@@ -31,8 +31,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
         - [Task 1: Create a virtual machine to execute the lab](#task-1-create-a-virtual-machine-to-execute-the-lab)
-        - [Task 2: Install the Azure Stack Developer Kit](#task-2-install-the-azure-stack-developer-kit)
-        - [Task 3: Download and Run the Azure Stack Configurator Script](#task-3-download-and-run-the-azure-stack-configurator-script)
+        - [Task 2: Download and Run the Azure Stack Configurator Script](#task-2-download-and-run-the-azure-stack-configurator-script)
 
 <!-- /TOC -->
 
@@ -52,80 +51,33 @@ For help with installation of the Azure Stack Development Kit, review the follow
 
 ### Task 1: Create a virtual machine to execute the lab
 
-1. Click the Deploy to Azure Button to create the Azure Stack Host VM in your Azure subscription.
+1. Navigate to the following URL to launch the AzureStackOnAzureVM deployment template in the Azure Portal.
 
-   [![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FMCW-Azure-Stack%2Fmaster%2FHands-on%20lab%2ftemplate%2fazuredeploy.json)
-
-
-2.  Specify a resource group name **AzureStack** and deploy the template.
-
-    > **Note:** Please wait for the virtual machine to be provisioned prior to moving to the next step.
-
-3.  After the VM is provisioned, **connect** to establish a new Remote Desktop Session.
-
-4.  Depending on your Remote Desktop Protocol Client and browser configuration, you will either be prompted to open an RDP file, or you will need to download it and then open it separately to connect.
-
-5.  Log in with the credentials specified during creation:
-
-    -   User: **administrator**
-
-    -   Password: **demo\@pass123**
-
-6.  You will be presented with a Remote Desktop Connection warning because of a certificate trust issue. Click **Yes** to continue with the connection.
-
-    ![Screenshot of the Remote Desktop Connection warning dialog box.](images/Setup/image3.png)
-
-7.  When logging on for the first time, you will see a prompt on the right asking about network discovery. Click **No**.
-
-    ![Screenshot of the Network discovery prompt, with the No button selected.](images/Setup/image4.png)
-
-8.  Notice that Server Manager opens by default. On the left, click **Local Server**.
-
-    ![Local Server is selected in the Server Manager menu.](images/Setup/image5.png)
-
-9.  On the right side of the pane, click **On** by **IE Enhanced Security Configuration**.
-
-10. Change to **Off** for Administrators and click **OK**.
-
-    ![In the Internet Explorer Enhanced Security Configuration dialog box, Administrators is set to Off.](images/Setup/image7.png)
-
-11. Launch Internet Explorer, and right click at the top of the browser and check Menu bar. Then open Tools -\> Internet Options -\> Security -\> Custom Level. Change File download to **Enable**.
-
-    ![Under Downloads, File download is set to Enable.](images/Setup/image8.png)
-
-### Task 2: Install the Azure Stack Developer Kit
-
-1.  Launch an elevated PowerShell console and execute the following commands:
-
-    ```powershell
-    cd C:\AzureStackOnAzureVM
-
-    .\Install-ASDK.ps1
+    ```
+    http://aka.ms/AzureStackonAzureVM
     ```
 
-    When prompted enter:
+2. Specify the following options on the template settings:
 
-    - Enter **AAD** for the deployment type
+    - Admin Password: demo@pass123
+    - Public DNS Name: specify a unique value
+    - Auto Install ASDK: true
+    - Azure AD Tenant: your Azure AD tenant
+    - Azure AD Global Admin: your Azure AD Global admin account
+    - Azure AD Global Admin Password: your Azure AD Global admin password
 
-    - Password for administrator: **demo\@pass123**
+    Click **Purchase** when you are ready to deploy the VM.
 
-    - Enter the Azure AD User: Specify your Azure subscription user account.
+    > **Note:** This step may take up to 6 hours to deploy. 
 
-    - Select ASK Version **1905-40** and press **C** to continue.
-
-2.  It will take up to 6 hours to successfully install the Azure Stack developer kit.
-
-3.  After the installation reboots the virtual machine, login to the **AzSHost-1** virtual machine using RDP to monitor the installation progress. You will need to use the account:
+3.  After several hours, you may login to the **AzSHost-1** virtual machine using RDP to monitor the installation progress. You will need to use the account:
 
     -   Username: **azurestack.local\\azurestackadmin**
 
-    -   Password: **\[your Azure Stack password\]**
+    -   Password: **demo@pass123**
 
-4.  Once connected open Server Manager. On the left, click **Local Server**.  
 
-    > **Note:** Wait until installation is complete.
-
-### Task 3: Download and Run the Azure Stack Configurator Script
+### Task 2: Download and Run the Azure Stack Configurator Script
 
 In this task you will execute a script that will configure Azure Stack with many of the standard Resource Providers such as SQL, App Service, and MySQL.
 
@@ -136,6 +88,7 @@ In this task you will execute a script that will configure Azure Stack with many
     ```PowerShell
     Start-BitsTransfer -Source https://cloudworkshop.blob.core.windows.net/azure-stack/iso/win2016eval.iso -Destination D:\win2016eval.iso
     ```
+
 3. Download the ConfigASDK Script:
 
     ```PowerShell
@@ -148,12 +101,36 @@ In this task you will execute a script that will configure Azure Stack with many
     Invoke-Webrequest http://bit.ly/configasdk -UseBasicParsing -OutFile ConfigASDK.ps1
     ```
 
-4. Execute the script to configure the Azure SDK (ensure you replace the [placeholder values]). Note: This step will take between 3 and 4 hours.
+4. Execute the script to configure the Azure SDK (ensure you replace the [placeholder values]). 
+ 
+    > Note: This step will take an additional between 3 and 4 hours.
 
     
     ```PowerShell
+    New-Item -ItemType Directory -Force -Path "D:\ASDKINSTALL"
+    
     .\ConfigASDK.ps1 -azureDirectoryTenantName "[tenant].onmicrosoft.com" -authenticationType AzureAD `
     -downloadPath "D:\ASDKINSTALL" -ISOPath "D:\win2016eval.iso" -azureStackAdminPwd 'demo@pass123' `
     -VMpwd 'demo@pass123' -azureAdUsername "[youruser]@[tenant].onmicrosoft.com" -azureAdPwd '[your user password]' `
     -registerASDK -useAzureCredsForRegistration -azureRegSubId "[Your Azure Subscription ID]"
     ```
+
+
+    > Note: If any of the jobs fail, wait for the entire script to complete and run the script again. 
+
+
+5. Many of the instructions ask you to copy/paste values from the Azure Stack portal. The copy buttons do not work in IE. It is recommended to install Firefox or Chrome inside the VM. 
+
+    ```
+    https://www.mozilla.org/en-US/firefox/new/
+    ```
+
+    ```
+    https://www.google.com/chrome
+    ```
+
+
+
+You should complete these instructions **before** attending the workshop. 
+
+
