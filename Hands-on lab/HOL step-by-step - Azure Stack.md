@@ -17,7 +17,8 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
-© 2018 Microsoft Corporation. All rights reserved.
+
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -37,7 +38,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Task 2: Provision an Azure Storage Account](#task-2-provision-an-azure-storage-account)
         - [Task 3: Deploy SQL DB on Azure Stack](#task-3-deploy-sql-db-on-azure-stack)
         - [Task 4: Update the configuration strings](#task-4-update-the-configuration-strings)
-        - [Task 4: Publish the Contoso Financial Web Application](#task-4-publish-the-contoso-financial-web-application)
+        - [Task 5: Publish the Contoso Financial Web Application](#task-5-publish-the-contoso-financial-web-application)
     - [Exercise 3: Deploy the customer offers Web API](#exercise-3-deploy-the-customer-offers-web-api)
         - [Task 1: Provision the offers Web API App](#task-1-provision-the-offers-web-api-app)
         - [Task 2: Deploy the Contoso.Apps.Financial.Offers project](#task-2-deploy-the-contosoappsfinancialoffers-project)
@@ -138,7 +139,7 @@ Duration: 15-30 minutes
 
     ![Screenshot of the Create Quota blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image77.png)
 
-8. Click **Review + Create** andn then confirm the creation. 
+8. Click **Review + Create** and then confirm the creation. 
 
     ![OK is selected in the Quotas blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image79.png)
 
@@ -185,7 +186,7 @@ Duration: 15-30 minutes
 
     ![Azure Stack dashboard screenshot](images/Hands-onlabstep-by-step-AzureStackimages/media/image88.png)
 
-    > Note: This is the User portal where Contoso Finance will use to provision and manage their Azure Stack service.
+    > **Note**: This is the User portal where Contoso Finance will use to provision and manage their Azure Stack service.
 
 
 17. Give it the name: **Production** and select the **PROD-Offer-1** and click **Create**.
@@ -253,7 +254,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 6.  On the **Access keys** blade, click the copy button by **Key** to copy the **key1** key value. Put the value in notepad for later reference.
 
-    ![The Key 1 copy button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image117.png)
+    ![The key1 copy button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image117.png)
 
     ![Key1 displays in Notepad.](images/Hands-onlabstep-by-step-AzureStackimages/media/image118.png)
 
@@ -338,7 +339,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 3.  Add a new **App setting** with the following values:
 
-    -   APP SETTING NAME: **AzureQueueConnectionString**
+    -   App setting name: **AzureQueueConnectionString**
 
     -   Value: **Enter the Connection String for the Storage Account that was just created**.
 
@@ -360,9 +361,9 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 6.  Click **Save**.
 
-### Task 4: Publish the Contoso Financial Web Application
+### Task 5: Publish the Contoso Financial Web Application
 
-The current version of the Azure Stack App Service Provider does not enable the deployment center feature yet. To enable the classic deployment feature navigate to this URL before following the next steps:
+The current version of the Azure Stack App Service Provider does not enable the deployment center feature yet. To enable the classic deployment feature, navigate to this URL before following the next steps:
 
 ```
 https://portal.local.azurestack.external/?websitesExtension_oldvsts=true
@@ -568,7 +569,7 @@ Contoso wants to automate the process of generating applications in PDF format a
 
     ![Under View files, run.csx is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image147.png)
 
-11. Select the **name of your function app followed by** **Application settings**.
+11. Select the **name of your function app** followed by **Application settings**.
 
     ![The previously mentioned settings are selected in the Function Apps blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image148.png)
 
