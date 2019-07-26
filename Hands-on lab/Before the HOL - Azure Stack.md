@@ -59,12 +59,12 @@ For help with installation of the Azure Stack Development Kit, review the follow
 
 2. Specify the following options on the template settings:
 
-    - Admin Password: demo@pass123
-    - Public DNS Name: specify a unique value
-    - Auto Install ASDK: true
-    - Azure AD Tenant: your Azure AD tenant
-    - Azure AD Global Admin: your Azure AD Global admin account
-    - Azure AD Global Admin Password: your Azure AD Global admin password
+    - Admin Password: **demo@pass123**
+    - Public DNS Name: **Specify a unique value**.
+    - Auto Install ASDK: **true**
+    - Azure AD Tenant: **Your Azure AD tenant**.
+    - Azure AD Global Admin: **Your Azure AD Global admin account**.
+    - Azure AD Global Admin Password: **Your Azure AD Global admin password**.
 
     Click **Purchase** when you are ready to deploy the VM.
 
@@ -103,7 +103,7 @@ In this task you will execute a script that will configure Azure Stack with many
 
 4. Execute the script to configure the Azure SDK (ensure you replace the [placeholder values]). 
  
-    > Note: This step will take an additional between 3 and 4 hours.
+    > **Note**: This step will take an additional 3 to 4 hours.
 
     
     ```PowerShell
@@ -116,7 +116,7 @@ In this task you will execute a script that will configure Azure Stack with many
     ```
 
 
-    > Note: If any of the jobs fail, wait for the entire script to complete and run the script again. 
+    > **Note**: If any of the jobs fail, wait for the entire script to complete and run the script again. 
 
 
 5. Many of the instructions ask you to copy/paste values from the Azure Stack portal. The copy buttons do not work in IE. It is recommended to install Firefox or Chrome inside the VM. 
@@ -129,8 +129,6 @@ In this task you will execute a script that will configure Azure Stack with many
     https://www.google.com/chrome
     ```
 
-
-
-You should complete these instructions **before** attending the workshop. 
+You should complete these instructions *before* attending the workshop. 
 
 
