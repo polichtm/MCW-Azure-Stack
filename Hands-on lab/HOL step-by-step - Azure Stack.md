@@ -32,7 +32,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Solution architecture](#solution-architecture)
     - [Help references](#help-references)
     - [Requirements](#requirements)
-    - [Exercise 1: Create Azure Stack Deployment Taxonomy for Tenets](#exercise-1-create-azure-stack-deployment-taxonomy-for-tenets)
+    - [Exercise 1: Create Azure Stack Deployment Taxonomy for Tenants](#exercise-1-create-azure-stack-deployment-taxonomy-for-tenants)
     - [Exercise 2: Deploy Contoso Financial Web Application](#exercise-2-deploy-contoso-financial-web-application)
         - [Task 1: Create the Web App](#task-1-create-the-web-app)
         - [Task 2: Provision an Azure Storage Account](#task-2-provision-an-azure-storage-account)
@@ -91,7 +91,7 @@ Contoso Finance is one of the largest banks in the United States with a signific
 -   Microsoft Azure subscription 
 
 
-## Exercise 1: Create Azure Stack Deployment Taxonomy for Tenets
+## Exercise 1: Create Azure Stack Deployment Taxonomy for Tenants
 
 In this exercise, you will create the subscriptions, offers, and plans that will be used by your Azure Stack tenants. 
 
