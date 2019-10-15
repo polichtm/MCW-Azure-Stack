@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
+﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
 
 <div class="MCWHeader1">
 Azure Stack
@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-June 2019
+October 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -178,7 +178,7 @@ Duration: 15-30 minutes
 
     ![Updated offer successfully message screenshot.](images/Hands-onlabstep-by-step-AzureStackimages/media/image87.png)
 
-16. Next, open a new browser tab, and navigate to Azure Stack tenant portal and click **Get Subscription**.
+16. Next, open a new browser tab, and navigate to Azure Stack User portal and click **Get Subscription**.
 
     ```
     https://portal.local.azurestack.external
@@ -210,7 +210,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 ### Task 1: Create the Web App
 
-1.  From within the Azure tenant portal, click **+Create a resource -\> Web + Mobile -\> Web App.**
+1.  From within the Azure Stack User portal, click **+Create a resource -\> Web + Mobile -\> Web App.**
 
 2.  On the **Web App** blade, select **App Service plan/Location**.
 
@@ -230,7 +230,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 ### Task 2: Provision an Azure Storage Account
 
-1.  In the Azure Tenant portal, click **+New, Data + Storage,** and **Storage account**.
+1.  In the Azure Stack User portal, click **+New, Data + Storage,** and **Storage account**.
 
     ![In the New and Data and Storage blades, the previously defined options are selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image113.png)
 
@@ -269,7 +269,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 ### Task 3: Deploy SQL DB on Azure Stack 
 
-1.  In the Azure Stack Tenant portal, click **+ Create a Resource**, **Data + Storage** followed by **SQL Database**.
+1.  In the Azure Stack User portal, click **+ Create a Resource**, **Data + Storage** followed by **SQL Database**.
 
     ![In the Azure Stack portal, in the New blade, Data and Storage is selected. In the Data and Storage blade, SQL Database is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image99.png)
 
@@ -349,7 +349,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
     -   Password: **Demo@pass123**
 
-5.  Locate **Connection Strings** below App settings in the Azure tenant portal, add a new **Connection String** with the following values:
+5.  Locate **Connection Strings** below App settings in the Azure Stack User portal, add a new **Connection String** with the following values:
 
     -   Name: **ContosoFinance**
 
@@ -403,7 +403,7 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
 ### Task 1: Provision the offers Web API App
 
-1.  Using the Azure Stack Tenant portal, click **+Create a resource**, **Web + Mobile**, and click **API App**.
+1.  Using the Azure Stack User portal, click **+Create a resource**, **Web + Mobile**, and click **API App**.
 
     ![Screenshot of the API App button.](images/Hands-onlabstep-by-step-AzureStackimages/media/image129.png)
 
@@ -463,7 +463,7 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
 ### Task 3: Update the Application Settings of the Web App with the API URL
 
-1.  Open the ContosoFinanceWeb application in the Azure Stack Tenant portal and click on Application settings
+1.  Open the ContosoFinanceWeb application in the Azure Stack User portal and click on Application settings
 
     ![In the App Service blade, under settings, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image134.png)
 
@@ -509,7 +509,7 @@ Contoso wants to automate the process of generating applications in PDF format a
 
     ![In the Azure Stack Host, the Clone or download button is selected, and under Clone with HTTPS, the Download ZIP button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image139.png)
 
-2.  From the Tenant portal, click **+Create a resource**, **Web + Mobile**, and then click **Function App**.
+2.  From the User portal, click **+Create a resource**, **Web + Mobile**, and then click **Function App**.
 
     ![Function App option screenshot](images/Hands-onlabstep-by-step-AzureStackimages/media/image140.png)
 
@@ -579,7 +579,7 @@ Contoso wants to automate the process of generating applications in PDF format a
 
     -   Value: **Paste the connection string for the storage account created earlier in the lab**.
 
-13. Locate **Connection Strings** below Application settings in the Azure tenant portal, and click **+Add a new** **Connection String** with the following values:
+13. Locate **Connection Strings** below Application settings in the Azure Stack User portal, and click **+Add a new** **Connection String** with the following values:
 
     -   Name: **ContosoFinance (must match exactly -- case sensitive)**
 
@@ -601,7 +601,7 @@ In this exercise, you will provision the admin website to be used by employees t
 
 ### Task 1: Provision the Contoso Finance Admin Web App
 
-1.  In the Azure tenant portal, click **+Create new resource**, **Web + Mobile**, and select **Web App**.
+1.  In the Azure Stack User portal, click **+Create new resource**, **Web + Mobile**, and select **Web App**.
 
 2.  Specify a **unique URL** for the Web App, ensure the **same App Service Plan** as well as the **ContosoFinanceWeb** resource group you have used throughout the lab are selected.
 
@@ -621,7 +621,7 @@ In this exercise, you will provision the admin website to be used by employees t
 
     ![Screenshot of the App Services blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image155.png)
 
-7.  Locate **Connection Strings** below App settings in the Azure tenant portal add a new **Connection String** with the following values:
+7.  Locate **Connection Strings** below App settings in the Azure Stack User portal add a new **Connection String** with the following values:
 
     -   Name: **ContosoFinance**
 
