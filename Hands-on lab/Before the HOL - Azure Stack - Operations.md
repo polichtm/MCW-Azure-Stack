@@ -29,7 +29,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
     - [Task 1: Prepare the Azure Stack operator station](#task-1-prepare-the-azure-stack-operator-station)
-    - [Task 2: Register the Azure Stack Development Kit with Azure](#task-2-register-the-azure-stack-development-kit-with-azure)
+  - [Task 2: Register the Azure Stack Development Kit with Azure](#task-2-register-the-azure-stack-development-kit-with-azure)
 
 # Azure Stack before the hands-on lab setup guide 
 
@@ -47,31 +47,31 @@ Duration: 60 minutes
 
 1.  In the Azure portal, navigate to the blade of **AzS-HOST1** virtual machine.
 
-1.  From the **AzS-HOST1** blade, connect via RDP to **AzS-HOST1** Windows host. When prompted, authenticate by using the following credentials:
+2.  From the **AzS-HOST1** blade, connect via RDP to **AzS-HOST1** Windows host. When prompted, authenticate by using the following credentials:
 
     -   Username: **AzureStack\AzureStackAdmin**
 
     -   Password: **demo@pass123**
 
-1.  Click **Start** and, in the Start menu, click **Control Panel**.
+3.  select **Start** and, in the Start menu, select **Control Panel**.
 
-1.  In the Control Panel window, click **View by**, in the drop-down menu, click **Small icons**, and click **User Accounts**.
+4.  In the Control Panel window, select **View by**, in the drop-down menu, select **Small icons**, and select **User Accounts**.
 
-1.  Click **Change User Account Control settings**. 
+5.  select **Change User Account Control settings**. 
 
-1.  When prompted, in the **User Account Control** dialog box, click **Yes**. 
+6.  When prompted, in the **User Account Control** dialog box, select **Yes**. 
 
-1.  In the **User Account Control Settings**, move the slider down to the **Never notify** position, click **OK**, and, wen prompted again, in the **User Account Control** dialog box, click **Yes**. 
+7.  In the **User Account Control Settings**, move the slider down to the **Never notify** position, select **OK**, and, wen prompted again, in the **User Account Control** dialog box, select **Yes**. 
 
-1.  Start Internet Explorer and install another web browser (Chrome or Firefox). 
+8.  Start Internet Explorer and install another web browser (Chrome or Firefox). 
 
-1.  From Internet Explorer, browse to https://code.visualstudio.com/, and from the Visual Studio Code page, install the latest stable version of Visual Studo Code. 
+9.  From Internet Explorer, browse to https://code.visualstudio.com/, and from the Visual Studio Code page, install the latest stable version of Visual Studo Code. 
 
     > **Note:** except VScode, most of the next steps should be already configured on your VM - please check that the tools are there and you are able to configure them. VSCode is optional - you can perform all of the activities in the labs using just PowerShell, but you may want to explore the VSCode user interface, becasue it makes interacting with Azure Stack using PowerSHell and ARM templaes more powerful.
 
-1.  Right-click **Start** and, in the right-click menu, click **Command Prompt (Admin)**.
+10. Right-click **Start** and, in the right-click menu, select **Command Prompt (Admin)**.
 
-1.  From the **Administrator: Command Prompt**, install appropriate VSCode extensions by running the following:
+11. From the **Administrator: Command Prompt**, install appropriate VSCode extensions by running the following:
 
     ```
     code --install-extension msazurermtools.azurerm-vscode-tools
@@ -79,9 +79,9 @@ Duration: 60 minutes
     code --install-extension ms-azuretools.vscode-azurestorage
     ```
 
-1.  Start Windows PowerShell ISE as administrator.
+12. Start Windows PowerShell ISE as administrator.
 
-1.  From the Administrator: Windows PowerShell ISE window, ensure that PSGallery is configured as trusted repository by running the following:
+13. From the Administrator: Windows PowerShell ISE window, ensure that PSGallery is configured as trusted repository by running the following:
 
     ```powershell
     Import-Module -Name PowerShellGet -ErrorAction Stop
@@ -90,26 +90,26 @@ Duration: 60 minutes
     Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, install the AzureRM.BootStrapper module by running the following:
+14. From the Administrator: Windows PowerShell ISE window, install the AzureRM.BootStrapper module by running the following:
 
     ```powershell
     Install-Module -Name AzureRM.BootStrapper
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, install and import the API Version Profile required by Azure Stack into the current PowerShell session by running the following:
+15. From the Administrator: Windows PowerShell ISE window, install and import the API Version Profile required by Azure Stack into the current PowerShell session by running the following:
 
     ```powershell
     Use-AzureRmProfile -Profile 2019-03-01-hybrid -Force
     ```
   
-1.  From the Administrator: Windows PowerShell ISE window, install and import the API Version Profile required by Azure Stack into the current PowerShell session by running the following:
+16. From the Administrator: Windows PowerShell ISE window, install and import the API Version Profile required by Azure Stack into the current PowerShell session by running the following:
 
     ```powershell
     Use-AzureRmProfile -Profile 2019-03-01-hybrid -Force
     Install-Module -Name AzureStack -RequiredVersion 1.7.2
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, download the Azure Stack Tools by running the following:
+17. From the Administrator: Windows PowerShell ISE window, download the Azure Stack Tools by running the following:
 
     ```powershell
     Set-Location -Path '\'
@@ -119,7 +119,7 @@ Duration: 60 minutes
     Set-Location -Path '\AzureStack-Tools-master'
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, register the Azure Stack PowerShell environment that targets your Azure Stack instance by running the following:
+18. From the Administrator: Windows PowerShell ISE window, register the Azure Stack PowerShell environment that targets your Azure Stack instance by running the following:
 
     ```powershell
     Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
@@ -127,7 +127,7 @@ Duration: 60 minutes
       -AzureKeyVaultServiceEndpointResourceId https://adminvault.local.azurestack.external
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, set your Azure Active Directory tenant by running the following (make sure to replace the placeholder `<tenant_name>` with the name of your Azure Active Directory tenant):
+19. From the Administrator: Windows PowerShell ISE window, set your Azure Active Directory tenant by running the following (make sure to replace the placeholder `<tenant_name>` with the name of your Azure Active Directory tenant):
 
     ```powershell
     $AuthEndpoint = (Get-AzureRmEnvironment -Name "AzureStackAdmin").ActiveDirectoryAuthority.TrimEnd('/')
@@ -135,17 +135,17 @@ Duration: 60 minutes
     $TenantId = (invoke-restmethod "$($AuthEndpoint)/$($AADTenantName)/.well-known/openid-configuration").issuer.TrimEnd('/').Split('/')[-1]
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, create the **AzureStackAdmin** environment by running the following:
+20. From the Administrator: Windows PowerShell ISE window, create the **AzureStackAdmin** environment by running the following:
 
     ```powershell
     Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
     ```  
 
-1.  When prompted, sign in with your Azure Active Directory account.
+21. When prompted, sign in with your Azure Active Directory account.
 
-   > **Note:** Type "Get-AzureRMSubscription" and note list of subscriptions (Default Provider Subscription, Metering Subscrption, and Consumption Subscription) and the corresponding tenant ID. You are now connected to your Azure Stack instance and can run commands such as **Get-AzsLocation**, **Get-AzsSubscription**, or **Get-AzsUserSubscription**.
+    > **Note:** Type "Get-AzureRMSubscription" and note list of subscriptions (Default Provider Subscription, Metering Subscrption, and Consumption Subscription) and the corresponding tenant ID. You are now connected to your Azure Stack instance and can run commands such as **Get-AzsLocation**, **Get-AzsSubscription**, or **Get-AzsUserSubscription**.
 
-   > **Note:** Ignore the warning stating **Preview version of the module Azs.Subscriptions loaded. Future release of this module may have breaking changes**.
+    > **Note:** Ignore the warning stating **Preview version of the module Azs.Subscriptions loaded. Future release of this module may have breaking changes**.
 
 ## Task 2: Register the Azure Stack Development Kit with Azure
 
@@ -155,21 +155,21 @@ Duration: 60 minutes
     Add-AzureRmAccount -EnvironmentName AzureCloud
     ```
 
-1.  When prompted, your Azure Active Directory account that you provided when provisioning the Azure Stack environment.
+2.  When prompted, your Azure Active Directory account that you provided when provisioning the Azure Stack environment.
 
-1.  If you have multiple subscriptions, run the following command to select the one you want to use (make sure to replace the placeholder `<subscription_ID>` with the id of the target subscription):
+3.  If you have multiple subscriptions, run the following command to select the one you want to use (make sure to replace the placeholder `<subscription_ID>` with the id of the target subscription):
 
     ```powershell
     Set-AzureRmContext - SubscriptionId '<subscription_ID'"
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, register the Azure Stack resource provider by running the following:
+4.  From the Administrator: Windows PowerShell ISE window, register the Azure Stack resource provider by running the following:
 
     ```powershell
     Register-AzureRmResourceProvider -ProviderNamespace Microsoft.AzureStack
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, configure the registration by running the following:
+5.  From the Administrator: Windows PowerShell ISE window, configure the registration by running the following:
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -178,7 +178,7 @@ Duration: 60 minutes
 
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, connect to the privileged endpoint of your ASDK installation by running the following:
+6.  From the Administrator: Windows PowerShell ISE window, connect to the privileged endpoint of your ASDK installation by running the following:
 
     ```powershell
     $adminUserName = 'azurestack\CloudAdmin'
@@ -188,19 +188,19 @@ Duration: 60 minutes
     Enter-PSSession -ComputerName AzS-ERCS01 -ConfigurationName PrivilegedEndpoint -Credential $adminCredentials
     ```
 
-1.  From the `[AzS-ERC01]: PS>` prompt within the Administrator: Windows PowerShell ISE window, display the local Azure Stack stamp information by running the following:
+7.  From the `[AzS-ERC01]: PS>` prompt within the Administrator: Windows PowerShell ISE window, display the local Azure Stack stamp information by running the following:
 
     ```powershell
     Get-AzureStackStampInformation 
     ```
 
-1.  In the output of the commmand you ran in the previous step, identify the CloudId parameter, copy it to Clipboard, and exit the PowerShell Remoting session by running the following:
+8.  In the output of the commmand you ran in the previous step, identify the CloudId parameter, copy it to Clipboard, and exit the PowerShell Remoting session by running the following:
 
     ```powershell
     Exit-PSSession
     ```
 
-1.  From the Administrator: Windows PowerShell ISE window, configure the registration by running the following (make sure to replace the placeholder `<cloud_ID>` with the value of the CloudId parameter you identified in the previous step):
+9.  From the Administrator: Windows PowerShell ISE window, configure the registration by running the following (make sure to replace the placeholder `<cloud_ID>` with the value of the CloudId parameter you identified in the previous step):
 
     ```powershell
     $RegistrationName = "<cloud_ID>"
@@ -214,4 +214,4 @@ Duration: 60 minutes
 	-UsageReportingEnabled:$true
     ```
 
-1.  Review the output of the command you ran in the previous task and verify that the registration was successful.
+10. Review the output of the command you ran in the previous task and verify that the registration was successful.

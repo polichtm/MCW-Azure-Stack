@@ -28,10 +28,10 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Azure Stack before the hands-on lab setup guide](#azure-stack-before-the-hands-on-lab-setup-guide)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Create a virtual machine to execute the lab](#task-1-create-a-virtual-machine-to-execute-the-lab)
-        - [Task 2: Download and Run the Azure Stack Configurator Script](#task-2-download-and-run-the-azure-stack-configurator-script)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
+    - [Task 1: Create a virtual machine to execute the lab](#task-1-create-a-virtual-machine-to-execute-the-lab)
+    - [Task 2: Download and Run the Azure Stack Configurator Script](#task-2-download-and-run-the-azure-stack-configurator-script)
 
 <!-- /TOC -->
 
@@ -66,7 +66,7 @@ For help with installation of the Azure Stack Development Kit, review the follow
     - Azure AD Global Admin: **Your Azure AD Global admin account**.
     - Azure AD Global Admin Password: **Your Azure AD Global admin password**.
 
-    Click **Purchase** when you are ready to deploy the VM.
+    select **Purchase** when you are ready to deploy the VM.
 
     > **Note:** This step may take up to 6 hours to deploy. 
 

@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+ï¿½ 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -27,44 +27,44 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Azure Stack hands-on lab step-by-step](#azure-stack-hands-on-lab-step-by-step)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Overview](#overview)
-    - [Solution architecture](#solution-architecture)
-    - [Help references](#help-references)
-    - [Requirements](#requirements)
-    - [Exercise 1: Create and publish an Azure Stack Marketplace item](#exercise-1-create-and-publish-an-Azure-Stack-Marketplace-item)
-        - [Task 1: Set up tools and artifacts for publishing custom Azure Stack Marketplace items](#task-1-set-up-tools-and-artifacts-for-publishing-custom-azure-stack-marketplace-items)
-        - [Task 2: Publish a custom Azure Marketplace solution](#task-2-publish-a-custom-azure-marketplace-solution)
-    - [Exercise 2: Implement multi-tenancy](#exercise-2-implement-multi-tenancy)
-        - [Task 1: Create and configure a new Azure Active Directory tenant](#task-1-create-and-configure-a-new-azure-active-directory-tenant)
-        - [Task 2: Configure the existing Azure Stack Azure Active Directory tenant](#task-2-configure-the-existing-azure-stack-azure-active-directory-tenant)
-        - [Task 3: Configure the newly created Azure Active Directory tenant](#task-3-configure-the-newly-created-azure-active-directory-tenant)
-    - [Exercise 3: Implement delegated management of plans, offers, and subscriptions](#exercise-3-implement-delegated-management-of-plans-offers-and-subscriptions)
-        - [Task 1: Create delegated operator and user Azure Active Directory accounts (as the Azure Stack operator)](#task-1-create-delegated-operator-and-user-azure-active-directory-accounts-as-the-azure-stack-operator)
-        - [Task 2: Create a plan consisting of the Subscription service (as the Azure Stack operator)](#task-2-create-a-plan-consisting-of-the-subscription-service-as-the-azure-stack-operator)
-        - [Task 3: Create an offer based on the plan consisting of the Subscriptions service (as the Azure Stack operator)](#task-3-create-an-offer-based-on-the-plan-consisting-of-the-Subscriptions-service-as-the-azure-stack-operator)
-        - [Task 4: Create new subscriptions containing the offer with the delegated providers as their subscriber (as the Azure Stack operator)](#task-4-create-new-subscriptions-containing-the-offer-with-the-delegated-providers-as-their-subscriber-as-the-azure-stack-operator)
-        - [Task 5: Create a plan to be delegated by delegated providers to users (as the Azure Stack operator)](#task-5-create-a-plan-to-be-delegated-by-delegated-providers-to-users-as-the-azure-stack-operator)
-        - [Task 6: Create an offer based on the plan containing Microsoft.Storage (as the Azure Stack operator)](#task-6-create-an-offer-based-on-the-plan-containing-microsoft.storage-as-the-azure-stack-operator)
-        - [Task 7: Delegate the offer to delegated providers (as the Azure Stack operator)](#task-7-delegate-the-offer-to-delegated-providers-as-the-azure-stack-operator)
-        - [Task 8: Create a delegated provider offer for Contoso users (as the Contoso delegated provider) based on offer from the Azure Stack operator](#task-8-create-a-delegated-provider-offer-for-contoso-users-as-the-contoso-delegated-provider-based-on-offer-from-the-azure-stack-operator)
-        - [Task 9: Create a delegated provider offer for Fabrikam users (as the Fabrikam delegated provider) based on offer from the Azure Stack operator](#task-9-create-a-delegated-provider-offer-for-fabrikam-users-(as-the-fabrikam-delegated-provider)-based-on-offer-from-the-azure-stack-operator)
-        - [Task 10: Sign up for the delegated provider's offer (as a Contoso user)](#task-10-sign-up-for-the-delegated-providers-offer-as-a-contoso-user)
-        - [Task 11: Sign up for the delegated provider's offer (as a Fabrikam user)](#task-11-sign-up-for-the-delegated-providers-offer-as-a-fabrikam-user)
-    - [Exercise 4: Configure Role Based Access Control (RBAC)](#exercise-4-configure-role-based-access-control-rbac)
-        - [Task 1: Create a custom role](#task-1-create-a-custom-role)
-        - [Task 2: Create Azure AD users and groups](#task-2-create-azure-ad-users-and-groups)
-        - [Task 3: Configure RBAC role assignments](#task-3-configure-rbac-role-assignments)
-    - [Exercise 5: Connect to and work with the Privileged Endpoint](#exercise-5-connect-to-and-work-with-the-privileged-endpoint)
-        - [Task 1: Create a log share](#task-1-create-a-log-share)
-        - [Task 2: Connect to the privileged endpoint via PowerShell Remoting](#task-2-connect-to-the-privileged-endpoint-via-powershell-remoting)
-        - [Task 3: Review capabilities of the privileged endpoint](#task-3-review-capabilities-of-the-privileged-endpoint)
-    - [Exercise 6: Implement Azure Stack infrastructure backup](#exercise-6-implement-azure-stack-infrastructure-backup)
-        - [Task 1: Create a backup user](#task-1-create-a-backup-user)
-        - [Task 2: Create a backup share](#task-2-create-a-backup-share)
-        - [Task 3: Generate an encryption certificate](#task-3-generate-an-encryption-certificate)
-        - [Task 4: Configure backup controller](#task-4-configure-backup-controller)
-    - [After the hands-on lab](#after-the-hands-on-lab)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Overview](#overview)
+  - [Help references](#help-references)
+  - [Requirements](#requirements)
+  - [Exercise 1: Create and publish an Azure Stack Marketplace item](#exercise-1-create-and-publish-an-azure-stack-marketplace-item)
+    - [Task 1: Set up tools and artifacts for publishing custom Azure Stack Marketplace items](#task-1-set-up-tools-and-artifacts-for-publishing-custom-azure-stack-marketplace-items)
+    - [Task 2: Publish a custom Azure Marketplace solution](#task-2-publish-a-custom-azure-marketplace-solution)
+  - [Exercise 2: Implement multi-tenancy](#exercise-2-implement-multi-tenancy)
+    - [Task 1: Create and configure a new Azure Active Directory tenant](#task-1-create-and-configure-a-new-azure-active-directory-tenant)
+    - [Task 2: Configure the existing Azure Stack Azure Active Directory tenant](#task-2-configure-the-existing-azure-stack-azure-active-directory-tenant)
+    - [Task 3: Configure the newly created Azure Active Directory tenant](#task-3-configure-the-newly-created-azure-active-directory-tenant)
+  - [Exercise 3: Implement delegated management of plans, offers, and subscriptions](#exercise-3-implement-delegated-management-of-plans-offers-and-subscriptions)
+    - [Task 1: Create delegated operator and user Azure Active Directory accounts (as the Azure Stack operator)](#task-1-create-delegated-operator-and-user-azure-active-directory-accounts-as-the-azure-stack-operator)
+    - [Task 2: Create a plan consisting of the Subscription service (as the Azure Stack operator)](#task-2-create-a-plan-consisting-of-the-subscription-service-as-the-azure-stack-operator)
+    - [Task 3: Create an offer based on the plan consisting of the Subscriptions service (as the Azure Stack operator)](#task-3-create-an-offer-based-on-the-plan-consisting-of-the-subscriptions-service-as-the-azure-stack-operator)
+    - [Task 4: Create new subscriptions containing the offer with the delegated providers as their subscriber (as the Azure Stack operator)](#task-4-create-new-subscriptions-containing-the-offer-with-the-delegated-providers-as-their-subscriber-as-the-azure-stack-operator)
+    - [Task 5: Create a plan to be delegated by delegated providers to users (as the Azure Stack operator)](#task-5-create-a-plan-to-be-delegated-by-delegated-providers-to-users-as-the-azure-stack-operator)
+    - [Task 6: Create an offer based on the plan containing Microsoft.Storage (as the Azure Stack operator)](#task-6-create-an-offer-based-on-the-plan-containing-microsoftstorage-as-the-azure-stack-operator)
+    - [Task 7: Delegate the offer to delegated providers (as the Azure Stack operator)](#task-7-delegate-the-offer-to-delegated-providers-as-the-azure-stack-operator)
+    - [Task 8: Create a delegated provider offer for Contoso users (as the Contoso delegated provider) based on offer from the Azure Stack operator](#task-8-create-a-delegated-provider-offer-for-contoso-users-as-the-contoso-delegated-provider-based-on-offer-from-the-azure-stack-operator)
+    - [Task 9: Create a delegated provider offer for Fabrikam users (as the Fabrikam delegated provider) based on offer from the Azure Stack operator](#task-9-create-a-delegated-provider-offer-for-fabrikam-users-as-the-fabrikam-delegated-provider-based-on-offer-from-the-azure-stack-operator)
+    - [Task 10: Sign up for the delegated provider's offer (as a Contoso user)](#task-10-sign-up-for-the-delegated-providers-offer-as-a-contoso-user)
+    - [Task 11: Sign up for the delegated provider's offer (as a Fabrikam user)](#task-11-sign-up-for-the-delegated-providers-offer-as-a-fabrikam-user)
+  - [Exercise 4: Configure Role Based Access Control (RBAC)](#exercise-4-configure-role-based-access-control-rbac)
+    - [Task 1: Create a custom role](#task-1-create-a-custom-role)
+    - [Task 2: Create Azure AD users and groups](#task-2-create-azure-ad-users-and-groups)
+    - [Task 3: Configure RBAC role assignments](#task-3-configure-rbac-role-assignments)
+  - [Exercise 5: Connect to and work with the Privileged Endpoint](#exercise-5-connect-to-and-work-with-the-privileged-endpoint)
+    - [Task 1: Create a log share](#task-1-create-a-log-share)
+    - [Task 2: Connect to the privileged endpoint via PowerShell Remoting](#task-2-connect-to-the-privileged-endpoint-via-powershell-remoting)
+    - [Task 3: Review capabilities of the privileged endpoint](#task-3-review-capabilities-of-the-privileged-endpoint)
+    - [Task 4: Manage Azure Stack diagnostics log collection via the privileged endpoint.](#task-4-manage-azure-stack-diagnostics-log-collection-via-the-privileged-endpoint)
+  - [Exercise 6: Implement Azure Stack infrastructure backup](#exercise-6-implement-azure-stack-infrastructure-backup)
+    - [Task 1: Create a backup user](#task-1-create-a-backup-user)
+    - [Task 2: Create a backup share](#task-2-create-a-backup-share)
+    - [Task 3: Generate an encryption certificate](#task-3-generate-an-encryption-certificate)
+    - [Task 4: Configure backup controller](#task-4-configure-backup-controller)
+  - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
 
@@ -124,7 +124,7 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 1.  When prompted, download the archive file **Azure Stack Marketplace Item Generator and Sample.zip** to the **C:\Downloads** folder (create the folder if needed).
 
-1.  Once the download completes, start File Explorer, click the **View** menu item, and click **File name extensions**.
+1.  Once the download completes, start File Explorer, select the **View** menu item, and select **File name extensions**.
 
     ![In the View ribbon of File Explorer, File name extensions checkbox is selected.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image1.png)
 
@@ -134,13 +134,13 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 1.  In File Explorer, navigate to the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons folder.
 
-1.  Right-click the **Wide.png** image, in the right-click menu, and then click **Open with** -> **Paint**.
+1.  right-click the **Wide.png** image, in the right-click menu, and then select **Open with** -> **Paint**.
 
-1.  In the Microsoft Paint window, click **Resize**.
+1.  In the Microsoft Paint window, select **Resize**.
 
     ![In the View ribbon of Microsoft Paint, the Resize icon is selected.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image2.png)
 
-1.  In the **Resize and Skew** window, clear the **Maintain aspect ratio** checkbox, click the **Pixels** option, set the following image properties and click **OK**:
+1.  In the **Resize and Skew** window, clear the **Maintain aspect ratio** checkbox, select the **Pixels** option, set the following image properties and select **OK**:
 
     -  Horizontal: **533**
 
@@ -148,7 +148,7 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
     ![In the Resize and Skew window, the image size is set to the required values.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image3.png)
 
-1.  Save the resulting image as C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons\Screenshot.png (when prompted whether to continue, click **OK**) and close Microsoft Paint. 
+1.  Save the resulting image as C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons\Screenshot.png (when prompted whether to continue, select **OK**) and close Microsoft Paint. 
 
     > **Note:** You are using sample images for the sake of simplicity. When creating and publishing custom Azure Stack Marketplace solutions, you would create your own icons and screenshots that represent the characteristics of these solutions. Keep in mind that you must ensure that their sizes match those specified in the documentation available at https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md
 
@@ -249,9 +249,9 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 1.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
 
-1.  In the Azure Stack Admin portal, in the hub menu, click **+ Create a resource**.
+1.  In the Azure Stack Admin portal, in the hub menu, select **+ Create a resource**.
 
-1.  On the New blade, click **Data + Storage** and then click **Storage account - blob, file, table, queue**.
+1.  On the New blade, select **Data + Storage** and then select **Storage account - blob, file, table, queue**.
 
     ![In the Azure Stack Admin portal, Storage account - blob, file, table, queue is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image4.png)
 
@@ -271,31 +271,31 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
     -  Replication: **Locally-redundant storage (LRS)**
 
-1.  Click **Review + create** and then **Create**. Wait until the storage account is provisioned.
+1.  select **Review + create** and then **Create**. Wait until the storage account is provisioned.
 
-1.  In the hub menu, click **Resource groups**.
+1.  In the hub menu, select **Resource groups**.
 
-1.  On the Resource Groups blade in the list of resource groups, click **marketplace-pkgs-RG**.
+1.  On the Resource Groups blade in the list of resource groups, select **marketplace-pkgs-RG**.
 
-1.  On the marketplace-pkgs-RG blade, click the entry representing the newly created storage account.
+1.  On the marketplace-pkgs-RG blade, select the entry representing the newly created storage account.
 
-1.  On the storage account blade, click **Blobs**.
+1.  On the storage account blade, select **Blobs**.
 
-1.  On the Blob service blade, click **+ Container**.
+1.  On the Blob service blade, select **+ Container**.
 
 1.  In the Name textbox, type **packages** and in the **Access type** drop down list, select **Blob (anonymous read access for blobs only)**
 
-1.  In the list of containers, click **packages**.
+1.  In the list of containers, select **packages**.
 
-1.  On the packages blade, click **Upload**.
+1.  On the packages blade, select **Upload**.
 
-1.  On the upload blob blade, click the folder icon next to the **Select a file** text box. 
+1.  On the upload blob blade, select the folder icon next to the **Select a file** text box. 
 
-1.  In the Choose File to Upload text box, navigate to the location containing the package that you noted in the previous task, click the **Contoso.ContosoWebApp.1.0.0.azpkg** file and click **Open**.
+1.  In the Choose File to Upload text box, navigate to the location containing the package that you noted in the previous task, select the **Contoso.ContosoWebApp.1.0.0.azpkg** file and select **Open**.
 
     ![In the Azure Stack Admin portal, the Upload blob pane shows the Contoso.ContosoWebApp.1.0.0.azpkg file to be uploaded.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image5.png)
 
-1.  Back on the Upload blob blade, click **Upload**.
+1.  Back on the Upload blob blade, select **Upload**.
 
     > **Note:** Subsequent steps require Azure Stack PowerShell and tools installed. This was performed as part of **Azure Stack Before the Hands-on Lab setup guide**)
 
@@ -326,25 +326,25 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 1.  Ensure that the command completes successfully.
 
-1.  Switch back to the Azure Stack Admin portal, in the hub menu, click **+ Create a resource**.
+1.  Switch back to the Azure Stack Admin portal, in the hub menu, select **+ Create a resource**.
 
     > **Note:** Alternatively, you can use the Azure Stack User portal at <https://portal.local.azurestack.external/>. The newly added Marketplace item should be available in both.
 
-1.  On the New blade, click **Custom**.
+1.  On the New blade, select **Custom**.
 
-1.  On the Custom blade, click **See all** and ensure that **Contoso WebApp** appears in the list of resource types to provision.
+1.  On the Custom blade, select **See all** and ensure that **Contoso WebApp** appears in the list of resource types to provision.
 
     > **Note:** It might take a few minutes for a newly added Marketplace item to appear
 
     ![In the Azure Stack Admin portal, Contoso WebApp custom Marketplace item is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image6.png)
 
-1.  On the Custom blade, click **Contoso WebApp**.
+1.  On the Custom blade, select **Contoso WebApp**.
 
 1.  On the Contoso webapp blade, review the interface of the Contoso webapp blade to verify that it reflects the configuration you specified when creating the package.
 
-1.  On the Contoso webapp blade, click **Create**
+1.  On the Contoso webapp blade, select **Create**
 
-1.  Step through the process of configuring the deployment but do not click **Create**.
+1.  Step through the process of configuring the deployment but do not select **Create**.
 
 1.  Close all open windows.
 
@@ -361,13 +361,13 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
 1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in by using an account with the Global Admin privileges to the Azure AD tenant associated with the Azure Stack environment.
 
-1.  In the Azure portal, click **+ Create a resource**.
+1.  In the Azure portal, select **+ Create a resource**.
 
-1.  On the New blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, click **Azure Active Directory**.
+1.  On the New blade, in the **Search the Marketplace** text box, type **Azure Active Directory** and, in the list of results, select **Azure Active Directory**.
 
-1.  On the Azure Active Directory blade, click **Create**. 
+1.  On the Azure Active Directory blade, select **Create**. 
 
-1.  On the Create directory blade, specify the following settings and click **Create**:
+1.  On the Create directory blade, specify the following settings and select **Create**:
 
     -  Organization name: **Fabrikam**
 
@@ -375,13 +375,13 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
     -  Country or region: **United States**
 
-1.  Wait until the new directory is created and then use the link **Click here to manage your new directory** to navigate to the **Fabrikam** Azure Active Directory blade.
+1.  Wait until the new directory is created and then use the link **select here to manage your new directory** to navigate to the **Fabrikam** Azure Active Directory blade.
 
-1.  On the Fabrikam - Overview blade, click **Users**.
+1.  On the Fabrikam - Overview blade, select **Users**.
 
-1.  On the Users - All users blade, click **+ New user**
+1.  On the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     > **Note:** Take a note of the user names (including the domain suffix) and their autogenerated passwords. You will need them in the subsequent tasks of this lab.
 
@@ -407,9 +407,9 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
     -  Department : not set
 
-1.  Back on the Users - All users blade, click **+ New user**
+1.  Back on the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     -  User name: **fabrikamuser1**
 
@@ -433,11 +433,11 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
     -  Department : not set
 
-1.  Click the **Directory + Subscription** icon (to the right of the Cloud Shell icon). 
+1.  select the **Directory + Subscription** icon (to the right of the Cloud Shell icon). 
 
-1.  In the Directory + Subscription pane, in the Switch directory section, click the entry representing the Azure Active Directory tenant associated with the Azure Stack environment.
+1.  In the Directory + Subscription pane, in the Switch directory section, select the entry representing the Azure Active Directory tenant associated with the Azure Stack environment.
 
-1.  In the Azure portal, click the user name appearing in the upper right corner, click **Sign out**, and then close the web browser window.
+1.  In the Azure portal, select the user name appearing in the upper right corner, select **Sign out**, and then close the web browser window.
 
 ### Task 2: Configure the existing Azure Stack Azure Active Directory tenant
 
@@ -538,13 +538,13 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
 
-1.  In the Azure portal, click **Azure Active Directory**.
+1.  In the Azure portal, select **Azure Active Directory**.
 
-1.  On the Azure Active Directory blade of the tenant associated with the Azure Stack environment, click **Users**.
+1.  On the Azure Active Directory blade of the tenant associated with the Azure Stack environment, select **Users**.
 
-1.  On the Users - All users blade, click **+ New user**
+1.  On the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     > **Note:** Take a note of the user names (including the domain suffix) and their autogenerated passwords. You will need them in the subsequent tasks of this lab.
 
@@ -570,9 +570,9 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Department : not set
 
-1.  Back on the Users - All users blade, click **+ New user**
+1.  Back on the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     -  User name: **contosouser1**
 
@@ -600,13 +600,13 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 1.  Start a web browser using in private/incognito mode, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the **FabrikamAdmin1** Azure Active Directory credentials you created in the previous exercise. 
 
-1.  In the Azure portal, click **Azure Active Directory**.
+1.  In the Azure portal, select **Azure Active Directory**.
 
-1.  On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant click **Users**.
+1.  On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant select **Users**.
 
-1.  On the Users - All users blade, click **+ New user**
+1.  On the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     -  User name: **fabrikamazsdp1**
 
@@ -638,9 +638,9 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 1.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
 
-1.  In the Azure Stack Admin portal, click **+ Create a resource**. 
+1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
 
-1.  On the New blade, click **Offers + Plans** and then click **Plan**.
+1.  On the New blade, select **Offers + Plans** and then select **Plan**.
 
 1.  On the Basics tab of the New plan blade, specify the following settings:
 
@@ -654,25 +654,25 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the Basics tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image7.png)
 
-1.  Click the **Services** tab.
+1.  select the **Services** tab.
 
 1.  On the Services tab of the New plan blade, select the **Microsoft.Subscriptions** checkbox.
 
     ![In the Azure Stack admin portal, the Services tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image8.png)
 
-1.  Click **Quotas**.
+1.  select **Quotas**.
 
 1.  On the Quotas tab of the New plan blade, in the **Microsoft.Subscriptions** drop down list, select **delegatedProviderQuota**.
 
     ![In the Azure Stack admin portal, the Quotas tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image9.png)
 
-1.  Click **Review + create** and then click **Create**. 
+1.  select **Review + create** and then select **Create**. 
 
 ### Task 3: Create an offer based on the plan consisting of the Subscriptions service (as the Azure Stack operator)
 
-1.  In the Azure Stack Admin portal, click **+ Create a resource**. 
+1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
 
-1.  On the New blade, click **Offers + Plans** and then click **Offer**.
+1.  On the New blade, select **Offers + Plans** and then select **Offer**.
 
 1.  On the Basics tab of the Create a new offer blade, specify the following settings:
 
@@ -688,19 +688,19 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the Basics tab of the New offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image10.png)
 
-1.  Click the **Base plans** tab.
+1.  select the **Base plans** tab.
 
 1.  On the **Base plans** tab of the Create a new offer blade, select the **DP-subscription-plan1** checkbox.
 
     ![In the Azure Stack admin portal, the Base plans tab of the New offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image11.png)
 
-1.  Do not include Add-on plans, click **Review + create**, and then click **Create**. 
+1.  Do not include Add-on plans, select **Review + create**, and then select **Create**. 
 
 ### Task 4: Create new subscriptions containing the offer with the delegated providers as their subscriber (as the Azure Stack operator)
 
-1.  In the Azure Stack Admin portal, click **+ Create a resource**. 
+1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
 
-1.  On the New blade, click **Offers + Plans** and then click **Subscription**.
+1.  On the New blade, select **Offers + Plans** and then select **Subscription**.
 
 1.  On the New user subscription blade, specify the following settings:
 
@@ -714,11 +714,11 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the New user subscription blade for Contoso is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image12.png)
 
-1.  Click **Create**. 
+1.  select **Create**. 
 
-1.  In the Azure Stack Admin portal, click **+ Create a resource**. 
+1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
 
-1.  On the New blade, click **Offers + Plans** and then click **Subscription**.
+1.  On the New blade, select **Offers + Plans** and then select **Subscription**.
 
 1.  On the New user subscription blade, specify the following settings:
 
@@ -732,13 +732,13 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the New user subscription blade for Fabrikam is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image13.png)
 
-1.  Click **Create**. 
+1.  select **Create**. 
 
 ### Task 5: Create a plan to be delegated by delegated providers to users (as the Azure Stack operator)
 
-1.  In the Azure Stack Admin portal, click **+ Create a resource**. 
+1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
 
-1.  On the New blade, click **Offers + Plans** and then click **Plan**.
+1.  On the New blade, select **Offers + Plans** and then select **Plan**.
 
 1.  On the Basics tab of the New plan blade, specify the following settings:
 
@@ -752,15 +752,15 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the Basics tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image14.png)
 
-1.  Click the **Services** tab.
+1.  select the **Services** tab.
 
 1.  On the Services tab of the New plan blade, select the **Microsoft.Storage** checkbox.
 
     ![In the Azure Stack admin portal, the Services tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image15.png)
 
-1.  Click the **Quotas** tab.
+1.  select the **Quotas** tab.
 
-1.  On the Quotas blade, click **Create new** next to the **Microsoft Storage** drop-down list.
+1.  On the Quotas blade, select **Create new** next to the **Microsoft Storage** drop-down list.
 
 1.  On the Create Storage quota blade, specify the following settings:
 
@@ -772,15 +772,15 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the Quotas tab of the New plan blade and the Create Storage quotas blade are displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image16.png)
 
-1.  Click **OK**. This will automatically set the **Microsoft Storage** drop-down list entry to **dp-storage-quota1**.
+1.  select **OK**. This will automatically set the **Microsoft Storage** drop-down list entry to **dp-storage-quota1**.
 
-1.  Click **Review + create** and then click **Create**. 
+1.  select **Review + create** and then select **Create**. 
 
 ### Task 6: Create an offer based on the plan containing Microsoft.Storage (as the Azure Stack operator)
 
-1.  In the Azure Stack Admin portal, click **+ Create a resource**. 
+1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
 
-1.  On the New blade, click **Offers + Plans** and then click **Offer**.
+1.  On the New blade, select **Offers + Plans** and then select **Offer**.
 
 1.  On the Basics tab of the Create new offer blade, specify the following settings:
 
@@ -796,23 +796,23 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the Basics tab of the Create a new offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image17.png)
 
-1.  Click the **Base plans** tab.
+1.  select the **Base plans** tab.
 
 1.  On the Base plans tab of the Create a new offer blade, select the **DP-services-plan1** checkbox.
 
     ![In the Azure Stack admin portal, the Base plans tab of the Create a new offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image18.png)
 
-1.  Do not include Add-on plans, click **Review + create**, and then click **Create**. 
+1.  Do not include Add-on plans, select **Review + create**, and then select **Create**. 
 
 ### Task 7: Delegate the offer to delegated providers (as the Azure Stack operator)
 
-1.  In the Azure Stack Admin portal, click **All services** and then click **Offers**. 
+1.  In the Azure Stack Admin portal, select **All services** and then select **Offers**. 
 
-1.  On the Offers blade, click **services-for-dp-offer1**.
+1.  On the Offers blade, select **services-for-dp-offer1**.
 
-1.  On the services-for-dp-offer1 blade, click **Delegated providers**.
+1.  On the services-for-dp-offer1 blade, select **Delegated providers**.
 
-1.  Click **+ Add**.
+1.  select **+ Add**.
 
 1.  On the Delegate offer blade, specify the following settings:
 
@@ -822,15 +822,15 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the Delegate offer for Contoso subscriptions blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image19.png)
 
-1.  Click **Delegate**. 
+1.  select **Delegate**. 
 
-1.  In the Azure Stack Admin portal, click **All services** and then click **Offers**. 
+1.  In the Azure Stack Admin portal, select **All services** and then select **Offers**. 
 
-1.  On the Offers blade, click **services-for-dp-offer1**.
+1.  On the Offers blade, select **services-for-dp-offer1**.
 
-1.  On the services-for-dp-offer1 blade, click **Delegated providers**.
+1.  On the services-for-dp-offer1 blade, select **Delegated providers**.
 
-1.  Click **+ Add**.
+1.  select **+ Add**.
 
 1.  On the Delegate offer blade, specify the following settings:
 
@@ -840,7 +840,7 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack admin portal, the Delegate offer for Fabrikam subscriptions blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image20.png)
 
-1.  Click **Delegate**. 
+1.  select **Delegate**. 
 
 ### Task 8: Create a delegated provider offer for Contoso users (as the Contoso delegated provider) based on offer from the Azure Stack operator
 
@@ -848,11 +848,11 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Contoso AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-1.  In the Azure Stack user portal, click **All services** and then click **Offers**. 
+1.  In the Azure Stack user portal, select **All services** and then select **Offers**. 
 
-1.  On the Create a new offer blade, click **Delegated offer**.
+1.  On the Create a new offer blade, select **Delegated offer**.
 
-1.  On the Delegated offer blade, click the entry corresponding to the delegated offer based on **services-for-dp-offer1**.
+1.  On the Delegated offer blade, select the entry corresponding to the delegated offer based on **services-for-dp-offer1**.
 
 1.  On the Create a new offer blade, specify the following settings:
 
@@ -866,23 +866,23 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack user portal, the Create a new offer for Contoso is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image21.png)
 
-1.  Click **Create**. 
+1.  select **Create**. 
 
-1.  Back on the **Offers** blade, click the newly created offer.
+1.  Back on the **Offers** blade, select the newly created offer.
 
-    > **Note:** You might need to click **Refresh**
+    > **Note:** You might need to select **Refresh**
 
-1.  On the blade of the newly created offer, click **Change state** and, in the drop-down list, click **Public**.
+1.  On the blade of the newly created offer, select **Change state** and, in the drop-down list, select **Public**.
 
     ![In the Azure Stack user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image22.png)
 
-1.  In the Azure Stack user portal, click **All services**. 
+1.  In the Azure Stack user portal, select **All services**. 
 
-1.  In the list of services, click **Subscriptions**.
+1.  In the list of services, select **Subscriptions**.
 
-1.  On the Subscriptions blade, click **Contoso-DP-subscription1**.
+1.  On the Subscriptions blade, select **Contoso-DP-subscription1**.
 
-1.  On the Contoso-DP-subscription1 blade, click **Properties**.
+1.  On the Contoso-DP-subscription1 blade, select **Properties**.
 
 1.  On the properties blade, copy the value of the PORTAL URL to clipboard. You will need it in the next task of this exercise, 
 
@@ -896,13 +896,13 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Fabrikam AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-1.  In the Azure Stack user portal, click **All services** and then click **Offers**. 
+1.  In the Azure Stack user portal, select **All services** and then select **Offers**. 
 
-1.  On the Offers blade, click **+ Add**
+1.  On the Offers blade, select **+ Add**
 
-1.  On the Create a new offer blade, click **Delegated offer**.
+1.  On the Create a new offer blade, select **Delegated offer**.
 
-1.  On the Delegated offer blade, click the entry corresponding to the delegated offer based on **services-for-dp-offer1**.
+1.  On the Delegated offer blade, select the entry corresponding to the delegated offer based on **services-for-dp-offer1**.
 
 1.  On the Create a new offer blade, specify the following settings:
 
@@ -916,23 +916,23 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     ![In the Azure Stack user portal, the Create a new offer for Fabrikam is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image23.png)
 
-1.  Click **Create**. 
+1.  select **Create**. 
 
-1.  Back on the **Offers** blade, click the newly created offer.
+1.  Back on the **Offers** blade, select the newly created offer.
 
-    > **Note:** You might need to click **Refresh**
+    > **Note:** You might need to select **Refresh**
 
-1.  On the blade of the newly created offer, click **Change state** and, in the drop-down list, click **Public**.
+1.  On the blade of the newly created offer, select **Change state** and, in the drop-down list, select **Public**.
 
     ![In the Azure Stack user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image24.png)
 
-1.  In the Azure Stack user portal, click **All services**. 
+1.  In the Azure Stack user portal, select **All services**. 
 
-1.  In the list of services, click **Subscriptions**.
+1.  In the list of services, select **Subscriptions**.
 
-1.  On the Subscriptions blade, click **Fabrikam-DP-subscription1**.
+1.  On the Subscriptions blade, select **Fabrikam-DP-subscription1**.
 
-1.  On the Fabrikam-DP-subscription1 blade, click **Properties**.
+1.  On the Fabrikam-DP-subscription1 blade, select **Properties**.
 
 1.  On the properties blade, copy the value of the PORTAL URL to clipboard. You will need it in the next task of this exercise, 
 
@@ -946,17 +946,17 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     > **Note:** Make sure NOT to use the Azure Stack user portal URL in this case
 
-1.  In the Azure Stack user portal, click **Get a subscription** on the dashboard. 
+1.  In the Azure Stack user portal, select **Get a subscription** on the dashboard. 
 
 1.  On the Get a subscription blade, in the Display name text box, type **Contoso-user1-subscription1**
 
-1.  Click **Select an offer**.
+1.  select **Select an offer**.
 
-1.  On the Choose an offer blade, click the name of the Contoso delegated offer created earlier in this exercise.
+1.  On the Choose an offer blade, select the name of the Contoso delegated offer created earlier in this exercise.
 
-1.  Click **Create**.
+1.  select **Create**.
 
-1.  In the message box **Your subscription has been created. You must refresh the portal to start using your subscription**, click **Refresh**. 
+1.  In the message box **Your subscription has been created. You must refresh the portal to start using your subscription**, select **Refresh**. 
 
 ### Task 11: Sign up for the delegated provider's offer (as a Fabrikam user)
 
@@ -964,17 +964,17 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     > **Note:** Make sure NOT to use the Azure Stack user portal URL in this case
 
-1.  In the Azure Stack user portal, click **Get a subscription** on the dashboard. 
+1.  In the Azure Stack user portal, select **Get a subscription** on the dashboard. 
 
 1.  On the Get a subscription blade, in the Display name text box, type **Fabrikam-user1-subscription1**
 
-1.  Click **Select an offer**.
+1.  select **Select an offer**.
 
-1.  On the Choose an offer blade, click the name of the Contoso delegated offer created earlier in this exercise.
+1.  On the Choose an offer blade, select the name of the Contoso delegated offer created earlier in this exercise.
 
-1.  Click **Create**.
+1.  select **Create**.
 
-1.  In the message box **Your subscription has been created. You must refresh the portal to start using your subscription**, click **Refresh**. 
+1.  In the message box **Your subscription has been created. You must refresh the portal to start using your subscription**, select **Refresh**. 
 
 
 ## Exercise 4: Configure Role Based Access Control (RBAC)
@@ -1043,13 +1043,13 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  From the AzS-Host1 Azure VM, start a web browser using in private/incognito mode, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the **FabrikamAdmin1** Azure Active Directory credentials you created earlier in this lab. 
 
-1.  In the Azure portal, click **Azure Active Directory**.
+1.  In the Azure portal, select **Azure Active Directory**.
 
-1.  On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant, click **Users**.
+1.  On the Azure Active Directory blade of the Fabrikam Azure Active Directory tenant, select **Users**.
 
-1.  On the Users - All users blade, click **+ New user**
+1.  On the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     > **Note:** Take a note of the user names (including the domain suffix) and their autogenerated passwords. You will need them in the subsequent tasks of this lab.
 
@@ -1079,13 +1079,13 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
 
-1.  In the Azure portal, click **Azure Active Directory**.
+1.  In the Azure portal, select **Azure Active Directory**.
 
-1.  On the Azure Active Directory blade of the tenant associated with the Azure Stack environment, click **Users**.
+1.  On the Azure Active Directory blade of the tenant associated with the Azure Stack environment, select **Users**.
 
-1.  On the Users - All users blade, click **+ New user**
+1.  On the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     > **Note:** Take a note of the user names (including the domain suffix) and their autogenerated passwords. You will need them in the subsequent tasks of this exercise.
 
@@ -1111,9 +1111,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Department : not set
 
-1.  Back on the Users - All users blade, click **+ New user**
+1.  Back on the Users - All users blade, select **+ New user**
 
-1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and click **Create**:
+1.  On the **New user** blade, ensure that the **Create user** option is selected, specify the following settings, note the values of the full user name (including the domain suffix) and the randomly generated password, and select **Create**:
 
     -  User name: **contosoazslogreader1**
 
@@ -1137,9 +1137,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Department : not set
 
-1.  Back on the Users - All users blade, click **+ New guest user**
+1.  Back on the Users - All users blade, select **+ New guest user**
 
-1.  On the **New user** blade, ensure that the **Invite user** option is selected, specify the following settings, and click **Invite**:
+1.  On the **New user** blade, ensure that the **Invite user** option is selected, specify the following settings, and select **Invite**:
 
     -  Name: **Fabrikam AzSReader1**
 
@@ -1171,15 +1171,15 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  When prompted, sign in by using the credentials of the **Fabrikam AzSReader1** account.
 
-1.  When prompted, grant the target Azure AD tenant requested permissions by clicking **Accept**. In the Update your password window, change the password to **demo@pass123**.
+1.  When prompted, grant the target Azure AD tenant requested permissions by selecting **Accept**. In the Update your password window, change the password to **demo@pass123**.
 
 1.  Sign out as Fabrikam AzSReader1 from the Azure portal and close the window of the web browser using in private/incognito mode.
 
-1.  Navigate back to the Azure Active Directory blade of the tenant associated with the Azure Stack environment and click **Groups**.
+1.  Navigate back to the Azure Active Directory blade of the tenant associated with the Azure Stack environment and select **Groups**.
 
-1.  On the Groups - All groups blade, click **+ New group**
+1.  On the Groups - All groups blade, select **+ New group**
 
-1.  On the **New Group** blade, specify the following settings, and click **Create**:
+1.  On the **New Group** blade, specify the following settings, and select **Create**:
 
     -  Group type: **Security**
 
@@ -1195,9 +1195,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     ![In the Azure portal, the New Group and Add members blades are displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image27.png)
 
-1.  On the Groups - All groups blade, click **+ New group**
+1.  On the Groups - All groups blade, select **+ New group**
 
-1.  On the **New Group** blade, specify the following settings, and click **Create**:
+1.  On the **New Group** blade, specify the following settings, and select **Create**:
 
     -  Group type: **Security**
 
@@ -1213,9 +1213,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     ![In the Azure portal, the New Group and Add members blades are displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image27.png)
 
-1.  Back on the Groups - All groups blade, click **+ New group**
+1.  Back on the Groups - All groups blade, select **+ New group**
 
-1.  On the **New Group** blade, specify the following settings, and click **Create**:
+1.  On the **New Group** blade, specify the following settings, and select **Create**:
 
     -  Group type: **Security**
 
@@ -1237,15 +1237,15 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
 
-1.  In the Azure Stack Admin portal, click **All services** and then, in the list of services, click **Subscriptions**.
+1.  In the Azure Stack Admin portal, select **All services** and then, in the list of services, select **Subscriptions**.
 
-1.  On the Subscriptions blade, click **Default Provider Subscription**. 
+1.  On the Subscriptions blade, select **Default Provider Subscription**. 
 
-1.  On the Default Provider Subscripton blade, click **Access control (IAM)** and then click **+ Add**.
+1.  On the Default Provider Subscripton blade, select **Access control (IAM)** and then select **+ Add**.
 
     ![In the Azure Stack Admin portal, the Default Provider Subscription - Access control (IAM) is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image25.png)
 
-1.  In the **Add permissions** pane, specify the following settings and then click **Save**:
+1.  In the **Add permissions** pane, specify the following settings and then select **Save**:
 
     -  Role: **Activity Log Reader (custom)**
 
@@ -1253,9 +1253,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     ![In the Azure Stack Admin portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a custom role selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image29.png)
 
-1.  Back on the Default Provider Subscription - Access control (IAM) blade and then click **+ Add**.
+1.  Back on the Default Provider Subscription - Access control (IAM) blade and then select **+ Add**.
 
-1.  In the **Add permissions** pane, specify the following settings and then click **Save**:
+1.  In the **Add permissions** pane, specify the following settings and then select **Save**:
 
     -  Role: **Reader**
 
@@ -1277,25 +1277,25 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
 1.  In File Explorer, verify that the folder C:\Logs exists (if not, create it). 
 
-1.  Right-click **Logs** and, in the right-click menu, click **Properties**.
+1.  right-click **Logs** and, in the right-click menu, select **Properties**.
 
-1.  In the Logs Properties window, click the **Sharing** tab and then click **Advanced Sharing**.
+1.  In the Logs Properties window, select the **Sharing** tab and then select **Advanced Sharing**.
 
-1.  In the Advanced Sharing dialog box, click **Share** this folder and then click **Permissions**.
+1.  In the Advanced Sharing dialog box, select **Share** this folder and then select **Permissions**.
 
-1.  In the Permissions for Logs window, ensure that the Everyone entry is selected and then click **Remove**.
+1.  In the Permissions for Logs window, ensure that the Everyone entry is selected and then select **Remove**.
 
-1.  Click **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **CloudAdmins** and click **OK**.
+1.  select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **CloudAdmins** and select **OK**.
 
-1.  Ensure that the **CloudAdmins** entry is selected and click the **Full Control** checkbox in the Allow column.
+1.  Ensure that the **CloudAdmins** entry is selected and select the **Full Control** checkbox in the Allow column.
 
     ![In File Explorer, the share permissions of the Logs share are displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image31.png)
 
-1.  Click **OK**.
+1.  select **OK**.
 
-1.  Back in the Advanced Sharing dialog box, click **OK**.
+1.  Back in the Advanced Sharing dialog box, select **OK**.
 
-1.  Back in the Logs Properties window, click **Close**.
+1.  Back in the Logs Properties window, select **Close**.
 
 ### Task 2: Connect to the privileged endpoint via PowerShell Remoting
 
@@ -1361,15 +1361,15 @@ Duration: 30 minutes
 
 ### Task 1: Create a backup user
 
-1.  From the AzS-Host1 Azure VM, click **Start**, in the Start menu, expand the Windows Administrative Tools folder, and click **Active Directory Administrative Center**.
+1.  From the AzS-Host1 Azure VM, select **Start**, in the Start menu, expand the Windows Administrative Tools folder, and select **Active Directory Administrative Center**.
 
-1.  In Active Directory Administrative Center, click **azurestack (local)** and, in the main window pane, click the **Users** container.
+1.  In Active Directory Administrative Center, select **azurestack (local)** and, in the main window pane, select the **Users** container.
 
-1.  In the Tasks pane, in the Users section, click **New** and then click **User**.
+1.  In the Tasks pane, in the Users section, select **New** and then select **User**.
 
     ![In Active Directory Administrative Center, the User entry in the New menu of the Users container is selected.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image32.png)
 
-1.  In the Create User window, specify the following settings and click **OK**:
+1.  In the Create User window, specify the following settings and select **OK**:
 
     -  Full name: **AzS-BackupOperator**
 
@@ -1391,39 +1391,39 @@ Duration: 30 minutes
 
 1.  In File Explorer, create a new folder C:\Backup.
 
-1.  Right-click **Backup** and, in the right-click menu, click **Properties**.
+1.  right-click **Backup** and, in the right-click menu, select **Properties**.
 
-1.  In the Backup Properties window, click the **Sharing** tab and then click **Advanced Sharing**.
+1.  In the Backup Properties window, select the **Sharing** tab and then select **Advanced Sharing**.
 
-1.  In the Advanced Sharing dialog box, click **Share this folder** and then click **Permissions**.
+1.  In the Advanced Sharing dialog box, select **Share this folder** and then select **Permissions**.
 
-1.  In the Permissions for Backup window, ensure that the **Everyone** entry is selected and then click **Remove**.
+1.  In the Permissions for Backup window, ensure that the **Everyone** entry is selected and then select **Remove**.
 
-1.  Click **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **AzS-BackupOperator** and click **OK**.
+1.  select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, type **AzS-BackupOperator** and select **OK**.
 
-1.  Ensure that the AzS-BackupOperator entry is selected and click the **Full Control** checkbox in the Allow column.
+1.  Ensure that the AzS-BackupOperator entry is selected and select the **Full Control** checkbox in the Allow column.
 
-1.  Click **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, click **Locations**. 
+1.  select **Add**, in the Select Users, Computers, Service Accounts, or Groups dialog box, select **Locations**. 
 
-1.  In the Locations dialog box, click the entry representing the local computer (AzS-Host1) and click **OK**.
+1.  In the Locations dialog box, select the entry representing the local computer (AzS-Host1) and select **OK**.
 
-1.  In the Enter the object names to select text box, type **Administrators** and click **OK**.
+1.  In the Enter the object names to select text box, type **Administrators** and select **OK**.
 
-1.  Ensure that the Administrators entry is selected and click the **Full Control** checkbox in the Allow column.
+1.  Ensure that the Administrators entry is selected and select the **Full Control** checkbox in the Allow column.
 
-1.  Click **OK**.
+1.  select **OK**.
 
     ![In File Explorer, the share permissions of the Backup share are displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image33.png)
 
-1.  Back in the Advanced Sharing dialog box, click **OK**.
+1.  Back in the Advanced Sharing dialog box, select **OK**.
 
-1.  Back in the Backup Properties window, click the **Security** tab. 
+1.  Back in the Backup Properties window, select the **Security** tab. 
 
-1.  Click **Edit**.
+1.  select **Edit**.
 
-1.  In the Permissions for Backup dialog box, in the list of entries in the Groups or user names pane, click **AzS-BackupOperator**, in the Permissions for AzS-BackupOperator pane, click **Full Control** in the Allow column and then click **OK**.
+1.  In the Permissions for Backup dialog box, in the list of entries in the Groups or user names pane, select **AzS-BackupOperator**, in the Permissions for AzS-BackupOperator pane, select **Full Control** in the Allow column and then select **OK**.
 
-1.  Back in the Backup Properties window, click **Close**.
+1.  Back in the Backup Properties window, select **Close**.
 
 
 ### Task 3: Generate an encryption certificate
@@ -1449,13 +1449,13 @@ Duration: 30 minutes
 
 1.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
 
-1.  In the Azure Stack Admin portal, click **All services**. 
+1.  In the Azure Stack Admin portal, select **All services**. 
 
-1.  In the ADMINISTRATION section, click **Infrastructure backup**.
+1.  In the ADMINISTRATION section, select **Infrastructure backup**.
 
-1.  On the Infrastructure backup blade, click **Configure**.
+1.  On the Infrastructure backup blade, select **Configure**.
 
-1.  On the Backup controller settings blade, specify the following settings and click **OK**:
+1.  On the Backup controller settings blade, specify the following settings and select **OK**:
 
     -  Backup storage location: **\\AzS-Host1.azurestack.local\Backup**
 
@@ -1469,11 +1469,11 @@ Duration: 30 minutes
 
     -  Retention period in days: **7**
 
-    -  Certificate .cer file: click the folder icon and upload the public key of the certificate (C:\Certs\AzSIBackupCert.cer) you generated in the previous task
+    -  Certificate .cer file: select the folder icon and upload the public key of the certificate (C:\Certs\AzSIBackupCert.cer) you generated in the previous task
 
     ![In the Azure Stack Admin portal, the Backup Controller settings blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image34.png)
 
-1.  Back on the Infrastructure backup blade, click **Disable automatic backup**.
+1.  Back on the Infrastructure backup blade, select **Disable automatic backup**.
 
 ## After the hands-on lab 
 
