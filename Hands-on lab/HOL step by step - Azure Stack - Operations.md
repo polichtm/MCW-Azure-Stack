@@ -160,7 +160,7 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
      ```
      Invoke-WebRequest `
-  		-Uri https://raw.githubusercontent.com/rtibi/MCW-Azure-Stack/master/OperationsLab/appservices/appservice_Install01.json `
+  		-Uri https://raw.githubusercontent.com/polichtm/MCW-Azure-Stack/master/Hands-on%20lab/resources.operations/ContosoWebAppTempate.json `
 		-OutFile 'C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ContosoWebAppTempate.json'
      ```
 
