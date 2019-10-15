@@ -223,7 +223,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 5.  Allow for a consistent application deployment model using Azure ARM templates and CI/CD.
 
-6.  Detail the taxonomy that will be leveraged for the hybrid-cloud including the Resource Providers (RP) This includes tenants, regions, subscriptions, offers, plans, services and quota.
+6.  Detail the taxonomy that will be leveraged for the hybrid-cloud including the Resource Providers (RP) This includes tenants, regions, subscriptions, offers, plans, services and quotas.
 
 7.  Design an integration model that would allow resource access for both Contoso and Fabrikam users.
 
@@ -433,7 +433,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 -   Fabrikam teams:
 
-    -   Security, development, DevOps and application owners
+    -   Networking, security, development, DevOps and application owners
 
 -   FT Teams
 
@@ -531,8 +531,7 @@ A hybrid continuous integration/continuous delivery(CI/CD) pipeline enables you 
 
 -   **Region**: One Azure Stack region would be created in the FT datacenter for Contoso's operations in North America.
 
--   **Tenant**: Contoso will be setup as the primary tenant for their US based operations. To accommodate requirements for integration with Fabrikam 
-Azure Active Directory, FT will implement multi-tenant Azure Stack topology. The same topology can be further extended to include other tenants as Contoso grows its business. All tenants can be granted access to all of the offers and services detailed in the rest of this taxonomy. (If further separation is required, then another Region would have to be deployed.)
+-   **Tenant**: Contoso will be setup as the primary tenant for their US based operations. To accommodate requirements for integration with Fabrikam Azure Active Directory, FT will implement multi-tenant Azure Stack topology. The same topology can be further extended to include other tenants as Contoso grows its business. All tenants can be granted access to all of the offers and services detailed in the rest of this taxonomy. (If further separation is required, then another Region would have to be deployed.)
 
 -   **Subscriptions**: The Azure Stack environment will contain multiple subscriptions. Their creation would be coordinated with Contoso and Fabrikam, but considering the intended self-service model, users will be able to create their own subscriptions based on public or private offers available to them. Distinct subscriptions will facilitate cost allocation and chargeback processes.
 
