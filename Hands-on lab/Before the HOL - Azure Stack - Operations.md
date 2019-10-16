@@ -28,8 +28,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Azure Stack before the hands-on lab setup guide](#azure-stack-before-the-hands-on-lab-setup-guide)
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
-    - [Task 1: Prepare the Azure Stack operator station](#task-1-prepare-the-azure-stack-operator-station)
-  - [Task 2: Register the Azure Stack Development Kit with Azure](#task-2-register-the-azure-stack-development-kit-with-azure)
+    - [Task 1: Provision Azure Stack Development Kit](#task-1-provision-azure-stack-development-kit)
+    - [Task 2: Prepare the Azure Stack operator station](#task-2-prepare-the-azure-stack-operator-station)
+    - [Task 3: Register the Azure Stack Development Kit with Azure](#task-3-register-the-azure-stack-development-kit-with-azure)
 
 # Azure Stack before the hands-on lab setup guide 
 
@@ -41,9 +42,38 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Before the hands-on lab
 
-Duration: 60 minutes
+Duration: 7 hours
 
-### Task 1: Prepare the Azure Stack operator station
+### Task 1: Provision Azure Stack Development Kit
+
+1.  Navigate to the following URL to launch the AzureStackOnAzureVM deployment template in the Azure Portal.
+
+    ```
+    http://aka.ms/AzureStackonAzureVM
+    ```
+2.  When prompted, authenticate with an Azure Active Directory account with the owner role in the subscription where you intend to provision the Azure Stack Development Kit Azure VM named **AzSHOST-1** and with the Global Administrator role in the Azure Active Directory tenant associated with that subscription.
+
+3.  On the Custom deployment blade, specify the following settings (accept the default values of all others) and click **Purchase**:
+
+    - Resource group: any existing or a new resource group
+
+    - Admin Password: **demo@pass123**
+
+    - Public DNS Name: any unique, valid DNS name
+
+    - Auto Download ASDK: **true**
+
+    - Auto Install ASDK: **true**
+
+    - Azure AD Tenant: **Your Azure AD tenant**.
+
+    - Azure AD Global Admin: **Your Azure AD Global admin account**.
+
+    - Azure AD Global Admin Password: **Your Azure AD Global admin password**.
+
+    > **Note:** This step might take about 6 hours to complete.
+
+### Task 2: Prepare the Azure Stack operator station
 
 1.  In the Azure portal, navigate to the blade of **AzS-HOST1** virtual machine.
 
@@ -147,7 +177,7 @@ Duration: 60 minutes
 
     > **Note:** Ignore the warning stating **Preview version of the module Azs.Subscriptions loaded. Future release of this module may have breaking changes**.
 
-## Task 2: Register the Azure Stack Development Kit with Azure
+## Task 3: Register the Azure Stack Development Kit with Azure
 
 1.  From the Administrator: Windows PowerShell ISE window, specify the Azure Active Directory account you will use to register Azure Stack with the Azure Stack resource provider in Azure by running the following:
 
