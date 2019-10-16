@@ -95,9 +95,9 @@ Duration: 7 hours
 
 8.  Start Internet Explorer and install another web browser (Chrome or Firefox). 
 
-9.  From Internet Explorer, browse to https://code.visualstudio.com/, and from the Visual Studio Code page, install the latest stable version of Visual Studo Code. 
+9.  From Internet Explorer, browse to https://code.visualstudio.com/, and from the Visual Studio Code page, install the latest stable version of Visual Studio Code. 
 
-    > **Note:** except VScode, most of the next steps should be already configured on your VM - please check that the tools are there and you are able to configure them. VSCode is optional - you can perform all of the activities in the labs using just PowerShell, but you may want to explore the VSCode user interface, becasue it makes interacting with Azure Stack using PowerSHell and ARM templaes more powerful.
+    > **Note:** Except VScode, most of the next steps should be already configured on your VM - please check that the tools are there and you are able to configure them. VSCode is optional - you can perform all of the activities in the labs using just PowerShell, but you may want to explore the VSCode user interface, because it enhances interacting with Azure Stack using PowerShell and ARM templates.
 
 10. Right-click **Start** and, in the right-click menu, select **Command Prompt (Admin)**.
 
@@ -224,7 +224,7 @@ Duration: 7 hours
     Get-AzureStackStampInformation 
     ```
 
-8.  In the output of the commmand you ran in the previous step, identify the CloudId parameter, copy it to Clipboard, and exit the PowerShell Remoting session by running the following:
+8.  In the output of the command you ran in the previous step, identify the CloudId parameter, copy it to Clipboard, and exit the PowerShell Remoting session by running the following:
 
     ```powershell
     Exit-PSSession

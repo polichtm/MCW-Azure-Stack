@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
+﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
 
 <div class="MCWHeader1">
 Azure Stack - Operations
@@ -83,7 +83,7 @@ As the result of a recent acquisition of a financial analytics company named Fab
 
 During the planning stages, Contoso realized they would not be able to retain their customer data in US based Azure regions due to corporate compliance policies and regulatory issues. They have selected Azure Stack as the deployment method to take advantage of Azure technologies while still maintaining compliance.
 
-To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT), . FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have datacenters located in Denver, London, Las Vegas, Dallas and Hong Kong SAR.
+To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have datacenters located in Denver, London, Las Vegas, Dallas and Hong Kong SAR.
 
 Contoso has expressed to FT the need to embrace Microsoft Azure technologies as well as technologies that will help their organization with a more agile continuous integration and continuous deployment model for application deployment. Contoso also underscored the need for cooperation with Fabrikam's integration teams, including the intent to delegate some of the infrastructure management tasks. 
 
@@ -236,7 +236,7 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
     }
     ```
 
-    > **Note:** For more information regarding the format and conent of the files used for publishing custom Azure Stack Marketplace items, refer to https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md
+    > **Note:** For more information regarding the format and content of the files used for publishing custom Azure Stack Marketplace items, refer to https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md
 
 ### Task 2: Publish a custom Azure Marketplace solution
 
@@ -532,7 +532,7 @@ Duration: 90 minutes
 
 In this exercise, you will implement Azure Stack delegation in a multi-tenant environment
 
-   > **Note:** Implementing delegation in a single tenant envrionment follows the same procedure as the one described in this exercise. The only difference is that you delegate to identities (users and groups) which reside exclusively in the same Azure Active Directory tenant. 
+   > **Note:** Implementing delegation in a single tenant environment follows the same procedure as the one described in this exercise. The only difference is that you delegate to identities (users and groups) which reside exclusively in the same Azure Active Directory tenant. 
 
 ### Task 1: Create delegated operator and user Azure Active Directory accounts (as the Azure Stack operator)
 
@@ -1241,7 +1241,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  On the Subscriptions blade, select **Default Provider Subscription**. 
 
-1.  On the Default Provider Subscripton blade, select **Access control (IAM)** and then select **+ Add**.
+1.  On the Default Provider Subscription blade, select **Access control (IAM)** and then select **+ Add**.
 
     ![In the Azure Stack Admin portal, the Default Provider Subscription - Access control (IAM) is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image25.png)
 
