@@ -376,7 +376,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 ### Task 4: Update the configuration strings
 
-1.  Navigate to your web app and on the left pane of the Web App, select on **Application settings**.
+1.  Navigate to your web app and on the left pane of the Web App, select **Application settings**.
 
     ![Under Settings, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image121.png "Application settings")
 
@@ -416,7 +416,7 @@ The current version of the Azure Stack App Service Provider does not enable the 
 https://portal.local.azurestack.external/?websitesExtension_oldvsts=true
 ```
 
-1.  From within the web app blade, select on **Deployment Options**.
+1.  From within the web app blade, select **Deployment Options**.
 
     ![Deployment options is selected under Deployment.](images/Hands-onlabstep-by-step-AzureStackimages/media/image125.png "Deployment options")
 
@@ -430,7 +430,7 @@ https://portal.local.azurestack.external/?websitesExtension_oldvsts=true
     https://github.com/opsgility/contosofinanceweb
     ```
 
-4.  Select on the Deployment options button and monitor until the application is deployed.
+4.  Select the Deployment options button and monitor until the application is deployed.
 
 5.  Select the Overview tab, and then select the URL. You should see the Contoso Finance web app.
 
@@ -454,13 +454,13 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
     ![Screenshot of the API App button.](images/Hands-onlabstep-by-step-AzureStackimages/media/image129.png "API App")
 
-2.  Select on **Create**.
+2.  Select **Create**.
 
 3.  On the new **API App** blade, **specify a unique name** for the App Name, and ensure the previously used Resource Group and App Service Plan is selected.
 
 4.  After the values are accepted select **Create**.
 
-5.  On the **App Service** blade, scroll down, and select on **CORS** within the API section of the left pane.
+5.  On the **App Service** blade, scroll down, and select **CORS** within the API section of the left pane.
 
     ![Under API, CORS is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image130.png "CORS")
 
@@ -468,7 +468,7 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
     ![In the App Service blade, Allowed Origins is set to asterisk, and Save is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image131.png "App Service blade")
 
-7.  On the **App Service** blade for the Offers API, select on **Application settings**.
+7.  On the **App Service** blade for the Offers API, select **Application settings**.
 
     ![Under Settings in the App Service blade, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image132.png "App Service blade")
 
@@ -490,7 +490,7 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
 ### Task 2: Deploy the Contoso.Apps.Financial.Offers project
 
-1.  From within the API app blade, select on **Deployment options**.
+1.  From within the API app blade, select **Deployment options**.
 
     ![Under Deployment, Deployment options is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image125.png "Deployment options")
 
@@ -504,13 +504,13 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
     https://github.com/opsgility/contosofinanceoffers
     ```
 
-4.  Select on the Deployment options button and monitor until the application is deployed.
+4.  Select the Deployment options button and monitor until the application is deployed.
 
 5.  On the **Overview** tab, copy the URL for the web app to the clipboard.
 
 ### Task 3: Update the Application Settings of the Web App with the API URL
 
-1.  Open the ContosoFinanceWeb application in the Azure Stack User portal and select on Application settings
+1.  Open the ContosoFinanceWeb application in the Azure Stack User portal and select Application settings
 
     ![In the App Service blade, under settings, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image134.png "App Service blade")
 
@@ -528,7 +528,7 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
        ![Under App settings, offersAPIUrl and its URL are selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image136.png "App settings")
 
-4.  Select on **Save**.
+4.  Select **Save**.
 
     > **Note**: Ensure the API URL is using **SSL** (https://), or you will see a CORS errors when loading the webpage.
 
@@ -612,7 +612,7 @@ Contoso wants to automate the process of generating applications in PDF format a
 
     -   ViewModels.csx
 
-10. Select on **run.csx** to refresh the code editor.
+10. Select **run.csx** to refresh the code editor.
 
     ![Under View files, run.csx is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image147.png "View files")
 
@@ -660,7 +660,7 @@ In this exercise, you will provision the admin website to be used by employees t
 
     ![contosofinanceadmin option screenshot](images/Hands-onlabstep-by-step-AzureStackimages/media/image153.png "App Service balde")
 
-5.  On the **App Service** blade, select on **Application settings** in the left pane.
+5.  On the **App Service** blade, select **Application settings** in the left pane.
 
     ![Under Settings, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image154.png "Application settings")
 
@@ -682,7 +682,7 @@ In this exercise, you will provision the admin website to be used by employees t
 
 ### Task 2: Deploy the call center admin Web App from Visual Studio
 
-1.  From within the web app blade, select on **Deployment options**.
+1.  From within the web app blade, select **Deployment options**.
 
     ![Under Deployment, Deployment options is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image125.png "Deployment options")
 
@@ -696,7 +696,7 @@ In this exercise, you will provision the admin website to be used by employees t
     https://github.com/opsgility/contosofinanceadmin
     ```
 
-4.  Select on the Deployment options button and monitor until the application is deployed.
+4.  Select the Deployment options button and monitor until the application is deployed.
 
 5.  On the **Overview** tab, copy the URL for the web app to the clipboard.
 
