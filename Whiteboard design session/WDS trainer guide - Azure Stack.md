@@ -206,7 +206,7 @@ Contoso has expressed to FT the need to embrace Microsoft Azure technologies as 
 
 With these goals in mind, Contoso has challenged FT to implement a hosted environment that will accommodate requirements regarding integration work to be carried out by Fabrikam. In addition, as internal workloads are transitioned to the hosting environment, Contoso internal audit team must retain its ability to track all of the infrastructure changes. For compliance purposes, the delegation model that will provide Contoso and Fabrikam staff with insight into the hosted environment must comply with the principle of least privilege. To satisfy Contoso governance requirements, FT must document standard operating procedures that will be carried out within the hosted infrastructure. 
 
-![The Contoso Dallas Data Center diagram shows the flow between Contoso Mortgage customers and Contoso's web servers, application servers, and SQL servers.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image2.jpg)
+![The Contoso Dallas Data Center diagram shows the flow between Contoso Mortgage customers and Contoso's web servers, application servers, and SQL servers.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image2.jpg "Contoso Dallas Data Center diagram")
 
 
 ### Customer needs 
@@ -246,11 +246,11 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 4.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack make it to where we must use two skillsets?
 
-5.  Fabrikam has already its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
+5.  Fabrikam already has its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
 
 ### Infographic for common scenarios
 
-![In the Infographic for Common scenarios, Microsoft Azure (public) is connected to the Microsoft Azure Stoack (private / hosted) through Developers and IT.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image3.png)
+![In the Infographic for Common scenarios, Microsoft Azure (public) is connected to the Microsoft Azure Stoack (private / hosted) through Developers and IT.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image3.png "Common scenarios")
 
 ## Step 2: Design a proof of concept solution
 
@@ -443,7 +443,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 After being engaged by Contoso and gathering the requirements from the client, FT has put forward a design which embraces the Azure platform and DevOps for development and deployment, as well as addresses multi-tenant identity and data sovereignty requirements discovered by Contoso (no customer data in the public cloud). The solution consists of using Azure public cloud in the South-Central Region and Azure Stack running in a FT Dallas datacenter.
 
-![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stock FusionTomo Dallas Datacenter, which in turn connects via VPN to On-Premises.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png)
+![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stock FusionTomo Dallas Datacenter, which in turn connects via VPN to On-Premises.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png "Preferred solution")
 
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso:
 
@@ -541,7 +541,7 @@ A hybrid continuous integration/continuous delivery(CI/CD) pipeline enables you 
 
 -   **Services/Resource Providers (RP)**: The base Resource Providers: Compute RP, Network RP, Storage RP and KeyVault RP will all be enabled. The SQL Server RP will be enabled and configured. The Azure App RP will be enabled and configured (The Windows Server 2016, SQL Server 2017, SQL IaaS Extension for Azure Stack).
 
-    ![The Azure Stack Taxonomy displays as previously described.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image5.png)
+    ![The Azure Stack Taxonomy displays as previously described.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image5.png "Azure Stack Taxonomy")
 
 1. Design Network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack that will allow future applications to be deployed in the public cloud or Azure Stack and still provide connectivity to customer or On-Premises data.
 

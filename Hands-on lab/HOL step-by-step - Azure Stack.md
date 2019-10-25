@@ -768,7 +768,7 @@ To help design a solution using Azure technologies, Contoso has engaged a Micros
 
 Contoso has expressed to FT the need to embrace Microsoft Azure technologies as well as technologies that will help their organization with a more agile continuous integration and continuous deployment model for application deployment. Contoso also underscored the need for cooperation with Fabrikam's integration teams, including the intent to delegate some of the infrastructure management tasks. 
 
-With these goals in mind, Contoso has challenged FT to help implement the hosted environment must also accommodate requirements regarding integration work to be carried out by Fabrikam. In addition, as internal workloads are transitioned to the hosting environment, Contoso internal audit team must retain its ability to track all of the infrastructure changes. For compliance purposes, the delegation model that will provide Contoso and Fabrikam staff with insight into the hosted environment must comply with the principle of least privilege. To satisfy Contoso governance requirements, FT must document standard operating procedures that will be carried out within the hosted infrastructure. 
+With these goals in mind, Contoso has challenged FT to help implement the hosted environment which must also accommodate requirements regarding integration work to be carried out by Fabrikam. In addition, as internal workloads are transitioned to the hosting environment, Contoso internal audit team must retain its ability to track all of the infrastructure changes. For compliance purposes, the delegation model that will provide Contoso and Fabrikam staff with insight into the hosted environment must comply with the principle of least privilege. To satisfy Contoso governance requirements, FT must document standard operating procedures that will be carried out within the hosted infrastructure. 
 
 ## Help references
 |    |            |
@@ -847,7 +847,7 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 14. In File Explorer, navigate to the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\strings folder.
 
-15. Open the file **resources.resjson** in Notepad, modify its content so it matches the following, save, and close the file:
+15. Open the file **resources.json** in Notepad, modify its content so it matches the following, save, and close the file:
 
     ```
     {
