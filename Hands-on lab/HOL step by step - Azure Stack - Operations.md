@@ -12,13 +12,14 @@ Hands-on lab step-by-step
 October 2019
 </div>
 
+
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-� 2019 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -122,25 +123,25 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 1.  From the AzS-Host1 Azure VM, start Internet Explorer and navigate to http://aka.ms/azurestackmarketplaceitem
 
-1.  When prompted, download the archive file **Azure Stack Marketplace Item Generator and Sample.zip** to the **C:\Downloads** folder (create the folder if needed).
+2.  When prompted, download the archive file **Azure Stack Marketplace Item Generator and Sample.zip** to the **C:\Downloads** folder (create the folder if needed).
 
-1.  Once the download completes, start File Explorer, select the **View** menu item, and select **File name extensions**.
+3.  Once the download completes, start File Explorer, select the **View** menu item, and select **File name extensions**.
 
     ![In the View ribbon of File Explorer, File name extensions checkbox is selected.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image1.png)
 
-1.  In File Explorer, navigate to the C:\Downloads folder, and extract the compressed content (the **Azure Stack Marketplace Item Generator and Sample** folder) into C:\Downloads.
+4.  In File Explorer, navigate to the C:\Downloads folder, and extract the compressed content (the **Azure Stack Marketplace Item Generator and Sample** folder) into C:\Downloads.
 
-1.  In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample** folder, create a new folder named **ContosoWebAppTemplate** and copy the content of the **SampleVMTemplate** folder into it. 
+5.  In File Explorer, navigate to the **C:\Downloads\Azure Stack Marketplace Item Generator and Sample** folder, create a new folder named **ContosoWebAppTemplate** and copy the content of the **SampleVMTemplate** folder into it. 
 
-1.  In File Explorer, navigate to the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons folder.
+6.  In File Explorer, navigate to the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons folder.
 
-1.  right-click the **Wide.png** image, in the right-click menu, and then select **Open with** -> **Paint**.
+7.  right-click the **Wide.png** image, in the right-click menu, and then select **Open with** -> **Paint**.
 
-1.  In the Microsoft Paint window, select **Resize**.
+8.  In the Microsoft Paint window, select **Resize**.
 
     ![In the View ribbon of Microsoft Paint, the Resize icon is selected.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image2.png)
 
-1.  In the **Resize and Skew** window, clear the **Maintain aspect ratio** checkbox, select the **Pixels** option, set the following image properties and select **OK**:
+9.  In the **Resize and Skew** window, clear the **Maintain aspect ratio** checkbox, select the **Pixels** option, set the following image properties and select **OK**:
 
     -  Horizontal: **533**
 
@@ -148,15 +149,15 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
     ![In the Resize and Skew window, the image size is set to the required values.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image3.png)
 
-1.  Save the resulting image as C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons\Screenshot.png (when prompted whether to continue, select **OK**) and close Microsoft Paint. 
+10. Save the resulting image as C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons\Screenshot.png (when prompted whether to continue, select **OK**) and close Microsoft Paint. 
 
     > **Note:** You are using sample images for the sake of simplicity. When creating and publishing custom Azure Stack Marketplace solutions, you would create your own icons and screenshots that represent the characteristics of these solutions. Keep in mind that you must ensure that their sizes match those specified in the documentation available at https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md
 
-1.  Delete the file **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\azuredeploy-101-simple-windows-vm.json**
+11. Delete the file **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\azuredeploy-101-simple-windows-vm.json**
 
-1.  Start Windows PowerShell ISE as administrator.
+12. Start Windows PowerShell ISE as administrator.
 
-1.  From the Administrator: Windows PowerShell ISE window, download into the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ folder a sample template that provisions an Azure Stack web app:
+13. From the Administrator: Windows PowerShell ISE window, download into the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ folder a sample template that provisions an Azure Stack web app:
 
      ```
      Invoke-WebRequest `
