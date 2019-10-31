@@ -982,6 +982,8 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 19. From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant)
 
+    >**Note**: Azure Stack still uses the *AzureRM* cmdlets and does not yet support the newer *AzureAZ* cmdlets.
+
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
 
