@@ -233,7 +233,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 10.  Suggest a methodology that would facilitate implementing corporate standards by automating the process of resource provisioning and configuration. 
 
-11.  Document standard operational tasks such as infrastruture backup and log collection.
+11.  Document standard operational tasks such as infrastructure backup and log collection.
 
 
 ### Customer objections 
@@ -487,67 +487,69 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack environment.
 
-In order to facilitate authentication and authorization requirements (and given the cloud first strategy embraced by Contoso), FT will implement Azure Active Directory as the identity provider in the multi-tenant topology, with the Contoso Azure Active Directory serving as the primary tenant (providing access to both the Azure Stack Admin and User portal) and the Fabrikam Azure Active Directory serving as a guest tenant (allowing its users to access the Azure Stack User portal only).
+    In order to facilitate authentication and authorization requirements (and given the cloud first strategy embraced by Contoso), FT will implement Azure Active Directory as the identity provider in the multi-tenant topology, with the Contoso Azure Active Directory serving as the primary tenant (providing access to both the Azure Stack Admin and User portal) and the Fabrikam Azure Active Directory serving as a guest tenant (allowing its users to access the Azure Stack User portal only).
 
 5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack resources. 
 
-FT will rely on the two primary delegation mechanisms in order to accommodate the need to provide restricted access to the Azure Stack environment:
+    FT will rely on the two primary delegation mechanisms in order to accommodate the need to provide restricted access to the Azure Stack environment:
 
--   Role Based Access Control (RBAC): allows assigning users to built-in or custom roles that determine actions which these users will be able to carry out within the scope of an assignment (such as a subscription or a resource group). FT can use RBAC to provide designated members of Contoso and Fabrikam IT staff with limited access to the Default Provider Subscription (for example, assign them to the built-in Reader role on the subscription level or use a custom role that restrict their access futher, allowing them only to view the Activity Log). 
+    -   Role Based Access Control (RBAC): allows assigning users to built-in or custom roles that determine actions which these users will be able to carry out within the scope of an assignment (such as a subscription or a resource group). FT can use RBAC to provide designated members of Contoso and Fabrikam IT staff with limited access to the Default Provider Subscription (for example, assign them to the built-in Reader role on the subscription level or use a custom role that restrict their access further, allowing them only to view the Activity Log). 
 
--   Delegated Provider model: allows members of Contoso and Fabrikam IT staff designated as delegated providers to control the process of their respective end-users signing up for subscriptions. With delegation, the delegated provider manages an offer (called a delegated offer), and end users obtain subscriptions under that offer without involvement from the FT Azure Stack operator.
+    -   Delegated Provider model: allows members of Contoso and Fabrikam IT staff designated as delegated providers to control the process of their respective end-users signing up for subscriptions. With delegation, the delegated provider manages an offer (called a delegated offer), and end users obtain subscriptions under that offer without involvement from the FT Azure Stack operator.
 
 6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack operators. 
 
-FT will be responsible for implementing the following common Azure Stack management tasks:
+    FT will be responsible for implementing the following common Azure Stack management tasks:
 
--   Creating plans, quotas, and offers
+    -   Creating plans, quotas, and offers
 
--   Creating Marketplace items
+    -   Creating Marketplace items
 
--   Backing up Azure Stack Infrastructure 
+    -   Backing up Azure Stack Infrastructure 
 
--   Monitoring infrastructure health
+    -   Monitoring infrastructure health
 
--   Managing network and storage resources
+    -   Managing network and storage resources
 
--   Replacing failed hardware
+    -   Replacing failed hardware
 
 7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure public cloud and Azure Stack.
 
-Azure Resource Manager templates can be used to deploy supported services to both Azure public cloud and Azure Stack.
+    Azure Resource Manager templates can be used to deploy supported services to both Azure public cloud and Azure Stack.
 
-A hybrid continuous integration/continuous delivery(CI/CD) pipeline enables you to build, test, and deploy your app to multiple clouds. A hybrid CI/CD pipeline can help you:
+    A hybrid continuous integration/continuous delivery(CI/CD) pipeline enables you to build, test, and deploy your app to multiple clouds. A hybrid CI/CD pipeline can help you:
 
--   Initiate a new build based on code commits to your Azure DevOps repository.
+    -   Initiate a new build based on code commits to your Azure DevOps repository.
 
--   Automatically deploy your newly built code to Azure for user acceptance testing.
+    -   Automatically deploy your newly built code to Azure for user acceptance testing.
 
--   Once your code has passed testing, automatically deploy to Azure Stack.
+    -   Once your code has passed testing, automatically deploy to Azure Stack.
 
 8.  Plan and Document Azure Stack Taxonomy for this deployment.
 
--   **Cloud operator**: The primary responsibilities associated with this role will be handled by FT. As the Service Provider, FT will provision and maintain the Azure Stack Infrastructure, including building out the hardware, software, and managing plans, offers and services via the Azure Stack Admin portal. Contoso and Fabrikam end users and IT staff will have access to the Azure Stack environment via the User Portal to build, manage and secure their deployments. Through the delegated providers model, Contoso and Fabrikam IT staff will also be able to create delegated offers and plans based on offers and plans controlled centrally by FT Azure Stack operators. This, in turn, will allow Contoso and Fabrikam end users to subscribe to offers and provision Azure Stack resources through self-service. In addition, FT will be able to leverage built-in and custom Role Based Access Control roles to provide restricted access to the Azure Stack Admin portal to Contoso and Fabrikam staff in order to satisfy audit, security, and governance requirements.
+    -   **Cloud operator**: The primary responsibilities associated with this role will be handled by FT. As the Service Provider, FT will provision and maintain the Azure Stack Infrastructure, including building out the hardware, software, and managing plans, offers and services via the Azure Stack Admin portal. Contoso and Fabrikam end users and IT staff will have access to the Azure Stack environment via the User Portal to build, manage and secure their deployments. Through the delegated providers model, Contoso and Fabrikam IT staff will also be able to create delegated offers and plans based on offers and plans controlled centrally by FT Azure Stack operators. This, in turn, will allow Contoso and Fabrikam end users to subscribe to offers and provision Azure Stack resources through self-service. In addition, FT will be able to leverage built-in and custom Role Based Access Control roles to provide restricted access to the Azure Stack Admin portal to Contoso and Fabrikam staff in order to satisfy audit, security, and governance requirements.
 
--   **Region**: One Azure Stack region would be created in the FT datacenter for Contoso's operations in North America.
+    -   **Region**: One Azure Stack region would be created in the FT datacenter for Contoso's operations in North America.
 
--   **Tenant**: Contoso will be setup as the primary tenant for their US based operations. To accommodate requirements for integration with Fabrikam Azure Active Directory, FT will implement multi-tenant Azure Stack topology. The same topology can be further extended to include other tenants as Contoso grows its business. All tenants can be granted access to all of the offers and services detailed in the rest of this taxonomy. (If further separation is required, then another Region would have to be deployed.)
+    -   **Tenant**: Contoso will be setup as the primary tenant for their US based operations. To accommodate requirements for integration with Fabrikam Azure Active Directory, FT will implement multi-tenant Azure Stack topology. The same topology can be further extended to include other tenants as Contoso grows its business. All tenants can be granted access to all of the offers and services detailed in the rest of this taxonomy. (If further separation is required, then another Region would have to be deployed.)
 
--   **Subscriptions**: The Azure Stack environment will contain multiple subscriptions. Their creation would be coordinated with Contoso and Fabrikam, but considering the intended self-service model, users will be able to create their own subscriptions based on public or private offers available to them. Distinct subscriptions will facilitate cost allocation and chargeback processes.
+    -   **Subscriptions**: The Azure Stack environment will contain multiple subscriptions. Their creation would be coordinated with Contoso and Fabrikam, but considering the intended self-service model, users will be able to create their own subscriptions based on public or private offers available to them. Distinct subscriptions will facilitate cost allocation and chargeback processes.
 
--   **Plans and quotas**: Plans are groupings of one or more services, with quotas restricting resources available when provisioning these services. In Azure, services are designed, deployed and offered to various regions by Microsoft engineers and operators. In Azure Stack the cloud operator deploys these services and makes them available to subscribed users using [quotas, plans, and offers](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-plan-offer-quota-overview). This needs to be carefully designed in order to take into account capacity planning and growth/usage patterns as each of these elements are connected and define both the capabilities and quantities that users can consume. As the provider, FT will create plans to offer to the Contoso and Fabrikam tenants. Each service added to a plan can be configured with quota settings. 
+    -   **Plans and quotas**: Plans are groupings of one or more services, with quotas restricting resources available when provisioning these services. In Azure, services are designed, deployed and offered to various regions by Microsoft engineers and operators. In Azure Stack the cloud operator deploys these services and makes them available to subscribed users using [quotas, plans, and offers](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-plan-offer-quota-overview). This needs to be carefully designed in order to take into account capacity planning and growth/usage patterns as each of these elements are connected and define both the capabilities and quantities that users can consume. As the provider, FT will create plans to offer to the Contoso and Fabrikam tenants. Each service added to a plan can be configured with quota settings. 
 
--   **Offers**: Offers make plans available to users or delegated providers. FT will implement the delegated provider model, allowing designated members of the Contoso and Fabrikam staff serve the role of delegated providers and to create offers to their respective end-users based on FT-defined plans and offers.
+    -   **Offers**: Offers make plans available to users or delegated providers. FT will implement the delegated provider model, allowing designated members of the Contoso and Fabrikam staff serve the role of delegated providers and to create offers to their respective end-users based on FT-defined plans and offers.
 
--   **Services/Resource Providers (RP)**: The base Resource Providers: Compute RP, Network RP, Storage RP and KeyVault RP will all be enabled. The SQL Server RP will be enabled and configured. The Azure App RP will be enabled and configured (The Windows Server 2016, SQL Server 2017, SQL IaaS Extension for Azure Stack).
+    -   **Services/Resource Providers (RP)**: The base Resource Providers: Compute RP, Network RP, Storage RP and KeyVault RP will all be enabled. The SQL Server RP will be enabled and configured. The Azure App RP will be enabled and configured (The Windows Server 2016, SQL Server 2017, SQL IaaS Extension for Azure Stack).
 
     ![The Azure Stack Taxonomy displays as previously described.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image5.png "Azure Stack Taxonomy")
 
-1. Design Network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack that will allow future applications to be deployed in the public cloud or Azure Stack and still provide connectivity to customer or On-Premises data.
+9.  Create a networks design.
 
--   The initial proof of concept will start with providing a S2S VPN between the virtual network the Azure Web App is connected to and Azure Stack and another S2S Gateway between the Azure Stack datacenter in FT and the Contoso Regional HQ.
+    Design Network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack that will allow future applications to be deployed in the public cloud or Azure Stack and still provide connectivity to customer or On-Premises data.
 
--   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the new routers On-Premises at the Contoso Dallas office. Contoso's Public IP Space will be leveraged along with the addition of Public IP space from FT.
+    -   The initial proof of concept will start with providing a S2S VPN between the virtual network the Azure Web App is connected to and Azure Stack and another S2S Gateway between the Azure Stack datacenter in FT and the Contoso Regional HQ.
+
+   -   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the new routers On-Premises at the Contoso Dallas office. Contoso's Public IP Space will be leveraged along with the addition of Public IP space from FT.
 
 ## Checklist of preferred objection handling
 
