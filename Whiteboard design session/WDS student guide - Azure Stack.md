@@ -1,4 +1,4 @@
-﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Azure Stack
@@ -106,7 +106,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 10.  Suggest a methodology that would facilitate implementing corporate standards by automating the process of resource provisioning and configuration. 
 
-11.  Document standard operational tasks such as infrastruture backup and log collection.
+11.  Document standard operational tasks such as infrastructure backup and log collection.
 
 ### Customer objections 
 
