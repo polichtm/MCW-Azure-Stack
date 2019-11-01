@@ -1,4 +1,4 @@
-﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
 
 <div class="MCWHeader1">
 Azure Stack
@@ -44,7 +44,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Choose your lab
 
-This content consists of two hands on labs, *`Azure Stack`* and *`Azure Stack Operations`*. You should only complete the setup for the lab you wish to complete. You may use the table of contents to navigate to the appropriate instructions. The descriptions below are provided to help you decide which lab your would like to complete. 
+This content consists of two hands-on lab paths, **Azure Stack** and **Azure Stack Operations**. You should only complete the setup for the lab you wish to complete. You may use the table of contents to navigate to the appropriate instructions. The descriptions below are provided to help you decide which lab you would like to complete. 
 
 The first hands-on lab involves starts with deploying the Azure Stack Development Kit, deploying the SQL Database and Azure App Service resource providers, as well as downloading several virtual machine images from the Azure Stack Marketplace. From there, you will implement a full taxonomy in Azure Stack consisting of a region, subscription, plan, offer, and quotas. After Azure Stack is configured, you will then deploy Azure SQL Database, Web and API apps and then deploy the Contoso application.
 
@@ -54,7 +54,7 @@ The second hands-on lab focuses on the Azure Stack operational tasks. In this ca
 
 ## Requirements
 
--   Microsoft Azure subscription 
+-   A Microsoft Azure subscription.
 
 ## Before the hands-on lab
 
@@ -81,7 +81,7 @@ For help with installation of the Azure Stack Development Kit, review the follow
     - Azure AD Global Admin: **Your Azure AD Global admin account**.
     - Azure AD Global Admin Password: **Your Azure AD Global admin password**.
 
-    select **Purchase** when you are ready to deploy the VM.
+    Select **Purchase** when you are ready to deploy the VM.
 
     > **Note:** This step may take up to 6 hours to deploy. 
 
@@ -150,9 +150,9 @@ You should complete these instructions *before* attending the workshop.
 
 ## Requirements
 
--   Administrative access to an Azure Stack Development Kit deployment in an Azure VM
--   An Azure subscription
--   An Azure Active Directory account with the Owner role in the Azure Subscription and the Global Administrator role in the corresponding Azure Active Directory tenant
+-   Administrative access to an Azure Stack Development Kit deployment in an Azure VM.
+-   An Azure subscription.
+-   An Azure Active Directory account with the Owner role in the Azure Subscription and the Global Administrator role in the corresponding Azure Active Directory tenant.
 
 ## Before the hands-on lab
 
@@ -167,13 +167,13 @@ Duration: 7 hours
     ```
 2.  When prompted, authenticate with an Azure Active Directory account with the owner role in the subscription where you intend to provision the Azure Stack Development Kit Azure VM named **AzSHOST-1** and with the Global Administrator role in the Azure Active Directory tenant associated with that subscription.
 
-3.  On the Custom deployment blade, specify the following settings (accept the default values of all others) and click **Purchase**:
+3.  On the Custom deployment blade, specify the following settings (accept the default values of all others) and select **Purchase**:
 
-    - Resource group: any existing or a new resource group
+    - Resource group: Any existing or a new resource group.
 
     - Admin Password: **demo@pass123**
 
-    - Public DNS Name: any unique, valid DNS name
+    - Public DNS Name: Any unique, valid DNS name.
 
     - Auto Download ASDK: **true**
 
@@ -201,11 +201,11 @@ Duration: 7 hours
 
 4.  In the Control Panel window, select **View by**, in the drop-down menu, select **Small icons**, and select **User Accounts**.
 
-5.  select **Change User Account Control settings**. 
+5.  Select **Change User Account Control settings**. 
 
 6.  When prompted, in the **User Account Control** dialog box, select **Yes**. 
 
-7.  In the **User Account Control Settings**, move the slider down to the **Never notify** position, select **OK**, and, wen prompted again, in the **User Account Control** dialog box, select **Yes**. 
+7.  In the **User Account Control Settings**, move the slider down to the **Never notify** position, select **OK**, and, when prompted again, in the **User Account Control** dialog box, select **Yes**. 
 
 8.  Start Internet Explorer and install another web browser (Chrome or Firefox). 
 
@@ -213,7 +213,7 @@ Duration: 7 hours
 
     > **Note:** Except VScode, most of the next steps should be already configured on your VM - please check that the tools are there and you are able to configure them. VSCode is optional - you can perform all of the activities in the labs using just PowerShell, but you may want to explore the VSCode user interface, because it enhances interacting with Azure Stack using PowerShell and ARM templates.
 
-10. Right-click **Start** and, in the right-click menu, select **Command Prompt (Admin)**.
+10. Right-click **Start** and, in the right-hand menu, select **Command Prompt (Admin)**.
 
 11. From the **Administrator: Command Prompt**, install appropriate VSCode extensions by running the following:
 
@@ -287,9 +287,9 @@ Duration: 7 hours
 
 21. When prompted, sign in with your Azure Active Directory account.
 
-    > **Note:** Type "Get-AzureRMSubscription" and note list of subscriptions (Default Provider Subscription, Metering Subscrption, and Consumption Subscription) and the corresponding tenant ID. You are now connected to your Azure Stack instance and can run commands such as **Get-AzsLocation**, **Get-AzsSubscription**, or **Get-AzsUserSubscription**.
+    > **Note:** Type "Get-AzureRMSubscription" and note list of subscriptions (Default Provider Subscription, Metering Subscription, and Consumption Subscription) and the corresponding tenant ID. You are now connected to your Azure Stack instance and can run commands such as **Get-AzsLocation**, **Get-AzsSubscription**, or **Get-AzsUserSubscription**.
 
-    > **Note:** Ignore the warning stating **Preview version of the module Azs.Subscriptions loaded. Future release of this module may have breaking changes**.
+    > Ignore the warning stating, **Preview version of the module Azs.Subscriptions loaded. Future release of this module may have breaking changes**.
 
 ## Task 3: Register the Azure Stack Development Kit with Azure
 
@@ -359,3 +359,6 @@ Duration: 7 hours
     ```
 
 10. Review the output of the command you ran in the previous task and verify that the registration was successful.
+
+You should complete these instructions *before* attending the workshop. 
+
