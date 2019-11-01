@@ -169,11 +169,11 @@ Duration: 7 hours
 
 3.  On the Custom deployment blade, specify the following settings (accept the default values of all others) and select **Purchase**:
 
-    - Resource group: Any existing or a new resource group.
+    - Resource group: **Any existing or a new resource group**.
 
     - Admin Password: **demo@pass123**
 
-    - Public DNS Name: Any unique, valid DNS name.
+    - Public DNS Name: **Any unique, valid DNS name**.
 
     - Auto Download ASDK: **true**
 
