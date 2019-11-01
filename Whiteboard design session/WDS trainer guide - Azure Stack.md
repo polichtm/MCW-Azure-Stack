@@ -549,7 +549,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   The initial proof of concept will start with providing a S2S VPN between the virtual network the Azure Web App is connected to and Azure Stack and another S2S Gateway between the Azure Stack datacenter in FT and the Contoso Regional HQ.
 
-   -   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the new routers On-Premises at the Contoso Dallas office. Contoso's Public IP Space will be leveraged along with the addition of Public IP space from FT.
+    -   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the new routers On-Premises at the Contoso Dallas office. Contoso's Public IP Space will be leveraged along with the addition of Public IP space from FT.
 
 ## Checklist of preferred objection handling
 
