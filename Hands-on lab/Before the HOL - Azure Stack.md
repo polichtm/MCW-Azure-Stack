@@ -28,16 +28,16 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Choose your lab](#choose-your-lab)
-- [Azure Stack Hub before the hands-on lab setup guide](#azure-stack-before-the-hands-on-lab-setup-guide)
+- [Azure Stack Hub before the hands on lab setup guide](#azure-stack-before-the-hands-on-lab-setup-guide)
   - [Requirements](#requirements)
-  - [Before the hands-on lab](#before-the-hands-on-lab)
+  - [Before the hands on lab](#before-the-hands-on-lab)
     - [Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit)
     - [Task 2: Install Azure Stack Hub Development Kit](#task-2-Install-Azure-Stack-Hub-Development-Kit)
     - [Task 3: Download and Run the Azure Stack Hub Configurator Script](#task-2-Download-and-Run-the-Azure-Stack-Hub-Configurator-Script)
-    - [Task 4: Perform Post-Installation Tasks](#task-2-Perform-Post-Installation-Tasks)
+    - [Task 4: Perform Post Installation Tasks](#task-2-Perform-Post-Installation-Tasks)
 - [Azure Stack Hub Operations before the hands-on lab setup guide](#azure-stack-operations-before-the-hands-on-lab-setup-guide)
   - [Requirements (Operations)](#requirements-operations)
-  - [Before the hands-on lab (Operations)](#before-the-hands-on-lab-operations)
+  - [Before the hands on lab (Operations)](#before-the-hands-on-lab-operations)
     - [Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit (Operations)](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit-Operations)
     - [Task 2: Install Azure Stack Hub Development Kit (Operations)](#task-2-Install-Azure-Stack-Hub-Development-Kit-Operations)
     - [Task 3: Prepare the Azure Stack Hub Operator Station](#task-3-Prepare-the-Azure-Stack-Hub-Operator-Station)
@@ -53,13 +53,13 @@ The first hands-on lab involves starts with deploying the Azure Stack Hub Develo
 
 The second hands-on lab focuses on the Azure Stack Hub operational tasks. In this case, you will also start with deploying the Azure Stack Hub Development Kit, but the subsequent steps will differ. First, you will install the Azure Stack Hub tools. You will subsequently rely on them to create and publish a custom Azure Marketplace item as well as to implement multi-tenant topology by provisioning another Azure Active Directory tenant and adding it to the existing Azure Stack Hub environment. Once that is completed, you will set up delegation by using the delegated provider model and Azure Stack Hub Role-Based Access Control (RBAC). You will conclude this lab by carrying out common Azure Stack Hub maintenance tasks, including log collection (via Privileged Endpoint) and infrastructure backup (by using the Azure Stack Hub Admin portal).
 
-# Azure Stack Hub before the hands-on lab setup guide 
+# Azure Stack Hub before the hands on lab setup guide 
 
 ## Requirements
 
 -   A Microsoft Azure subscription.
 
-## Before the hands-on lab
+## Before the hands on lab
 
 Duration: 10-12 hours
 
@@ -160,12 +160,13 @@ In this task you will execute a script that will download and provision Azure St
     $localAdminPass = ConvertTo-SecureString 'demo@pass123' -AsPlainText -Force
     $azpass = ConvertTo-SecureString '[azure-admin-password]' -AsPlainText -Force
     $azcred = New-Object System.Management.Automation.PSCredential ('[azure-admin-upn]', $azpass)
-   ```
+    ```
 
 1. From the Administrator: Windows PowerShell window, invoke the installation of Azure Stack Hub Development Kit by running the following (ensure you replace the placeholder values, where `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab):
 
+    ```powershell
     .\Install-ASDK.ps1 -DownloadASDK -DeploymentType AAD -LocalAdminPass $localAdminPass -AADTenant [tenant].onmicrosoft.com -version '1907-20' -InfraAzureDirectoryTenantAdminCredential $azcred
-   ```
+    ```
 
     > **Note:** After about 75 minutes, the Azure VM will automatically restart.
 
@@ -231,7 +232,7 @@ In this task you will execute a script that will configure install and configure
     > **Note**: If any of the jobs fail, wait for the entire script to complete and run the script again. 
 
 
-### Task 4: Perform Post-Installation Tasks
+### Task 4: Perform Post Installation Tasks
 
 1. Within the Remote Desktop session to **AzSHOST-1**, start Internet Explorer and browse to <https://portal.azure.com>.
 
@@ -293,7 +294,7 @@ You should complete these instructions *before* attending the workshop.
 -   An Azure subscription.
 -   An Azure Active Directory account with the Owner role in the Azure Subscription and the Global Administrator role in the corresponding Azure Active Directory tenant.
 
-## Before the hands-on lab (Operations)
+## Before the hands on lab (Operations)
 
 Duration: 7 hours
 
@@ -388,12 +389,13 @@ In this task you will execute a script that will download and provision Azure St
     $localAdminPass = ConvertTo-SecureString 'demo@pass123' -AsPlainText -Force
     $azpass = ConvertTo-SecureString '[azure-admin-password]' -AsPlainText -Force
     $azcred = New-Object System.Management.Automation.PSCredential ('[azure-admin-upn]', $azpass)
-   ```
+    ```
 
 1. From the Administrator: Windows PowerShell window, invoke the installation of Azure Stack Hub Development Kit by running the following (ensure you replace the placeholder values, where `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab):
 
+    ```powershell
     .\Install-ASDK.ps1 -DownloadASDK -DeploymentType AAD -LocalAdminPass $localAdminPass -AADTenant [tenant].onmicrosoft.com -version '1907-20' -InfraAzureDirectoryTenantAdminCredential $azcred
-   ```
+    ```
 
     > **Note:** After about 75 minutes, the Azure VM will automatically restart.
 

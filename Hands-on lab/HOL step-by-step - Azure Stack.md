@@ -209,7 +209,7 @@ Duration: 15-30 minutes
 
     -   Make this offer public? **No**
 
-        ![Fields in the New Offer blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image82.png "New Offer blade")
+    ![Fields in the New Offer blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image82.png "New Offer blade")
 
 1. On the **Base plans** blade, check **PROD-Plan-1** and select **Review + create** and then **Create**.
 
@@ -246,10 +246,6 @@ Duration: 15-30 minutes
 
     ![Under the Subscription created message, the Refresh button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image91.png "Refresh")
 
-1. Click the **Directory + subscription** filter and, in the drop-down list, select **Production** and close the **Directory + subscription** pane.
-
-    ![In the Directory + subscription filter, the Production subscription is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image92a.png "Production subscription selection")
-
 
 ## Exercise 2: Deploy Contoso Financial Web Application
 
@@ -275,7 +271,7 @@ In this exercise, you will provision a website using the Azure Stack Hub portal.
 
     -   Resource group: **ContosoFinanceWeb**
 
-        ![Create blade fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image112.png "Create blade")
+    ![Create blade fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image112.png "Create blade")
 
 ### Task 2: Provision an Azure Storage Account
 
@@ -299,7 +295,7 @@ In this exercise, you will provision a website using the Azure Stack Hub portal.
 
     -   Replication: **Locally-redundant storage (LRS)**
 
-        ![Create storage account blade fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image114.png "Create storage account blade")
+    ![Create storage account blade fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image114.png "Create storage account blade")
 
 3.  Select **Review + create** followed by **Create**.
 
@@ -336,7 +332,7 @@ In this exercise, you will provision a website using the Azure Stack Hub portal.
 
     -   Location: **local**
 
-        ![Screenshot of the Create database blade with fields set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image100.png "Create database blade")
+    ![Screenshot of the Create database blade with fields set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image100.png "Create database blade")
 
 3.  Next, select **SKU**.
 
@@ -360,7 +356,7 @@ In this exercise, you will provision a website using the Azure Stack Hub portal.
 
     -   Password/Confirm Password: **Demo@pass123 - Note: Upper case D**
 
-        ![Fields in the New Login blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image105.png "New Login blade")
+    ![Fields in the New Login blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image105.png "New Login blade")
 
 8.  Review the **Create Database** blade and select **Create**.
 
@@ -396,7 +392,7 @@ In this exercise, you will provision a website using the Azure Stack Hub portal.
 
     -   Value: **Enter the Connection String for the Storage Account that you created earlier in this exercise**.
 
-        ![Fields in the App settings section are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image123.png "App settings")
+    ![Fields in the App settings section are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image123.png "App settings")
 
 4.  Switch to Notepad containing the SQL Server Connection string copied from Azure Stack Hub and ensure that the password is set to `Demo@pass123`.
 
@@ -408,13 +404,13 @@ In this exercise, you will provision a website using the Azure Stack Hub portal.
 
     -   Type: **SQLAzure**
 
-        ![The Connection strings fields display.](images/Hands-onlabstep-by-step-AzureStackimages/media/image124.png "Connection strings")
+    ![The Connection strings fields display.](images/Hands-onlabstep-by-step-AzureStackimages/media/image124.png "Connection strings")
 
 6.  Select **Save**.
 
 ### Task 5: Publish the Contoso Financial Web Application
 
-    > **Note:** The current version of the Azure Stack Hub App Service Provider does not enable the deployment center feature yet. 
+> **Note:** The current version of the Azure Stack Hub App Service Provider does not enable the deployment center feature yet. 
 
 1.  From within the web app blade, select **Deployment options (Classic)**.
 
@@ -484,7 +480,7 @@ In this exercise, you will provision an Azure API App using the Azure Stack Hub 
 
     -   Type: **SQLAzure**
 
-        ![the Connection strings fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image133b.png "Connection strings")
+    ![the Connection strings fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image133b.png "Connection strings")
 
 10. Select **Save**.
 
@@ -578,8 +574,6 @@ Contoso wants to automate the process of generating applications in PDF format b
 
     -   Storage Account: **Use existing**
 
-        ![Create new app service plan blade is displayed.](images/Hands-onlabstep-by-step-AzureStackimages/media/image141b.png "Create App Service plan blade")
-
 4.  Select **Create**.
 
 5.  Using the Azure Stack Hub portal, open the Function App you just created, select **Functions** and then **New function**.
@@ -598,7 +592,7 @@ Contoso wants to automate the process of generating applications in PDF format b
 
     -   Queue name: **receiptgenerator (must be this exact text)**
 
-        ![Fields in the New Function blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image144.png "New Function blade")
+    ![Fields in the New Function blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image144.png "New Function blade")
 
 8.  Expand the View files area on the right of the code window, and select **Upload**.
 
