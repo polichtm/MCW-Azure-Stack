@@ -1,7 +1,7 @@
-﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png)
 
 <div class="MCWHeader1">
-Azure Stack
+Azure Stack Hub
 </div>
 
 <div class="MCWHeader2">
@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-October 2019
+January 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+� 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -27,17 +27,17 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Choose your lab](#choose-your-lab)
-- [Azure Stack hands-on lab step-by-step](#azure-stack-hands-on-lab-step-by-step)
+- [Azure Stack Hub hands-on lab step-by-step](#azure-stack-hub-hands-on-lab-step-by-step)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Help references](#help-references)
   - [Requirements](#requirements)
-  - [Exercise 1: Create Azure Stack Deployment Taxonomy for Tenants](#exercise-1-create-azure-stack-deployment-taxonomy-for-tenants)
+  - [Exercise 1: Create Azure Stack Hub Deployment Taxonomy for Tenants](#exercise-1-create-azure-stack-hub-deployment-taxonomy-for-tenants)
   - [Exercise 2: Deploy Contoso Financial Web Application](#exercise-2-deploy-contoso-financial-web-application)
     - [Task 1: Create the Web App](#task-1-create-the-web-app)
     - [Task 2: Provision an Azure Storage Account](#task-2-provision-an-azure-storage-account)
-    - [Task 3: Deploy SQL DB on Azure Stack](#task-3-deploy-sql-db-on-azure-stack)
+    - [Task 3: Deploy SQL DB on Azure Stack Hub](#task-3-deploy-sql-db-on-azure-stack-hub)
     - [Task 4: Update the configuration strings](#task-4-update-the-configuration-strings)
     - [Task 5: Publish the Contoso Financial Web Application](#task-5-publish-the-contoso-financial-web-application)
   - [Exercise 3: Deploy the customer offers Web API](#exercise-3-deploy-the-customer-offers-web-api)
@@ -50,28 +50,28 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 1: Provision the Contoso Finance Admin Web App](#task-1-provision-the-contoso-finance-admin-web-app)
     - [Task 2: Deploy the call center admin Web App from Visual Studio](#task-2-deploy-the-call-center-admin-web-app-from-visual-studio)
   - [After the hands-on lab](#after-the-hands-on-lab)
-- [Azure Stack Operations hands-on lab step-by-step](#azure-stack-operations-hands-on-lab-step-by-step)
+- [Azure Stack Hub Operations hands-on lab step-by-step](#azure-stack-hub-operations-hands-on-lab-step-by-step)
   - [Abstract and learning objectives](#abstract-and-learning-objectives-1)
   - [Overview](#overview-1)
   - [Help references](#help-references-1)
   - [Requirements](#requirements-1)
-  - [Exercise 1: Create and publish an Azure Stack Marketplace item](#exercise-1-create-and-publish-an-azure-stack-marketplace-item)
-    - [Task 1: Set up tools and artifacts for publishing custom Azure Stack Marketplace items](#task-1-set-up-tools-and-artifacts-for-publishing-custom-azure-stack-marketplace-items)
+  - [Exercise 1: Create and publish an Azure Stack Hub Marketplace item](#exercise-1-create-and-publish-an-azure-stack-hub-marketplace-item)
+    - [Task 1: Set up tools and artifacts for publishing custom Azure Stack Hub Marketplace items](#task-1-set-up-tools-and-artifacts-for-publishing-custom-azure-stack-hub-marketplace-items)
     - [Task 2: Publish a custom Azure Marketplace solution](#task-2-publish-a-custom-azure-marketplace-solution)
   - [Exercise 2: Implement multi-tenancy](#exercise-2-implement-multi-tenancy)
     - [Task 1: Create and configure a new Azure Active Directory tenant](#task-1-create-and-configure-a-new-azure-active-directory-tenant)
-    - [Task 2: Configure the existing Azure Stack Azure Active Directory tenant](#task-2-configure-the-existing-azure-stack-azure-active-directory-tenant)
+    - [Task 2: Configure the existing Azure Stack Hub Azure Active Directory tenant](#task-2-configure-the-existing-azure-stack-hub-azure-active-directory-tenant)
     - [Task 3: Configure the newly created Azure Active Directory tenant](#task-3-configure-the-newly-created-azure-active-directory-tenant)
   - [Exercise 3: Implement delegated management of plans, offers, and subscriptions](#exercise-3-implement-delegated-management-of-plans-offers-and-subscriptions)
-    - [Task 1: Create delegated operator and user Azure Active Directory accounts (as the Azure Stack operator)](#task-1-create-delegated-operator-and-user-azure-active-directory-accounts-as-the-azure-stack-operator)
-    - [Task 2: Create a plan consisting of the Subscription service (as the Azure Stack operator)](#task-2-create-a-plan-consisting-of-the-subscription-service-as-the-azure-stack-operator)
-    - [Task 3: Create an offer based on the plan consisting of the Subscriptions service (as the Azure Stack operator)](#task-3-create-an-offer-based-on-the-plan-consisting-of-the-subscriptions-service-as-the-azure-stack-operator)
-    - [Task 4: Create new subscriptions containing the offer with the delegated providers as their subscriber (as the Azure Stack operator)](#task-4-create-new-subscriptions-containing-the-offer-with-the-delegated-providers-as-their-subscriber-as-the-azure-stack-operator)
-    - [Task 5: Create a plan to be delegated by delegated providers to users (as the Azure Stack operator)](#task-5-create-a-plan-to-be-delegated-by-delegated-providers-to-users-as-the-azure-stack-operator)
-    - [Task 6: Create an offer based on the plan containing Microsoft.Storage (as the Azure Stack operator)](#task-6-create-an-offer-based-on-the-plan-containing-microsoftstorage-as-the-azure-stack-operator)
-    - [Task 7: Delegate the offer to delegated providers (as the Azure Stack operator)](#task-7-delegate-the-offer-to-delegated-providers-as-the-azure-stack-operator)
-    - [Task 8: Create a delegated provider offer for Contoso users (as the Contoso delegated provider) based on offer from the Azure Stack operator](#task-8-create-a-delegated-provider-offer-for-contoso-users-as-the-contoso-delegated-provider-based-on-offer-from-the-azure-stack-operator)
-    - [Task 9: Create a delegated provider offer for Fabrikam users (as the Fabrikam delegated provider) based on offer from the Azure Stack operator](#task-9-create-a-delegated-provider-offer-for-fabrikam-users-as-the-fabrikam-delegated-provider-based-on-offer-from-the-azure-stack-operator)
+    - [Task 1: Create delegated operator and user Azure Active Directory accounts (as the Azure Stack Hub operator)](#task-1-create-delegated-operator-and-user-azure-active-directory-accounts-as-the-azure-stack-hub-operator)
+    - [Task 2: Create a plan consisting of the Subscription service (as the Azure Stack Hub operator)](#task-2-create-a-plan-consisting-of-the-subscription-service-as-the-azure-stack-hub-operator)
+    - [Task 3: Create an offer based on the plan consisting of the Subscriptions service (as the Azure Stack Hub operator)](#task-3-create-an-offer-based-on-the-plan-consisting-of-the-subscriptions-service-as-the-azure-stack-hub-operator)
+    - [Task 4: Create new subscriptions containing the offer with the delegated providers as their subscriber (as the Azure Stack Hub operator)](#task-4-create-new-subscriptions-containing-the-offer-with-the-delegated-providers-as-their-subscriber-as-the-azure-stack-hub-operator)
+    - [Task 5: Create a plan to be delegated by delegated providers to users (as the Azure Stack Hub operator)](#task-5-create-a-plan-to-be-delegated-by-delegated-providers-to-users-as-the-azure-stack-hub-operator)
+    - [Task 6: Create an offer based on the plan containing Microsoft.Storage (as the Azure Stack Hub operator)](#task-6-create-an-offer-based-on-the-plan-containing-microsoftstorage-as-the-azure-stack-hub-operator)
+    - [Task 7: Delegate the offer to delegated providers (as the Azure Stack Hub operator)](#task-7-delegate-the-offer-to-delegated-providers-as-the-azure-stack-hub-operator)
+    - [Task 8: Create a delegated provider offer for Contoso users (as the Contoso delegated provider) based on offer from the Azure Stack Hub operator](#task-8-create-a-delegated-provider-offer-for-contoso-users-as-the-contoso-delegated-provider-based-on-offer-from-the-azure-stack-hub-operator)
+    - [Task 9: Create a delegated provider offer for Fabrikam users (as the Fabrikam delegated provider) based on offer from the Azure Stack Hub operator](#task-9-create-a-delegated-provider-offer-for-fabrikam-users-as-the-fabrikam-delegated-provider-based-on-offer-from-the-azure-stack-hub-operator)
     - [Task 10: Sign up for the delegated provider's offer (as a Contoso user)](#task-10-sign-up-for-the-delegated-providers-offer-as-a-contoso-user)
     - [Task 11: Sign up for the delegated provider's offer (as a Fabrikam user)](#task-11-sign-up-for-the-delegated-providers-offer-as-a-fabrikam-user)
   - [Exercise 4: Configure Role Based Access Control (RBAC)](#exercise-4-configure-role-based-access-control-rbac)
@@ -82,8 +82,8 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Task 1: Create a log share](#task-1-create-a-log-share)
     - [Task 2: Connect to the privileged endpoint via PowerShell Remoting](#task-2-connect-to-the-privileged-endpoint-via-powershell-remoting)
     - [Task 3: Review capabilities of the privileged endpoint](#task-3-review-capabilities-of-the-privileged-endpoint)
-    - [Task 4: Manage Azure Stack diagnostics log collection via the privileged endpoint.](#task-4-manage-azure-stack-diagnostics-log-collection-via-the-privileged-endpoint)
-  - [Exercise 6: Implement Azure Stack infrastructure backup](#exercise-6-implement-azure-stack-infrastructure-backup)
+    - [Task 4: Manage Azure Stack Hub diagnostics log collection via the privileged endpoint.](#task-4-manage-azure-stack-hub-diagnostics-log-collection-via-the-privileged-endpoint)
+  - [Exercise 6: Implement Azure Stack Hub infrastructure backup](#exercise-6-implement-azure-stack-hub-infrastructure-backup)
     - [Task 1: Create a backup user](#task-1-create-a-backup-user)
     - [Task 2: Create a backup share](#task-2-create-a-backup-share)
     - [Task 3: Generate an encryption certificate](#task-3-generate-an-encryption-certificate)
@@ -94,65 +94,70 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 # Choose your lab
 
-This content consists of two hands-on lab paths, **Azure Stack** and **Azure Stack Operations**. You should verify that you have completed the setup in the *Before the hands-on lab* guide for the lab you wish to complete. You may use the table of contents to navigate to the appropriate instructions. The descriptions below are provided to help you decide which lab you would like to complete. 
+This content consists of two hands-on lab paths, **Azure Stack Hub** and **Azure Stack Hub Operations**. You should verify that you have completed the setup in the *Before the hands-on lab* guide for the lab you wish to complete. You may use the table of contents to navigate to the appropriate instructions. The descriptions below are provided to help you decide which lab you would like to complete. 
 
-The first hands-on lab involves starts with deploying the Azure Stack Development Kit, deploying the SQL Database and Azure App Service resource providers, as well as downloading several virtual machine images from the Azure Stack Marketplace. From there, you will implement a full taxonomy in Azure Stack consisting of a region, subscription, plan, offer, and quotas. After Azure Stack is configured, you will then deploy Azure SQL Database, Web and API apps and then deploy the Contoso application.
+The first hands-on lab involves starts with deploying the Azure Stack Hub Development Kit, deploying the SQL Database and Azure App Service resource providers, as well as downloading several virtual machine images from the Azure Stack Hub Marketplace. From there, you will implement a full taxonomy in Azure Stack Hub consisting of a region, subscription, plan, offer, and quotas. After Azure Stack Hub is configured, you will then deploy Azure SQL Database, Web and API apps and then deploy the Contoso application.
 
-The second hands-on lab focuses on the Azure Stack operational tasks. In this case, you will also start with deploying the Azure Stack Development Kit, but the subsequent steps will differ. First, you will install the Azure Stack tools. You will subsequently rely on them to create and publish a custom Azure Marketplace item as well as to implement multi-tenant topology by provisioning another Azure Active Directory tenant and adding it to the existing Azure Stack environment. Once that is completed, you will set up delegation by using the delegated provider model and Azure Stack Role-Based Access Control (RBAC). You will conclude this lab by carrying out common Azure Stack maintenance tasks, including log collection (via Privileged Endpoint) and infrastructure backup (by using the Azure Stack Admin portal).
+The second hands-on lab focuses on the Azure Stack Hub operational tasks. In this case, you will also start with deploying the Azure Stack Hub Development Kit, but the subsequent steps will differ. First, you will install the Azure Stack Hub tools. You will subsequently rely on them to create and publish a custom Azure Marketplace item as well as to implement multi-tenant topology by provisioning another Azure Active Directory tenant and adding it to the existing Azure Stack Hub environment. Once that is completed, you will set up delegation by using the delegated provider model and Azure Stack Hub Role-Based Access Control (RBAC). You will conclude this lab by carrying out common Azure Stack Hub maintenance tasks, including log collection (via Privileged Endpoint) and infrastructure backup (by using the Azure Stack Hub administrator portal).
 
-# Azure Stack hands-on lab step-by-step
+# Azure Stack Hub hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will deploy the Azure Stack Development Kit and deploy the SQL Database and Azure App Service resource providers, as well as download several virtual machine images from the Azure Stack Marketplace. From there, you will implement a full taxonomy in Azure Stack consisting of a region, subscription, plan, offer, and quotas. After Azure Stack is configured, you will then deploy Azure SQL Database, Web and API apps and then deploy the Contoso application.
+In this hands-on lab, you will deploy the Azure Stack Hub Development Kit and deploy the SQL Database and Azure App Service resource providers, as well as download several virtual machine images from the Azure Stack Hub Marketplace. From there, you will implement a full taxonomy in Azure Stack Hub consisting of a region, subscription, plan, offer, and quotas. After Azure Stack Hub is configured, you will then deploy Azure SQL Database, Web and API apps and then deploy the Contoso application.
 
-At the end of this hands-on lab, you will be better able to deploy and manage solutions running on Azure Stack.
+At the end of this hands-on lab, you will be better able to deploy and manage solutions running on Azure Stack Hub.
 
 ## Overview
 
-Contoso Finance is one of the largest banks in the United States with a significant amount of their revenue coming from their residential mortgage business. As part of Contoso's shift to a cloud first strategy they planning to migrate their loan web applications to a hybrid cloud solution. During the planning stages, Contoso realized they would not be able to retain their customer data in US based Azure regions due to corporate compliance policies and regulatory issues. They have selected Azure Stack as the deployment method to take advantage of Azure technologies while still maintaining compliance.
+Contoso Finance is one of the largest banks in the United States with a significant amount of their revenue coming from their residential mortgage business. As part of Contoso's shift to a cloud first strategy they planning to migrate their loan web applications to a hybrid cloud solution. During the planning stages, Contoso realized they would not be able to retain their customer data in US based Azure regions due to corporate compliance policies and regulatory issues. They have selected Azure Stack Hub as the deployment method to take advantage of Azure technologies while still maintaining compliance.
 
 ## Solution architecture
 
-![The Microsoft Azure Stack is made up of Mortgage Applications and Mortgage Admin databases, Offerings API, Storage Queue Mortgage Applications, Mortgage Applications, and SQL Web App DB and Customer Data.](images/Hands-onlabstep-by-step-AzureStackimages/media/image2.png "Solution Architecture")
+![The Microsoft Azure Stack Hub is made up of Mortgage Applications and Mortgage Admin databases, Offerings API, Storage Queue Mortgage Applications, Mortgage Applications, and SQL Web App DB and Customer Data.](images/Hands-onlabstep-by-step-AzureStackimages/media/image2.png "Solution Architecture")
 
 ## Help references
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| Azure Stack overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
-| Azure Stack use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
-| Azure Stack features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
-| Azure Stack planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
-| Azure Stack documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
-| Deploy apps to Azure and Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
+| Azure Stack Hub overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
+| Azure Stack Hub use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
+| Azure Stack Hub features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
+| Azure Stack Hub planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
+| Azure Stack Hub documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
+| Deploy apps to Azure and Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
 | White paper | <https://azure.microsoft.com/en-us/resources/azure-stack-an-extension-of-azure/> |
-| PowerShell for Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
-| Azure Stack marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
+| PowerShell for Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
+| Azure Stack Hub marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
 
 
 ## Requirements
 
 -   A Microsoft Azure subscription.
 
+## Exercise 1: Create Azure Stack Hub Deployment Taxonomy for Tenants
 
-## Exercise 1: Create Azure Stack Deployment Taxonomy for Tenants
-
-In this exercise, you will create the subscriptions, offers, and plans that will be used by your Azure Stack tenants. 
+In this exercise, you will create the subscriptions, offers, and plans that will be used by your Azure Stack Hub tenants. 
 
 Duration: 15-30 minutes
 
-![Screenshot of an Azure Stack Deployment Taxonomy.](images/Hands-onlabstep-by-step-AzureStackimages/media/image69.png "Azure Stack deployment")
+![Screenshot of an Azure Stack Hub Deployment Taxonomy.](images/Hands-onlabstep-by-step-AzureStackimages/media/image69.png "Azure Stack Hub deployment")
 
-1.  Select **+Create a resource** in the Azure Stack Admin portal.
+1. Within the Remote Desktop session to **AzSHOST-1**, start Internet Explorer and navigate to <https://adminportal.local.azurestack.external>
 
-2.  Select **Offers + Plans** followed by **Plan**.
+1. When prompted, sign in with Azure AD user account with the Owner or a Contributor role in the Azure Stack Hub Default Provider subscription.
+
+1. In the Azure Stack Hub administrator portal, in the hub menu, 
+
+1.  Select **+Create a resource** in the Azure Stack Hub administrator portal.
+
+1.  Select **Offers + Plans** followed by **Plan**, followed by **Create**.
 
     ![In the Marketplace blade, Offers and Plans is selected. In the Featured Apps blade, Plan is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image70.png "Featured Apps blade")
 
-3.  In the New Plan blade, provide the following inputs:
+1.  In the New Plan blade, provide the following inputs:
 
     -   Display name: **PROD-Plan-1**
 
@@ -160,44 +165,41 @@ Duration: 15-30 minutes
 
     -   Resource group (Create new): **ContosoFinance**
 
-        ![New plan blade, fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image71.png "New plan blade")
+    ![New plan blade, fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image71.png "New plan blade")
 
-4.  Select **Services**.
+1.  Select **Services**.
 
     ![Screenshot of the Services option.](images/Hands-onlabstep-by-step-AzureStackimages/media/image72.png "Select services")
 
-5.  Next, check each of the **Services** listed, and select **Next: Quotas**.
+1.  Next, check all of the **Services** except for **Microsoft.MySQLAdapter** and **Microsoft.Subsciptions** and click **Next: Quotas**.
 
     ![Services are listed in the Services blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image73.png "Services")
 
-
-6.  For Quotas, select through and choose the default quota presented **[skipping]** the Microsoft.SQLAdapter. Once this is complete, select **Create New** by Microsoft.SQLAdapter.
+1.  For Quotas, select through and choose the default quotas with exception of the Microsoft.SQLAdapter entry. Next, click **Create New** next to the Microsft.SQLAdapter entry.
 
     ![The Quotas blade displays with Microsoft SQL Adapter selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image75.png "Quotas blade")
 
+1. On the **Create Quota** blade, specify the following information and click **Create**:
 
-7.  Complete the **Create Quota** blade using these inputs. Then, select **Create**.
+    -   Quota Name: **SQLQuota**
 
-    -   Quota Name (no spaces allowed): **SQLQuota**
-
-    -   Maximum size of all databases (GB): **50**
+    -   Maximum size of all Databases (GB): **50**
 
     -   Maximum number of databases: **20**
 
-    ![Screenshot of the Create Quota blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image77.png "Create Quota blade")
+    ![The Create Quota tab displays the specified settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image77.png "Create Quota blade")
 
-8. Select **Review + Create** and then confirm the creation. 
+1. Select **Review + Create** and then confirm the creation. 
 
-    ![OK is selected in the Quotas blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image79.png "Create Quota blade")
+    ![The Quotas tab of the New plan blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image79.png "Quotas tab of the New plan blade")
 
-9. The Plan will deploy immediately. Select **+ Create a resource** in the Azure Stack Admin portal.
+1.  Select **+ Create a resource** followed by **Create** in the Azure Stack Hub administrator portal. The Plan will deploy immediately.
 
-
-10. Select **Offers + Plans** followed by **Offer**.
+1. Select **Offers + Plans** followed by **Offer**.
 
     ![In the Marketplace blade, Offers and Plans is selected. In the Featured Apps blade, Offer is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image81.png "Marketplace blade")
 
-11. Update the New offer blade using the following inputs. Then, select **Next: Base plans**.
+1. Update the New offer blade using the following inputs. Then, select **Next: Base plans**.
 
     -   Display Name: **PROD-Offer-1**
 
@@ -205,59 +207,59 @@ Duration: 15-30 minutes
 
     -   Resource group: **Use existing / ContosoFinance**
 
-    -   Base plans: **PROD-Plan-1**
+    -   Make this offer public? **No**
 
         ![Fields in the New Offer blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image82.png "New Offer blade")
 
-12. On the **Base plans** blade, check **prod-plan-1** and select **Review + create** and then **Create**.
+1. On the **Base plans** blade, check **PROD-Plan-1** and select **Review + create** and then **Create**.
 
     ![Screenshot of the Resource group blade. Under Name, a callout points to prod-offer-1.](images/Hands-onlabstep-by-step-AzureStackimages/media/image83.png "Resource group blade")
 
-13. Open the new offer after it is created. Notice the portal shows a warning stating: "**This offer is private, and users cannot see it**." To fix this, select the **Change state** button.
+1. Open the new offer after it is created. Notice the portal shows a warning stating: "**This offer is private, and users cannot see it**." To fix this, select the **Change state** button.
 
     ![In the Offer blade, warning displays, and the Change state button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image85.png "Offer blade")
 
-14. Select **Public**.
+1. Select **Public**.
 
     ![Public is selected in the Change state menu.](images/Hands-onlabstep-by-step-AzureStackimages/media/image86.png "Change state menu")
 
-15. The portal will immediately provide a notification about the update to the offer.
+1. The portal will immediately provide a notification about the update to the offer.
 
     ![Updated offer successfully message screenshot.](images/Hands-onlabstep-by-step-AzureStackimages/media/image87.png "Success")
 
-16. Next, open a new browser tab, and navigate to Azure Stack User portal and select **Get Subscription**.
+1. Next, open a new browser tab, and navigate to Azure Stack Hub User portal and select **Get Subscription**.
 
     ```
     https://portal.local.azurestack.external
     ```
 
-    ![Azure Stack dashboard screenshot](images/Hands-onlabstep-by-step-AzureStackimages/media/image88.png "Azure Stack dashboard")
+    ![Azure Stack Hub dashboard screenshot](images/Hands-onlabstep-by-step-AzureStackimages/media/image88.png "Azure Stack Hub dashboard")
 
-    > **Note**: This is the User portal Contoso Finance will use to provision and manage their Azure Stack service.
+    > **Note**: This is the User portal Contoso Finance will use to provision and manage their Azure Stack Hub service.
 
 
-17. Give it the name: **Production** and select the **PROD-Offer-1** and select **Create**.
+1. Give it the name: **Production** and select the **PROD-Offer-1** and select **Create**.
 
     ![In the Get a subscription blade, the Display name is Production. In the Choose an offer blade, PROD-Offer-1 is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image90.png "Get a subscription blade")
 
-18. You will need to Refresh the window to start using the new Subscription.
+1. You will need to Refresh the window to start using the new Subscription.
 
     ![Under the Subscription created message, the Refresh button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image91.png "Refresh")
 
-19. Once the portal refreshes, select **All Services \> Subscriptions**.
+1. Click the **Directory + subscription** filter and, in the drop-down list, select **Production** and close the **Directory + subscription** pane.
 
-20. The Production Subscription will load, and you can select to review.
+    ![In the Directory + subscription filter, the Production subscription is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image92a.png "Production subscription selection")
 
 
 ## Exercise 2: Deploy Contoso Financial Web Application
 
 Duration: 15-30 minutes
 
-In this exercise, you will provision a website using the Azure Stack portal. The Web App will leverage the SQL DB running in Azure Stack. This is the front-end website that customers will see when browsing for a Mortgage or other financial services products.
+In this exercise, you will provision a website using the Azure Stack Hub portal. The Web App will leverage the SQL DB running in Azure Stack Hub. This is the front-end website that customers will see when browsing for a Mortgage or other financial services products.
 
 ### Task 1: Create the Web App
 
-1.  From within the Azure Stack User portal, select **+Create a resource -\> Web + Mobile -\> Web App.**
+1.  From within the Azure Stack Hub User portal, select **+Create a resource -\> Web + Mobile -\> Web App.**
 
 2.  On the **Web App** blade, select **App Service plan/Location**.
 
@@ -277,21 +279,29 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 ### Task 2: Provision an Azure Storage Account
 
-1.  In the Azure Stack User portal, select **+New, Data + Storage,** and **Storage account**.
+1.  In the Azure Stack Hub User portal, select **+Create  a resource -\> Data + Storage -\> Storage account - blob, file, table, queue**.
 
     ![In the New and Data and Storage blades, the previously defined options are selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image113.png "New and Data and Storage blades")
 
-2.  On the **Create storage account** blade, specify the following configuration options:
+2.  On the **Basics** tab of the **Create storage account** blade, specify the following configuration options:
 
-    -   Name: **Unique value for the storage account (ensure the green check mark appears)**.
+    -   Subscription: **Production**
 
-    -   Resource Group: **ContosoFinanceWeb**
+    -   Resource group: **ContosoFinanceWeb**
+
+    -   Storage account name: **Unique value for the storage account (ensure the green check mark appears)**
+
+    -   Location: **local**
+
+    -   Performance: **Standard**
+
+    -   Account kind: **Storage (general purpose v1)**
+
+    -   Replication: **Locally-redundant storage (LRS)**
 
         ![Create storage account blade fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image114.png "Create storage account blade")
 
-3.  Select **Create**.
-
-    ![Create button screenshot](images/Hands-onlabstep-by-step-AzureStackimages/media/image115.png "Create button")
+3.  Select **Review + create** followed by **Create**.
 
 4.  After the storage account has completed provisioning, open the storage account by selecting **Storage accounts** in the left navigation, and then select the storage account name.
 
@@ -299,26 +309,22 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
     ![Under Settings, Access keys is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image116.png "Access keys")
 
-6.  On the **Access keys** blade, select the copy button by **Key** to copy the **key1** key value. Put the value in notepad for later reference.
+6.  On the **Access keys** blade, select the copy button by **Key** to copy the **key1** key value. Paste the value into Notepad for later reference.
 
     ![The key1 copy button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image117.png "copy button")
 
-    ![Key1 displays in Notepad.](images/Hands-onlabstep-by-step-AzureStackimages/media/image118.png "Key1")
-
-7.  On the **Access keys** blade, select the copy button by **Connection string** to copy the **key1** connection string value. Put the value in notepad for later reference.
+7.  On the **Access keys** blade, select the copy button by **Connection string** to copy the **key1** connection string value. Paste the value into Notepad for later reference.
 
     ![The Connection string copy button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image119.png "Connection string copy")
-
-    ![In Notepad, the connection string displays.](images/Hands-onlabstep-by-step-AzureStackimages/media/image120.png "Notepad")
 
     > **Note**: If the copy to clipboard button does not work, you may need to highlight the key and copy by right-clicking. Some versions of Internet Explorer have issues with this functionality.
 
 
-### Task 3: Deploy SQL DB on Azure Stack 
+### Task 3: Deploy SQL DB on Azure Stack Hub 
 
-1.  In the Azure Stack User portal, select **+ Create a Resource**, **Data + Storage** followed by **SQL Database**.
+1.  In the Azure Stack Hub User portal, select **+ Create a Resource -\> Data + Storage -\> SQL Database**.
 
-    ![In the Azure Stack portal, in the New blade, Data and Storage is selected. In the Data and Storage blade, SQL Database is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image99.png "New blade")
+    ![In the Azure Stack Hub portal, in the New blade, Data and Storage is selected. In the Data and Storage blade, SQL Database is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image99.png "New blade")
 
 2.  Complete the **Create Database** with the following:
 
@@ -328,7 +334,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
     -   Resource group: **ContosoFinanceWeb**
 
-    -   Location: **Local**
+    -   Location: **local**
 
         ![Screenshot of the Create database blade with fields set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image100.png "Create database blade")
 
@@ -360,7 +366,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
     ![Fields in the Create Database blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image106.png "Create Database blade")
 
-9.  Once the deployment completes, use the Azure Stack User portal to locate the **ContosoFinanceWebDB** in the **ContosoFinanceWeb** resource group. Select to examine the details of the new SQL DB running in Azure Stack PaaS.
+9.  Once the deployment completes, use the Azure Stack Hub User portal to locate the **ContosoFinanceWebDB** in the **ContosoFinanceWeb** resource group. Select to examine the details of the new SQL DB running in Azure Stack Hub PaaS.
 
     ![In the Resource group blade, under Name, ContosoFinanceWebDB is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image107.png "Resource group blade")
 
@@ -371,7 +377,7 @@ In this exercise, you will provision a website using the Azure Stack portal. The
     > **Note**: If the clipboard copy does not work, you can use the following sample text for your environment. You will need to alter this text to match your configuration.
 
     ```
-    Data Source=X.X.X.X,1433;Initial Catalog=ContosoFinanceWebDB;User ID=ContosoFinanceWebDB;Password=demo\@pass123
+    Data Source=sqlhost.local.cloudapp.azurestack.external,1433;Initial Catalog=ContosoFinanceWebDB;User ID=ContosoFinanceWebDB;Password=Demo\@pass123
     ```
 
 ### Task 4: Update the configuration strings
@@ -384,23 +390,21 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
     ![Screenshot of the App settings section.](images/Hands-onlabstep-by-step-AzureStackimages/media/image122.png "App settings")
 
-3.  Add a new **App setting** with the following values:
+3.  Add a new **App setting** with the following values and click **Save**:
 
-    -   App setting name: **AzureQueueConnectionString**
+    -   App Setting Name: **AzureQueueConnectionString**
 
-    -   Value: **Enter the Connection String for the Storage Account that was just created**.
+    -   Value: **Enter the Connection String for the Storage Account that you created earlier in this exercise**.
 
         ![Fields in the App settings section are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image123.png "App settings")
 
-4.  Move to your Notepad with the SQL Server Connection string copied from Azure Stack. Update the following items in the string:
+4.  Switch to Notepad containing the SQL Server Connection string copied from Azure Stack Hub and ensure that the password is set to `Demo@pass123`.
 
-    -   Password: **Demo@pass123**
-
-5.  Locate **Connection Strings** below App settings in the Azure Stack User portal, add a new **Connection String** with the following values:
+5.  Locate **Connection Strings** section (right below the **Application settings** section) in the Azure Stack Hub User portal, add a new **Connection String** with the following values:
 
     -   Name: **ContosoFinance**
 
-    -   Value: **Enter the Connection String for the SQL Database in Azure Stack you just updated**.
+    -   Value: **Enter the Connection String for the SQL Database in Azure Stack Hub you created earlier in this exercise**.
 
     -   Type: **SQLAzure**
 
@@ -410,13 +414,9 @@ In this exercise, you will provision a website using the Azure Stack portal. The
 
 ### Task 5: Publish the Contoso Financial Web Application
 
-The current version of the Azure Stack App Service Provider does not enable the deployment center feature yet. To enable the classic deployment feature, navigate to this URL before following the next steps:
+    > **Note:** The current version of the Azure Stack Hub App Service Provider does not enable the deployment center feature yet. 
 
-```
-https://portal.local.azurestack.external/?websitesExtension_oldvsts=true
-```
-
-1.  From within the web app blade, select **Deployment options**.
+1.  From within the web app blade, select **Deployment options (Classic)**.
 
     ![Deployment options is selected under Deployment.](images/Hands-onlabstep-by-step-AzureStackimages/media/image125.png "Deployment options")
 
@@ -430,9 +430,11 @@ https://portal.local.azurestack.external/?websitesExtension_oldvsts=true
     https://github.com/opsgility/contosofinanceweb
     ```
 
-4.  Select the **Deployment options** button and monitor until the application is deployed.
+    ![In the Deployment option blade, Repository ULR is set. In the Choose source blade, External Repository is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image126b.png "Deployment options")
 
-5.  Select the **Overview** tab, and then select the URL. You should see the Contoso Finance web app.
+4.  Display the **Deployment options (Classic)** blade, monitor the deployment and wait until the web app is deployed.
+
+5.  Select the **Overview** tab, and then click the URL. This should automatically open a new browser tab displaying the Contoso Finance web app.
 
     ![The URL is selected in the App Service blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image127.png "App Service blade")
 
@@ -446,21 +448,21 @@ https://portal.local.azurestack.external/?websitesExtension_oldvsts=true
 
 Duration: 15-30 minutes
 
-In this exercise, you will provision an Azure API App using the Azure Stack portal. This API application is part of the front-end Web Applications and makes recommendations to the user on products the company wishes to highlight. The API App will leverage the SQL Database deployed previously.
+In this exercise, you will provision an Azure API App using the Azure Stack Hub portal. This API application is part of the front-end Web Applications and makes recommendations to the user on products the company wishes to highlight. The API App will leverage the SQL Database deployed previously.
 
 ### Task 1: Provision the offers Web API App
 
-1.  Using the Azure Stack User portal, select **+Create a resource**, **Web + Mobile**, and select **API App**.
+1.  Using the Azure Stack Hub User portal, select **+Create a resource -\> Web + Mobile -\> API App**.
 
     ![Screenshot of the API App button.](images/Hands-onlabstep-by-step-AzureStackimages/media/image129.png "API App")
 
 2.  Select **Create**.
 
-3.  On the new **API App** blade, **specify a unique name** for the App Name, and ensure the previously used Resource Group and App Service Plan is selected.
+3.  On the new **API App** blade, **specify a unique name** for the App Name, and ensure the previously used Resource Group and App Service Plan are selected.
 
 4.  After the values are accepted select **Create**.
 
-5.  On the **App Service** blade, scroll down, and select **CORS** within the API section of the left pane.
+5.  Navigate to the blade of the newly provisioned API app, on the **App Service** blade, scroll down, and select **CORS** within the API section of the left pane.
 
     ![Under API, CORS is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image130.png "CORS")
 
@@ -470,27 +472,25 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
 7.  On the **App Service** blade for the Offers API, select **Application settings**.
 
-    ![Under Settings in the App Service blade, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image132.png "App Service blade")
-
 8.  Scroll down, and locate the **Connection strings** section.
 
     ![Screenshot of the Connection strings section.](images/Hands-onlabstep-by-step-AzureStackimages/media/image133.png "Connection strings")
 
-9.  Locate **Connection Strings** below App settings in the Azure global portal.  Add a new **Connection String** with the following values:
+9.  Add a new **Connection String** with the following values:
 
     -   Name: **ContosoFinance (must match exactly -- case sensitive)**
 
-    -   Value: **Enter the Connection String for the SQL Database in Azure Stack you just updated**.
+    -   Value: **Enter the Connection String for the SQL Database in Azure Stack Hub you provisioned in the previous exercise**.
 
-    -   Type: **SQL Database**
+    -   Type: **SQLAzure**
 
-        ![the Connection strings fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image124.png "Connection strings")
+        ![the Connection strings fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image133b.png "Connection strings")
 
 10. Select **Save**.
 
 ### Task 2: Deploy the Contoso.Apps.Financial.Offers project
 
-1.  From within the API app blade, select **Deployment options**.
+1.  From within the API app blade, select **Deployment options (Classic)**.
 
     ![Under Deployment, Deployment options is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image125.png "Deployment options")
 
@@ -504,23 +504,25 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
     https://github.com/opsgility/contosofinanceoffers
     ```
 
-4.  Select the **Deployment options** button and monitor until the application is deployed.
+4.  Display the **Deployment options (Classic)** blade, monitor the deployment, and wait until the API app is deployed.
 
-5.  On the **Overview** tab, copy the URL for the web app to the clipboard.
+5.  Switch to the **Overview** blade and copy the URL for the API app to the clipboard.
+
+    ![The URL is selected in the App Service blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image127b.png "App Service blade")
 
 ### Task 3: Update the Application Settings of the Web App with the API URL
 
-1.  Open the ContosoFinanceWeb application in the Azure Stack User portal and select Application settings.
+1.  Open the ContosoFinanceWeb application in the Azure Stack Hub User portal and select **Application settings**.
 
     ![In the App Service blade, under settings, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image134.png "App Service blade")
 
-2.  Scroll down and locate the **App settings** section
+2.  Scroll down and locate the **Application settings** section
 
     ![Screenshot of the App settings section.](images/Hands-onlabstep-by-step-AzureStackimages/media/image135.png "App Service blade")
 
-3.  Add a new **App Setting** with the following values:
+3.  Add a new **Application Setting** with the following values:
 
-    -   Key: **offersAPIUrl**
+    -   App Setting Name: **offersAPIUrl**
 
     -   Value: Enter the **HTTPS** URL for the Offers API App with **/api/get** appended to the end.
     
@@ -528,9 +530,9 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
        ![Under App settings, offersAPIUrl and its URL are selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image136.png "App settings")
 
-4.  Select **Save**.
-
     > **Note**: Ensure the API URL is using **SSL** (https://), or you will see a CORS errors when loading the webpage.
+
+4.  Select **Save**.
 
 5.  Connect to the URL of the **contosofinanceweb** Web App.
 
@@ -544,39 +546,43 @@ In this exercise, you will provision an Azure API App using the Azure Stack port
 
 Duration: 15-30 minutes
 
-Contoso wants to automate the process of generating applications in PDF format and using Azure Functions. In this exercise, you will provision a Function App using the Azure Stack portal. This Function App will watch the Azure Storage Queue for a message that the web application has submitted, process the application creating a PDF and storing it in Azure Blob Storage.
+Contoso wants to automate the process of generating applications in PDF format by using Azure Functions. In this exercise, you will provision a Function App using the Azure Stack Hub portal. This Function App will watch the Azure Storage Queue for a message that the web application has submitted, process the application creating a PDF and storing it in Azure Blob Storage.
 
 ### Task 1: Create an Azure function to generate PDF receipts
 
-1.  From your Azure Stack Host, navigate to the following repository: and select **Clone or download**, and then **Download ZIP**. After the file is downloaded, extract it to a new folder.
+1.  From your Azure Stack Hub Host, navigate to the following repository: and select **Clone or download**, and then **Download ZIP**. After the file is downloaded, extract it to a new folder named **C:\\HoL**.
 
     ```
     https://github.com/opsgility/contosofinancefunction
     ```
 
-    ![In the Azure Stack Host, the Clone or download button is selected, and under Clone with HTTPS, the Download ZIP button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image139.png "Azure Stack Host")
+    ![In the Azure Stack Hub Host, the Clone or download button is selected, and under Clone with HTTPS, the Download ZIP button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image139.png "Azure Stack Hub Host")
 
-2.  From the User portal, select **+Create a resource**, **Web + Mobile**, and then select **Function App**.
+2.  From the User portal, select **+Create a resource -/> Web + Mobile -/> Function App**.
 
     ![Function App option screenshot](images/Hands-onlabstep-by-step-AzureStackimages/media/image140.png "Function App option")
 
-3.  Complete the **Create Function App** blade using the following inputs:
+3.  Specify the following settings on the **Create Function App** blade using the following inputs:
 
-    -   App name: **Specify a unique name**.
+    -   App name: **Specify a unique name**
+
+    -   Subscription: **Production**
 
     -   Resource Group: **ContosoFinanceWeb**
 
-    -   Hosting Plan: **App Service Plan**
+    -   Hosting Plan: **Consumption Plan**
 
-    -   App Service plan/Location: **ContosoFinanceWeb**
+    -   Location: **local**
 
-    -   Storage Account: **Select your storage account**.
+    -   Runtime Stack: **.NET**
 
-        ![Create blade fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image141.png "Create blade")
+    -   Storage Account: **Use existing**
+
+        ![Create new app service plan blade is displayed.](images/Hands-onlabstep-by-step-AzureStackimages/media/image141b.png "Create App Service plan blade")
 
 4.  Select **Create**.
 
-5.  Using the Azure Stack portal, open the Function App you just created, select **Functions** and then **New function**.
+5.  Using the Azure Stack Hub portal, open the Function App you just created, select **Functions** and then **New function**.
 
     ![The New function button is selected in the Function Apps blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image142.png "Function Apps blade")
 
@@ -616,25 +622,23 @@ Contoso wants to automate the process of generating applications in PDF format a
 
     ![Under View files, run.csx is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image147.png "View files")
 
-11. Select the **name of your function app** followed by **Application settings**.
+11. Select the **name of your function app** followed by **Platform features**, followed by **Configuration**.
 
     ![The previously mentioned settings are selected in the Function Apps blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image148.png "Function Apps blade")
 
-12. Scroll down to the **Application settings** and select **+Add new setting** to add a storage connection. This storage account will be used to write the PDFs to blob storage.
+12. In the **Application settings** section, select **New application setting** to add a storage connection. This storage account will be used to write the PDFs to blob storage.
 
     -   Name: **contosofinancestorage (must be this name exactly)**
 
     -   Value: **Paste the connection string for the storage account created earlier in the lab**.
 
-13. Locate **Connection Strings** below Application settings in the Azure Stack User portal, and select **+Add a new** **Connection String** with the following values:
+13. Locate **Connection strings** below Application settings in the Azure Stack Hub User portal, select **New connection string** and add a new connection string with the following values:
 
     -   Name: **ContosoFinance (must match exactly -- case sensitive)**
 
-    -   Value: **Enter the Connection String for the SQL Database**.
+    -   Value: **Enter the Connection String for the SQL Database in Azure Stack Hub you created earlier in this lab**.
 
-    -   Type: **SQL Azure**
-
-        ![Under Application settings, ContosoFinance is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image149.png "Application settings")
+    -   Type: **SQLAzure**
 
 14. Scroll back up to the top of the blade and select **Save**.
 
@@ -648,7 +652,7 @@ In this exercise, you will provision the admin website to be used by employees t
 
 ### Task 1: Provision the Contoso Finance Admin Web App
 
-1.  In the Azure Stack User portal, select **+Create new resource**, **Web + Mobile**, and select **Web App**.
+1.  In the Azure Stack Hub User portal, select **+Create new resource -/> Web + Mobile -/> Web App**.
 
 2.  Specify a **unique URL** for the Web App, ensure the **same App Service Plan** as well as the **ContosoFinanceWeb** resource group you have used throughout the lab are selected.
 
@@ -662,27 +666,23 @@ In this exercise, you will provision the admin website to be used by employees t
 
 5.  On the **App Service** blade, select **Application settings** in the left pane.
 
-    ![Under Settings, Application settings is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image154.png "Application settings")
-
 6.  Scroll down and locate the **Connection strings** section.
 
     ![Screenshot of the App Services blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image155.png "App Services blade")
 
-7.  Locate **Connection Strings** below App settings in the Azure Stack User portal add a new **Connection String** with the following values:
+7.  Locate **Connection Strings** below App settings in the Azure Stack Hub User portal add a new **Connection String** with the following values:
 
     -   Name: **ContosoFinance**
 
-    -   Value: **Enter the Connection String for the SQL Database in Azure Stack you just updated**.
+    -   Value: **Enter the Connection String for the SQL Database in Azure Stack Hub you created earlier in this lab**.
 
-    -   Type: **SQL Database**
-
-        ![Connection strings fields screenshot.](images/Hands-onlabstep-by-step-AzureStackimages/media/image124.png "Connection strings")
+    -   Type: **SQLAzure**
 
 8.  Select **Save**.
 
 ### Task 2: Deploy the call center admin Web App from Visual Studio
 
-1.  From within the web app blade, select **Deployment options**.
+1.  From within the web app blade, select **Deployment options (Classic)**.
 
     ![Under Deployment, Deployment options is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image125.png "Deployment options")
 
@@ -698,13 +698,13 @@ In this exercise, you will provision the admin website to be used by employees t
 
 4.  Select the Deployment options button and monitor until the application is deployed.
 
-5.  On the **Overview** tab, copy the URL for the web app to the clipboard.
+5.  On the **Overview** tab, click the URL of the web app. This should automatically open another browser window tab displaying the web app.
 
-6.  Connect to the **contosofinanceadmin** portal to see the list of applications that have been completed.
+6.  On the **contosofinanceadmin** portal, note that you have the option of viewing completed applications.
 
-    ![Screenshot of the Contoso webpage for Contoso Finance Admin.](images/Hands-onlabstep-by-step-AzureStackimages/media/image156.png "Contoso webpage")
+    > **Note**: At this point, the list of completed applications will be empty. You will create a sample application and view it via this web page in the next task of this exercise.
 
->**Note**: In production this application would be secured using Azure AD for authentication purposes.
+    > **Note**: In production this application would be secured using Azure AD for authentication purposes.
 
 7.  Since the application is fully deployed, you will want to see it work end to end. Open the URL for the contosofinanceweb Web App. The application will load in the browser.
 
@@ -732,7 +732,7 @@ In this exercise, you will provision the admin website to be used by employees t
 
     ![Screenshot of the Contoso webpage Contoso Finance Admin section.](images/Hands-onlabstep-by-step-AzureStackimages/media/image164.png "Contoso webpage")
 
-12. Notice the details of the application. This data is stored in SQL DB running in PaaS on Azure Stack. Select **Download application to view a sample PDF**.
+12. Notice the details of the application. This data is stored in SQL DB running in PaaS on Azure Stack Hub. Select **Download application to view a sample PDF**.
 
     ![Under Application Details, the Download application link is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image165.png "Application Details")
 
@@ -742,19 +742,19 @@ Duration: 10 minutes
 
 In this final task you will clean up the Azure Resources that you have create for the hands-on lab. This task is optional.
 
-1.  If provisioned using the Azure Stack Developer Kit in an Azure VM, delete the resource group your Azure Stack Host VM is running in.
+1.  If provisioned using the Azure Stack Hub Developer Kit in an Azure VM, delete the resource group your Azure Stack Hub Host VM is running in.
 
-2.  If running on your own Developer Kit, delete all the resource groups from the Azure Stack portal that you created during the execution of this lab.
+2.  If running on your own Developer Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
 
 You should follow all steps provided *after* attending the Hands-on lab.
 
->**NOTE**: This is the end of the *Azure Stack* hands-on lab path. The steps that follow are for the *Azure Stack Operations* hands-on lab path. If you wish to do this lab as well, you should verify that you have completed the prerequisite steps for *Azure Stack Operations* in the before the hands-on lab guide.
+>**NOTE**: This is the end of the *Azure Stack Hub* hands-on lab path. The steps that follow are for the *Azure Stack Hub Operations* hands-on lab path. If you wish to do this lab as well, you should verify that you have completed the prerequisite steps for *Azure Stack Hub Operations* in the before the hands-on lab guide.
 
-# Azure Stack Operations hands-on lab step-by-step
+# Azure Stack Hub Operations hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will perform common Azure Stack operational tasks by using the Azure Stack Development Kit. You will start by creating and publishing a custom Azure Marketplace item. Next, you will implement multi-tenant topology by provisioning another Azure Active Directory tenant and adding it to the existing Azure Stack environment. Once that is completed, you will set up delegation by using the delegated provider model and Azure Stack Role-Based Access Control (RBAC). You will conclude this lab by carrying out common Azure Stack operational tasks, including log collection (via Privileged Endpoint) and infrastructure backup (by using the Azure Stack Admin portal).
+In this hands-on lab, you will perform common Azure Stack Hub operational tasks by using the Azure Stack Hub Development Kit. You will start by creating and publishing a custom Azure Marketplace item. Next, you will implement multi-tenant topology by provisioning another Azure Active Directory tenant and adding it to the existing Azure Stack Hub environment. Once that is completed, you will set up delegation by using the delegated provider model and Azure Stack Hub Role-Based Access Control (RBAC). You will conclude this lab by carrying out common Azure Stack Hub operational tasks, including log collection (via Privileged Endpoint) and infrastructure backup (by using the Azure Stack Hub administrator portal).
 
 ## Overview
 
@@ -762,7 +762,7 @@ Contoso Finance is one of the largest banks in the United States with a signific
 
 As the result of a recent acquisition of a financial analytics company named Fabrikam, based in Houston, Texas, Contoso IT management team plans to integrate a number of Fabrikam's internally developed applications to process and analyze the customer data being used by the Contoso's customer facing mortgage application. Fabrikam has skilled development and infrastructure teams, with extensive Azure experience and its own Azure Active Directory tenant. Contoso is very interested in leveraging that experience and plans to offer the Fabrikam IT team sufficient level of autonomy when working on the integration tasks. That autonomy should include the ability of the Fabrikam IT team to offer to their users cloud resources required for application development, implementation, and maintenance. At the same time, Contoso wants to ensure proper governance and facilitate implementation of corporate standards via centralized control of the service catalog content and through automation. 
 
-During the planning stages, Contoso realized they would not be able to retain their customer data in US based Azure regions due to corporate compliance policies and regulatory issues. They have selected Azure Stack as the deployment method to take advantage of Azure technologies while still maintaining compliance.
+During the planning stages, Contoso realized they would not be able to retain their customer data in US based Azure regions due to corporate compliance policies and regulatory issues. They have selected Azure Stack Hub as the deployment method to take advantage of Azure technologies while still maintaining compliance.
 
 To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have datacenters located in Denver, London, Las Vegas, Dallas and Hong Kong SAR.
 
@@ -774,32 +774,32 @@ With these goals in mind, Contoso has challenged FT to help implement the hosted
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| Azure Stack overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
-| Azure Stack use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
-| Azure Stack features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
-| Azure Stack planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
-| Azure Stack documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
-| Deploy apps to Azure and Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
+| Azure Stack Hub overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
+| Azure Stack Hub use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
+| Azure Stack Hub features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
+| Azure Stack Hub planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
+| Azure Stack Hub documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
+| Deploy apps to Azure and Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
 | White paper | <https://azure.microsoft.com/en-us/resources/azure-stack-an-extension-of-azure/> |
-| PowerShell for Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
-| Azure Stack marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
+| PowerShell for Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
+| Azure Stack Hub marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
 
 
 ## Requirements
 
--   Complete all tasks described in **Before the HOL - Azure Stack - Operations**
+-   Complete all tasks described in **Before the HOL - Azure Stack Hub - Operations**
 
-## Exercise 1: Create and publish an Azure Stack Marketplace item
+## Exercise 1: Create and publish an Azure Stack Hub Marketplace item
 
 Duration: 90 minutes
 
-In this exercise, you will create and publish custom Azure Stack Marketplace items by using the Marketplace Toolkit.
+In this exercise, you will create and publish custom Azure Stack Hub Marketplace items by using the Marketplace Toolkit.
 
-   > **Note**: Azure Marketplace Toolkit is part of the Azure Stack Tools. 
+   > **Note**: Azure Marketplace Toolkit is part of the Azure Stack Hub Tools. 
 
-### Task 1: Set up tools and artifacts for publishing custom Azure Stack Marketplace items
+### Task 1: Set up tools and artifacts for publishing custom Azure Stack Hub Marketplace items
 
 1.  From the AzS-Host1 Azure VM, start Internet Explorer and navigate to http://aka.ms/azurestackmarketplaceitem.
 
@@ -831,13 +831,13 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 10. Save the resulting image as C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons\Screenshot.png.  When prompted whether to continue, select **OK** and close Microsoft Paint. 
 
-    > **Note**: You are using sample images for the sake of simplicity. When creating and publishing custom Azure Stack Marketplace solutions, you would create your own icons and screenshots that represent the characteristics of these solutions. Keep in mind that you must ensure that their sizes match those specified in the documentation available at https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md.
+    > **Note**: You are using sample images for the sake of simplicity. When creating and publishing custom Azure Stack Hub Marketplace solutions, you would create your own icons and screenshots that represent the characteristics of these solutions. Keep in mind that you must ensure that their sizes match those specified in the documentation available at https://github.com/Azure/portaldocs/blob/master/gallery-sdk/generated/index-gallery.md.
 
 11. Delete the file **C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\azuredeploy-101-simple-windows-vm.json**.
 
 12. Start Windows PowerShell ISE as administrator.
 
-13. From the Administrator: Windows PowerShell ISE window, download into the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ folder a sample template that provisions an Azure Stack web app:
+13. From the Administrator: Windows PowerShell ISE window, download into the C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\DeploymentTemplates\ folder a sample template that provisions an Azure Stack Hub web app:
 
      ```
      Invoke-WebRequest `
@@ -926,15 +926,15 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
      ```
      & 'C:\Downloads\Azure Stack Marketplace Item Generator and Sample\AzureGalleryPackageGenerator\AzureGalleryPackager.exe' package -m "C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\manifest.json" -o "C:\Downloads"
      ```
-2.  Start Internet Explorer and navigate to the Azure Stack Admin portal at https://adminportal.local.azurestack.external/.
+2.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/.
 
-3.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
+3.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
-4.  In the Azure Stack Admin portal, in the hub menu, select **+ Create a resource**.
+4.  In the Azure Stack Hub administrator portal, in the hub menu, select **+ Create a resource**.
 
 5.  On the New blade, select **Data + Storage** and then select **Storage account - blob, file, table, queue**.
 
-    ![In the Azure Stack Admin portal, Storage account - blob, file, table, queue is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image4.png "Storage account")
+    ![In the Azure Stack Hub administrator portal, Storage account - blob, file, table, queue is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image4.png "Storage account")
 
 6.  On the Create storage account blade, specify the following settings:
 
@@ -974,15 +974,15 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 17. In the Choose File to Upload text box, navigate to the location containing the package that you noted in the previous task, select the **Contoso.ContosoWebApp.1.0.0.azpkg** file and select **Open**.
 
-    ![In the Azure Stack Admin portal, the Upload blob pane shows the Contoso.ContosoWebApp.1.0.0.azpkg file to be uploaded.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image5.png "Upload blob pane")
+    ![In the Azure Stack Hub administrator portal, the Upload blob pane shows the Contoso.ContosoWebApp.1.0.0.azpkg file to be uploaded.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image5.png "Upload blob pane")
 
 18. Back on the Upload blob blade, select **Upload**.
 
-    > **Note**: Subsequent steps require Azure Stack PowerShell and tools installed. This was performed as part of **Azure Stack Before the Hands-on Lab setup guide**).
+    > **Note**: Subsequent steps require Azure Stack PowerShell and tools installed. This was performed as part of **Azure Stack Hub Before the Hands-on Lab setup guide**).
 
-19. From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant).
+19. From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant).
 
-    >**Note**: Azure Stack still uses the *AzureRM* cmdlets and does not yet support the newer *AzureAZ* cmdlets.
+    >**Note**: Azure Stack Hub still uses the *AzureRM* cmdlets and does not yet support the newer *AzureAZ* cmdlets.
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -998,9 +998,9 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
     Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
 
     ```
-20. When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack environment.
+20. When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
-21. From the Administrator: Windows PowerShell ISE window, publish the package to Azure Stack Marketplace by running the following (make sure to replace the placeholder <storageaccountname> with the name of the storage account you created earlier in this task):
+21. From the Administrator: Windows PowerShell ISE window, publish the package to Azure Stack Hub Marketplace by running the following (make sure to replace the placeholder <storageaccountname> with the name of the storage account you created earlier in this task):
 
     ```
     Add-AzsGalleryItem -GalleryItemUri `
@@ -1009,9 +1009,9 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 22. Ensure that the command completes successfully.
 
-23. Switch back to the Azure Stack Admin portal, in the hub menu, select **+ Create a resource**.
+23. Switch back to the Azure Stack Hub administrator portal, in the hub menu, select **+ Create a resource**.
 
-    > **Note**: Alternatively, you can use the Azure Stack User portal at <https://portal.local.azurestack.external/>. The newly added Marketplace item should be available in both.
+    > **Note**: Alternatively, you can use the Azure Stack Hub User portal at <https://portal.local.azurestack.external/>. The newly added Marketplace item should be available in both.
 
 24. On the New blade, select **Custom**.
 
@@ -1019,7 +1019,7 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
     > **Note**: It might take a few minutes for a newly added Marketplace item to appear.
 
-    ![In the Azure Stack Admin portal, Contoso WebApp custom Marketplace item is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image6.png "Contoso WebApp custom Marketplace item")
+    ![In the Azure Stack Hub administrator portal, Contoso WebApp custom Marketplace item is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image6.png "Contoso WebApp custom Marketplace item")
 
 26. On the Custom blade, select **Contoso WebApp**.
 
@@ -1031,18 +1031,18 @@ In this exercise, you will create and publish custom Azure Stack Marketplace ite
 
 30. Close all open windows.
 
-    > **Note**: In general, in order to ensure that the new Azure Stack Marketplace item is functional, you also need to satisfy all of the prerequisites for its deployment, such as OS images referenced by a VM template, are in place. 
+    > **Note**: In general, in order to ensure that the new Azure Stack Hub Marketplace item is functional, you also need to satisfy all of the prerequisites for its deployment, such as OS images referenced by a VM template, are in place. 
 
 
 ## Exercise 2: Implement multi-tenancy
 
 Duration: 30 minutes
 
-In this exercise, you will implement Azure Stack multi-tenancy.
+In this exercise, you will implement Azure Stack Hub multi-tenancy.
 
 ### Task 1: Create and configure a new Azure Active Directory tenant
 
-1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in by using an account with the Global Admin privileges to the Azure AD tenant associated with the Azure Stack environment.
+1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in by using an account with the Global Admin privileges to the Azure AD tenant associated with the Azure Stack Hub environment.
 
 2.  In the Azure portal, select **+ Create a resource**.
 
@@ -1118,17 +1118,17 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
 12. Select the **Directory + Subscription** icon (to the right of the Cloud Shell icon). 
 
-13. In the Directory + Subscription pane, in the Switch directory section, select the entry representing the Azure Active Directory tenant associated with the Azure Stack environment.
+13. In the Directory + Subscription pane, in the Switch directory section, select the entry representing the Azure Active Directory tenant associated with the Azure Stack Hub environment.
 
 14. In the Azure portal, select the user name appearing in the upper right corner, select **Sign out**, and then close the web browser window.
 
-### Task 2: Configure the existing Azure Stack Azure Active Directory tenant
+### Task 2: Configure the existing Azure Stack Hub Azure Active Directory tenant
 
 1.  Start Windows PowerShell ISE as administrator.
 
-    > **Note**: Subsequent steps require Azure Stack PowerShell and tools installed. This was performed as part of **Azure Stack - Operations - Before the hands-on lab setup guide**.
+    > **Note**: Subsequent steps require Azure Stack PowerShell and tools installed. This was performed as part of **Azure Stack Hub - Operations - Before the hands-on lab setup guide**.
 
-2.  From the Administrator: Windows PowerShell ISE window, set the current directory to the location of the Azure Stack Tools and import required PowerShell modules by running the following:
+2.  From the Administrator: Windows PowerShell ISE window, set the current directory to the location of the Azure Stack Hub Tools and import required PowerShell modules by running the following:
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -1136,7 +1136,7 @@ In this exercise, you will implement Azure Stack multi-tenancy.
     Import-Module .\Identity\AzureStack.Identity.psm1
     ```
 
-3.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
+3.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
 
     ```powershell
     Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external" `
@@ -1149,7 +1149,7 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
     Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
     ```
-4.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack environment.
+4.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
 5.  From the Administrator: Windows PowerShell ISE window, specify that you will accept identities from the newly created Azure Active Directory tenant by running the following (replace the placeholder `<contoso>` with the DNS name of the existing Azure AD tenant and the placeholder `<fabrikam>` with the DNS name of the newly created Azure AD tenant):
 
@@ -1170,7 +1170,7 @@ In this exercise, you will implement Azure Stack multi-tenancy.
       -SubscriptionName $SubscriptionName
      ```
 
-6.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack environment.
+6.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
 7.  Verify that the operation was successful and close the Administrator: Windows PowerShell ISE window.
 
@@ -1178,7 +1178,7 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
 1.  Start Windows PowerShell ISE as administrator.
 
-2.  From the Administrator: Windows PowerShell ISE window, set the current directory to the location of the Azure Stack Tools and import required PowerShell modules by running the following:
+2.  From the Administrator: Windows PowerShell ISE window, set the current directory to the location of the Azure Stack Hub Tools and import required PowerShell modules by running the following:
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -1186,7 +1186,7 @@ In this exercise, you will implement Azure Stack multi-tenancy.
     Import-Module .\Identity\AzureStack.Identity.psm1
     ```
 
-3.  From the Administrator: Windows PowerShell ISE window, register Azure Stack with the newly created Azure Active Directory tenant by running the following (replace the placeholder `<fabrikam>` with the DNS name of the newly created Azure AD tenant):
+3.  From the Administrator: Windows PowerShell ISE window, register Azure Stack Hub with the newly created Azure Active Directory tenant by running the following (replace the placeholder `<fabrikam>` with the DNS name of the newly created Azure AD tenant):
 
      ```
      $tenantARMEndpoint = "https://management.local.azurestack.external"
@@ -1202,9 +1202,9 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
 5.  Verify that the operation was successful and close the Administrator: Windows PowerShell ISE window.
 
-6.  To verify that the multi-tenancy has been configured properly, start Internet Explorer with the InPrivate Browsing option, navigate to the Azure Stack user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **FabrikamUser1** account you created in the first task of this exercise.
+6.  To verify that the multi-tenancy has been configured properly, start Internet Explorer with the InPrivate Browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **FabrikamUser1** account you created in the first task of this exercise.
 
-    > **Note**: Multi-tenancy provides the ability for users in the guest Azure Active Directory tenant to access the Azure Stack user portal (and their respective subscriptions), but not the Azure Stack Admin portal.
+    > **Note**: Multi-tenancy provides the ability for users in the guest Azure Active Directory tenant to access the Azure Stack Hub user portal (and their respective subscriptions), but not the Azure Stack Hub administrator portal.
 
 7.  Close all open windows.
 
@@ -1213,17 +1213,17 @@ In this exercise, you will implement Azure Stack multi-tenancy.
 
 Duration: 90 minutes
 
-In this exercise, you will implement Azure Stack delegation in a multi-tenant environment
+In this exercise, you will implement Azure Stack Hub delegation in a multi-tenant environment
 
    > **Note**: Implementing delegation in a single tenant environment follows the same procedure as the one described in this exercise. The only difference is that you delegate to identities (users and groups) which reside exclusively in the same Azure Active Directory tenant. 
 
-### Task 1: Create delegated operator and user Azure Active Directory accounts (as the Azure Stack operator)
+### Task 1: Create delegated operator and user Azure Active Directory accounts (as the Azure Stack Hub operator)
 
-1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
+1.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
 2.  In the Azure portal, select **Azure Active Directory**.
 
-3.  On the Azure Active Directory blade of the tenant associated with the Azure Stack environment, select **Users**.
+3.  On the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment, select **Users**.
 
 4.  On the Users - All users blade, select **+ New user**
 
@@ -1315,13 +1315,13 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 14. Leave the browser in private/incognito mode window open.
 
-### Task 2: Create a plan consisting of the Subscription service (as the Azure Stack operator)
+### Task 2: Create a plan consisting of the Subscription service (as the Azure Stack Hub operator)
 
-1.  Start Internet Explorer and navigate to the Azure Stack Admin portal at https://adminportal.local.azurestack.external/.
+1.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/.
 
-2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
+2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
-3.  In the Azure Stack Admin portal, select **+ Create a resource**. 
+3.  In the Azure Stack Hub administrator portal, select **+ Create a resource**. 
 
 4.  On the New blade, select **Offers + Plans** and then select **Plan**.
 
@@ -1335,25 +1335,25 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Resource group: name of a new resource group **dp-RG**
 
-    ![In the Azure Stack admin portal, the Basics tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image7.png "Basics tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image7.png "Basics tab of the New plan blade")
 
 6.  Select the **Services** tab.
 
 7.  On the Services tab of the New plan blade, select the **Microsoft.Subscriptions** checkbox.
 
-    ![In the Azure Stack admin portal, the Services tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image8.png "Services tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Services tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image8.png "Services tab of the New plan blade")
 
 8.  Select **Quotas**.
 
 9.  On the Quotas tab of the New plan blade, in the **Microsoft.Subscriptions** drop down list, select **delegatedProviderQuota**.
 
-    ![In the Azure Stack admin portal, the Quotas tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image9.png "Quotas tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Quotas tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image9.png "Quotas tab of the New plan blade")
 
 10. Select **Review + create** and then select **Create**. 
 
-### Task 3: Create an offer based on the plan consisting of the Subscriptions service (as the Azure Stack operator)
+### Task 3: Create an offer based on the plan consisting of the Subscriptions service (as the Azure Stack Hub operator)
 
-1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
+1.  In the Azure Stack Hub administrator portal, select **+ Create a resource**. 
 
 2.  On the New blade, select **Offers + Plans** and then select **Offer**.
 
@@ -1369,19 +1369,19 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Make this offer public?: **No**
 
-    ![In the Azure Stack admin portal, the Basics tab of the New offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image10.png "Basics tab of the New offer blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the New offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image10.png "Basics tab of the New offer blade")
 
 4.  Select the **Base plans** tab.
 
 5.  On the **Base plans** tab of the Create a new offer blade, select the **DP-subscription-plan1** checkbox.
 
-    ![In the Azure Stack admin portal, the Base plans tab of the New offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image11.png "Base plans tab of the New offer blade")
+    ![In the Azure Stack Hub administrator portal, the Base plans tab of the New offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image11.png "Base plans tab of the New offer blade")
 
 6.  Do not include Add-on plans, select **Review + create**, and then select **Create**. 
 
-### Task 4: Create new subscriptions containing the offer with the delegated providers as their subscriber (as the Azure Stack operator)
+### Task 4: Create new subscriptions containing the offer with the delegated providers as their subscriber (as the Azure Stack Hub operator)
 
-1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
+1.  In the Azure Stack Hub administrator portal, select **+ Create a resource**. 
 
 2.  On the New blade, select **Offers + Plans** and then select **Subscription**.
 
@@ -1393,13 +1393,13 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Offer: **Subscription-for-dp-offer1**
 
-    -  Directory tenant: The Azure Active Directory tenant associated with the Azure Stack environment.
+    -  Directory tenant: The Azure Active Directory tenant associated with the Azure Stack Hub environment.
 
-    ![In the Azure Stack admin portal, the New user subscription blade for Contoso is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image12.png "New user subscription blade")
+    ![In the Azure Stack Hub administrator portal, the New user subscription blade for Contoso is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image12.png "New user subscription blade")
 
 4.  Select **Create**. 
 
-5.  In the Azure Stack Admin portal, select **+ Create a resource**. 
+5.  In the Azure Stack Hub administrator portal, select **+ Create a resource**. 
 
 6.  On the New blade, select **Offers + Plans** and then select **Subscription**.
 
@@ -1411,15 +1411,15 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Offer: **Subscription-for-dp-offer1**
 
-    -  Directory tenant: The Fabrikam Azure Active Directory tenant which you associated with the Azure Stack environment in the previous exercise.
+    -  Directory tenant: The Fabrikam Azure Active Directory tenant which you associated with the Azure Stack Hub environment in the previous exercise.
 
-    ![In the Azure Stack admin portal, the New user subscription blade for Fabrikam is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image13.png "New user subscription blade")
+    ![In the Azure Stack Hub administrator portal, the New user subscription blade for Fabrikam is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image13.png "New user subscription blade")
 
 8.  Select **Create**. 
 
-### Task 5: Create a plan to be delegated by delegated providers to users (as the Azure Stack operator)
+### Task 5: Create a plan to be delegated by delegated providers to users (as the Azure Stack Hub operator)
 
-1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
+1.  In the Azure Stack Hub administrator portal, select **+ Create a resource**. 
 
 2.  On the New blade, select **Offers + Plans** and then select **Plan**.
 
@@ -1433,13 +1433,13 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Resource group: **dp-RG**
 
-    ![In the Azure Stack admin portal, the Basics tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image14.png "Basics tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image14.png "Basics tab of the New plan blade")
 
 4.  Select the **Services** tab.
 
 5.  On the Services tab of the New plan blade, select the **Microsoft.Storage** checkbox.
 
-    ![In the Azure Stack admin portal, the Services tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image15.png "Services tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Services tab of the New plan blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image15.png "Services tab of the New plan blade")
 
 6.  Select the **Quotas** tab.
 
@@ -1453,15 +1453,15 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Total number of storage accounts: **1**
 
-    ![In the Azure Stack admin portal, the Quotas tab of the New plan blade and the Create Storage quotas blade are displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image16.png "Quotas tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Quotas tab of the New plan blade and the Create Storage quotas blade are displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image16.png "Quotas tab of the New plan blade")
 
 9.  Select **OK**. This will automatically set the **Microsoft Storage** drop-down list entry to **dp-storage-quota1**.
 
 10. Select **Review + create** and then select **Create**. 
 
-### Task 6: Create an offer based on the plan containing Microsoft.Storage (as the Azure Stack operator)
+### Task 6: Create an offer based on the plan containing Microsoft.Storage (as the Azure Stack Hub operator)
 
-1.  In the Azure Stack Admin portal, select **+ Create a resource**. 
+1.  In the Azure Stack Hub administrator portal, select **+ Create a resource**. 
 
 2.  On the New blade, select **Offers + Plans** and then select **Offer**.
 
@@ -1477,19 +1477,19 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Make this offer public?: **No**
 
-    ![In the Azure Stack admin portal, the Basics tab of the Create a new offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image17.png "Basics tab of the Create a new offer blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the Create a new offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image17.png "Basics tab of the Create a new offer blade")
 
 4.  Select the **Base plans** tab.
 
 5.  On the Base plans tab of the Create a new offer blade, select the **DP-services-plan1** checkbox.
 
-    ![In the Azure Stack admin portal, the Base plans tab of the Create a new offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image18.png "Base plans tab of the Create a new offer blade")
+    ![In the Azure Stack Hub administrator portal, the Base plans tab of the Create a new offer blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image18.png "Base plans tab of the Create a new offer blade")
 
 6.  Do not include Add-on plans, select **Review + create**, and then select **Create**. 
 
-### Task 7: Delegate the offer to delegated providers (as the Azure Stack operator)
+### Task 7: Delegate the offer to delegated providers (as the Azure Stack Hub operator)
 
-1.  In the Azure Stack Admin portal, select **All services** and then select **Offers**. 
+1.  In the Azure Stack Hub administrator portal, select **All services** and then select **Offers**. 
 
 2.  On the Offers blade, select **services-for-dp-offer1**.
 
@@ -1503,11 +1503,11 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Pick the delegated provider subscription: **Contoso-DP-subscription1**.
 
-    ![In the Azure Stack admin portal, the Delegate offer for Contoso subscriptions blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image19.png "Delegate offer")
+    ![In the Azure Stack Hub administrator portal, the Delegate offer for Contoso subscriptions blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image19.png "Delegate offer")
 
 6.  Select **Delegate**. 
 
-7.  In the Azure Stack Admin portal, select **All services** and then select **Offers**. 
+7.  In the Azure Stack Hub administrator portal, select **All services** and then select **Offers**. 
 
 8.  On the Offers blade, select **services-for-dp-offer1**.
 
@@ -1521,17 +1521,17 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Pick the delegated provider subscription: **Fabrikam-DP-subscription1**.
 
-    ![In the Azure Stack admin portal, the Delegate offer for Fabrikam subscriptions blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image20.png "Delegate offer")
+    ![In the Azure Stack Hub administrator portal, the Delegate offer for Fabrikam subscriptions blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image20.png "Delegate offer")
 
 12. Select **Delegate**. 
 
-### Task 8: Create a delegated provider offer for Contoso users (as the Contoso delegated provider) based on offer from the Azure Stack operator
+### Task 8: Create a delegated provider offer for Contoso users (as the Contoso delegated provider) based on offer from the Azure Stack Hub operator
 
    > **Note**: This will allow Contoso users to create subscriptions based on the offer from the delegated provider.
 
-1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Contoso AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
+1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Contoso AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-2.  In the Azure Stack user portal, select **All services** and then select **Offers**. 
+2.  In the Azure Stack Hub user portal, select **All services** and then select **Offers**. 
 
 3.  On the Create a new offer blade, select **Delegated offer**.
 
@@ -1547,7 +1547,7 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Resource group: the name of a new resource group **Contoso-dp1-RG**.
 
-    ![In the Azure Stack user portal, the Create a new offer for Contoso is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image21.png "Create a new offer")
+    ![In the Azure Stack Hub user portal, the Create a new offer for Contoso is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image21.png "Create a new offer")
 
 6.  Select **Create**. 
 
@@ -1557,9 +1557,9 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 8.  On the blade of the newly created offer, select **Change state** and, in the drop-down list, select **Public**.
 
-    ![In the Azure Stack user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image22.png "delegated-services-for-dp-offer1 blade")
+    ![In the Azure Stack Hub user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image22.png "delegated-services-for-dp-offer1 blade")
 
-9.  In the Azure Stack user portal, select **All services**. 
+9.  In the Azure Stack Hub user portal, select **All services**. 
 
 10. In the list of services, select **Subscriptions**.
 
@@ -1571,15 +1571,15 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     > **Note**: Tenants need to subscribe to the offer from that URL.
 
-14. Sign out from the Azure Stack tenant portal and close the web browser window.
+14. Sign out from the Azure Stack Hub tenant portal and close the web browser window.
 
-### Task 9: Create a delegated provider offer for Fabrikam users (as the Fabrikam delegated provider) based on offer from the Azure Stack operator
+### Task 9: Create a delegated provider offer for Fabrikam users (as the Fabrikam delegated provider) based on offer from the Azure Stack Hub operator
 
    > **Note**: This will allow Fabrikam users to create subscriptions based on the offer from the delegated provider.
 
-1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Fabrikam AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
+1.  Start a web browser with the InPrivate Browsing option, navigate to the Azure Stack Hub user portal at <https://portal.local.azurestack.external/> and, when prompted, authenticate by using the **Fabrikam AzSDP1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-2.  In the Azure Stack user portal, select **All services** and then select **Offers**. 
+2.  In the Azure Stack Hub user portal, select **All services** and then select **Offers**. 
 
 3.  On the Offers blade, select **+ Add**.
 
@@ -1597,7 +1597,7 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     -  Resource group: the name of a new resource group **Fabrikam-dp1-RG**
 
-    ![In the Azure Stack user portal, the Create a new offer for Fabrikam is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image23.png "Create a new offer")
+    ![In the Azure Stack Hub user portal, the Create a new offer for Fabrikam is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image23.png "Create a new offer")
 
 7.  Select **Create**. 
 
@@ -1607,9 +1607,9 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 9.  On the blade of the newly created offer, select **Change state** and, in the drop-down list, select **Public**.
 
-    ![In the Azure Stack user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image24.png "Change state drop-down list")
+    ![In the Azure Stack Hub user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image24.png "Change state drop-down list")
 
-10. In the Azure Stack user portal, select **All services**. 
+10. In the Azure Stack Hub user portal, select **All services**. 
 
 11. In the list of services, select **Subscriptions**.
 
@@ -1621,15 +1621,15 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
     > **Note**: Tenants need to subscribe to the offer from that URL.
 
-15. Sign out from the Azure Stack tenant portal and close the web browser window.
+15. Sign out from the Azure Stack Hub tenant portal and close the web browser window.
 
 ### Task 10: Sign up for the delegated provider's offer (as a Contoso user)
 
 1.  Start a web browser with the InPrivate Browsing option, navigate to the Contoso delegated provider portal URL you identified earlier in this exercise, and, when prompted, authenticate by using the **Contoso User1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-    > **Note**: Make sure **NOT** to use the Azure Stack user portal URL in this case.
+    > **Note**: Make sure **NOT** to use the Azure Stack Hub user portal URL in this case.
 
-2.  In the Azure Stack user portal, select **Get a subscription** on the dashboard. 
+2.  In the Azure Stack Hub user portal, select **Get a subscription** on the dashboard. 
 
 3.  On the Get a subscription blade, in the Display name text box, type **Contoso-user1-subscription1**.
 
@@ -1645,9 +1645,9 @@ In this exercise, you will implement Azure Stack delegation in a multi-tenant en
 
 1.  Start a web browser with the InPrivate Browsing option, navigate to the Fabrikam delegated provider portal URL you identified earlier in this exercise, and, when prompted, authenticate by using the **Fabrikam User1** account you created in the first task of this exercise. In the Update your password window, change the password to **demo@pass123**.
 
-    > **Note**: Make sure NOT to use the Azure Stack user portal URL in this case.
+    > **Note**: Make sure NOT to use the Azure Stack Hub user portal URL in this case.
 
-2.  In the Azure Stack user portal, select **Get a subscription** on the dashboard. 
+2.  In the Azure Stack Hub user portal, select **Get a subscription** on the dashboard. 
 
 3.  On the Get a subscription blade, in the Display name text box, type **Fabrikam-user1-subscription1**.
 
@@ -1670,7 +1670,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 1.  From the AzS-Host1 Azure VM, start Windows PowerShell ISE as administrator.
 
-2.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
+2.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following (make sure to replace the placeholder <tenant_name> with the name of your Azure Active Directory tenant):
 
     ```powershell
     Set-Location -Path '\AzureStack-Tools-master'
@@ -1686,9 +1686,9 @@ In this exercise, you will configure Role Based Access Control using a custom ro
     Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
 
     ```
-3.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack environment.
+3.  When prompted, sign in with your Azure Active Directory account that you provided when provisioning the Azure Stack Hub environment.
 
-4.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack as operator by running the following:
+4.  From the Administrator: Windows PowerShell ISE window, sign in to the Azure Stack Hub as operator by running the following:
 
     ```powershell
     $defaultProviderSubscriptionId = (Get-AzureRmSubscription -SubscriptionName 'Default Provider Subscription').Id
@@ -1760,11 +1760,11 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 6.  Sign out as FabrikamAdmin1 from the Azure portal and close the window of the web browser using in private/incognito mode.
 
-7.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
+7.  From the AzS-Host1 Azure VM, start a web browser, navigate to the Azure portal at <https://portal.azure.com>, and sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
 8.  In the Azure portal, select **Azure Active Directory**.
 
-9.  On the Azure Active Directory blade of the tenant associated with the Azure Stack environment, select **Users**.
+9.  On the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment, select **Users**.
 
 10. On the Users - All users blade, select **+ New user**.
 
@@ -1832,7 +1832,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Last name: not set
 
-    -  Personal message : **Welcome to the Contoso Azure Stack Azure Active Directory tenant**.
+    -  Personal message : **Welcome to the Contoso Azure Stack Hub Azure Active Directory tenant**.
 
     -  Groups: not set
 
@@ -1846,7 +1846,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Department : not set
 
-16. Start a web browser using in private/incognito mode and browse to the following URL (where `<existing_tenant>` represents the DNS name of the original Azure Active Directory tenant associated with your Azure Stack subscription).
+16. Start a web browser using in private/incognito mode and browse to the following URL (where `<existing_tenant>` represents the DNS name of the original Azure Active Directory tenant associated with your Azure Stack Hub subscription).
 
      ```
      https://portal.azure.com/#@<existing_tenant>.onmicrosoft.com
@@ -1858,7 +1858,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 19. Sign out as Fabrikam AzSReader1 from the Azure portal and close the window of the web browser using in private/incognito mode.
 
-20. Navigate back to the Azure Active Directory blade of the tenant associated with the Azure Stack environment and select **Groups**.
+20. Navigate back to the Azure Active Directory blade of the tenant associated with the Azure Stack Hub environment and select **Groups**.
 
 21. On the Groups - All groups blade, select **+ New group**
 
@@ -1868,7 +1868,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Group name: **ContosoAzSReaders**
 
-    -  Group description: **Contoso Azure Stack Readers**
+    -  Group description: **Contoso Azure Stack Hub Readers**
 
     -  Membership type: **Assigned**
 
@@ -1886,7 +1886,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Group name: **ContosoAzSReaders**
 
-    -  Group description: **Contoso Azure Stack Readers**
+    -  Group description: **Contoso Azure Stack Hub Readers**
 
     -  Membership type: **Assigned**
 
@@ -1904,7 +1904,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Group name: **ContosoAzSLogReaders**
 
-    -  Group description: **Contoso Azure Stack Log Readers**
+    -  Group description: **Contoso Azure Stack Hub Log Readers**
 
     -  Membership type: **Assigned**
 
@@ -1916,17 +1916,17 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 ### Task 3: Configure RBAC role assignments
 
-1.  Start Internet Explorer and navigate to the Azure Stack Admin portal at <https://adminportal.local.azurestack.external>.
+1.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at <https://adminportal.local.azurestack.external>.
 
-2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
+2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
-3.  In the Azure Stack Admin portal, select **All services** and then, in the list of services, select **Subscriptions**.
+3.  In the Azure Stack Hub administrator portal, select **All services** and then, in the list of services, select **Subscriptions**.
 
 4.  On the Subscriptions blade, select **Default Provider Subscription**. 
 
 5.  On the Default Provider Subscription blade, select **Access control (IAM)** and then select **+ Add**.
 
-    ![In the Azure Stack Admin portal, the Default Provider Subscription - Access control (IAM) is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image25.png "Default Provider Subscription")
+    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access control (IAM) is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image25.png "Default Provider Subscription")
 
 6.  In the **Add permissions** pane, specify the following settings and then select **Save**:
 
@@ -1934,7 +1934,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Select: **ContosoAzSLogReaders**
 
-    ![In the Azure Stack Admin portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a custom role selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image29.png "Add permissions blade")
+    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a custom role selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image29.png "Add permissions blade")
 
 7.  Back on the Default Provider Subscription - Access control (IAM) blade and then select **+ Add**.
 
@@ -1944,7 +1944,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Select: **ContosoAzSReaders**
 
-    ![In the Azure Stack Admin portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a built-in role selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image30.png "Add permissions blade")
+    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a built-in role selected is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image30.png "Add permissions blade")
 
 ## Exercise 5: Connect to and work with the Privileged Endpoint
 
@@ -1984,7 +1984,7 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
 1.  From the AzS-Host1 Azure VM, start Windows PowerShell ISE as administrator.
 
-2.  From the Administrator: Windows PowerShell ISE window, store in a variable the Azure Stack admin credentials that you will use to access Privileged Endpoint by running the following:
+2.  From the Administrator: Windows PowerShell ISE window, store in a variable the Azure Stack Hub admin credentials that you will use to access Privileged Endpoint by running the following:
 
      ```
      $adminUserName = 'azurestack\CloudAdmin'
@@ -2016,15 +2016,15 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
     > **Note**: The list should include only two accounts - AzureStackAdmin and CloudAdmin.
 
-### Task 4: Manage Azure Stack diagnostics log collection via the privileged endpoint.
+### Task 4: Manage Azure Stack Hub diagnostics log collection via the privileged endpoint.
 
-1.  From the PowerShell Remoting session in the Administrator: Windows PowerShell ISE window, in the console pane, collect Azure Stack storage logs by running the following:
+1.  From the PowerShell Remoting session in the Administrator: Windows PowerShell ISE window, in the console pane, collect Azure Stack Hub storage logs by running the following:
 
      ```
      Get-AzureStackLog -OutputSharePath '\\AzS-Host1\Logs' -OutputShareCredential $using:adminCredentials -FilterByRole Storage
      ```
 
-    > **Note**: On Azure Stack Development Kit systems, it is possible to run Get-AzureStackLog directly from the ASDK host. 
+    > **Note**: On Azure Stack Hub Development Kit systems, it is possible to run Get-AzureStackLog directly from the ASDK host. 
 
     > You have the option of filtering by role as well as specify the time window for which logs should be collected. For details, refer to https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-diagnostics.
 
@@ -2038,7 +2038,7 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
      Exit-PSSession
      ```
 
-## Exercise 6: Implement Azure Stack infrastructure backup
+## Exercise 6: Implement Azure Stack Hub infrastructure backup
 
 Duration: 30 minutes
 
@@ -2068,7 +2068,7 @@ Duration: 30 minutes
 
 ### Task 2: Create a backup share
 
-   > **Note**: In production scenarios (with Azure Stack integrated systems) you would configure a backup share on a highly available file server. When using Azure Stack Development Kit, you can use for this purpose the ASDK host.
+   > **Note**: In production scenarios (with Azure Stack Hub integrated systems) you would configure a backup share on a highly available file server. When using Azure Stack Hub Development Kit, you can use for this purpose the ASDK host.
 
 1.  On the AzS-Host1 Azure VM, start File Explorer. 
 
@@ -2128,11 +2128,11 @@ Duration: 30 minutes
 
 ### Task 4: Configure backup controller
 
-1.  Start Internet Explorer and navigate to the Azure Stack Admin portal at https://adminportal.local.azurestack.external/.
+1.  Start Internet Explorer and navigate to the Azure Stack Hub administrator portal at https://adminportal.local.azurestack.external/.
 
-2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack environment.
+2.  When prompted, sign in with the Azure Active Directory credentials you provided when provisioning the Azure Stack Hub environment.
 
-3.  In the Azure Stack Admin portal, select **All services**. 
+3.  In the Azure Stack Hub administrator portal, select **All services**. 
 
 4.  In the ADMINISTRATION section, select **Infrastructure backup**.
 
@@ -2154,7 +2154,7 @@ Duration: 30 minutes
 
     -  Certificate .cer file: **Select the folder icon and upload the public key of the certificate (C:\Certs\AzSIBackupCert.cer) you generated in the previous task**.
 
-    ![In the Azure Stack Admin portal, the Backup Controller settings blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image34.png "Backup Controller settings blade")
+    ![In the Azure Stack Hub administrator portal, the Backup Controller settings blade is displayed.](images.operations/Hands-onlabstep-by-step-AzureStackimages/media/image34.png "Backup Controller settings blade")
 
 7.  Back on the Infrastructure backup blade, select **Disable automatic backup**.
 
@@ -2164,8 +2164,8 @@ Duration: 10 minutes
 
 In this final task you will clean up the Azure Resources that you have create for the hands-on lab. This task is optional.
 
-1.  If provisioned using the Azure Stack Developer Kit in an Azure VM, delete the resource group your Azure Stack Host VM is running in.
+1.  If provisioned using the Azure Stack Hub Developement Kit in an Azure VM, delete the resource group your Azure Stack Hub Host VM is running in.
 
-2.  If running on your own Developer Kit, delete all the resource groups from the Azure Stack portal that you created during the execution of this lab.
+2.  If running on your own Developer Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
 
 You should follow all steps provided *after* attending the Hands-on lab.
