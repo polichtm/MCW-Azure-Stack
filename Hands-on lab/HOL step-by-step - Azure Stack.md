@@ -145,11 +145,9 @@ Duration: 15-30 minutes
 
 ![Screenshot of an Azure Stack Hub Deployment Taxonomy.](images/Hands-onlabstep-by-step-AzureStackimages/media/image69.png "Azure Stack Hub deployment")
 
-1. Within the Remote Desktop session to **AzSHOST-1**, start Internet Explorer and navigate to <https://adminportal.local.azurestack.external>
+1.  Within the Remote Desktop session to **AzSHOST-1**, start Internet Explorer and navigate to <https://adminportal.local.azurestack.external>
 
-1. When prompted, sign in with Azure AD user account with the Owner or a Contributor role in the Azure Stack Hub Default Provider subscription.
-
-1. In the Azure Stack Hub administrator portal, in the hub menu, 
+1.  When prompted, sign in with the **AzSHOperator** you created when following the **Before the hands-on lab guide**.
 
 1.  Select **+Create a resource** in the Azure Stack Hub administrator portal.
 
@@ -179,7 +177,7 @@ Duration: 15-30 minutes
 
     ![The Quotas blade displays with Microsoft SQL Adapter selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image75.png "Quotas blade")
 
-1. On the **Create Quota** blade, specify the following information and click **Create**:
+1.  On the **Create Quota** blade, specify the following information and click **Create**:
 
     -   Quota Name: **SQLQuota**
 
@@ -189,17 +187,17 @@ Duration: 15-30 minutes
 
     ![The Create Quota tab displays the specified settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image77.png "Create Quota blade")
 
-1. Select **Review + Create** and then confirm the creation. 
+1.  Select **Review + Create** and then confirm the creation. 
 
     ![The Quotas tab of the New plan blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image79.png "Quotas tab of the New plan blade")
 
 1.  Select **+ Create a resource** followed by **Create** in the Azure Stack Hub administrator portal. The Plan will deploy immediately.
 
-1. Select **Offers + Plans** followed by **Offer**.
+1.  Select **Offers + Plans** followed by **Offer**.
 
     ![In the Marketplace blade, Offers and Plans is selected. In the Featured Apps blade, Offer is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image81.png "Marketplace blade")
 
-1. Update the New offer blade using the following inputs. Then, select **Next: Base plans**.
+1.  Update the New offer blade using the following inputs. Then, select **Next: Base plans**.
 
     -   Display Name: **PROD-Offer-1**
 
@@ -211,23 +209,23 @@ Duration: 15-30 minutes
 
     ![Fields in the New Offer blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image82.png "New Offer blade")
 
-1. On the **Base plans** blade, check **PROD-Plan-1** and select **Review + create** and then **Create**.
+1.  On the **Base plans** blade, check **PROD-Plan-1** and select **Review + create** and then **Create**.
 
     ![Screenshot of the Resource group blade. Under Name, a callout points to prod-offer-1.](images/Hands-onlabstep-by-step-AzureStackimages/media/image83.png "Resource group blade")
 
-1. Open the new offer after it is created. Notice the portal shows a warning stating: "**This offer is private, and users cannot see it**." To fix this, select the **Change state** button.
+1.  Open the new offer after it is created. Notice the portal shows a warning stating: "**This offer is private, and users cannot see it**." To fix this, select the **Change state** button.
 
     ![In the Offer blade, warning displays, and the Change state button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image85.png "Offer blade")
 
-1. Select **Public**.
+1.  Select **Public**.
 
     ![Public is selected in the Change state menu.](images/Hands-onlabstep-by-step-AzureStackimages/media/image86.png "Change state menu")
 
-1. The portal will immediately provide a notification about the update to the offer.
+1.  The portal will immediately provide a notification about the update to the offer.
 
     ![Updated offer successfully message screenshot.](images/Hands-onlabstep-by-step-AzureStackimages/media/image87.png "Success")
 
-1. Next, open a new browser tab, and navigate to Azure Stack Hub User portal and select **Get Subscription**.
+1.  Next, open a new browser tab, and navigate to Azure Stack Hub User portal and select **Get Subscription**.
 
     ```
     https://portal.local.azurestack.external
@@ -238,11 +236,11 @@ Duration: 15-30 minutes
     > **Note**: This is the User portal Contoso Finance will use to provision and manage their Azure Stack Hub service.
 
 
-1. Give it the name: **Production** and select the **PROD-Offer-1** and select **Create**.
+1.  Give it the name: **Production** and select the **PROD-Offer-1** and select **Create**.
 
     ![In the Get a subscription blade, the Display name is Production. In the Choose an offer blade, PROD-Offer-1 is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image90.png "Get a subscription blade")
 
-1. You will need to Refresh the window to start using the new Subscription.
+1.  You will need to Refresh the window to start using the new Subscription.
 
     ![Under the Subscription created message, the Refresh button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image91.png "Refresh")
 
@@ -612,21 +610,21 @@ Contoso wants to automate the process of generating applications in PDF format b
 
     -   ViewModels.csx
 
-10. Select **run.csx** to refresh the code editor.
+10.  Select **run.csx** to refresh the code editor.
 
     ![Under View files, run.csx is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image147.png "View files")
 
-11. Select the **name of your function app** followed by **Platform features**, followed by **Configuration**.
+11.  Select the **name of your function app** followed by **Platform features**, followed by **Configuration**.
 
     ![The previously mentioned settings are selected in the Function Apps blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image148.png "Function Apps blade")
 
-12. In the **Application settings** section, select **New application setting** to add a storage connection. This storage account will be used to write the PDFs to blob storage.
+12.  In the **Application settings** section, select **New application setting** to add a storage connection. This storage account will be used to write the PDFs to blob storage.
 
     -   Name: **contosofinancestorage (must be this name exactly)**
 
     -   Value: **Paste the connection string for the storage account created earlier in the lab**.
 
-13. Locate **Connection strings** below Application settings in the Azure Stack Hub User portal, select **New connection string** and add a new connection string with the following values:
+13.  Locate **Connection strings** below Application settings in the Azure Stack Hub User portal, select **New connection string** and add a new connection string with the following values:
 
     -   Name: **ContosoFinance (must match exactly -- case sensitive)**
 
@@ -634,7 +632,7 @@ Contoso wants to automate the process of generating applications in PDF format b
 
     -   Type: **SQLAzure**
 
-14. Scroll back up to the top of the blade and select **Save**.
+14.  Scroll back up to the top of the blade and select **Save**.
 
     ![The Save button is selected in the Function Apps blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image150.png "Function Apps blade")
 
@@ -714,19 +712,19 @@ In this exercise, you will provision the admin website to be used by employees t
 
     ![Under Product Name, the Apply button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image160.png "Product Name")
 
-10. Complete the Application and select **Continue** followed by **Complete Application** on the confirmation screen.
+10.  Complete the Application and select **Continue** followed by **Complete Application** on the confirmation screen.
 
     ![Screenshot of the Contoso Finance application.](images/Hands-onlabstep-by-step-AzureStackimages/media/image161.png "Contoso Finance application")
 
     ![Screenshot of the Complete Application button.](images/Hands-onlabstep-by-step-AzureStackimages/media/image162.png "Complete Application")
 
-11. Now, to act as an employee, open the Admin application to see the submitted applications. Select **Details** on one of the applications.
+11.  Now, to act as an employee, open the Admin application to see the submitted applications. Select **Details** on one of the applications.
 
     ![The URL link is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image163.png "URL link")
 
     ![Screenshot of the Contoso webpage Contoso Finance Admin section.](images/Hands-onlabstep-by-step-AzureStackimages/media/image164.png "Contoso webpage")
 
-12. Notice the details of the application. This data is stored in SQL DB running in PaaS on Azure Stack Hub. Select **Download application to view a sample PDF**.
+12.  Notice the details of the application. This data is stored in SQL DB running in PaaS on Azure Stack Hub. Select **Download application to view a sample PDF**.
 
     ![Under Application Details, the Download application link is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image165.png "Application Details")
 

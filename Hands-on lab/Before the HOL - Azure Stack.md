@@ -274,6 +274,28 @@ In this task you will execute a script that will configure install and configure
 
 1. Return to the **Subscription** blade and repeat the previous two steps for the **Consumption Subscription** and **Metering Subscription**.
 
+    > **Note:** Use the **AzSHOperator** user account when running the lab.
+
+1. In the Azure Stack administrator portal, in the hub menu, click **All services**.
+
+1. On the **All Services** blade, click **App Service**.
+
+1. On the **App Service** blade, click **Roles**.
+
+    ![App Service - Roles blade is displayed.](images/Hands-onlabstep-by-step-AzureStackimages/media/image8.png "App Service - Roles")
+
+1. In the list of roles, in the **Web Worker** **Small** tier entry, right-click the ellipsis icon and, in the right click menu, click **ScaleSet**.
+
+1. On the **SmallWorkerTierScaleSet** blade, click **Scaling**.
+
+1. On the **SmallWorkerTierScaleSet - Scaling** blade, set **Instance count** to 1 and click **Save**.
+
+    ![SmallWorkerTierScaleSet - Scaling blade is displayed with Instance count set to 1.](images/Hands-onlabstep-by-step-AzureStackimages/media/image10.png "App Service - Roles")
+
+    > **Note:** App Service on Azure Stack Hub will now add the additional VM, configure it, install all the required software, and mark it as ready when this process is complete. This process should take approximately 30 minutes. To verify it, review the **SmallWorkerTierScaleSet - Instances** blade.
+
+    ![SmallWorkerTierScaleSet - Instances blade is displayed with the SmallWorkerTierScaleSet instance running.](images/Hands-onlabstep-by-step-AzureStackimages/media/image11.png "App Service - Roles")
+
     > **Note:** Many of the instructions ask you to copy/paste values from the Azure Stack Hub portal. The copy buttons do not work in IE. It is recommended to install Firefox or Chrome inside the Azure Stack Hub host. 
 
     ```
