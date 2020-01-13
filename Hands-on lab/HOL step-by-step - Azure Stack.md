@@ -736,9 +736,9 @@ Duration: 10 minutes
 
 In this final task you will clean up the Azure Resources that you have create for the hands-on lab. This task is optional.
 
-1.  If provisioned using the Azure Stack Hub Developer Kit in an Azure VM, delete the resource group your Azure Stack Hub Host VM is running in.
+1.  If provisioned using the Azure Stack Hub Development Kit in an Azure VM, delete the resource group your Azure Stack Hub Host VM is running in.
 
-2.  If running on your own Developer Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
+2.  If running on your own Development Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
 
 You should follow all steps provided *after* attending the Hands-on lab.
 
@@ -2160,6 +2160,6 @@ In this final task you will clean up the Azure Resources that you have create fo
 
 1.  If provisioned using the Azure Stack Hub Developement Kit in an Azure VM, delete the resource group your Azure Stack Hub Host VM is running in.
 
-2.  If running on your own Developer Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
+2.  If running on your own Development Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
 
 You should follow all steps provided *after* attending the Hands-on lab.

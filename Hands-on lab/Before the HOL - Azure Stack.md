@@ -28,20 +28,20 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Choose your lab](#choose-your-lab)
-- [Azure Stack Hub before the hands on lab setup guide](#azure-stack-before-the-hands-on-lab-setup-guide)
+- [Azure Stack Hub before the hands-on lab setup guide](#azure-stack-hub-before-the-hands-on-lab-setup-guide)
   - [Requirements](#requirements)
-  - [Before the hands on lab](#before-the-hands-on-lab)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
     - [Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit)
     - [Task 2: Install Azure Stack Hub Development Kit](#task-2-Install-Azure-Stack-Hub-Development-Kit)
     - [Task 3: Download and Run the Azure Stack Hub Configurator Script](#task-2-Download-and-Run-the-Azure-Stack-Hub-Configurator-Script)
     - [Task 4: Perform Post Installation Tasks](#task-2-Perform-Post-Installation-Tasks)
-- [Azure Stack Hub Operations before the hands-on lab setup guide](#azure-stack-operations-before-the-hands-on-lab-setup-guide)
+- [Azure Stack Hub Operations before the hands-on lab setup guide](#azure-stack-hub-operations-before-the-hands-on-lab-setup-guide)
   - [Requirements (Operations)](#requirements-operations)
-  - [Before the hands on lab (Operations)](#before-the-hands-on-lab-operations)
+  - [Before the hands-on lab (Operations)](#before-the-hands-on-lab-operations)
     - [Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit (Operations)](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit-Operations)
     - [Task 2: Install Azure Stack Hub Development Kit (Operations)](#task-2-Install-Azure-Stack-Hub-Development-Kit-Operations)
     - [Task 3: Prepare the Azure Stack Hub Operator Station](#task-3-Prepare-the-Azure-Stack-Hub-Operator-Station)
-    - [Task 4: Register the Azure Stack Hub Development Kit with Azure](#task-4-register-the-azure-stack-development-kit-with-azure)
+    - [Task 4: Register the Azure Stack Hub Development Kit with Azure](#task-4-register-the-azure-stack-hub-development-kit-with-azure)
 
 <!-- /TOC -->
 
@@ -53,13 +53,13 @@ The first hands-on lab involves starts with deploying the Azure Stack Hub Develo
 
 The second hands-on lab focuses on the Azure Stack Hub operational tasks. In this case, you will also start with deploying the Azure Stack Hub Development Kit, but the subsequent steps will differ. First, you will install the Azure Stack Hub tools. You will subsequently rely on them to create and publish a custom Azure Marketplace item as well as to implement multi-tenant topology by provisioning another Azure Active Directory tenant and adding it to the existing Azure Stack Hub environment. Once that is completed, you will set up delegation by using the delegated provider model and Azure Stack Hub Role-Based Access Control (RBAC). You will conclude this lab by carrying out common Azure Stack Hub maintenance tasks, including log collection (via Privileged Endpoint) and infrastructure backup (by using the Azure Stack Hub Admin portal).
 
-# Azure Stack Hub before the hands on lab setup guide 
+# Azure Stack Hub before the hands-on lab setup guide 
 
 ## Requirements
 
 -   A Microsoft Azure subscription.
 
-## Before the hands on lab
+## Before the hands-on lab
 
 Duration: 10-12 hours
 
@@ -294,7 +294,7 @@ You should complete these instructions *before* attending the workshop.
 -   An Azure subscription.
 -   An Azure Active Directory account with the Owner role in the Azure Subscription and the Global Administrator role in the corresponding Azure Active Directory tenant.
 
-## Before the hands on lab (Operations)
+## Before the hands-on lab (Operations)
 
 Duration: 7 hours
 
