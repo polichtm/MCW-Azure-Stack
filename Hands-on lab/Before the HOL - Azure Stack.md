@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -31,14 +31,14 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Azure Stack Hub before the hands-on lab setup guide](#azure-stack-hub-before-the-hands-on-lab-setup-guide)
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
-    - [Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit)
+    - [Task 1: Provision an Azure VM to host the Azure Stack Hub Development Kit](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit)
     - [Task 2: Install Azure Stack Hub Development Kit](#task-2-Install-Azure-Stack-Hub-Development-Kit)
-    - [Task 3: Download and Run the Azure Stack Hub Configurator Script](#task-2-Download-and-Run-the-Azure-Stack-Hub-Configurator-Script)
-    - [Task 4: Perform Post Installation Tasks](#task-2-Perform-Post-Installation-Tasks)
+    - [Task 3: Download and run the Azure Stack Hub Configurator Script](#task-3-Download-and-run-the-Azure-Stack-Hub-Configurator-Script)
+    - [Task 4: Perform post installation tasks](#task-4-Perform-post-installation-tasks)
 - [Azure Stack Hub Operations before the hands-on lab setup guide](#azure-stack-hub-operations-before-the-hands-on-lab-setup-guide)
   - [Requirements (Operations)](#requirements-operations)
   - [Before the hands-on lab (Operations)](#before-the-hands-on-lab-operations)
-    - [Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit (Operations)](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit-Operations)
+    - [Task 1: Provision an Azure VM to host the Azure Stack Hub Development Kit (Operations)](#task-1-Provision-an-Azure-VM-to-host-the-Azure-Stack-Hub-Development-Kit-Operations)
     - [Task 2: Install Azure Stack Hub Development Kit (Operations)](#task-2-Install-Azure-Stack-Hub-Development-Kit-Operations)
     - [Task 3: Prepare the Azure Stack Hub Operator Station](#task-3-Prepare-the-Azure-Stack-Hub-Operator-Station)
     - [Task 4: Register the Azure Stack Hub Development Kit with Azure](#task-4-register-the-azure-stack-hub-development-kit-with-azure)
@@ -67,7 +67,7 @@ To execute this lab, you will have two options: you can use your own Azure Stack
 
 For help with installation of the Azure Stack Hub Development Kit, review the following article: <https://azure.microsoft.com/en-us/overview/azure-stack/development-kit>.
 
-### Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit
+### Task 1: Provision an Azure VM to host the Azure Stack Hub Development Kit
 
 In this task, you will provision an Azure VM that will host the Azure Stack Development Kit deployment
 
@@ -77,15 +77,15 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
     http://aka.ms/AzureStackonAzureVM
     ```
 
-1. When prompted, authenticate by using your Azure AD account or Microsoft Account with the Owner role in the Azure subscription that you intend to use in this lab.
+2. When prompted, authenticate by using your Azure AD account or Microsoft Account with the Owner role in the Azure subscription that you intend to use in this lab.
 
-1. Specify the following options on the template settings:
+3. Specify the following options on the template settings:
 
-    - Subscription: the name of the target Azure subscription where you want to deploy the Azure VM serving as the ASDK host 
+    - Subscription: The name of the target Azure subscription where you want to deploy the Azure VM serving as the ASDK host.
 
-    - Resource group: a new resource group named **azurestack-RG**
+    - Resource group: A new resource group named **azurestack-RG**.
 
-    - Location: the name of the Azure region where you want to deploy the Azure VM serving as the ASDK host 
+    - Location: The name of the Azure region where you want to deploy the Azure VM serving as the ASDK host.
 
     - Virtual Machine Name: **AzS-HOST1**
 
@@ -107,11 +107,11 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
     - Public Ip Address Type: **Dynamic**
 
-    - Public Dns Name: any valid, globally unique name
+    - Public Dns Name: Any valid, globally unique name.
 
     - Auto Shutdown Status: **Disabled**
 
-    - Auto Shutdown Time: the default value
+    - Auto Shutdown Time: The default value.
 
     - Auto Shutdown Notification Status: **Disabled**
 
@@ -119,13 +119,13 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
     - Auto Install ASDK: **false**
 
-    - Azure AD Tenant: the DNS name of your Azure AD tenant
+    - Azure AD Tenant: The DNS name of your Azure AD tenant.
 
-    - Azure AD Global Admin: the name of an Azure AD user with the Global Admin role
+    - Azure AD Global Admin: The name of an Azure AD user with the Global Admin role.
 
-    - Azure AD Global Admin Password: the password of the Azure AD user with the Global Admin role
+    - Azure AD Global Admin Password: The password of the Azure AD user with the Global Admin role.
 
-    - ASDK Configurator Object: the default value
+    - ASDK Configurator Object: The default value.
 
     - Enable RDSH: **false**
 
@@ -133,11 +133,11 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
     - Site Location: **[resourceGroup().location]**
 
-    Enable the checkbox **I agree to the terms and conditions stated above** and click **Purchase** when you are ready to deploy the VM.
+    Enable the checkbox **I agree to the terms and conditions stated above** and select **Purchase** when you are ready to deploy the VM.
 
     > **Note:** This deployment may take about 15 minutes to complete.
 
-3.  Wait until the deployment completes and login to the **AzS-HOST1** virtual machine via Remote Desktop using the following credentials:
+4.  Wait until the deployment completes and login to the **AzS-HOST1** virtual machine via Remote Desktop using the following credentials:
 
     - Username: **Administrator**
 
@@ -148,11 +148,11 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
 In this task you will execute a script that will download and provision Azure Stack Hub Development Kit on the newly deployed Azure VM
 
-1. Within the Remote Desktop session to **AzSHOST-1**, right-click Start and then click Command Prompt (Admin)
+1. Within the Remote Desktop session to **AzSHOST-1**, right-click Start and then select Command Prompt (Admin).
 
-1. Within the Remote Desktop session to **AzSHOST-1**, start Windows PowerShell as administrator.
+2. Within the Remote Desktop session to **AzSHOST-1**, start Windows PowerShell as administrator.
 
-1. From the Administrator: Windows PowerShell window, set values of the variables that will be used by the installation script by running the following (ensure you replace the placeholder values, where `[azure-admin-upn]` and `[azure-admin-password]` designate the user name and password of the account with the Owner role in the Azure subscription you are using in this lab and the Global Administrator role in the Azure AD tenant associated with that subscription):
+3. From the Administrator: Windows PowerShell window, set values of the variables that will be used by the installation script by running the following (ensure you replace the placeholder values, where `[azure-admin-upn]` and `[azure-admin-password]` designate the user name and password of the account with the Owner role in the Azure subscription you are using in this lab and the Global Administrator role in the Azure AD tenant associated with that subscription):
 
     ```powershell
     Set-Location -Path 'C:\AzureStackOnAzureVM'
@@ -162,7 +162,7 @@ In this task you will execute a script that will download and provision Azure St
     $azcred = New-Object System.Management.Automation.PSCredential ('[azure-admin-upn]', $azpass)
     ```
 
-1. From the Administrator: Windows PowerShell window, invoke the installation of Azure Stack Hub Development Kit by running the following (ensure you replace the placeholder values, where `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab):
+4. From the Administrator: Windows PowerShell window, invoke the installation of Azure Stack Hub Development Kit by running the following (ensure you replace the placeholder values, where `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab):
 
     ```powershell
     .\Install-ASDK.ps1 -DownloadASDK -DeploymentType AAD -LocalAdminPass $localAdminPass -AADTenant [tenant].onmicrosoft.com -version '1907-20' -InfraAzureDirectoryTenantAdminCredential $azcred
@@ -170,7 +170,7 @@ In this task you will execute a script that will download and provision Azure St
 
     > **Note:** After about 75 minutes, the Azure VM will automatically restart.
 
-1. Once the Azure VM restarts and the Remote Desktop session is terminated, sign-in back to **AzSHOST-1** via Remote Desktop using the following credentials:
+5. Once the Azure VM restarts and the Remote Desktop session is terminated, sign-in back to **AzSHOST-1** via Remote Desktop using the following credentials:
 
     - Username: **AzureStack\\AzureStackAdmin**
 
@@ -179,46 +179,46 @@ In this task you will execute a script that will download and provision Azure St
     > **Note:** The installation might take between 6-8 hours. Monitor the PowerShell session where the script is running to determine when it completes.
 
 
-### Task 3: Download and Run the Azure Stack Hub Configurator Script
+### Task 3: Download and run the Azure Stack Hub Configurator Script
 
 In this task you will execute a script that will configure install and configure Azure Stack Hub with PowerShell modules and tools as well as SQL, App Service, and MySQL Resource Providers.
 
 1. From within the **AzSHost-1** virtual machine launch a Windows PowerShell console as Administrator.
 
-1. From the Administrator: Windows PowerShell window, create a folder named **C:\\AzSPoc** and set it as the current directory by running the following:
+2. From the Administrator: Windows PowerShell window, create a folder named **C:\\AzSPoc** and set it as the current directory by running the following:
 
     ```powershell
     New-Item -ItemType Directory -Force -Path 'C:\AzSPoC'
     Set-Location 'C:\AzSPoC'
     ```
 
-1. From the Administrator: Windows PowerShell window, download the Azure Stack Hub Configuration script by running:
+3. From the Administrator: Windows PowerShell window, download the Azure Stack Hub Configuration script by running:
 
     ```powershell
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Invoke-Webrequest https://raw.githubusercontent.com/mattmcspirit/azurestack/AzureStack-VM-PoC/deployment/AzSPoC.ps1 -UseBasicParsing -OutFile AzSPoC.ps1
     ```
 
-1. From the Administrator: Windows PowerShell window, download the Windows 2019 Evaluation ISO for the Azure Stack Hub VMs by running the following:
+4. From the Administrator: Windows PowerShell window, download the Windows 2019 Evaluation ISO for the Azure Stack Hub VMs by running the following:
 
     ```powershell
     $ProgressPreference = "SilentlyContinue"
     wget https://software-download.microsoft.com/download/pr/17763.253.190108-0006.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso -UseBasicParsing -OutFile D:\WS2019EVALISO.iso
     ```
 
-1. From the Administrator: Windows PowerShell window, download the Windows 2016 Evaluation ISO for the Azure Stack Hub VMs by running the following:
+5. From the Administrator: Windows PowerShell window, download the Windows 2016 Evaluation ISO for the Azure Stack Hub VMs by running the following:
 
     ```powershell
     wget http://download.microsoft.com/download/1/4/9/149D5452-9B29-4274-B6B3-5361DBDA30BC/14393.0.161119-1705.RS1_REFRESH_SERVER_EVAL_X64FRE_EN-US.ISO -UseBasicParsing -OutFile D:\WS2016EVALISO.iso
     ```
 
-1. From the Administrator: Windows PowerShell window, create a folder named **D:\\ASDKfiles** by running the following:
+6. From the Administrator: Windows PowerShell window, create a folder named **D:\\ASDKfiles** by running the following:
 
     ```powershell
     New-Item -ItemType Directory -Force -Path 'D:\ASDKfiles'
     ```
 
-1. From the Administrator: Windows PowerShell window, execute the script to configure the Azure SDK (ensure you replace the placeholder values, where `[azure-admin-upn]` and `[azure-admin-password]` designate the user name and password of the account with the Owner role in the Azure subscription you are using in this lab and the Global Administrator role in the Azure AD tenant associated with that subscription, `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab, and `[subscription-id]` is the identifier of that subscription):
+7. From the Administrator: Windows PowerShell window, execute the script to configure the Azure SDK (ensure you replace the placeholder values, where `[azure-admin-upn]` and `[azure-admin-password]` designate the user name and password of the account with the Owner role in the Azure subscription you are using in this lab and the Global Administrator role in the Azure AD tenant associated with that subscription, `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab, and `[subscription-id]` is the identifier of that subscription):
 
     ```powershell
     .\AzSPoC.ps1 -azureDirectoryTenantName '[tenant].onmicrosoft.com' -authenticationType AzureAD `
@@ -232,23 +232,23 @@ In this task you will execute a script that will configure install and configure
     > **Note**: If any of the jobs fail, wait for the entire script to complete and run the script again. 
 
 
-### Task 4: Perform Post Installation Tasks
+### Task 4: Perform post installation tasks
 
 1. Within the Remote Desktop session to **AzSHOST-1**, start Internet Explorer and browse to <https://portal.azure.com>.
 
-1. When prompted, authenticate by using your Azure AD account or Microsoft Account with the Owner role in the Azure subscription that you are using in this lab.
+2. When prompted, authenticate by using your Azure AD account or Microsoft Account with the Owner role in the Azure subscription that you are using in this lab.
 
-1. In the Azure portal, start a PowerShell session within the Cloud Shell.
+3. In the Azure portal, start a PowerShell session within the Cloud Shell.
 
     > **Note:** If prompted, consent to configuring storage for Cloud Shell. 
 
-1. From the Cloud Shell pane, run the following to identify the Azure AD DNS domain name:
+4. From the Cloud Shell pane, run the following to identify the Azure AD DNS domain name:
 
     ```powershell
     $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
     ```
 
-1. From the Cloud Shell pane, run the following to create a new user account in the Azure AD tenant associated with your Azure subscription:
+5. From the Cloud Shell pane, run the following to create a new user account in the Azure AD tenant associated with your Azure subscription:
 
     ```powershell
     $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
@@ -258,37 +258,37 @@ In this task you will execute a script that will configure install and configure
     New-AzureADUser -AccountEnabled $true -DisplayName 'AzSHOperator' -PasswordProfile $passwordProfile -MailNickName 'AzSHOperator' -UserPrincipalName "AzSHOperator@$domainName"
     ```
 
-1. Switch to the Azure Stack Hub Administrator portal at <https://adminportal.local.azurestack.external>.
+6. Switch to the Azure Stack Hub Administrator portal at <https://adminportal.local.azurestack.external>.
 
-1. When prompted, sign in with Azure AD user account you provided when installing Azure Stack Hub Development Kit.
+7. When prompted, sign in with Azure AD user account you provided when installing Azure Stack Hub Development Kit.
 
-1. In the Azure Stack Hub Administrator portal, navigate to the **All services** blade and then, in the **GENERAL** section, click **Subscriptions**.
+8. In the Azure Stack Hub Administrator portal, navigate to the **All services** blade and then, in the **GENERAL** section, select **Subscriptions**.
 
-1. On the **Subscriptions** blade, click **Default Provider Subscription**.
+9. On the **Subscriptions** blade, select **Default Provider Subscription**.
 
     ![Three subscriptions, including Default Provider Subscription, listed on the Subscriptions blade. ](images/Hands-onlabstep-by-step-AzureStackimages/media/image1.png "Subscriptions")
 
-1. On the **Default Provider Subscription**, click **Acces control (IAM)**.
+10. On the **Default Provider Subscription**, select **Access control (IAM)**.
 
-1. Click **+ Add**, on the **Add permission** blade, assign the **Owner** role to the Azure AD user account you created earlier in this task and click **Save**.
+11. Select **+ Add**, on the **Add permission** blade, assign the **Owner** role to the Azure AD user account you created earlier in this task and **Save**.
 
-1. Return to the **Subscription** blade and repeat the previous two steps for the **Consumption Subscription** and **Metering Subscription**.
+12. Return to the **Subscription** blade and repeat the previous two steps for the **Consumption Subscription** and **Metering Subscription**.
 
     > **Note:** Use the **AzSHOperator** user account when running the lab.
 
-1. In the Azure Stack administrator portal, in the hub menu, click **All services**.
+13. In the Azure Stack administrator portal, in the hub menu, select **All services**.
 
-1. On the **All Services** blade, click **App Service**.
+14. On the **All Services** blade, select **App Service**.
 
-1. On the **App Service** blade, click **Roles**.
+15. On the **App Service** blade, select **Roles**.
 
     ![App Service - Roles blade is displayed.](images/Hands-onlabstep-by-step-AzureStackimages/media/image8.png "App Service - Roles")
 
-1. In the list of roles, in the **Web Worker** **Small** tier entry, right-click the ellipsis icon and, in the right click menu, click **ScaleSet**.
+16. In the list of roles, in the **Web Worker** **Small** tier entry, right-click the ellipsis icon and, in the right-click menu, select **ScaleSet**.
 
-1. On the **SmallWorkerTierScaleSet** blade, click **Scaling**.
+17. On the **SmallWorkerTierScaleSet** blade, select **Scaling**.
 
-1. On the **SmallWorkerTierScaleSet - Scaling** blade, set **Instance count** to 1 and click **Save**.
+18. On the **SmallWorkerTierScaleSet - Scaling** blade, set **Instance count** to 1 and select **Save**.
 
     ![SmallWorkerTierScaleSet - Scaling blade is displayed with Instance count set to 1.](images/Hands-onlabstep-by-step-AzureStackimages/media/image10.png "App Service - Roles")
 
@@ -322,21 +322,21 @@ Duration: 7 hours
 
 ### Task 1: Provision an Azure VM to Host the Azure Stack Hub Development Kit (Operations)
 
-In this task, you will provision an Azure VM that will host the Azure Stack Development Kit deployment
+In this task, you will provision an Azure VM that will host the Azure Stack Development Kit deployment.
 
-1. Navigate to the following URL to launch the AzureStackOnAzureVM deployment template in the Azure Portal.
+1. Navigate to the following URL to launch the AzureStackOnAzureVM deployment template in the Azure Portal:
 
     ```
     http://aka.ms/AzureStackonAzureVM
     ```
 
-1. Specify the following options on the template settings:
+2. Specify the following options on the template settings:
 
-    - Subscription: the name of the target Azure subscription where you want to deploy the Azure VM serving as the ASDK host 
+    - Subscription: The name of the target Azure subscription where you want to deploy the Azure VM serving as the ASDK host.
 
-    - Resource group: a new resource group named **azurestack-RG**
+    - Resource group: A new resource group named **azurestack-RG**.
 
-    - Location: the name of the Azure region where you want to deploy the Azure VM serving as the ASDK host 
+    - Location: The name of the Azure region where you want to deploy the Azure VM serving as the ASDK host.
 
     - Virtual Machine Name: **AzS-HOST1**
 
@@ -358,11 +358,11 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
     - Public Ip Address Type: **Dynamic**
 
-    - Public Dns Name: any valid, globally unique name
+    - Public Dns Name: Any valid, globally unique name.
 
     - Auto Shutdown Status: **Disabled**
 
-    - Auto Shutdown Time: the default value
+    - Auto Shutdown Time: The default value.
 
     - Auto Shutdown Notification Status: **Disabled**
 
@@ -370,13 +370,13 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
     - Auto Install ASDK: **false**
 
-    - Azure AD Tenant: the DNS name of your Azure AD tenant
+    - Azure AD Tenant: The DNS name of your Azure AD tenant.
 
-    - Azure AD Global Admin: the name of an Azure AD user with the Global Admin role
+    - Azure AD Global Admin: The name of an Azure AD user with the Global Admin role.
 
-    - Azure AD Global Admin Password: the password of the Azure AD user with the Global Admin role
+    - Azure AD Global Admin Password: The password of the Azure AD user with the Global Admin role.
 
-    - ASDK Configurator Object: the default value
+    - ASDK Configurator Object: The default value.
 
     - Enable RDSH: **false**
 
@@ -384,7 +384,7 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
     - Site Location: **[resourceGroup().location]**
 
-    Enable the checkbox **I agree to the terms and conditions stated above** and click **Purchase** when you are ready to deploy the VM.
+    Enable the checkbox **I agree to the terms and conditions stated above** and select **Purchase** when you are ready to deploy the VM.
 
     > **Note:** This deployment may take about 15 minutes to complete.
 
@@ -397,13 +397,13 @@ In this task, you will provision an Azure VM that will host the Azure Stack Deve
 
 ### Task 2: Install Azure Stack Hub Development Kit (Operations)
 
-In this task you will execute a script that will download and provision Azure Stack Hub Development Kit on the newly deployed Azure VM
+In this task you will execute a script that will download and provision Azure Stack Hub Development Kit on the newly deployed Azure VM.
 
-1. Within the Remote Desktop session to **AzSHOST-1**, right-click Start and then click Command Prompt (Admin)
+1. Within the Remote Desktop session to **AzSHOST-1**, right-click Start and then select Command Prompt (Admin).
 
-1. Within the Remote Desktop session to **AzSHOST-1**, start Windows PowerShell as administrator.
+2. Within the Remote Desktop session to **AzSHOST-1**, start Windows PowerShell as administrator.
 
-1. From the Administrator: Windows PowerShell window, set values of the variables that will be used by the installation script by running the following (ensure you replace the placeholder values, where `[azure-admin-upn]` and `[azure-admin-password]` designate the user name and password of the account with the Owner role in the Azure subscription you are using in this lab and the Global Administrator role in the Azure AD tenant associated with that subscription):
+3. From the Administrator: Windows PowerShell window, set values of the variables that will be used by the installation script by running the following (ensure you replace the placeholder values, where `[azure-admin-upn]` and `[azure-admin-password]` designate the user name and password of the account with the Owner role in the Azure subscription you are using in this lab and the Global Administrator role in the Azure AD tenant associated with that subscription):
 
     ```powershell
     Set-Location -Path 'C:\AzureStackOnAzureVM'
@@ -413,7 +413,7 @@ In this task you will execute a script that will download and provision Azure St
     $azcred = New-Object System.Management.Automation.PSCredential ('[azure-admin-upn]', $azpass)
     ```
 
-1. From the Administrator: Windows PowerShell window, invoke the installation of Azure Stack Hub Development Kit by running the following (ensure you replace the placeholder values, where `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab):
+4. From the Administrator: Windows PowerShell window, invoke the installation of Azure Stack Hub Development Kit by running the following (ensure you replace the placeholder values, where `[tenant]` is the name of the Azure AD tenant associated with the Azure subscription you are using in this lab):
 
     ```powershell
     .\Install-ASDK.ps1 -DownloadASDK -DeploymentType AAD -LocalAdminPass $localAdminPass -AADTenant [tenant].onmicrosoft.com -version '1907-20' -InfraAzureDirectoryTenantAdminCredential $azcred
@@ -421,7 +421,7 @@ In this task you will execute a script that will download and provision Azure St
 
     > **Note:** After about 75 minutes, the Azure VM will automatically restart.
 
-1. Once the Azure VM restarts and the Remote Desktop session is terminated, sign-in back to **AzSHOST-1** via Remote Desktop using the following credentials:
+5. Once the Azure VM restarts and the Remote Desktop session is terminated, sign-in back to **AzSHOST-1** via Remote Desktop using the following credentials:
 
     - Username: **AzureStack\\AzureStackAdmin**
 
@@ -440,7 +440,7 @@ In this task you will execute a script that will download and provision Azure St
 
     -   Password: **demo@pass123**
 
-3.  select **Start** and, in the Start menu, select **Control Panel**.
+3.  Select **Start** and, in the Start menu, select **Control Panel**.
 
 4.  In the Control Panel window, select **View by**, in the drop-down menu, select **Small icons**, and select **User Accounts**.
 
@@ -454,7 +454,7 @@ In this task you will execute a script that will download and provision Azure St
 
 9.  From Internet Explorer, browse to https://code.visualstudio.com/, and from the Visual Studio Code page, install the latest stable version of Visual Studio Code. 
 
-    > **Note:** Except VScode, most of the next steps should be already configured on your VM - please check that the tools are there and you are able to configure them. VSCode is optional - you can perform all of the activities in the labs using just PowerShell, but you may want to explore the VSCode user interface, because it enhances interacting with Azure Stack Hub using PowerShell and ARM templates.
+    > **Note:** Except VSCode, most of the next steps should be already configured on your VM - please check that the tools are there and you are able to configure them. VSCode is optional - you can perform all of the activities in the labs using just PowerShell, but you may want to explore the VSCode user interface, because it enhances interacting with Azure Stack Hub using PowerShell and ARM templates.
 
 10. Right-click **Start** and, in the right-hand menu, select **Command Prompt (Admin)**.
 
