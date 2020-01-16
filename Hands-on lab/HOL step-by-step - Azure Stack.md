@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+Â© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -147,15 +147,15 @@ Duration: 15-30 minutes
 
 1.  Within the Remote Desktop session to **AzSHOST-1**, start Internet Explorer and navigate to <https://adminportal.local.azurestack.external>
 
-1.  When prompted, sign in with the **AzSHOperator** you created when following the **Before the hands-on lab guide**.
+2.  When prompted, sign in with the **AzSHOperator** you created when following the **Before the hands-on lab guide**.
 
-1.  Select **+Create a resource** in the Azure Stack Hub administrator portal.
+3.  Select **+Create a resource** in the Azure Stack Hub administrator portal.
 
-1.  Select **Offers + Plans** followed by **Plan**, followed by **Create**.
+4.  Select **Offers + Plans** followed by **Plan**, followed by **Create**.
 
     ![In the Marketplace blade, Offers and Plans is selected. In the Featured Apps blade, Plan is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image70.png "Featured Apps blade")
 
-1.  In the New Plan blade, provide the following inputs:
+5.  In the New Plan blade, provide the following inputs:
 
     -   Display name: **PROD-Plan-1**
 
@@ -165,19 +165,19 @@ Duration: 15-30 minutes
 
     ![New plan blade, fields are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image71.png "New plan blade")
 
-1.  Select **Services**.
+6.  Select **Services**.
 
     ![Screenshot of the Services option.](images/Hands-onlabstep-by-step-AzureStackimages/media/image72.png "Select services")
 
-1.  Next, check all of the **Services** except for **Microsoft.MySQLAdapter** and **Microsoft.Subsciptions** and click **Next: Quotas**.
+7.  Next, check all of the **Services** except for **Microsoft.MySQLAdapter** and **Microsoft.Subscriptions** and select **Next: Quotas**.
 
     ![Services are listed in the Services blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image73.png "Services")
 
-1.  For Quotas, select through and choose the default quotas with exception of the Microsoft.SQLAdapter entry. Next, click **Create New** next to the Microsft.SQLAdapter entry.
+8.  For Quotas, select through and choose the default quotas with exception of the Microsoft.SQLAdapter entry. Next, click **Create New** next to the Microsft.SQLAdapter entry.
 
     ![The Quotas blade displays with Microsoft SQL Adapter selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image75.png "Quotas blade")
 
-1.  On the **Create Quota** blade, specify the following information and click **Create**:
+9.  On the **Create Quota** blade, specify the following information and select **Create**:
 
     -   Quota Name: **SQLQuota**
 
@@ -187,17 +187,17 @@ Duration: 15-30 minutes
 
     ![The Create Quota tab displays the specified settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image77.png "Create Quota blade")
 
-1.  Select **Review + Create** and then confirm the creation. 
+10.  Select **Review + Create** and then confirm the creation. 
 
     ![The Quotas tab of the New plan blade.](images/Hands-onlabstep-by-step-AzureStackimages/media/image79.png "Quotas tab of the New plan blade")
 
-1.  Select **+ Create a resource** followed by **Create** in the Azure Stack Hub administrator portal. The Plan will deploy immediately.
+11.  Select **+ Create a resource** followed by **Create** in the Azure Stack Hub administrator portal. The Plan will deploy immediately.
 
-1.  Select **Offers + Plans** followed by **Offer**.
+12.  Select **Offers + Plans** followed by **Offer**.
 
     ![In the Marketplace blade, Offers and Plans is selected. In the Featured Apps blade, Offer is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image81.png "Marketplace blade")
 
-1.  Update the New offer blade using the following inputs. Then, select **Next: Base plans**.
+13.  Update the New offer blade using the following inputs. Then, select **Next: Base plans**.
 
     -   Display Name: **PROD-Offer-1**
 
@@ -209,23 +209,23 @@ Duration: 15-30 minutes
 
     ![Fields in the New Offer blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image82.png "New Offer blade")
 
-1.  On the **Base plans** blade, check **PROD-Plan-1** and select **Review + create** and then **Create**.
+14.  On the **Base plans** blade, check **PROD-Plan-1** and select **Review + create** and then **Create**.
 
     ![Screenshot of the Resource group blade. Under Name, a callout points to prod-offer-1.](images/Hands-onlabstep-by-step-AzureStackimages/media/image83.png "Resource group blade")
 
-1.  Open the new offer after it is created. Notice the portal shows a warning stating: "**This offer is private, and users cannot see it**." To fix this, select the **Change state** button.
+15.  Open the new offer after it is created. Notice the portal shows a warning stating: "**This offer is private, and users cannot see it**." To fix this, select the **Change state** button.
 
     ![In the Offer blade, warning displays, and the Change state button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image85.png "Offer blade")
 
-1.  Select **Public**.
+16.  Select **Public**.
 
     ![Public is selected in the Change state menu.](images/Hands-onlabstep-by-step-AzureStackimages/media/image86.png "Change state menu")
 
-1.  The portal will immediately provide a notification about the update to the offer.
+17.  The portal will immediately provide a notification about the update to the offer.
 
     ![Updated offer successfully message screenshot.](images/Hands-onlabstep-by-step-AzureStackimages/media/image87.png "Success")
 
-1.  Next, open a new browser tab, and navigate to Azure Stack Hub User portal and select **Get Subscription**.
+18.  Next, open a new browser tab, and navigate to Azure Stack Hub User portal and select **Get Subscription**.
 
     ```
     https://portal.local.azurestack.external
@@ -236,11 +236,11 @@ Duration: 15-30 minutes
     > **Note**: This is the User portal Contoso Finance will use to provision and manage their Azure Stack Hub service.
 
 
-1.  Give it the name: **Production** and select the **PROD-Offer-1** and select **Create**.
+19.  Give it the name: **Production** and select the **PROD-Offer-1** and select **Create**.
 
     ![In the Get a subscription blade, the Display name is Production. In the Choose an offer blade, PROD-Offer-1 is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image90.png "Get a subscription blade")
 
-1.  You will need to Refresh the window to start using the new Subscription.
+20.  You will need to Refresh the window to start using the new Subscription.
 
     ![Under the Subscription created message, the Refresh button is selected.](images/Hands-onlabstep-by-step-AzureStackimages/media/image91.png "Refresh")
 
@@ -384,7 +384,7 @@ In this exercise, you will provision a website using the Azure Stack Hub portal.
 
     ![Screenshot of the App settings section.](images/Hands-onlabstep-by-step-AzureStackimages/media/image122.png "App settings")
 
-3.  Add a new **App setting** with the following values and click **Save**:
+3.  Add a new **App setting** with the following values and select **Save**:
 
     -   App Setting Name: **AzureQueueConnectionString**
 
@@ -690,7 +690,7 @@ In this exercise, you will provision the admin website to be used by employees t
 
 4.  Select the Deployment options button and monitor until the application is deployed.
 
-5.  On the **Overview** tab, click the URL of the web app. This should automatically open another browser window tab displaying the web app.
+5.  On the **Overview** tab, select the URL of the web app. This should automatically open another browser window tab displaying the web app.
 
 6.  On the **contosofinanceadmin** portal, note that you have the option of viewing completed applications.
 
@@ -1625,7 +1625,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 3.  On the Get a subscription blade, in the Display name text box, type **Contoso-user1-subscription1**.
 
-4.  Chooe **Select an offer**.
+4.  Choose **Select an offer**.
 
 5.  On the Choose an offer blade, select the name of the Contoso delegated offer created earlier in this exercise.
 
@@ -2156,7 +2156,7 @@ Duration: 10 minutes
 
 In this final task you will clean up the Azure Resources that you have create for the hands-on lab. This task is optional.
 
-1.  If provisioned using the Azure Stack Hub Developement Kit in an Azure VM, delete the resource group your Azure Stack Hub Host VM is running in.
+1.  If provisioned using the Azure Stack Hub Development Kit in an Azure VM, delete the resource group your Azure Stack Hub Host VM is running in.
 
 2.  If running on your own Development Kit, delete all the resource groups from the Azure Stack Hub portal that you created during the execution of this lab.
 
