@@ -199,13 +199,13 @@ Duration: 15-30 minutes
 
 13.  Update the New offer blade using the following inputs. Then, select **Next: Base plans**.
 
-    -   Display Name: **PROD-Offer-1**
+   -   Display Name: **PROD-Offer-1**
 
-    -   Resource Name: **prod-offer-1**
+   -   Resource Name: **prod-offer-1**
 
-    -   Resource group: **Use existing / ContosoFinance**
+   -   Resource group: **Use existing / ContosoFinance**
 
-    -   Make this offer public? **No**
+   -   Make this offer public? **No**
 
    ![Fields in the New Offer blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-AzureStackimages/media/image82.png "New Offer blade")
 
