@@ -799,7 +799,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 3.  Once the download completes, start File Explorer, select the **View** menu item, and select **File name extensions**.
 
-    ![In the View ribbon of File Explorer, File name extensions checkbox is selected.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image1.png "View ribbon of File Explorer")
+    ![In the View ribbon of File Explorer, File name extensions checkbox is selected.](images-operations/hol-az-stack/image1.png "View ribbon of File Explorer")
 
 4.  In File Explorer, navigate to the C:\Downloads folder, and extract the compressed content (the **Azure Stack Marketplace Item Generator and Sample** folder) into C:\Downloads.
 
@@ -811,7 +811,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 8.  In the Microsoft Paint window, select **Resize**.
 
-    ![In the View ribbon of Microsoft Paint, the Resize icon is selected.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image2.png "View ribbon of Microsoft Paint")
+    ![In the View ribbon of Microsoft Paint, the Resize icon is selected.](images-operations/hol-az-stack/image2.png "View ribbon of Microsoft Paint")
 
 9.  In the **Resize and Skew** window, clear the **Maintain aspect ratio** checkbox, select the **Pixels** option, set the following image properties and select **OK**:
 
@@ -819,7 +819,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
     -  Vertical: **324**
 
-    ![In the Resize and Skew window, the image size is set to the required values.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image3.png "Resize")
+    ![In the Resize and Skew window, the image size is set to the required values.](images-operations/hol-az-stack/image3.png "Resize")
 
 10. Save the resulting image as C:\Downloads\Azure Stack Marketplace Item Generator and Sample\ContosoWebAppTemplate\Icons\Screenshot.png.  When prompted whether to continue, select **OK** and close Microsoft Paint. 
 
