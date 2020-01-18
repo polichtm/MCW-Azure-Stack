@@ -926,7 +926,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 5.  On the New blade, select **Data + Storage** and then select **Storage account - blob, file, table, queue**.
 
-    ![In the Azure Stack Hub administrator portal, Storage account - blob, file, table, queue is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image4.png "Storage account")
+    ![In the Azure Stack Hub administrator portal, Storage account - blob, file, table, queue is displayed.](images/image4.png "Storage account")
 
 6.  On the Create storage account blade, specify the following settings:
 
@@ -966,7 +966,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
 17. In the Choose File to Upload text box, navigate to the location containing the package that you noted in the previous task, select the **Contoso.ContosoWebApp.1.0.0.azpkg** file and select **Open**.
 
-    ![In the Azure Stack Hub administrator portal, the Upload blob pane shows the Contoso.ContosoWebApp.1.0.0.azpkg file to be uploaded.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image5.png "Upload blob pane")
+    ![In the Azure Stack Hub administrator portal, the Upload blob pane shows the Contoso.ContosoWebApp.1.0.0.azpkg file to be uploaded.](images/image5.png "Upload blob pane")
 
 18. Back on the Upload blob blade, select **Upload**.
 
@@ -1011,7 +1011,7 @@ In this exercise, you will create and publish custom Azure Stack Hub Marketplace
 
     > **Note**: It might take a few minutes for a newly added Marketplace item to appear.
 
-    ![In the Azure Stack Hub administrator portal, Contoso WebApp custom Marketplace item is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image6.png "Contoso WebApp custom Marketplace item")
+    ![In the Azure Stack Hub administrator portal, Contoso WebApp custom Marketplace item is displayed.](images/image6.png "Contoso WebApp custom Marketplace item")
 
 26. On the Custom blade, select **Contoso WebApp**.
 
@@ -1327,19 +1327,19 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Resource group: name of a new resource group **dp-RG**
 
-    ![In the Azure Stack Hub administrator portal, the Basics tab of the New plan blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image7.png "Basics tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the New plan blade is displayed.](images/image7.png "Basics tab of the New plan blade")
 
 6.  Select the **Services** tab.
 
 7.  On the Services tab of the New plan blade, select the **Microsoft.Subscriptions** checkbox.
 
-    ![In the Azure Stack Hub administrator portal, the Services tab of the New plan blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image8.png "Services tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Services tab of the New plan blade is displayed.](images/image8.png "Services tab of the New plan blade")
 
 8.  Select **Quotas**.
 
 9.  On the Quotas tab of the New plan blade, in the **Microsoft.Subscriptions** drop down list, select **delegatedProviderQuota**.
 
-    ![In the Azure Stack Hub administrator portal, the Quotas tab of the New plan blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image9.png "Quotas tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Quotas tab of the New plan blade is displayed.](images/image9.png "Quotas tab of the New plan blade")
 
 10. Select **Review + create** and then select **Create**. 
 
@@ -1361,13 +1361,13 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Make this offer public?: **No**
 
-    ![In the Azure Stack Hub administrator portal, the Basics tab of the New offer blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image10.png "Basics tab of the New offer blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the New offer blade is displayed.](images/image10.png "Basics tab of the New offer blade")
 
 4.  Select the **Base plans** tab.
 
 5.  On the **Base plans** tab of the Create a new offer blade, select the **DP-subscription-plan1** checkbox.
 
-    ![In the Azure Stack Hub administrator portal, the Base plans tab of the New offer blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image11.png "Base plans tab of the New offer blade")
+    ![In the Azure Stack Hub administrator portal, the Base plans tab of the New offer blade is displayed.](images/image11.png "Base plans tab of the New offer blade")
 
 6.  Do not include Add-on plans, select **Review + create**, and then select **Create**. 
 
@@ -1387,7 +1387,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Directory tenant: The Azure Active Directory tenant associated with the Azure Stack Hub environment.
 
-    ![In the Azure Stack Hub administrator portal, the New user subscription blade for Contoso is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image12.png "New user subscription blade")
+    ![In the Azure Stack Hub administrator portal, the New user subscription blade for Contoso is displayed.](images/image12.png "New user subscription blade")
 
 4.  Select **Create**. 
 
@@ -1405,7 +1405,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Directory tenant: The Fabrikam Azure Active Directory tenant which you associated with the Azure Stack Hub environment in the previous exercise.
 
-    ![In the Azure Stack Hub administrator portal, the New user subscription blade for Fabrikam is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image13.png "New user subscription blade")
+    ![In the Azure Stack Hub administrator portal, the New user subscription blade for Fabrikam is displayed.](images/image13.png "New user subscription blade")
 
 8.  Select **Create**. 
 
@@ -1425,13 +1425,13 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Resource group: **dp-RG**
 
-    ![In the Azure Stack Hub administrator portal, the Basics tab of the New plan blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image14.png "Basics tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the New plan blade is displayed.](images/image14.png "Basics tab of the New plan blade")
 
 4.  Select the **Services** tab.
 
 5.  On the Services tab of the New plan blade, select the **Microsoft.Storage** checkbox.
 
-    ![In the Azure Stack Hub administrator portal, the Services tab of the New plan blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image15.png "Services tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Services tab of the New plan blade is displayed.](images/image15.png "Services tab of the New plan blade")
 
 6.  Select the **Quotas** tab.
 
@@ -1445,7 +1445,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Total number of storage accounts: **1**
 
-    ![In the Azure Stack Hub administrator portal, the Quotas tab of the New plan blade and the Create Storage quotas blade are displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image16.png "Quotas tab of the New plan blade")
+    ![In the Azure Stack Hub administrator portal, the Quotas tab of the New plan blade and the Create Storage quotas blade are displayed.](images/image16.png "Quotas tab of the New plan blade")
 
 9.  Select **OK**. This will automatically set the **Microsoft Storage** drop-down list entry to **dp-storage-quota1**.
 
@@ -1469,13 +1469,13 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Make this offer public?: **No**
 
-    ![In the Azure Stack Hub administrator portal, the Basics tab of the Create a new offer blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image17.png "Basics tab of the Create a new offer blade")
+    ![In the Azure Stack Hub administrator portal, the Basics tab of the Create a new offer blade is displayed.](images/image17.png "Basics tab of the Create a new offer blade")
 
 4.  Select the **Base plans** tab.
 
 5.  On the Base plans tab of the Create a new offer blade, select the **DP-services-plan1** checkbox.
 
-    ![In the Azure Stack Hub administrator portal, the Base plans tab of the Create a new offer blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image18.png "Base plans tab of the Create a new offer blade")
+    ![In the Azure Stack Hub administrator portal, the Base plans tab of the Create a new offer blade is displayed.](images/image18.png "Base plans tab of the Create a new offer blade")
 
 6.  Do not include Add-on plans, select **Review + create**, and then select **Create**. 
 
@@ -1495,7 +1495,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Pick the delegated provider subscription: **Contoso-DP-subscription1**.
 
-    ![In the Azure Stack Hub administrator portal, the Delegate offer for Contoso subscriptions blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image19.png "Delegate offer")
+    ![In the Azure Stack Hub administrator portal, the Delegate offer for Contoso subscriptions blade is displayed.](images/image19.png "Delegate offer")
 
 6.  Select **Delegate**. 
 
@@ -1513,7 +1513,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Pick the delegated provider subscription: **Fabrikam-DP-subscription1**.
 
-    ![In the Azure Stack Hub administrator portal, the Delegate offer for Fabrikam subscriptions blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image20.png "Delegate offer")
+    ![In the Azure Stack Hub administrator portal, the Delegate offer for Fabrikam subscriptions blade is displayed.](images/image20.png "Delegate offer")
 
 12. Select **Delegate**. 
 
@@ -1539,7 +1539,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Resource group: the name of a new resource group **Contoso-dp1-RG**.
 
-    ![In the Azure Stack Hub user portal, the Create a new offer for Contoso is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image21.png "Create a new offer")
+    ![In the Azure Stack Hub user portal, the Create a new offer for Contoso is displayed.](images/image21.png "Create a new offer")
 
 6.  Select **Create**. 
 
@@ -1549,7 +1549,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 8.  On the blade of the newly created offer, select **Change state** and, in the drop-down list, select **Public**.
 
-    ![In the Azure Stack Hub user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image22.png "delegated-services-for-dp-offer1 blade")
+    ![In the Azure Stack Hub user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images/image22.png "delegated-services-for-dp-offer1 blade")
 
 9.  In the Azure Stack Hub user portal, select **All services**. 
 
@@ -1589,7 +1589,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
     -  Resource group: the name of a new resource group **Fabrikam-dp1-RG**
 
-    ![In the Azure Stack Hub user portal, the Create a new offer for Fabrikam is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image23.png "Create a new offer")
+    ![In the Azure Stack Hub user portal, the Create a new offer for Fabrikam is displayed.](images/image23.png "Create a new offer")
 
 7.  Select **Create**. 
 
@@ -1599,7 +1599,7 @@ In this exercise, you will implement Azure Stack Hub delegation in a multi-tenan
 
 9.  On the blade of the newly created offer, select **Change state** and, in the drop-down list, select **Public**.
 
-    ![In the Azure Stack Hub user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image24.png "Change state drop-down list")
+    ![In the Azure Stack Hub user portal, the delegated-services-for-dp-offer1 blade with the Change state drop-down list and the Public entry selected is displayed.](images/image24.png "Change state drop-down list")
 
 10. In the Azure Stack Hub user portal, select **All services**. 
 
@@ -1868,7 +1868,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Members: **Contoso AzSReader1** and **Fabrikam AzSReader1**.
 
-    ![In the Azure portal, the New Group and Add members blades are displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image27.png "New Group and Add members blades")
+    ![In the Azure portal, the New Group and Add members blades are displayed.](images/image27.png "New Group and Add members blades")
 
 23. On the Groups - All groups blade, select **+ New group**.
 
@@ -1886,7 +1886,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Members: **Contoso AzSReader1** and **Fabrikam AzSReader1**
 
-    ![In the Azure portal, the New Group and Add members blades are displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image27.png "New Group and Add members blades")
+    ![In the Azure portal, the New Group and Add members blades are displayed.](images/image27.png "New Group and Add members blades")
 
 25. Back on the Groups - All groups blade, select **+ New group**.
 
@@ -1904,7 +1904,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Members: **Contoso AzSLogReader1**
 
-    ![In the Azure portal, the New Group and Add members blades are displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image28.png "New Group and Add members blades")
+    ![In the Azure portal, the New Group and Add members blades are displayed.](images/image28.png "New Group and Add members blades")
 
 ### Task 3: Configure RBAC role assignments
 
@@ -1918,7 +1918,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
 5.  On the Default Provider Subscription blade, select **Access control (IAM)** and then select **+ Add**.
 
-    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access control (IAM) is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image25.png "Default Provider Subscription")
+    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access control (IAM) is displayed.](images/image25.png "Default Provider Subscription")
 
 6.  In the **Add permissions** pane, specify the following settings and then select **Save**:
 
@@ -1926,7 +1926,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Select: **ContosoAzSLogReaders**
 
-    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a custom role selected is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image29.png "Add permissions blade")
+    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a custom role selected is displayed.](images/image29.png "Add permissions blade")
 
 7.  Back on the Default Provider Subscription - Access control (IAM) blade and then select **+ Add**.
 
@@ -1936,7 +1936,7 @@ In this exercise, you will configure Role Based Access Control using a custom ro
 
     -  Select: **ContosoAzSReaders**
 
-    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a built-in role selected is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image30.png "Add permissions blade")
+    ![In the Azure Stack Hub administrator portal, the Default Provider Subscription - Access Control (IAM)  Add permissions blade with a built-in role selected is displayed.](images/image30.png "Add permissions blade")
 
 ## Exercise 5: Connect to and work with the Privileged Endpoint
 
@@ -1964,7 +1964,7 @@ In this exercise, you establish a PowerShell Remoting session to the privileged 
 
 8.  Ensure that the **CloudAdmins** entry is selected and select the **Full Control** checkbox in the Allow column.
 
-    ![In File Explorer, the share permissions of the Logs share are displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image31.png "File Explorer")
+    ![In File Explorer, the share permissions of the Logs share are displayed.](images/image31.png "File Explorer")
 
 9.  Select **OK**.
 
@@ -2042,7 +2042,7 @@ Duration: 30 minutes
 
 3.  In the Tasks pane, in the Users section, select **New** and then select **User**.
 
-    ![In Active Directory Administrative Center, the User entry in the New menu of the Users container is selected.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image32.png "AD Admin Center")
+    ![In Active Directory Administrative Center, the User entry in the New menu of the Users container is selected.](images/image32.png "AD Admin Center")
 
 4.  In the Create User window, specify the following settings and select **OK**:
 
@@ -2088,7 +2088,7 @@ Duration: 30 minutes
 
 13. Select **OK**.
 
-    ![In File Explorer, the share permissions of the Backup share are displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image33.png "File Explorer")
+    ![In File Explorer, the share permissions of the Backup share are displayed.](images/image33.png "File Explorer")
 
 14. Back in the Advanced Sharing dialog box, select **OK**.
 
@@ -2146,7 +2146,7 @@ Duration: 30 minutes
 
     -  Certificate .cer file: **Select the folder icon and upload the public key of the certificate (C:\Certs\AzSIBackupCert.cer) you generated in the previous task**.
 
-    ![In the Azure Stack Hub administrator portal, the Backup Controller settings blade is displayed.](images-operations/Hands-onlabstep-by-step-AzureStackimages/media/image34.png "Backup Controller settings blade")
+    ![In the Azure Stack Hub administrator portal, the Backup Controller settings blade is displayed.](images/image34.png "Backup Controller settings blade")
 
 7.  Back on the Infrastructure backup blade, select **Disable automatic backup**.
 
