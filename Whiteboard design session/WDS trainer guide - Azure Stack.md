@@ -296,7 +296,7 @@ Directions: With all participants at your table, respond to the following questi
 
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso.
 
-1.  Identify the overall application design you would propose for modernizing their existing application into Azure.
+1. Identify the overall application design you would propose for modernizing their existing application.
 
 1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
@@ -489,21 +489,21 @@ After being engaged by Contoso and gathering the requirements from the client, F
 
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso:
 
-1. Identify the overall application design you would propose for modernizing their existing application into Azure.
+1. Identify the overall application design you would propose for modernizing their existing application.
 
-    -   Azure Web Apps and API Apps will replace the IIS servers for hosting the website and associated APIs.
+    -   Azure Web Apps and API Apps will replace the IIS servers for hosting the Mortgage Application web site and associated APIs.
 
-    -   Azure Blob Storage will be used for storage of private and public PDF files.
+    -   Azure Blob Storage will be used for hosting private and public PDF files.
 
-    -   Azure Storage Queues would replace passing messages using MSMQ.
+    -   Azure Storage Queues will replace MSMQ to provide the message queuing functionality
 
     -   Azure Functions will replace the Windows Services.
 
     -   Azure SQL Database will replace the central instance of the SQL Server database hosting Mortgage Application data.
 
-    -   Azure Traffic Manager will be configured using the Priority mode to route web traffic to either the Azure public Web App or the Web App on Azure Stack Hub.
+    -   Azure Traffic Manager will be configured to use a nested profile. The parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the US, the target endpoint will be implemented by using the Priority routing method in order to direct requests to the Web App instance hosted on Azure Stack Hub or, if that one becomes temporarily unavailable, to the Azure public Web App instance. The failover between the production and disaster recovery environment will be performed manually by disabling/enabling corresponding endpoints due to the dependency on the availability of the back-end database.
 
-    -   Azure Content Deployment Network (CDN) will be used to allow public files such as PDFs to be routed closer to customers for a faster download experience.
+    -   Azure Content Delivery Network (CDN) will be used for caching publicly accessible files, such as PDFs, closer to customers' locations in order to minimize download times.
 
 1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
@@ -511,13 +511,15 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-    -   Azure public cloud: The South-Central Region will be used for public facing applications allowing the reuse of all of the code currently being run in production in Europe and Australia. The following applications will be deployed to Azure Global Cloud:
+    -   Azure public cloud: The South Central US and Canada Central regions will be used for the production instance of the public facing applications. The following applications will be deployed to Azure public cloud:
 
-        -   Mortgage Application Web App
+        -   Web App for the Mortgage Application web application code.
 
-        -   Azure Storage for publicly accessible PDF files.
+        -   Azure Blob Storage for hosting publicly accessible PDF files.
 
-        -   Azure CDN for hosting publicly accessible PDF files.
+        -   Azure CDN for caching publicly accessible PDF files.
+
+        -   Azure Traffic Manager will be using the Priority mode to route web traffic to either the Azure public Web App or the Web App on Azure Stack Hub.
 
 1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
 

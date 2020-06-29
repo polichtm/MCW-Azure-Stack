@@ -172,7 +172,7 @@ Directions: With all participants at your table, respond to the following questi
 
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso.
 
-1.  Identify the overall application design you would propose for modernizing their existing application into Azure.
+1. Identify the overall application design you would propose for modernizing their existing application.
 
 1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
