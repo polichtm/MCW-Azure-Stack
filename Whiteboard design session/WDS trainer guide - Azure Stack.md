@@ -497,7 +497,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Azure Storage Queues will replace MSMQ to provide the message queuing functionality
 
-    -   Azure Functions will replace the Windows Services.
+    -   Azure Functions will replace the Windows services.
 
     -   Azure SQL Database will replace the central instance of the SQL Server database hosting Mortgage Application data.
 
@@ -511,23 +511,37 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-    -   Azure public cloud: The South Central US and Canada Central regions will be used for the production instance of the public facing applications. The following applications will be deployed to Azure public cloud:
+    -   Azure public cloud: The South Central US and Canada Central regions will be used for the production instances of the public facing applications. The following applications will be deployed to Azure public cloud:
 
         -   Web App for the Mortgage Application web application code.
 
-        -   Azure Blob Storage for hosting publicly accessible PDF files.
+        -   Azure Blob Storage will be used for hosting private and public PDF files.
 
         -   Azure CDN for caching publicly accessible PDF files.
 
-        -   Azure Traffic Manager will be using the Priority mode to route web traffic to either the Azure public Web App or the Web App on Azure Stack Hub.
+        -   Azure Traffic Manager for routing web traffic to either the Azure public web apps or the web apps on Azure Stack Hub.
 
 1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
 
-    -   A new Azure Stack Hub Region will be deployed into the FusionTomo datacenter in Dallas, TX. The following applications and VMs will be deployed into Azure Stack Hub:
+    -   An Azure Stack Hub region will be deployed into the FusionTomo datacenter in Dallas, TX. The following resources will be deployed into that Azure Stack Hub region:
 
-        -   Azure Stack Hub SQL Database for the Web App DB and Customer Data. This will require the Azure Stack Hub SQL DB Resource Provider to be installed.
+        -   SQL Database for the Web App database and for Customer Data. This will require installation of the Azure Stack Hub SQL DB Resource Provider. Both databases will be configured as primary replicas of their respective Always On Availability Groups.
 
-        -   Mortgage Applications and Mortgage Admin: Offers API, and Function App will be deployed to Azure App services in an Azure App Service Environment (due to ExpressRoute integration with Azure Stack Hub). This will require the Azure Stack Hub Azure App Resource Provider to be installed.
+        -   Mortgage Applications web site API and Function App to implement the functionality of the Windows services being used currently. This will require installation of the Azure Stack Hub Azure App Resource Provider.
+
+        -   Azure Blob Storage for PDFs.
+
+        -   Azure Queue Storage for the Mortgage Application messaging.
+
+    -   An Azure Stack Hub region will be deployed into the FusionTomo datacenter in Chicago, IL. This region will host the same set of services as those provisioned into the Azure Stack Hub region in FusionTomo datacenter in Dallas, TX, however, the two databases will be configured as secondary replicas of their respective Always On Availability Groups.
+
+    -   An Azure Stack Hub region will be deployed into the FusionTomo datacenter in Toronto, ON. The following resources will be deployed into that Azure Stack Hub region:
+
+        -   SQL Database for the Web App database. This will require installation of the Azure Stack Hub SQL DB Resource Provider.
+
+        -   Windows Server 2019 VM with SQL Server 2019 installed, hosting a local instance of the Customer Data database. This database will be configured to replicate with the Always On Availability Group containing the Customer Data database hosted in the US.
+
+        -   Mortgage Applications web site API and Function App to implement the functionality of the Windows services being used currently. This will require installation of the Azure Stack Hub Azure App Resource Provider.
 
         -   Azure Blob Storage for PDFs.
 
