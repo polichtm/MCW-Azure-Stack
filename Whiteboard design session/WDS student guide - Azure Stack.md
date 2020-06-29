@@ -1,7 +1,7 @@
 ﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Azure Stack
+Azure Stack Hub
 </div>
 
 <div class="MCWHeader2">
@@ -26,7 +26,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- TOC -->
 
-- [Azure Stack whiteboard design session student guide](#azure-stack-whiteboard-design-session-student-guide)
+- [Azure Stack Hub whiteboard design session student guide](#azure-stack-whiteboard-design-session-student-guide)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
     - [Customer situation](#customer-situation)
@@ -40,13 +40,13 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- /TOC -->
 
-#  Azure Stack whiteboard design session student guide
+#  Azure Stack Hub whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will work with a group to design a hybrid cloud architecture using a combination of the Azure public cloud and Azure Stack. This functional architecture will enable customers to leverage their investments in Azure as a "cloud platform," rather than Azure as a "place."
+In this whiteboard design session, you will work with a group to design a hybrid cloud architecture using a combination of the Azure public cloud and Azure Stack Hub. This functional architecture will enable customers to leverage their investments in Azure as a "cloud platform," rather than Azure as a "place."
 
-At the end of the session, you will be able to determine which systems are good candidates for the Azure public cloud, and which are better suited on Azure Stack.
+At the end of the session, you will be able to determine which systems are good candidates for the Azure public cloud, and which are better suited on Azure Stack Hub.
 
 ## Step 1: Review the customer case study 
 
@@ -139,7 +139,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
 
-1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack make it to where we must use two skillsets?
+1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack Hub make it to where we must use two skillsets?
 
 1.  Fabrikam already has its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
 
@@ -174,17 +174,17 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 2.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure Region will be best suited for the deployment.
 
-3.  List the services and components that will be deployed to Azure Stack. For each, provide their basic function in the system.
+3.  List the services and components that will be deployed to Azure Stack Hub. For each, provide their basic function in the system.
 
-4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack environment.
+4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
-5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack resources. 
+5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
 
-6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack operators. 
+6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
 
-7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack.
+7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack Hub.
 
-8.  Plan and document Azure Stack taxonomy for this deployment. 
+8.  Plan and document Azure Stack Hub taxonomy for this deployment. 
 
     -   Document each of the following areas of the taxonomy with details on how it will be setup:
 
@@ -206,7 +206,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 9.  Create a network design.
 
-    -   Design network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack that will allow future applications to be deployed in the public cloud or Azure Stack but still provide connectivity to customer or On-Premises data.
+    -   Design network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack Hub that will allow future applications to be deployed in the public cloud or Azure Stack Hub but still provide connectivity to customer or On-Premises data.
 
 **Prepare**
 
@@ -256,21 +256,21 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| Azure Stack overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
-| Azure Stack use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
-| Azure Stack features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
-| Azure Stack planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
-| Azure Stack documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
-| Azure Stack to Azure Global VPN | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-vpn> |
-| Register Azure Stack with your subscription | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-register> |
+| Azure Stack Hub overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
+| Azure Stack Hub use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
+| Azure Stack Hub features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
+| Azure Stack Hub planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
+| Azure Stack Hub documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
+| Azure Stack Hub to Azure Global VPN | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-vpn> |
+| Register Azure Stack Hub with your subscription | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-register> |
 | Deploy the Azure App Service resource provider | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-app-service-deploy> |
-| Deploy the Azure Stack SQL resource provider | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-sql-resource-provider-deploy#deploy-the-resource-provider> |
-| Deploy apps to Azure and Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
+| Deploy the Azure Stack Hub SQL resource provider | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-sql-resource-provider-deploy#deploy-the-resource-provider> |
+| Deploy apps to Azure and Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
 | White paper | <https://azure.microsoft.com/en-us/resources/azure-stack-an-extension-of-azure/> |
-| PowerShell for Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
-| Azure Stack marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
+| PowerShell for Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
+| Azure Stack Hub marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
 | What is Azure Arc for servers (preview)? | <https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview> |
 | Run an N-tier application in multiple Azure Stack Hub regions for high availability | <https://docs.microsoft.com/en-us/azure-stack/user/iaas-architecture-sql-n-tier-multi-region?view=azs-2002> |
 | Replication to Azure SQL Database | <https://docs.microsoft.com/en-us/azure/azure-sql/database/replication-to-sql-database> |

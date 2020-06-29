@@ -1,7 +1,7 @@
 ﻿![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Azure Stack
+Azure Stack Hub
 </div>
 
 <div class="MCWHeader2">
@@ -31,7 +31,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
   - [Whiteboard design session flow](#whiteboard-design-session-flow)
   - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
   - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
-- [Azure Stack whiteboard design session student guide](#azure-stack-whiteboard-design-session-student-guide)
+- [Azure Stack Hub whiteboard design session student guide](#azure-stack-whiteboard-design-session-student-guide)
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
     - [Customer situation](#customer-situation)
@@ -42,7 +42,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
   - [Step 3: Present the solution](#step-3-present-the-solution)
   - [Wrap-up](#wrap-up)
   - [Additional references](#additional-references)
-- [Azure Stack whiteboard design session trainer guide](#azure-stack-whiteboard-design-session-trainer-guide)
+- [Azure Stack Hub whiteboard design session trainer guide](#azure-stack-whiteboard-design-session-trainer-guide)
   - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
   - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
   - [Step 3: Present the solution](#step-3-present-the-solution-1)
@@ -166,13 +166,13 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-#  Azure Stack whiteboard design session student guide
+#  Azure Stack Hub whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will work with a group to design a hybrid cloud architecture using a combination of the Azure public cloud and Azure Stack. This functional architecture will enable customers to leverage their investments in Azure as a "cloud platform," rather than Azure as a "place."
+In this whiteboard design session, you will work with a group to design a hybrid cloud architecture using a combination of the Azure public cloud and Azure Stack Hub. This functional architecture will enable customers to leverage their investments in Azure as a "cloud platform," rather than Azure as a "place."
 
-At the end of the session, you will be able to determine which systems are good candidates for the Azure public cloud, and which are better suited on Azure Stack.
+At the end of the session, you will be able to determine which systems are good candidates for the Azure public cloud, and which are better suited on Azure Stack Hub.
 
 ## Step 1: Review the customer case study 
 
@@ -264,7 +264,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
 
-1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack make it to where we must use two skillsets?
+1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack Hub make it to where we must use two skillsets?
 
 1.  Fabrikam already has its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
 
@@ -298,17 +298,17 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 2.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure Region will be best suited for the deployment.
 
-3.  List the services and components that will be deployed to Azure Stack. For each, provide their basic function in the system.
+3.  List the services and components that will be deployed to Azure Stack Hub. For each, provide their basic function in the system.
 
-4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack environment.
+4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
-5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack resources. 
+5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
 
-6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack operators. 
+6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
 
-7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack.
+7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack Hub.
 
-8.  Plan and document Azure Stack taxonomy for this deployment. 
+8.  Plan and document Azure Stack Hub taxonomy for this deployment. 
 
     -   Document each of the following areas of the taxonomy with details on how it will be setup:
 
@@ -330,7 +330,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 9.  Create a network design.
 
-    -   Design network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack that will allow future applications to be deployed in the public cloud or Azure Stack but still provide connectivity to customer or On-Premises data.
+    -   Design network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack Hub that will allow future applications to be deployed in the public cloud or Azure Stack Hub but still provide connectivity to customer or On-Premises data.
 
 **Prepare**
 
@@ -380,29 +380,29 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| Azure Stack overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
-| Azure Stack use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
-| Azure Stack features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
-| Azure Stack planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
-| Azure Stack documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
-| Azure Stack networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
-| Azure Stack to Azure Global VPN | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-vpn> |
-| Register Azure Stack with your subscription | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-register> |
+| Azure Stack Hub overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
+| Azure Stack Hub use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
+| Azure Stack Hub features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
+| Azure Stack Hub planning considerations | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-planning-considerations> |
+| Azure Stack Hub documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub Operator documentation | <https://docs.microsoft.com/en-us/azure/azure-stack/> |
+| Azure Stack Hub networking | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-network-overview/> |
+| Azure Stack Hub to Azure Global VPN | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-vpn> |
+| Register Azure Stack Hub with your subscription | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-register> |
 | Deploy the Azure App Service resource provider | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-app-service-deploy> |
-| Deploy the Azure Stack SQL resource provider | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-sql-resource-provider-deploy#deploy-the-resource-provider> |
-| Deploy apps to Azure and Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
+| Deploy the Azure Stack Hub SQL resource provider | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-sql-resource-provider-deploy#deploy-the-resource-provider> |
+| Deploy apps to Azure and Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-solution-pipeline> |
 | White paper | <https://azure.microsoft.com/en-us/resources/azure-stack-an-extension-of-azure/> |
-| PowerShell for Azure Stack | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
-| Azure Stack marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
-| Azure Stack Identity Architecture | <https://docs.microsoft.com/en-us/azure-stack/operator/azure-stack-identity-architecture> |
-| Delegate offers in Azure Stack | <https://docs.microsoft.com/en-us/azure-stack/operator/azure-stack-delegated-provider> |
+| PowerShell for Azure Stack Hub | <https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-install> |
+| Azure Stack Hub marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
+| Azure Stack Hub Identity Architecture | <https://docs.microsoft.com/en-us/azure-stack/operator/azure-stack-identity-architecture> |
+| Delegate offers in Azure Stack Hub | <https://docs.microsoft.com/en-us/azure-stack/operator/azure-stack-delegated-provider> |
 | What is Azure Arc for servers (preview)? | <https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview> |
 | Run an N-tier application in multiple Azure Stack Hub regions for high availability | <https://docs.microsoft.com/en-us/azure-stack/user/iaas-architecture-sql-n-tier-multi-region?view=azs-2002> |
 | Replication to Azure SQL Database | <https://docs.microsoft.com/en-us/azure/azure-sql/database/replication-to-sql-database> |
 
 
-# Azure Stack whiteboard design session trainer guide
+# Azure Stack Hub whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
@@ -460,11 +460,11 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 -   FT Teams
 
-    -   Azure Stack, networking
+    -   Azure Stack Hub, networking
 
 ## Preferred solution
 
-After being engaged by Contoso and gathering the requirements from the client, FT has put forward a design which embraces the Azure platform and DevOps for development and deployment, as well as addresses multi-tenant identity and data sovereignty requirements discovered by Contoso (no customer data in the public cloud). The solution consists of using Azure public cloud in the South-Central Region and Azure Stack running in a FT Dallas datacenter.
+After being engaged by Contoso and gathering the requirements from the client, FT has put forward a design which embraces the Azure platform and DevOps for development and deployment, as well as addresses multi-tenant identity and data sovereignty requirements discovered by Contoso (no customer data in the public cloud and filtering out regulated data for international customers). The solution relies on resources deployed to the Azure public cloud in the South-Central region and to an Azure Stack Hub stamp running in a FT Dallas datacenter for the production environment and with the North-Central region and Azure Stack Hub running in FT Chicago datacenter for the disaster recovery environment.
 
 ![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stock FusionTomo Dallas Datacenter, which in turn connects via VPN to On-Premises.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png "Preferred solution")
 
@@ -482,7 +482,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Azure SQL Database will replace the existing SQL Servers.
 
-    -   Azure Traffic Manager will be configured in Priority mode to route web traffic to either the Azure public Web App or the Web App on Azure Stack.
+    -   Azure Traffic Manager will be configured in Priority mode to route web traffic to either the Azure public Web App or the Web App on Azure Stack Hub.
 
     -   Azure Content Deployment Network (CDN) to allow public files such as PDFs to be routed closer to customers for a faster download experience.
 
@@ -496,39 +496,39 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   Azure CDN for hosting publicly accessible PDF files.
 
-3. List the services and components that will be deployed to Azure Stack Cloud. For each, provide their basic function in the system.
+3. List the services and components that will be deployed to Azure Stack Hub. For each, provide their basic function in the system.
 
-    -   A new Azure Stack Region will be deployed into the FusionTomo datacenter in Dallas, TX. The following applications and VMs will be deployed into Azure Stack:
+    -   A new Azure Stack Hub Region will be deployed into the FusionTomo datacenter in Dallas, TX. The following applications and VMs will be deployed into Azure Stack Hub:
 
-        -   Azure Stack SQL Database for the Web App DB and Customer Data. This will require the Azure Stack SQL DB Resource Provider to be installed.
+        -   Azure Stack Hub SQL Database for the Web App DB and Customer Data. This will require the Azure Stack Hub SQL DB Resource Provider to be installed.
 
-        -   Mortgage Applications and Mortgage Admin: Offers API, and Function App will be deployed to Azure App services in an Azure App Service Environment (due to ExpressRoute integration with Azure Stack). This will require the Azure Stack Azure App Resource Provider to be installed.
+        -   Mortgage Applications and Mortgage Admin: Offers API, and Function App will be deployed to Azure App services in an Azure App Service Environment (due to ExpressRoute integration with Azure Stack Hub). This will require the Azure Stack Hub Azure App Resource Provider to be installed.
 
         -   Azure Blob Storage for PDFs.
 
         -   Azure Queue Storage for the Mortgage Application messaging.
 
-4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack environment.
+4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
-    In order to facilitate authentication and authorization requirements (and given the cloud first strategy embraced by Contoso), FT will implement Azure Active Directory as the identity provider in the multi-tenant topology, with the Contoso Azure Active Directory serving as the primary tenant (providing access to both the Azure Stack Admin and User portal) and the Fabrikam Azure Active Directory serving as a guest tenant (allowing its users to access the Azure Stack User portal only).
+    In order to facilitate authentication and authorization requirements (and given the cloud first strategy embraced by Contoso), FT will implement Azure Active Directory as the identity provider in the multi-tenant topology, with the Contoso Azure Active Directory serving as the primary tenant (providing access to both the Azure Stack Hub Admin and User portal) and the Fabrikam Azure Active Directory serving as a guest tenant (allowing its users to access the Azure Stack Hub User portal only).
 
-5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack resources. 
+5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
 
-    FT will rely on the two primary delegation mechanisms in order to accommodate the need to provide restricted access to the Azure Stack environment:
+    FT will rely on the two primary delegation mechanisms in order to accommodate the need to provide restricted access to the Azure Stack Hub environment:
 
     -   Role Based Access Control (RBAC): allows assigning users to built-in or custom roles that determine actions which these users will be able to carry out within the scope of an assignment (such as a subscription or a resource group). FT can use RBAC to provide designated members of Contoso and Fabrikam IT staff with limited access to the Default Provider Subscription (for example, assign them to the built-in Reader role on the subscription level or use a custom role that restrict their access further, allowing them only to view the Activity Log). 
 
-    -   Delegated Provider model: allows members of Contoso and Fabrikam IT staff designated as delegated providers to control the process of their respective end-users signing up for subscriptions. With delegation, the delegated provider manages an offer (called a delegated offer), and end users obtain subscriptions under that offer without involvement from the FT Azure Stack operator.
+    -   Delegated Provider model: allows members of Contoso and Fabrikam IT staff designated as delegated providers to control the process of their respective end-users signing up for subscriptions. With delegation, the delegated provider manages an offer (called a delegated offer), and end users obtain subscriptions under that offer without involvement from the FT Azure Stack Hub operator.
 
-6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack operators. 
+6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
 
-    FT will be responsible for implementing the following common Azure Stack management tasks:
+    FT will be responsible for implementing the following common Azure Stack Hub management tasks:
 
     -   Creating plans, quotas, and offers
 
     -   Creating Marketplace items
 
-    -   Backing up Azure Stack Infrastructure 
+    -   Backing up Azure Stack Hub Infrastructure 
 
     -   Monitoring infrastructure health
 
@@ -536,9 +536,9 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Replacing failed hardware
 
-7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure public cloud and Azure Stack.
+7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure public cloud and Azure Stack Hub.
 
-    Azure Resource Manager templates can be used to deploy supported services to both Azure public cloud and Azure Stack.
+    Azure Resource Manager templates can be used to deploy supported services to both Azure public cloud and Azure Stack Hub.
 
     A hybrid continuous integration/continuous delivery(CI/CD) pipeline enables you to build, test, and deploy your app to multiple clouds. A hybrid CI/CD pipeline can help you:
 
@@ -546,31 +546,31 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Automatically deploy your newly built code to Azure for user acceptance testing.
 
-    -   Once your code has passed testing, automatically deploy to Azure Stack.
+    -   Once your code has passed testing, automatically deploy to Azure Stack Hub.
 
-8.  Plan and Document Azure Stack Taxonomy for this deployment.
+8.  Plan and Document Azure Stack Hub Taxonomy for this deployment.
 
-    -   **Cloud operator**: The primary responsibilities associated with this role will be handled by FT. As the Service Provider, FT will provision and maintain the Azure Stack Infrastructure, including building out the hardware, software, and managing plans, offers and services via the Azure Stack Admin portal. Contoso and Fabrikam end users and IT staff will have access to the Azure Stack environment via the User Portal to build, manage and secure their deployments. Through the delegated providers model, Contoso and Fabrikam IT staff will also be able to create delegated offers and plans based on offers and plans controlled centrally by FT Azure Stack operators. This, in turn, will allow Contoso and Fabrikam end users to subscribe to offers and provision Azure Stack resources through self-service. In addition, FT will be able to leverage built-in and custom Role Based Access Control roles to provide restricted access to the Azure Stack Admin portal to Contoso and Fabrikam staff in order to satisfy audit, security, and governance requirements.
+    -   **Cloud operator**: The primary responsibilities associated with this role will be handled by FT. As the Service Provider, FT will provision and maintain the Azure Stack Hub Infrastructure, including building out the hardware, software, and managing plans, offers and services via the Azure Stack Hub Admin portal. Contoso and Fabrikam end users and IT staff will have access to the Azure Stack Hub environment via the User Portal to build, manage and secure their deployments. Through the delegated providers model, Contoso and Fabrikam IT staff will also be able to create delegated offers and plans based on offers and plans controlled centrally by FT Azure Stack Hub operators. This, in turn, will allow Contoso and Fabrikam end users to subscribe to offers and provision Azure Stack Hub resources through self-service. In addition, FT will be able to leverage built-in and custom Role Based Access Control roles to provide restricted access to the Azure Stack Hub Admin portal to Contoso and Fabrikam staff in order to satisfy audit, security, and governance requirements.
 
-    -   **Region**: One Azure Stack region would be created in the FT datacenter for Contoso's operations in North America.
+    -   **Region**: One Azure Stack Hub region would be created in the FT datacenter for Contoso's operations in North America.
 
-    -   **Tenant**: Contoso will be setup as the primary tenant for their US based operations. To accommodate requirements for integration with Fabrikam Azure Active Directory, FT will implement multi-tenant Azure Stack topology. The same topology can be further extended to include other tenants as Contoso grows its business. All tenants can be granted access to all of the offers and services detailed in the rest of this taxonomy. (If further separation is required, then another Region would have to be deployed.)
+    -   **Tenant**: Contoso will be setup as the primary tenant for their US based operations. To accommodate requirements for integration with Fabrikam Azure Active Directory, FT will implement multi-tenant Azure Stack Hub topology. The same topology can be further extended to include other tenants as Contoso grows its business. All tenants can be granted access to all of the offers and services detailed in the rest of this taxonomy. (If further separation is required, then another Region would have to be deployed.)
 
-    -   **Subscriptions**: The Azure Stack environment will contain multiple subscriptions. Their creation would be coordinated with Contoso and Fabrikam, but considering the intended self-service model, users will be able to create their own subscriptions based on public or private offers available to them. Distinct subscriptions will facilitate cost allocation and chargeback processes.
+    -   **Subscriptions**: The Azure Stack Hub environment will contain multiple subscriptions. Their creation would be coordinated with Contoso and Fabrikam, but considering the intended self-service model, users will be able to create their own subscriptions based on public or private offers available to them. Distinct subscriptions will facilitate cost allocation and chargeback processes.
 
-    -   **Plans and quotas**: Plans are groupings of one or more services, with quotas restricting resources available when provisioning these services. In Azure, services are designed, deployed and offered to various regions by Microsoft engineers and operators. In Azure Stack the cloud operator deploys these services and makes them available to subscribed users using [quotas, plans, and offers](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-plan-offer-quota-overview). This needs to be carefully designed in order to take into account capacity planning and growth/usage patterns as each of these elements are connected and define both the capabilities and quantities that users can consume. As the provider, FT will create plans to offer to the Contoso and Fabrikam tenants. Each service added to a plan can be configured with quota settings. 
+    -   **Plans and quotas**: Plans are groupings of one or more services, with quotas restricting resources available when provisioning these services. In Azure, services are designed, deployed and offered to various regions by Microsoft engineers and operators. In Azure Stack Hub the cloud operator deploys these services and makes them available to subscribed users using [quotas, plans, and offers](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-plan-offer-quota-overview). This needs to be carefully designed in order to take into account capacity planning and growth/usage patterns as each of these elements are connected and define both the capabilities and quantities that users can consume. As the provider, FT will create plans to offer to the Contoso and Fabrikam tenants. Each service added to a plan can be configured with quota settings. 
 
     -   **Offers**: Offers make plans available to users or delegated providers. FT will implement the delegated provider model, allowing designated members of the Contoso and Fabrikam staff serve the role of delegated providers and to create offers to their respective end-users based on FT-defined plans and offers.
 
-    -   **Services/Resource Providers (RP)**: The base Resource Providers: Compute RP, Network RP, Storage RP and KeyVault RP will all be enabled. The SQL Server RP will be enabled and configured. The Azure App RP will be enabled and configured (The Windows Server 2016, SQL Server 2017, SQL IaaS Extension for Azure Stack).
+    -   **Services/Resource Providers (RP)**: The base Resource Providers: Compute RP, Network RP, Storage RP and KeyVault RP will all be enabled. The SQL Server RP will be enabled and configured. The Azure App RP will be enabled and configured (The Windows Server 2016, SQL Server 2017, SQL IaaS Extension for Azure Stack Hub).
 
-    ![The Azure Stack Taxonomy displays as previously described.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image5.png "Azure Stack Taxonomy")
+    ![The Azure Stack Hub Taxonomy displays as previously described.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image5.png "Azure Stack Hub Taxonomy")
 
 9.  Create a networks design.
 
-    Design Network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack that will allow future applications to be deployed in the public cloud or Azure Stack and still provide connectivity to customer or On-Premises data.
+    Design Network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack Hub that will allow future applications to be deployed in the public cloud or Azure Stack Hub and still provide connectivity to customer or On-Premises data.
 
-    -   The initial proof of concept will start with providing a S2S VPN between the virtual network the Azure Web App is connected to and Azure Stack and another S2S Gateway between the Azure Stack datacenter in FT and the Contoso Regional HQ.
+    -   The initial proof of concept will start with providing a S2S VPN between the virtual network the Azure Web App is connected to and Azure Stack Hub and another S2S Gateway between the Azure Stack Hub datacenter in FT and the Contoso Regional HQ.
 
     -   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the new routers On-Premises at the Contoso Dallas office. Contoso's Public IP Space will be leveraged along with the addition of Public IP space from FT.
 
@@ -580,13 +580,13 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     **Potential Answer:**
 
-    The SQL Database containing the customer information will be hosted in Azure Stack in the FT datacenter. This will require the SQL DB Resource Provider to be running on Azure Stack. The data will never reside in the Azure Global Cloud.
+    The SQL Database containing the customer information will be hosted in Azure Stack Hub in the FT datacenter. This will require the SQL DB Resource Provider to be running on Azure Stack Hub. The data will never reside in the Azure Global Cloud.
 
 2.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
 
     **Potential Answer:**
 
-    All of the services that are used for this application in both Azure Global and Azure Stack leverage PaaS services. As a result, there is very limited need for management of the platforms beyond the application.
+    All of the services that are used for this application in both Azure Global and Azure Stack Hub leverage PaaS services. As a result, there is very limited need for management of the platforms beyond the application.
 
 3.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
 
@@ -594,7 +594,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     The application code base can be modernized by converting the Windows Services to Azure Functions, messaging based code could use Azure Storage Queues or Service Bus, and code that reads and writes from the file system could be updated to use Azure Storage. Finally, application code that writes to SQL Server could be updated to use SQL Database.
 
-4.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack make it to where we must use two skillsets?
+4.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack Hub make it to where we must use two skillsets?
 
     **Potential Answer:**
 
@@ -604,11 +604,11 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     **Potential Answer:**
 
-    There is no need for creating duplicate accounts for Fabrikam users. When using Azure Active Directory as the identity provider, Azure Stack supports multi-tenant topology. Once implemented, the topology allows users from different Azure Active Directory tenants provision and access Azure Stack offers directly from the Azure Stack User portal. If there is a need for a Fabrikam IT staff to access the Azure Stack Admin portal, this can be accomplished by inviting that user into Contoso Azure Active Directory tenant and using Role Based Access Control to implement authorization. When using Active Directory Federation Services (AD FS) as the identity provider, multi-tenancy can be provided through federation trusts. 
+    There is no need for creating duplicate accounts for Fabrikam users. When using Azure Active Directory as the identity provider, Azure Stack Hub supports multi-tenant topology. Once implemented, the topology allows users from different Azure Active Directory tenants provision and access Azure Stack Hub offers directly from the Azure Stack Hub User portal. If there is a need for a Fabrikam IT staff to access the Azure Stack Hub Admin portal, this can be accomplished by inviting that user into Contoso Azure Active Directory tenant and using Role Based Access Control to implement authorization. When using Active Directory Federation Services (AD FS) as the identity provider, multi-tenancy can be provided through federation trusts. 
 
 
 ## Customer quote (to be read back to the attendees at the end)
 
-"Our plans to enter the North American Mortgage market were enabled by our Partner, FusionTomo helping us to leverage our investment in Azure as a platform with Azure Stack. We can move forward with our project timelines."
+"Our plans to enter the North American Mortgage market were enabled by our Partner, FusionTomo helping us to leverage our investment in Azure as a platform with Azure Stack Hub. We can move forward with our project timelines."
 
 -   Doreen Newton, CTO
