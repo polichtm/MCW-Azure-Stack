@@ -164,7 +164,7 @@ Directions:  With all participants at your table, answer the following questions
 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
 
-2.  What customer business needs do you need to address with your solution?
+1.  What customer business needs do you need to address with your solution?
 
 **Design**
 
@@ -174,19 +174,23 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Identify the overall application design you would propose for modernizing their existing application into Azure.
 
-2.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure Region will be best suited for the deployment.
+1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
-3.  List the services and components that will be deployed to Azure Stack Hub. For each, provide their basic function in the system.
+1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
+1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
 
-5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
+1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
-6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
+1.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
 
-7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack Hub.
+1.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
 
-8.  Plan and document Azure Stack Hub taxonomy for this deployment. 
+1.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack Hub.
+
+1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
+
+1.  Plan and document Azure Stack Hub taxonomy for this deployment. 
 
     -   Document each of the following areas of the taxonomy with details on how it will be setup:
 
@@ -206,9 +210,9 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Diagram your taxonomy.
 
-9.  Create a network design.
+1.  Create a network design.
 
-    -   Design network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack Hub that will allow future applications to be deployed in the public cloud or Azure Stack Hub but still provide connectivity to customer or On-Premises data.
+    -   Design network connectivity between Contoso's on-premises locations and resources hosted in Azure public and/or implemented by leveraging Azure Stack portfolio.
 
 **Prepare**
 
@@ -216,9 +220,9 @@ Directions: With all participants at your table:
 
 1.  Identify any customer needs that are not addressed with the proposed solution.
 
-2.  Identify the benefits of your solution.
+1.  Identify the benefits of your solution.
 
-3.  Determine how you will respond to the customer's objections.
+1.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -236,17 +240,17 @@ Directions:
 
 1.  Pair with another table.
 
-2.  One table is the Microsoft team and the other table is the customer.
+1.  One table is the Microsoft team and the other table is the customer.
 
-3.  The Microsoft team presents their proposed solution to the customer.
+1.  The Microsoft team presents their proposed solution to the customer.
 
-4.  The customer makes one of the objections from the list of objections.
+1.  The customer makes one of the objections from the list of objections.
 
-5.  The Microsoft team responds to the objection.
+1.  The Microsoft team responds to the objection.
 
-6.  The customer team gives feedback to the Microsoft team.
+1.  The customer team gives feedback to the Microsoft team.
 
-7.  Tables switch roles and repeat Steps 2-6.
+1.  Tables switch roles and repeat Steps 2-6.
 
 ##  Wrap-up 
 

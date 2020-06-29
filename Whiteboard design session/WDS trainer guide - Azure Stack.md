@@ -288,7 +288,7 @@ Directions:  With all participants at your table, answer the following questions
 
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
 
-2.  What customer business needs do you need to address with your solution?
+1.  What customer business needs do you need to address with your solution?
 
 **Design**
 
@@ -298,19 +298,23 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Identify the overall application design you would propose for modernizing their existing application into Azure.
 
-2.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure Region will be best suited for the deployment.
+1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
-3.  List the services and components that will be deployed to Azure Stack Hub. For each, provide their basic function in the system.
+1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
+1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
 
-5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
+1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
-6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
+1.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
 
-7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack Hub.
+1.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
 
-8.  Plan and document Azure Stack Hub taxonomy for this deployment. 
+1.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack Hub.
+
+1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
+
+1.  Plan and document Azure Stack Hub taxonomy for this deployment. 
 
     -   Document each of the following areas of the taxonomy with details on how it will be setup:
 
@@ -330,9 +334,10 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Diagram your taxonomy.
 
-9.  Create a network design.
+1.  Create a network design.
 
-    -   Design network connectivity between the Contoso Regional HQ in Dallas to Azure and Azure Stack Hub that will allow future applications to be deployed in the public cloud or Azure Stack Hub but still provide connectivity to customer or On-Premises data.
+    -   Design network connectivity between Contoso's on-premises locations and resources hosted in Azure public and/or implemented by leveraging Azure Stack portfolio.
+
 
 **Prepare**
 
@@ -340,9 +345,9 @@ Directions: With all participants at your table:
 
 1.  Identify any customer needs that are not addressed with the proposed solution.
 
-2.  Identify the benefits of your solution.
+1.  Identify the benefits of your solution.
 
-3.  Determine how you will respond to the customer's objections.
+1.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -360,17 +365,17 @@ Directions:
 
 1.  Pair with another table.
 
-2.  One table is the Microsoft team and the other table is the customer.
+1.  One table is the Microsoft team and the other table is the customer.
 
-3.  The Microsoft team presents their proposed solution to the customer.
+1.  The Microsoft team presents their proposed solution to the customer.
 
-4.  The customer makes one of the objections from the list of objections.
+1.  The customer makes one of the objections from the list of objections.
 
-5.  The Microsoft team responds to the objection.
+1.  The Microsoft team responds to the objection.
 
-6.  The customer team gives feedback to the Microsoft team.
+1.  The customer team gives feedback to the Microsoft team.
 
-7.  Tables switch roles and repeat Steps 2-6.
+1.  Tables switch roles and repeat Steps 2-6.
 
 ##  Wrap-up 
 
@@ -495,7 +500,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Azure Content Deployment Network (CDN) to allow public files such as PDFs to be routed closer to customers for a faster download experience.
 
-2. List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure Region will be best suited for the deployment.
+1. List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
     -   Azure public cloud: The South-Central Region will be used for public facing applications allowing the reuse of all of the code currently being run in production in Europe and Australia. The following applications will be deployed to Azure Global Cloud:
 
@@ -505,7 +510,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   Azure CDN for hosting publicly accessible PDF files.
 
-3. List the services and components that will be deployed to Azure Stack Hub. For each, provide their basic function in the system.
+1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
 
     -   A new Azure Stack Hub Region will be deployed into the FusionTomo datacenter in Dallas, TX. The following applications and VMs will be deployed into Azure Stack Hub:
 
@@ -517,11 +522,11 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   Azure Queue Storage for the Mortgage Application messaging.
 
-4.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
+1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
     In order to facilitate authentication and authorization requirements (and given the cloud first strategy embraced by Contoso), FT will implement Azure Active Directory as the identity provider in the multi-tenant topology, with the Contoso Azure Active Directory serving as the primary tenant (providing access to both the Azure Stack Hub Admin and User portal) and the Fabrikam Azure Active Directory serving as a guest tenant (allowing its users to access the Azure Stack Hub User portal only).
 
-5.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
+1.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
 
     FT will rely on the two primary delegation mechanisms in order to accommodate the need to provide restricted access to the Azure Stack Hub environment:
 
@@ -529,7 +534,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Delegated Provider model: allows members of Contoso and Fabrikam IT staff designated as delegated providers to control the process of their respective end-users signing up for subscriptions. With delegation, the delegated provider manages an offer (called a delegated offer), and end users obtain subscriptions under that offer without involvement from the FT Azure Stack Hub operator.
 
-6.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
+1.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
 
     FT will be responsible for implementing the following common Azure Stack Hub management tasks:
 
@@ -545,7 +550,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Replacing failed hardware
 
-7.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure public cloud and Azure Stack Hub.
+1.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure public cloud and Azure Stack Hub.
 
     Azure Resource Manager templates can be used to deploy supported services to both Azure public cloud and Azure Stack Hub.
 
@@ -557,7 +562,9 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Once your code has passed testing, automatically deploy to Azure Stack Hub.
 
-8.  Plan and Document Azure Stack Hub Taxonomy for this deployment.
+1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
+
+1.  Plan and Document Azure Stack Hub Taxonomy for this deployment.
 
     -   **Cloud operator**: The primary responsibilities associated with this role will be handled by FT. As the Service Provider, FT will provision and maintain the Azure Stack Hub Infrastructure, including building out the hardware, software, and managing plans, offers and services via the Azure Stack Hub Admin portal. Contoso and Fabrikam end users and IT staff will have access to the Azure Stack Hub environment via the User Portal to build, manage and secure their deployments. Through the delegated providers model, Contoso and Fabrikam IT staff will also be able to create delegated offers and plans based on offers and plans controlled centrally by FT Azure Stack Hub operators. This, in turn, will allow Contoso and Fabrikam end users to subscribe to offers and provision Azure Stack Hub resources through self-service. In addition, FT will be able to leverage built-in and custom Role Based Access Control roles to provide restricted access to the Azure Stack Hub Admin portal to Contoso and Fabrikam staff in order to satisfy audit, security, and governance requirements.
 
