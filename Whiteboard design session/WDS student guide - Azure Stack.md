@@ -135,6 +135,8 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
 
+1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
+
 1.  We have heard that Azure SQL Database does not support replication with on-premises SQL Server-based databases. If so, how can we implement replication of customer data that is not a subject to regulatory restrictions from Canada and Mexico in order to account for our business intelligence requirements?
 
 1.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
