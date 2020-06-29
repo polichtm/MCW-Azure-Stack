@@ -210,7 +210,7 @@ In addition, as a result of a recent acquisition of a financial analytics compan
 
 During the early planning stages of the new cloud strategy, Contoso IT team realized that the constraints applicable to its international locations also play significant role within the United States. As it turned out, corporate compliance policies and regulatory mandates preclude the ability to move some of their customer, on-premises resident data to US based Azure regions. "This was a cause for great concern, as this means Contoso may not be able to move to cloud-based services as we initially envisioned" says Max Rubin VP of Network Engineering. Doreen Newton took on the challenge to investigate alternatives to allow Contoso to proceed with getting the benefits of the cloud while not breaking rules for corporate compliance.
 
-To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have datacenters located in Dallas, Denver, Chicago, Las Vegas, London, and Hong Kong SAR.
+To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have a number of datacenters around the world, including Dallas, Denver, Chicago, Las Vegas, Toronto, and Mexico City.
 
 Contoso has expressed to FT the need to embrace Microsoft Azure technologies as well as technologies that will help their organization with a more agile continuous integration and continuous deployment model for application deployment. FT was made aware of the compliance and regulatory challenges it encountered, along with the set of business requirements that must be satisfied as Contoso transitions towards its longer term goals. Contoso's IT management team also underscored the need for cooperation with Fabrikam's integration teams, including the intent to delegate some of the infrastructure management tasks. 
 
@@ -223,40 +223,50 @@ In addition, Contoso has tasked FT with implementing a hosted environment that w
 
 Contoso is looking for FT to provide the following for their expansion into North America:
 
-1.  Design a hybrid-cloud architecture that is native Azure end-to-end without the need for hosting the application in a Contoso owned datacenter.
+1.  Design a hybrid-cloud architecture that is native Azure end-to-end without the need for hosting the application in a Contoso owned, US-based datacenter.
 
-2.  The design should ensure that customer data is not stored in the Azure Cloud while also allowing future applications to be easily deployed in Azure with access to custom data regardless of where they are deployed.
+1.  Incorporate into the design high availability and disaster recovery provisions for the customer-facing mortgage application.
 
-3.  Deploy the application in a secure manner as to allow for the frontend applications to access the backend customer data.
+1.  Ensure that customer data is not stored in the Azure Cloud while also allowing future applications to be easily deployed in Azure with access to custom data regardless of where they are deployed.
 
-4.  Establish direct connectivity from the new regional headquarters in Dallas to the deployments. This will allow communication with existing systems and reporting until the rest of Contoso's services are moved to Azure in the future.
+1.  Account for the Contoso's intention to expand its business to Canada and Mexico, including requirements regarding data residency and replication requirements.
 
-5.  Allow for a consistent application deployment model using Azure ARM templates and CI/CD.
+1.  Propose management and monitoring approach that would provide consistency in a hybrid environment. 
 
-6.  Detail the taxonomy that will be leveraged for the hybrid-cloud including the Resource Providers (RP) This includes tenants, regions, subscriptions, offers, plans, services and quotas.
+1.  Deploy the application in a secure manner as to allow for the frontend applications to access the backend customer data.
 
-7.  Design an integration model that would allow resource access for both Contoso and Fabrikam users.
+1.  Establish direct connectivity from the new regional headquarters in Dallas to the deployments. This will allow communication with existing systems and reporting until the rest of Contoso's services are moved to Azure in the future.
 
-8.  Propose a self-service approach that will allow Contoso and Fabrikam developers provision their own resources from the service catalog offered by infrastructure teams. The scope of resources available in service catalog must be controlled centrally, with an oversight by designated Contoso and Fabrikam administrators.
+1.  Allow for a consistent application deployment model using Azure ARM templates and CI/CD.
 
-9.  Recommend a procedure for delegation of permissions that would not only allow designated Fabrikam IT admins to manage Contoso infrastructure but also account for the need to provide limited access to the Contoso internal audit team.
+1.  Detail the taxonomy that will be leveraged for the hybrid-cloud including the Resource Providers (RP) This includes tenants, regions, subscriptions, offers, plans, services and quotas.
 
-10.  Suggest a methodology that would facilitate implementing corporate standards by automating the process of resource provisioning and configuration. 
+1.  Design an integration model that would allow resource access for both Contoso and Fabrikam users.
 
-11.  Document standard operational tasks such as infrastructure backup and log collection.
+1.  Propose a self-service approach that will allow Contoso and Fabrikam developers provision their own resources from the service catalog offered by infrastructure teams. The scope of resources available in service catalog must be controlled centrally, with an oversight by designated Contoso and Fabrikam administrators.
+
+1.  Recommend a procedure for delegation of permissions that would not only allow designated Fabrikam IT admins to manage Contoso infrastructure but also account for the need to provide limited access to the Contoso internal audit team.
+
+1.  Suggest a methodology that would facilitate implementing corporate standards by automating the process of resource provisioning and configuration. 
+
+1.  Document standard operational tasks such as infrastructure backup and log collection.
 
 
 ### Customer objections 
 
 1.  The Mortgage SQL DB cannot be hosted in the public cloud.
 
-2.  Contoso staff is already stretched thin, so minimizing patching of systems and day-to-day management is very important.
+1.  Contoso staff is already stretched thin, so minimizing patching of systems and day-to-day management is very important.
 
-3.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
+1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
 
-4.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack make it to where we must use two skillsets?
+1.  We have heard that Azure SQL Database does not support replication with on-premises SQL Server-based databases. If so, how can we implement replication of customer data that is not a subject to regulatory restrictions from Canada and Mexico in order to account for our business intelligence requirements?
 
-5.  Fabrikam already has its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
+1.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
+
+1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack make it to where we must use two skillsets?
+
+1.  Fabrikam already has its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
 
 ### Infographic for common scenarios
 
