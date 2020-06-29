@@ -194,17 +194,17 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 Contoso Finance is one of the largest banks in the United States with a significant amount of their revenue coming from their residential mortgage business. Their mortgage business is headquartered in Dallas, Texas. During a meeting with the newly appointed CTO Doreen Newton, the IT team learned that Contoso is shifting to a cloud first strategy after seeing firsthand the advantages of the cloud from Doreen's previous role leading her prior company through a digital transformation. Her message, "I have seen how applications and infrastructures are deployed and run using Microsoft Azure with both PaaS and IaaS services. These capabilities can transform Contoso with more agility and long-term cost effectiveness." resonated with other members of the IT organization.
 
-Contoso's current workloads run in their Dallas based datacenter using VMWare based virtual machines. One of the primary applications the company is interested in modernizing to take advantage of the cloud is a consumer facing mortgage application. This application is handling new mortgage requests and facilitating access of consumers to their current mortgage information. The current implementation of the mortgage application is hosted in a public facing website on Microsoft Internet Information Server (IIS) with a backend database using SQL Server 2014. The application has several modules that run as Windows Services. These modules are responsible for running credit checks and generating PDFs for transactions. The application uses Microsoft Message Queue (MSMQ) for interacting between modules. The application also allows customers to download several publicly accessible PDF files that provide an overview of the bank's mortgage related products.
+Contoso's current workloads run in their Dallas based datacenter using VMWare based virtual machines. One of the primary applications the company is interested in modernizing to take advantage of the cloud is a consumer facing mortgage application. This application is handling new mortgage requests and facilitating access of consumers to their current mortgage information. The current implementation of the mortgage application is hosted in a public facing website on Microsoft Internet Information Server (IIS) with a backend database using SQL Server 2012. The application has several modules that run as Windows Services. These modules are responsible for running credit checks and generating PDFs for transactions. The application uses Microsoft Message Queue (MSMQ) for interacting between modules. The application also allows customers to download several publicly accessible PDF files that provide an overview of the bank's mortgage related products.
 
 The current implementation of mortgage application relies on a third party load balancer to distribute requests across a pair of identically confgured web servers, with redundant application servers operating in the active/active mode, and the database tier leveraging SQL Server Always On availability group in the synchronous-commit mode. The database is also replicated asynchronously to the Contoso's disaster recovery site in Tulsa, Oklahoma. The recovery site hosts instances of web and application servers, configured identically to their production counterparts. As part of the disaster recovery plan, the external DNS records pointing to the public endpoint of the mortgage application would be modified to match the public IP address associated with the Tulsa datacenter edge routers.
 
-In addition to plans for modernizing its technology, Contoso is also interested in expanding its business mortgage origination business to Canada. Considering the matching projected timelines of these two initiatives, the IT team wants to explore the possibility of leveraging, whenever applicable, Azure technologies, not only for its United States-based workloads but also when developing and implementing its international operations. However, as the Contoso's compliance team has pointed out, operating internationally introduces regulatory challenges. In particular, Contoso must ensure that it protects personally identifiable information (PII) according to country-specific laws governing processing, distribution, and storage of financial records. Some of information provided by international customers must remain at the country of origin and would need to be excluded from any data set transmitted to Azure or to Contoso's United States-based locations.
+In addition to plans for modernizing its technology, Contoso is also interested in expanding its business mortgage origination business to Canada. Considering the matching projected timelines of these two initiatives, the IT team wants to explore the possibility of leveraging, whenever applicable, Azure technologies, not only for its United States-based workloads but also when developing and implementing its Canada-based operations. However, as the corporate Compliance team has pointed out, operating internationally introduces regulatory challenges. In particular, Contoso must ensure that it protects personally identifiable information (PII) according to country-specific laws governing processing, distribution, and storage of customer financial records. Some of information provided by Canadian customers must remain in the country of its origin and would need to be excluded from any data set transmitted to Azure or to Contoso's United States-based locations.
 
-At the same time, Contoso's strategy oversight committee emphasizes the significance of collecting comprehensive data associated with all of mortgage operations across the company, which feeds its custom Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) systems. Currently, these custom systems extract data directly from the SQL Server database that serves as the data store for the customer facing mortgage application. Due to existing dependencies built into the modules processing data feeds into the ERP and CRM systems, the intention is to keep the current model, with the single, centalized database for mortgage originations data.
+At the same time, Contoso's strategy oversight committee emphasizes the significance of collecting comprehensive data associated with all of mortgage operations across the company, which feeds its custom Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) systems. Currently, these custom systems extract data directly from the SQL Server database that serves as the data store for the customer facing mortgage application. Data feed mechanism used by both systems is latency-sensitive and does not work reliably over WAN connections.
 
 While the management team of Mortgage Unit within Contoso is open to modernizing technologies that deliver its applications to customers, its members are concerned about the resiliency of a hybrid solution that would result in moving its mission critical mortgage processing application out of Contoso owned datacenters. While currently there are no explicitly stated Recovery Point Objective (RPO) and Recovery Time Objective (RTO), the business wants to ensure that the proposed solution includes high availability and disaster recovery provisions. The management team wants to make sure that, at the very least, any potential downtime and data loss are minimized to the extent equivalent to that offereed by the current implementation.
 
-Another important consideration concerns the future management and maintenance model optimized for the clould first strategy. CTO Doreen Newton is a vocal advocate of consistency, regardless of whether compute, storage, or networking resources reside on-premises, in Azure, or a datacenter managed by a third party hosting provider. Contoso IT team currently relies on System Center Operations Manager for monitoring their on-premises servers, but it is yet unclear how to design and implement the approach promoted by its CTO once their workloads are migrated to a private or a public cloud. From the management standpoint, the team has been evaluating PowerShell Desired State Configuration on its Windows and Linux servers in order to eliminate configuration drift, which currently is one of the pain points negatively affecting the stability of the compute environment.
+Another important consideration concerns the future management and maintenance model optimized for the clould first strategy. CTO Doreen Newton is a vocal advocate of consistency, regardless of whether compute, storage, or networking resources reside on-premises, in Azure, or a datacenter managed by a third party hosting provider. Contoso IT team currently relies on System Center Operations Manager for monitoring their on-premises servers, but it is yet unclear how to design and implement the approach promoted by the company's CTO once their workloads are migrated to a private or a public cloud. From the management standpoint, the team has been evaluating PowerShell Desired State Configuration on Windows and Linux servers in order to eliminate configuration drift, which currently is one of the pain points negatively affecting the stability of the compute environment.
 
 In addition, as a result of a recent acquisition of a financial analytics company named Fabrikam, based in Houston, Texas, Contoso IT management team decided to integrate a number of Fabrikam's internally developed applications to process and analyze the customer data being used by the Contoso's customer facing mortgage application. Fabrikam has skilled development and infrastructure teams, with extensive Azure experience and its own Azure Active Directory tenant. Contoso is very interested in leveraging that experience and plans to offer the Fabrikam IT team sufficient level of autonomy when working on the integration tasks. That autonomy will need to account for the emerging cloud strategy and allow the Fabrikam IT team to offer to their users cloud resources required for application development, implementation, and maintenance. At the same time, Contoso will need to ensure proper governance that facilitates compliance with its corporate standards throgh automation and centralized control of the content of a service catalog offered to Fabrikam users. 
 
@@ -229,7 +229,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  Ensure that customer data is not stored in the Azure Cloud while also allowing future applications to be easily deployed in Azure with access to custom data regardless of where they are deployed.
 
-1.  Account for the Contoso's intention to expand its business to Canada, including provisions regarding data residency and replication requirements.
+1.  Account for the Contoso's intention to expand its business to Canada, including provisions regarding protecting sensitive customer data while also making it available for processing by internal ERP and CRM systems.
 
 1.  Propose management and monitoring approach that would provide consistency in a hybrid environment. 
 
@@ -262,11 +262,11 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
 
-1.  We have heard that Azure SQL Database does not support replication with on-premises SQL Server-based databases. If so, how can we implement replication of customer data that is not a subject to regulatory restrictions from Canada in order to account for our business intelligence requirements?
+1.  We have heard that PaaS SQL Database does not support replication with on-premises SQL Server-based databases. If so, how can we implement replication of customer data that is not a subject to regulatory restrictions from Canada in order to account for our business intelligence requirements?
 
-1.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
+1.  The developer team acknowledged that the existing application architecture is designed for running on Windows virtual machines, but PaaS is the future they envision. How can they move this application forward?
 
-1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack Hub make it to where we must use two skillsets?
+1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Do any of Azure Stack portfolio offerings acccommodate this approach or do we have to develop two distinct operational models?
 
 1.  Fabrikam already has its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
 
@@ -302,23 +302,23 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
+1.  List the services and components of your solution that will be deployed outside of Azure. For each system, service, and componenent, provide their basic function.
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
-1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and replication requirements.
+1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and for business intelligence requirements.
 
-1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
+1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack environment that is part of your solution environment.
 
-1.  Describe different delegation mechanisms can be employed to facilitate controlled access to Azure Stack Hub resources. 
+1.  Describe different delegation mechanisms can be employed to facilitate controlled access to resources within your Azure Stack-based solution. 
 
-1.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack Hub operators. 
+1.  Establish which common infrastructure management tasks must be implemented and maintained by designated Azure Stack operational team. 
 
-1.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack Hub.
+1.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure Public and Azure Stack-based deployment.
 
 1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
 
-1.  Plan and document Azure Stack Hub taxonomy for this deployment. 
+1.  Plan and document Azure Stack-related taxonomy relevant in this deployment. 
 
     -   Document each of the following areas of the taxonomy with details on how it will be setup:
 
@@ -550,6 +550,14 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
+    High availability is inherent part of any service deployed on Azure Stack Hub due to its architecture. This applies to both IaaS and PaaS services. Availabilty of Azure services is a subject to published and documented SLAs. Effectively, since all components of the proposed design rely on the combination of Azure Stack Hub and Azure services, the resulting solution is highly available. 
+
+    Disaster recovery provisions apply to the US-based deployment of the Mortgage Application infrastructure and rely on the following aspects of that infrastructure:
+
+        -   
+
+
+
 
 1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and replication requirements.
 
@@ -595,9 +603,6 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
     -   Once your code has passed testing, automatically deploy to Azure Stack Hub.
 
 1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
-
-1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
-
 
 
 
