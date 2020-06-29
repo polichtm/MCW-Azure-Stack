@@ -397,6 +397,9 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Stack marketplace | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-marketplace-azure-items> |
 | Azure Stack Identity Architecture | <https://docs.microsoft.com/en-us/azure-stack/operator/azure-stack-identity-architecture> |
 | Delegate offers in Azure Stack | <https://docs.microsoft.com/en-us/azure-stack/operator/azure-stack-delegated-provider> |
+| What is Azure Arc for servers (preview)? | <https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview> |
+| Run an N-tier application in multiple Azure Stack Hub regions for high availability | <https://docs.microsoft.com/en-us/azure-stack/user/iaas-architecture-sql-n-tier-multi-region?view=azs-2002> |
+| Replication to Azure SQL Database | <https://docs.microsoft.com/en-us/azure/azure-sql/database/replication-to-sql-database> |
 
 
 # Azure Stack whiteboard design session trainer guide
