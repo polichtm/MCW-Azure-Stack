@@ -198,7 +198,7 @@ Contoso's current workloads run in their Dallas based datacenter using VMWare ba
 
 The current implementation of mortgage application relies on a third party load balancer to distribute requests across a pair of identically confgured web servers, with redundant application servers operating in the active/active mode, and the database tier leveraging SQL Server Always On availability group in the synchronous-commit mode. The database is also replicated asynchronously to the Contoso's disaster recovery site in Tulsa, Oklahoma. The recovery site hosts instances of web and application servers, configured identically to their production counterparts. As part of the disaster recovery plan, the external DNS records pointing to the public endpoint of the mortgage application would be modified to match the public IP address associated with the Tulsa datacenter edge routers.
 
-In addition to plans for modernizing its technology, Contoso is also interested in expanding its business mortgage origination business to Mexico and Canada. Considering the matching projected timelines of these two initiatives, the IT team wants to explore the possibility of leveraging, whenever applicable, Azure technologies, not only for its United States-based workloads but also when developing and implementing its international operations. However, as the Contoso's compliance team has pointed out, operating internationally introduces regulatory challenges. In particular, Contoso must ensure that it protects personally identifiable information (PII) according to laws governing financial records in each country. Some of information provided by international customers must remain at its country of origin and would need to be excluded from any data set transmitted to Azure or to Contoso's United States-based locations.
+In addition to plans for modernizing its technology, Contoso is also interested in expanding its business mortgage origination business to Canada. Considering the matching projected timelines of these two initiatives, the IT team wants to explore the possibility of leveraging, whenever applicable, Azure technologies, not only for its United States-based workloads but also when developing and implementing its international operations. However, as the Contoso's compliance team has pointed out, operating internationally introduces regulatory challenges. In particular, Contoso must ensure that it protects personally identifiable information (PII) according to country-specific laws governing processing, distribution, and storage of financial records. Some of information provided by international customers must remain at the country of origin and would need to be excluded from any data set transmitted to Azure or to Contoso's United States-based locations.
 
 At the same time, Contoso's strategy oversight committee emphasizes the significance of collecting comprehensive data associated with all of mortgage operations across the company, which feeds its custom Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) systems. Currently, these custom systems extract data directly from the SQL Server database that serves as the data store for the customer facing mortgage application. Due to existing dependencies built into the modules processing data feeds into the ERP and CRM systems, the intention is to keep the current model, with the single, centalized database for mortgage originations data.
 
@@ -210,7 +210,7 @@ In addition, as a result of a recent acquisition of a financial analytics compan
 
 During the early planning stages of the new cloud strategy, Contoso IT team realized that the constraints applicable to its international locations also play significant role within the United States. As it turned out, corporate compliance policies and regulatory mandates preclude the ability to move some of their customer, on-premises resident data to US based Azure regions. "This was a cause for great concern, as this means Contoso may not be able to move to cloud-based services as we initially envisioned" says Max Rubin VP of Network Engineering. Doreen Newton took on the challenge to investigate alternatives to allow Contoso to proceed with getting the benefits of the cloud while not breaking rules for corporate compliance.
 
-To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have a number of datacenters around the world, including Dallas, Denver, Chicago, Las Vegas, Toronto, and Mexico City.
+To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have a number of datacenters in North America, including Dallas, Denver, Chicago, Las Vegas, and Toronto.
 
 Contoso has expressed to FT the need to embrace Microsoft Azure technologies as well as technologies that will help their organization with a more agile continuous integration and continuous deployment model for application deployment. FT was made aware of the compliance and regulatory challenges it encountered, along with the set of business requirements that must be satisfied as Contoso transitions towards its longer term goals. Contoso's IT management team also underscored the need for cooperation with Fabrikam's integration teams, including the intent to delegate some of the infrastructure management tasks. 
 
@@ -229,7 +229,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  Ensure that customer data is not stored in the Azure Cloud while also allowing future applications to be easily deployed in Azure with access to custom data regardless of where they are deployed.
 
-1.  Account for the Contoso's intention to expand its business to Canada and Mexico, including requirements regarding data residency and replication requirements.
+1.  Account for the Contoso's intention to expand its business to Canada, including requirements regarding data residency and replication requirements.
 
 1.  Propose management and monitoring approach that would provide consistency in a hybrid environment. 
 
@@ -262,7 +262,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
 
-1.  We have heard that Azure SQL Database does not support replication with on-premises SQL Server-based databases. If so, how can we implement replication of customer data that is not a subject to regulatory restrictions from Canada and Mexico in order to account for our business intelligence requirements?
+1.  We have heard that Azure SQL Database does not support replication with on-premises SQL Server-based databases. If so, how can we implement replication of customer data that is not a subject to regulatory restrictions from Canada in order to account for our business intelligence requirements?
 
 1.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
 
@@ -382,6 +382,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
+| Differences between global Azure, Azure Stack Hub, and Azure Stack HCI | <https://docs.microsoft.com/en-us/azure-stack/operator/compare-azure-azure-stack?view=azs-2002> |
 | Azure Stack Hub overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
 | Azure Stack Hub use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
 | Azure Stack Hub features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
@@ -466,7 +467,13 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Preferred solution
 
-After being engaged by Contoso and gathering the requirements from the client, FT has put forward a design which embraces the Azure platform and DevOps for development and deployment, as well as addresses multi-tenant identity and data sovereignty requirements discovered by Contoso (no customer data in the public cloud and filtering out regulated data for international customers). The solution relies on resources deployed to the Azure public cloud in the South-Central region and to an Azure Stack Hub stamp running in a FT Dallas datacenter for the production environment and with the North-Central region and Azure Stack Hub running in FT Chicago datacenter for the disaster recovery environment.
+After being engaged by Contoso and gathering the requirements from the client, FT has put forward a design which embraces the Azure platform and DevOps for development and deployment, delivers stipulated high availability and disaster recovery provisions, as well as addresses multi-tenant identity and data sovereignty requirements identified during the planning stage (no customer data in the public cloud and filtering out regulated data for international customers). The solution relies on resources deployed to the following locations: 
+
+- Azure public cloud in the South Central US region and an Azure Stack Hub integrated system running in the FT Dallas datacenter serving as the production environment for US-based customers
+
+- Azure public cloud in the North Central US region and an Azure Stack Hub integrated system running in the FT Chicago datacenter serving as the disaster recovery environment for US-based customers
+
+- Azure public cloud in the Canada Central region and an Azure Stack Hub integrated system running in the FT Toronto datacenter serving as the production environment for Canada customers
 
 ![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stock FusionTomo Dallas Datacenter, which in turn connects via VPN to On-Premises.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png "Preferred solution")
 
