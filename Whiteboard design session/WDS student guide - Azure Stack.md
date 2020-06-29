@@ -104,7 +104,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  Ensure that customer data is not stored in the Azure Cloud while also allowing future applications to be easily deployed in Azure with access to custom data regardless of where they are deployed.
 
-1.  Account for the Contoso's intention to expand its business to Canada, including requirements regarding data residency and replication requirements.
+1.  Account for the Contoso's intention to expand its business to Canada, including provisions regarding data residency and replication requirements.
 
 1.  Propose management and monitoring approach that would provide consistency in a hybrid environment. 
 
@@ -179,6 +179,10 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
 1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
+
+1.  Describe the high availability and disaster recovery provisions in your design.
+
+1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and replication requirements.
 
 1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
@@ -263,6 +267,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |----------|:-------------:|
 | **Description** | **Links** |
 | Differences between global Azure, Azure Stack Hub, and Azure Stack HCI | <https://docs.microsoft.com/en-us/azure-stack/operator/compare-azure-azure-stack?view=azs-2002> |
+| What is Azure Stack Edge? | <https://docs.microsoft.com/en-us/azure/databox-online/azure-stack-edge-overview> |
 | Azure Stack Hub overview  | <https://azure.microsoft.com/en-us/overview/azure-stack/> |
 | Azure Stack Hub use cases | <https://azure.microsoft.com/en-us/overview/azure-stack/use-cases/> |
 | Azure Stack Hub features | <https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-key-features> |
