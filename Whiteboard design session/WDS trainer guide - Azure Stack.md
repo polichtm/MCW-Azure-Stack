@@ -170,9 +170,9 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will work with a group to design a hybrid cloud architecture using a combination of the Azure public cloud and Azure Stack Hub. This functional architecture will enable customers to leverage their investments in Azure as a "cloud platform," rather than Azure as a "place."
+In this whiteboard design session, you will work with a group to design a hybrid cloud architecture using a combination of the Global Azure cloud and Azure Stack Hub. This functional architecture will enable customers to leverage their investments in Azure as a "cloud platform," rather than Azure as a "place."
 
-At the end of the session, you will be able to determine which systems are good candidates for the Azure public cloud, and which are better suited on Azure Stack Hub.
+At the end of the session, you will be able to determine which systems are good candidates for the Global Azure cloud, and which are better suited on Azure Stack Hub.
 
 ## Step 1: Review the customer case study 
 
@@ -298,7 +298,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
-1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
+1.  List the services and components that will be deployed to Global Azure cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
 1.  List the services and components of your solution that will be deployed outside of Azure. For each system, service, and componenent, provide their basic function.
 
@@ -479,11 +479,11 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 After being engaged by Contoso and gathering the requirements from the client, FT has put forward a design which embraces the Azure platform and DevOps for development and deployment, delivers stipulated high availability and disaster recovery provisions, as well as addresses multi-tenant identity and data sovereignty requirements identified during the planning stage (no customer data in the public cloud and filtering out regulated data for international customers when transferring it from the country of its origin). The solution relies on resources deployed to the following locations: 
 
-- Azure public cloud in the South Central US region and an Azure Stack Hub integrated system running in the FT Dallas datacenter serving as the production environment for US-based customers
+- Global Azure cloud in the South Central US region and an Azure Stack Hub integrated system running in the FT Dallas datacenter serving as the production environment for US-based customers
 
-- Azure public cloud in the North Central US region and an Azure Stack Hub integrated system running in the FT Chicago datacenter serving as the disaster recovery environment for US-based customers
+- Global Azure cloud in the North Central US region and an Azure Stack Hub integrated system running in the FT Chicago datacenter serving as the disaster recovery environment for US-based customers
 
-- Azure public cloud in the Canada Central region and an Azure Stack Hub integrated system running in the FT Toronto datacenter serving as the production environment for Canada customers
+- Global Azure cloud in the Canada Central region and an Azure Stack Hub integrated system running in the FT Toronto datacenter serving as the production environment for Canada customers
 
    ![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stock FT Dallas datacenter, which in turn connects via VPN to the Contoso on-premises datacenter.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png "Preferred solution")
 
@@ -509,9 +509,9 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     While the intention is to optimize the use of Azure public, the design must account for constraints imposed by national and industry specific regulations regarding customer data. In particular, based on the findings identified during the planning stage, the Mortgage Application Customer Data database for customers based in the US and Canada will need to reside in on-premises data centers within their respective countries of origin. While Azure Stack HCI is capable of hosting virtual machines running SQL Server instances, it does not support deployment of services such as Azure Web Apps, Azure Functions, or Azure Storage Queues, which are part of the application design outlined in the previous step. The primary purpose of Azure Stack Edge is to implement Artificial Intelligence-enabled edge computing devices that optimize network data transfer to Azure. This functionality does not yield any meaningful benefits in the scenario we are considering. However, with Azure Stack Hub we can accomplish both of our objectives - progressing the cloud first strategy while still allowing for exceptions where workloads must remain on-premises. 
 
-1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
+1.  List the services and components that will be deployed to Global Azure cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-    -   Azure public cloud: The South Central US and Canada Central regions will be used for the production instances of the public facing applications. The following applications will be deployed to Azure public cloud:
+    -   Global Azure cloud: The South Central US and Canada Central regions will be used for the production instances of the public facing applications. The following applications will be deployed to Global Azure cloud:
 
         -   Web App for the Mortgage Application application code.
 
@@ -551,6 +551,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         > **Note**: You would also need to create a VNet-to-VNet VPN connection **from** the virtual network hosting the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX.
 
+   > **Note**: Any updates to the Mortgage Application code applied to its instance hosted in the FT datacenter in Dallas, TX would be subsequently applied to the instances hosted in the FT datacenters in Chicago, IL and Toronto, ON. 
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
@@ -598,9 +599,9 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Replacing failed hardware
 
-1.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Azure public cloud and Azure Stack Hub.
+1.  Identify how applications such as the Mortgage App and other infrastructure workloads could be deployed in a consistent manner between Global Azure cloud and Azure Stack Hub.
 
-    Azure Resource Manager templates can be used to deploy supported services to both Azure public cloud and Azure Stack Hub.
+    Azure Resource Manager templates can be used to deploy supported services to both Global Azure cloud and Azure Stack Hub.
 
     A hybrid continuous integration/continuous delivery(CI/CD) pipeline enables you to build, test, and deploy your app to multiple clouds. A hybrid CI/CD pipeline can help you:
 
@@ -621,6 +622,8 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
     -   Analyzing the performance of Windows and Linux servers and monitoring their processes and dependencies on other resources and external processes by using the Azure Monitor for VMs functioality. This is accomplished by installing both the Log Analytics agent and Dependency agent VM extensions.
     -   Downloading and executing PowerShell and Bash scripts on Windows and Linux servers (respectively) by using the Custom Script Extension. This extension is useful for post deployment configuration, software installation, or any other configuration or management tasks.
 
+    Contoso has also the option of leveraging Azure Automation Update Management to minmize the administraive overhead associated with deployment and status monitoring of operating system updates. Update Management is available for Windows and Linux servers running in Azure, in on-premises environments, and in datacenters of 3rd party hosting providers. This will allow Contoso IT teams to easily identify available updates, assess the update status of all of their servers, and automate the update deployment process.
+
 1.  Plan and Document Azure Stack Hub Taxonomy for this deployment.
 
     -   **Cloud operator**: The primary responsibilities associated with this role will be handled by FT. As the Service Provider, FT will provision and maintain the Azure Stack Hub Infrastructure, including building out the hardware, software, and managing plans, offers and services via the Azure Stack Hub Admin portal. Contoso and Fabrikam end users and IT staff will have access to the Azure Stack Hub environment via the User Portal to build, manage and secure their deployments. Through the delegated providers model, Contoso and Fabrikam IT staff will also be able to create delegated offers and plans based on offers and plans controlled centrally by FT Azure Stack Hub operators. This, in turn, will allow Contoso and Fabrikam end users to subscribe to offers and provision Azure Stack Hub resources through self-service. In addition, FT will be able to leverage built-in and custom Role Based Access Control roles to provide restricted access to the Azure Stack Hub Admin portal to Contoso and Fabrikam staff in order to satisfy audit, security, and governance requirements.
@@ -639,13 +642,16 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     ![The Azure Stack Hub Taxonomy displays as previously described.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image5.png "Azure Stack Hub Taxonomy")
 
-9.  Create a networks design.
+1.  Create a networks design.
 
     Design network connectivity between Contoso's on-premises locations and resources hosted in Azure public and/or implemented by leveraging Azure Stack portfolio.
 
-    -   The initial proof of concept will start with providing a S2S VPN between the virtual network the Azure Web App is connected to and Azure Stack Hub and another S2S Gateway between the Azure Stack Hub datacenter in FT and the Contoso Regional HQ.
+    -   The initial proof of concept will involve providing a S2S VPN between the virtual network the Azure Web App is connected to and Azure Stack Hub and another S2S Gateway between the Azure Stack Hub datacenter in FT and the Contoso Regional HQ.
 
-    -   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the new routers On-Premises at the Contoso Dallas office. Contoso's Public IP Space will be leveraged along with the addition of Public IP space from FT.
+    -   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the routers residing in the on-premises Contoso Dallas location. The connection will be established by referencing Contoso's public IP address space and FT's public IP adress space.
+
+    -   As described earlier, connectivity between virtual networks that are part of each of the Mortgage Applications intance hosted in each Azure Stack Hub regions will be established by using VNet-to-VNet connectivity.
+
 
 ## Checklist of preferred objection handling
 
@@ -653,23 +659,33 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     **Potential Answer:**
 
-    The SQL Database containing the customer information will be hosted in Azure Stack Hub in the FT datacenter. This will require the SQL resource provider to be running on Azure Stack Hub. The data will never reside in the Azure Global Cloud.
+    The SQL Server database containing the customer information will be hosted in each of the Azure Stack Hub regions in the FT datacenters. The data will not traverse or be stored in the Global Azure cloud.
 
 1.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
 
     **Potential Answer:**
 
-    All of the services that are used for this application in both Azure Global and Azure Stack Hub leverage PaaS services. As a result, there is very limited need for management of the platforms beyond the application.
+    Majority of the services that form the proposed solution in both Global Azure cloud and Azure Stack Hub are implemented as PaaS services. As a result, the need for management of the underlying infrastructure and the operating system is is very limited. To manage operating system updates on virtual machines hosting SQL Server instances, Contoso can leverage Azure Automation Update Management. Update Management is available for Windows and Linux servers running in Azure, in on-premises environments, and in datacenters of 3rd party hosting providers. This will allow Contoso IT teams to easily identify available updates, assess the update status on all of their servers, and automate the update deployment process. 
 
 1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
 
+    **Potential Answer:**
+
+    In order toe provide consistent management experience across Windows and Linux servers in the hybrid environment regardless of their location, Contoso will consider implementing Azure Arc for Servers (once it reaches General Availability). Azure Arc for servers allows for management of Windows and Linux servers residing in on-premises environments and hosted by 3rd party service providers in the manner similar to that applicable to Azure VMs. Once you connect your servers to Azure by installing the Azure Connected Machine agent on them, each server gets assigned an unique resource ID designating it as an Azure resource within an resource group you designate. From that point on, you can use a number of Azure Resource Manager features to manage and oversee its configuration and state. These features include Azure Policy guest configurations, tags, and support for resource-context access to Log Analytics logs.
+
 1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
+
+    **Potential Answer:**
+
+    Azure Stack Hub is an extension of Azure that brings the agility and innovation of cloud computing to on-premises environments. Deployed on-premises, Azure Stack Hub can be used to provide Azure consistent services in either connected (with connectivity to Azure) or disconnected mode (with no or intermittent connectivity to Azure). Azure Stack Hub uses the same underlying technologies as Azure Global cloud, which includes the core components of IaaS, SaaS, and PaaS capabilities. These capabilities include Azure VMs running Windows or Linux, Azure Web Apps, API Apps, and Functions, Azure Key Vault, SQL and MySQL databases, Event Hub, IoT, Service Fabric, Ethereum Blockchain, Cloud Foundry, and Kubernetes Container Service, along with Azure Resource Manager and its management features.
+
+    Azure Stack HCI solutions is facilitates deployment and management of virtual machines in a Microsoft-validated hyperconverged infrastructure (HCI) solution hosted in an on-premises datacenter. Besides providing these core capabilities, Azure Stack HCI facilitates integrating its workloads with a number of Azure Global cloud services, including Azure Backup, Azure Site Recovery, Azure Monitor, and Azure Automation Update Management. 
 
 1.  The developer team acknowledged that the existing application architecture is designed for running on Windows virtual machines, but PaaS is the future they envision. How should they transition to this model?
 
     **Potential Answer:**
 
-    The application code base can be modernized by converting the Windows Services to Azure Functions, messaging based code could use Azure Storage Queues or Service Bus, and code that reads and writes from the file system could be updated to use Azure Storage. Finally, application code that writes to SQL Server could be updated to use SQL Database.
+    The application code base can be modernized by converting the Windows Services to Azure Functions, messaging based code could use Azure Storage Queues or Service Bus, and code that reads and writes from the file system could be updated to use Azure Storage. Finally, application code that writes to SQL Server could be updated to use SQL Database for data that can be transferred to Azure Global or to SQL database service in Azure Stack Hub.
 
 1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Do any of Azure Stack portfolio offerings accommodate this approach or do we have to develop and support two distinct operational models?
 
