@@ -200,7 +200,7 @@ The current implementation of the Mortgage Application relies on a third party l
 
 In addition to plans for modernizing its technology, Contoso is also interested in expanding its business mortgage origination business to Canada. Considering the matching projected timelines of these two initiatives, the IT team wants to explore the possibility of leveraging, whenever applicable, Azure technologies, not only for its United States-based workloads but also when developing and implementing its Canada-based operations. However, as the corporate Compliance team has pointed out, operating internationally introduces regulatory challenges. In particular, Contoso must ensure that it protects personally identifiable information (PII) according to country-specific laws governing processing, distribution, and storage of customer financial records. Some of information provided by Canadian customers must remain in the country of its origin and would need to be excluded from any data set transmitted to Azure or to Contoso's United States-based locations.
 
-At the same time, Contoso's strategy oversight committee emphasizes the significance of collecting comprehensive data associated with all of mortgage operations across the company, which feeds its custom Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) systems. Currently, these custom systems extract data directly from the SQL Server database that serves as the data store for the customer facing Mortgage Application. Data feed mechanism used by both systems is latency-sensitive and does not work reliably over WAN connections. Contoso's IT team considers replicating properly fitered data, but is concerned about impact of replication on the performance of the replicated database and unsure to what extent such arrangement is supported in hybrid scenarios.
+At the same time, Contoso's strategy oversight committee emphasizes the significance of collecting comprehensive data associated with all of mortgage operations across the company, which feeds its custom Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) systems. Currently, these custom systems extract data directly from the SQL Server database that serves as the data store for the customer facing Mortgage Application. Data feed mechanism used by both systems is latency-sensitive and does not work reliably over WAN connections. 
 
 While the management team of Mortgage Unit within Contoso is open to modernizing technologies that deliver its applications to customers, its members are concerned about the resiliency of a hybrid solution that would result in moving its mission critical mortgage processing application out of Contoso owned datacenters. While currently there are no explicitly stated Recovery Point Objective (RPO) and Recovery Time Objective (RTO), the business wants to ensure that the proposed solution includes high availability and disaster recovery provisions. The management team wants to make sure that, at the very least, any potential downtime and data loss are minimized to the extent equivalent to that offereed by the current implementation.
 
@@ -304,7 +304,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
-1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and for business intelligence requirements.
+1.  Describe the approach that will allow Contoso to implement the Mortgage Application web app in Canada, including provisions that account for data residency and for business intelligence requirements.
 
 1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack environment that is part of your solution environment.
 
@@ -562,14 +562,13 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   The remaining components of the Mortgage Application are deployed to Azure Stack Hub integrated system in the FT datacenters in Dallas, TX and Chicago, IL, respectively. The first of them constitutes the production instance, while the second serves as the disaster recovery site. The resiliency of the database tier is implemented by using SQL Server Always On Availability Group containing the Web App DB and Customer Data databases and configured with the asynchronous-commit mode. Due to the asynchronous nature of the replication and the potential for data loss, a failover between them involves a manual action. As part of failover, you need to update the Traffic Manager profile by enabling the secondary endpoint and disabling the primary one. Alternatively, you might change their relative priority. Keep in mind that Traffic Manager automatically fails back by default. For example, suppose the primary region is priority 1 and the secondary is priority 2. After a failover, set the primary region to priority 3, to prevent automatic failback. When you are ready to switch, back, update the priority to 1.
 
-1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and for business intelligence requirements.
+1.  Describe the approach that will allow Contoso to implement the Mortgage Application web app in Canada, including provisions that account for data residency and for business intelligence requirements.
 
     Implementing the Mortgate Application in Canada involves provisioning the same set of resources which will reside on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX and in the corresponding Azure-based environment in South Central US. To accomplish this, Contoso will leverage availability of the FT datacenter in Toronto, ON along with Canada Central Azure region.
 
-Traffic Manager
+    In order to make the customer data available for the ERP and CRM systems, the proposed solution will rely on transactional replicaton with column-based filters and the subscriber located on a Windows Server 2019 VMs running SQL Server 2019 hosted in the FT datacenter in Dallas, TX. 
 
-Snapshot replication
-
+    Azure Traffic Manager parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the web app interface, customers will have the option to explicitly select the country-specific version of the app. 
 
 1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
@@ -613,7 +612,10 @@ Snapshot replication
 
 1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
 
+    In order toe provide consistent management experience across Windows and Linux servers in the hybrid environment regardless of their location, Contoso will consider implementing Azure Arc for Servers. 
 
+
+PowerShell Desired State Configuration on Windows and Linux servers in order to eliminate configuration drift, which currently is one of the pain points negatively affecting the stability of the compute environment.
 
 
 1.  Plan and Document Azure Stack Hub Taxonomy for this deployment.
