@@ -487,6 +487,8 @@ After being engaged by Contoso and gathering the requirements from the client, F
 
    ![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stack Hub FT Dallas datacenter, which in turn connects via VPN to the Contoso on-premises datacenter. The DR location in the Azure Stack Hub FT Chicago datacenter is configured in the same manner, but it includes only a single instance of SQL Server VM.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png "Preferred solution with disaster recovery")
 
+   ![The remote Azure Stack Hub region includes the components necessary to run the Mortgage Application, including two VMs running SQL Servers containing the Customer Data database configured in an Always On Availability Group, which replicates via transactional replication (after sensitive data is filtered out) to the central Azure Stack Hub region.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4a.png "Preferred solution - remote office")
+
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso:
 
 1. Identify the overall application design you would propose for modernizing their existing application.
@@ -566,8 +568,6 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
     In order to make the customer data available for the ERP and CRM systems, the proposed solution will rely on transactional replication with column-based filters and the subscriber located on a Windows Server 2019 VMs running SQL Server 2019 hosted in the FT datacenter in Dallas, TX. 
 
     Azure Traffic Manager parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the web app interface, customers will have the option to explicitly select the country-specific version of the app. 
-
-        ![The remote Azure Stack Hub region includes the components necessary to run the Mortgage Application, including two VMs running SQL Servers containing the Customer Data database configured in an Always On Availability Group, which replicates via transactional replication (after sensitive data is filtered out) to the central Azure Stack Hub region.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4a.png "Preferred solution - remote office")
 
 1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
