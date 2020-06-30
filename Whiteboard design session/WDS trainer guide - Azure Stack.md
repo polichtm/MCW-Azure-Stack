@@ -256,7 +256,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  The Customer Data SQL Server database cannot be hosted in the public cloud.
 
-1.  Contoso staff is already stretched thin, so minimizing patching of systems and day-to-day management is very important.
+1.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
 
 1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
 
@@ -562,7 +562,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   The remaining components of the Mortgage Application are deployed to Azure Stack Hub integrated system in the FT datacenters in Dallas, TX and Chicago, IL, respectively. The first of them constitutes the production instance, while the second serves as the disaster recovery site. The resiliency of the database tier is implemented by using SQL Server Always On Availability Group containing the Web App DB and Customer Data databases and configured with the asynchronous-commit mode. Due to the asynchronous nature of the replication and the potential for data loss, a failover between them involves a manual action. As part of failover, you need to update the Traffic Manager profile by enabling the secondary endpoint and disabling the primary one. Alternatively, you might change their relative priority. Keep in mind that Traffic Manager automatically fails back by default. For example, suppose the primary region is priority 1 and the secondary is priority 2. After a failover, set the primary region to priority 3, to prevent automatic failback. When you are ready to switch, back, update the priority to 1.
 
-1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and replication requirements.
+1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and for business intelligence requirements.
 
     Implementing the Mortgate Application in Canada involves provisioning the same set of resources which will reside on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX and in the corresponding Azure-based environment in South Central US. To accomplish this, Contoso will leverage availability of the FT datacenter in Toronto, ON along with Canada Central Azure region.
 
@@ -644,31 +644,35 @@ Snapshot replication
 
 ## Checklist of preferred objection handling
 
-1.  The Mortgage SQL DB cannot be hosted in the public cloud.
+1.  The Customer Data SQL Server database cannot be hosted in the public cloud.
 
     **Potential Answer:**
 
     The SQL Database containing the customer information will be hosted in Azure Stack Hub in the FT datacenter. This will require the SQL resource provider to be running on Azure Stack Hub. The data will never reside in the Azure Global Cloud.
 
-2.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
+1.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
 
     **Potential Answer:**
 
     All of the services that are used for this application in both Azure Global and Azure Stack Hub leverage PaaS services. As a result, there is very limited need for management of the platforms beyond the application.
 
-3.  The developer team acknowledges that the existing application architecture is designed for running on Windows Virtual Machines, but PaaS is the future they envision. How can they move this application forward?
+1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
+
+1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
+
+1.  The developer team acknowledged that the existing application architecture is designed for running on Windows virtual machines, but PaaS is the future they envision. How should they transition to this model?
 
     **Potential Answer:**
 
     The application code base can be modernized by converting the Windows Services to Azure Functions, messaging based code could use Azure Storage Queues or Service Bus, and code that reads and writes from the file system could be updated to use Azure Storage. Finally, application code that writes to SQL Server could be updated to use SQL Database.
 
-4.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Will Azure Stack Hub make it to where we must use two skillsets?
+1.  One of the key reasons Contoso wants to go to the cloud is to take advantage of tools and services for automated deployments and application development. Do any of Azure Stack portfolio offerings accommodate this approach or do we have to develop and support two distinct operational models?
 
     **Potential Answer:**
 
     While there will be minor differences with connectivity/environment information, if the resources are supported in both clouds, the developer and tooling experience will be consistent.
 
-5.  Fabrikam has already its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
+1.  Fabrikam already has its own Azure Active Directory tenant. Will it be necessary to create duplicate accounts for Fabrikam users?
 
     **Potential Answer:**
 

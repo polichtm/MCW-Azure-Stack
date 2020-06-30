@@ -131,7 +131,7 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  The Customer Data SQL Server database cannot be hosted in the public cloud.
 
-1.  Contoso staff is already stretched thin, so minimizing patching of systems and day-to-day management is very important.
+1.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
 
 1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
 
