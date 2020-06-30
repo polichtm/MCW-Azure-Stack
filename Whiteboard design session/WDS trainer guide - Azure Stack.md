@@ -216,7 +216,7 @@ Contoso has expressed to FT the need to embrace Microsoft Azure technologies as 
 
 In addition, Contoso has tasked FT with implementing a hosted environment that will accommodate requirements regarding integration work to be carried out by Fabrikam. It was agreed that this implementation will account for the need expressed by Contoso's internal audit team regarding its ability to track all of the infrastructure changes. Furthermore, for compliance purposes, the delegation model that will provide Contoso and Fabrikam staff with insight into the hosted environment must comply with the principle of least privilege. Finally, to satisfy Contoso governance requirements, FT must document standard operating procedures that will be carried out within the hosted infrastructure. 
 
-![The Contoso Dallas datacenter diagram shows the flow between Contoso Mortgage customers and Contoso's web servers, application servers, and SQL servers.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image2.jpg "Contoso Dallas datacenter diagram")
+![The Contoso Dallas datacenter diagram shows the flow between Contoso Mortgage customers and Contoso's web servers, application servers, and SQL servers.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image2.png "Contoso datacenter diagram")
 
 
 ### Customer needs 
