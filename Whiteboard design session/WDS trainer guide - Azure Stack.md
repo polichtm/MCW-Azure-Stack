@@ -481,11 +481,11 @@ After being engaged by Contoso and gathering the requirements from the client, F
 
 - Global Azure cloud in the South Central US region and an Azure Stack Hub integrated system running in the FT Dallas datacenter serving as the production environment for US-based customers
 
-- Global Azure cloud in the North Central US region and an Azure Stack Hub integrated system running in the FT Chicago datacenter serving as the disaster recovery environment for US-based customers
+- An Azure Stack Hub integrated system running in the FT Chicago datacenter serving as the disaster recovery environment for US-based customers
 
-- Global Azure cloud in the Canada Central region and an Azure Stack Hub integrated system running in the FT Toronto datacenter serving as the production environment for Canada customers
+- An Azure Stack Hub integrated system running in the FT Toronto datacenter serving as the production environment for Canada customers
 
-   ![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stock FT Dallas datacenter, which in turn connects via VPN to the Contoso on-premises datacenter.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png "Preferred solution")
+   ![Both Traffic manager and VPN connect Azure Public (South Central) with the Azure Stack Hub FT Dallas datacenter, which in turn connects via VPN to the Contoso on-premises datacenter. The DR location in the Azure Stack Hub FT Chicago datacenter is configured in the same manner, but it includes only a single instance of SQL Server VM.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4.png "Preferred solution with disaster recovery")
 
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso:
 
@@ -499,7 +499,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Azure Functions will replace the Windows services.
 
-    -   Virtual machines running Windows Server 2019 with SQL Server 2019 installed will replace the US-based instances of the SQL Server databases hosting Mortgage Application data. Similarly, a virtual machines running Windows Server 2019 with SQL Server 2019 installed will serve as the database tier for the Mortgage Application deployed for Canadian customers.
+    -   Virtual machines running Windows Server 2019 with SQL Server 2019 installed will replace the US-based instances of the SQL Server databases hosting Mortgage Application data. Similarly, virtual machines running Windows Server 2019 with SQL Server 2019 installed will serve as the database tier for the Mortgage Application deployed for Canadian customers.
 
     -   Azure Traffic Manager will be configured to use a nested profile. The parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the US, the target endpoint will be implemented by using the Priority routing method in order to direct requests to the Web App instance hosted on Azure Stack Hub or, if that one becomes temporarily unavailable, to the Azure public Web App instance. The failover between the production and disaster recovery environment will be performed manually by disabling/enabling corresponding endpoints due to the dependency on the availability of the back-end database.
 
@@ -535,7 +535,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   A VNet-to-VNet VPN connection to the virtual networks hosting the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Chicago, IL. This is necessary for Always On Availability Group Members in two different Azure Stack Hub regions to replicate.
 
-    -   An Azure Stack Hub region will be deployed into the FT datacenter in Chicago, IL. This region will host the same set of services as those provisioned into the Azure Stack Hub region in FT datacenter in Dallas, TX, however, the two databases will be configured as secondary replicas in the Always On Availability Group, with the asynchronous-commit mode.
+    -   An Azure Stack Hub region will be deployed into the FT datacenter in Chicago, IL. This region will host the same set of services as those provisioned into the Azure Stack Hub region in FT datacenter in Dallas, TX, however, the two databases will reside on a single Windows Server 2019 VM with a SQL Server 2019 instance and configured as members of the secondary replica in the existing Always On Availability Group, with the asynchronous-commit mode.
 
     -   An Azure Stack Hub region will be deployed into the FT datacenter in Toronto, ON. The following resources will be deployed into that Azure Stack Hub region:
 
@@ -545,7 +545,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   Azure Storage queues for the Mortgage Application messaging.
 
-        -   A Windows Server 2019 VM with SQL Server 2019 installed, hosting the Web App DB and Customer Data databases. This database will be configured to replicate via transactional replication to a database hosted on one of the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX.
+        -   Two Windows Server 2019 VMs with SQL Server 2019 installed, hosting the Web App DB and Customer Data databases which are members of the same Always On Availability Group with the synchronous-commit mode. The Customer Data database will be configured to replicate via transactional replication to a database hosted on one of the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX.
 
         -   VNet-to-VNet VPN connection to the virtual network hosting the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX. This is necessary for SQL Server replication across different Azure Stack Hub regions.
 
@@ -557,19 +557,17 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     High availability is inherent part of any service deployed on Azure Stack Hub due to its architecture. This applies to both IaaS and PaaS services. Availability of Azure services is a subject to published and documented SLAs. Effectively, since all components of the proposed design rely on the combination of Azure Stack Hub and Azure services, the resulting solution is highly available. In addition, the database of the database tier for the US-based Mortgage Application in the FT datacenter in Dallas, TX is implemented by using the Always On Availability Group, with the asynchronous-commit mode.
 
-    -   Disaster recovery provisions apply to the US-based deployment of the Mortgage Application infrastructure and rely on the following aspects of that infrastructure:
-
-        -   Mortgage Application web app and Blob Storage hosting public PDFs are deployed to both South Central US and North Central US Azure regions (to minimize the cost, the disaster recovery instance of the web app can be scaled down to the Free pricing tier)
-
-        -   The remaining components of the Mortgage Application are deployed to Azure Stack Hub integrated system in the FT datacenters in Dallas, TX and Chicago, IL, respectively. The first of them constitutes the production instance, while the second serves as the disaster recovery site. The resiliency of the database tier is implemented by using SQL Server Always On Availability Group containing the Web App DB and Customer Data databases and configured with the asynchronous-commit mode. Due to the asynchronous nature of the replication and the potential for data loss, a failover between them involves a manual action. As part of failover, you need to update the Traffic Manager profile by enabling the secondary endpoint and disabling the primary one. Alternatively, you might change their relative priority. Keep in mind that Traffic Manager automatically fails back by default. For example, suppose the primary region is priority 1 and the secondary is priority 2. After a failover, set the primary region to priority 3, to prevent automatic failback. When you are ready to switch, back, update the priority to 1.
+    -   Disaster recovery provisions apply to the US-based deployment of the Mortgage Application infrastructure. The components of the Mortgage Application are deployed to Azure Stack Hub integrated system in the FT datacenters in Dallas, TX and Chicago, IL, respectively. The first of them constitutes the production instance, while the second serves as the disaster recovery site. The resiliency of the database tier is implemented by using SQL Server Always On Availability Group containing the Web App DB and Customer Data databases and configured with the asynchronous-commit mode. Due to the asynchronous nature of the replication and the potential for data loss, a failover between them involves a manual action. As part of failover, you need to update the Traffic Manager profile by enabling the secondary endpoint and disabling the primary one. Alternatively, you might change their relative priority. Keep in mind that Traffic Manager automatically fails back by default. For example, suppose the primary region is priority 1 and the secondary is priority 2. After a failover, set the primary region to priority 3, to prevent automatic failback. When you are ready to switch, back, update the priority to 1.
 
 1.  Describe the approach that will allow Contoso to implement the Mortgage Application web app in Canada, including provisions that account for data residency and for business intelligence requirements.
 
-    Implementing the Mortgage Application in Canada involves provisioning the same set of resources which will reside on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX and in the corresponding Azure-based environment in South Central US. To accomplish this, Contoso will leverage availability of the FT datacenter in Toronto, ON along with Canada Central Azure region.
+    Implementing the Mortgage Application in Canada involves provisioning the same set of resources which will reside on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX. To accomplish this, Contoso will leverage availability of the FT datacenter in Toronto, ON.
 
     In order to make the customer data available for the ERP and CRM systems, the proposed solution will rely on transactional replication with column-based filters and the subscriber located on a Windows Server 2019 VMs running SQL Server 2019 hosted in the FT datacenter in Dallas, TX. 
 
     Azure Traffic Manager parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the web app interface, customers will have the option to explicitly select the country-specific version of the app. 
+
+   ![The remote Azure Stack Hub region includes the components necessary to run the Mortgage Application, including two VMs running SQL Servers containing the Customer Data database configured in an Always On Availability Group, which replicates via transactional replication (after sensitive data is filtered out) to the central Azure Stack Hub region.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4a.png "Preferred solution - remote office")
 
 1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
