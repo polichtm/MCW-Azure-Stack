@@ -493,13 +493,13 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Azure Web Apps and API Apps will replace the IIS servers for hosting the Mortgage Application and Mortgage Admin web sites and associated APIs.
 
-    -   Azure Blob Storage will be used for hosting private and public PDF files.
+    -   Azure Blob Storage will be used for hosting private and public PDF files as well as for implementing Cloud Witness for SQL Server Always On Availability Group.
 
     -   Azure Storage Queues will replace MSMQ to provide the message queuing functionality
 
     -   Azure Functions will replace the Windows services.
 
-    -   Virtual machines running Windows Server 2019 with SQL Server 2019 installed that will replace the US-based instances of the SQL Server databases hosting Mortgage Application data.
+    -   Virtual machines running Windows Server 2019 with SQL Server 2019 installed will replace the US-based instances of the SQL Server databases hosting Mortgage Application data. Similarly, a virtual machines running Windows Server 2019 with SQL Server 2019 installed will serve as the database tier for the Mortgage Application deployed for Canadian customers.
 
     -   Azure Traffic Manager will be configured to use a nested profile. The parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the US, the target endpoint will be implemented by using the Priority routing method in order to direct requests to the Web App instance hosted on Azure Stack Hub or, if that one becomes temporarily unavailable, to the Azure public Web App instance. The failover between the production and disaster recovery environment will be performed manually by disabling/enabling corresponding endpoints due to the dependency on the availability of the back-end database.
 
@@ -515,7 +515,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         -   Web App for the Mortgage Application application code.
 
-        -   Azure Blob Storage for hosting private and public PDF files as well as to implement Cloud Witness for SQL Server Always On Availability Group
+        -   Azure Blob Storage for hosting private and public PDF files as well as for implementing Cloud Witness for SQL Server Always On Availability Group
 
         -   Azure CDN for caching publicly accessible PDF files.
 
@@ -556,7 +556,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     High availability is inherent part of any service deployed on Azure Stack Hub due to its architecture. This applies to both IaaS and PaaS services. Availabilty of Azure services is a subject to published and documented SLAs. Effectively, since all components of the proposed design rely on the combination of Azure Stack Hub and Azure services, the resulting solution is highly available. In addition, the database of the database tier for the US-based Mortgage Application in the FT datacenter in Dallas, TX is implemented by using the Always On Availability Group, with the asynchronous-commit mode.
 
-    Disaster recovery provisions apply to the US-based deployment of the Mortgage Application infrastructure and rely on the following aspects of that infrastructure:
+    -   Disaster recovery provisions apply to the US-based deployment of the Mortgage Application infrastructure and rely on the following aspects of that infrastructure:
 
         -   Mortgage Application web app and Blob Storage hosting public PDFs are deployed to both South Central US and North Central US Azure regions (to minimize the cost, the DR instance can be scaled down to the Free pricing tier)
 
