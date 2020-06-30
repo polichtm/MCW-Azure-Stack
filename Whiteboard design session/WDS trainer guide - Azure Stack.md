@@ -558,16 +558,17 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Disaster recovery provisions apply to the US-based deployment of the Mortgage Application infrastructure and rely on the following aspects of that infrastructure:
 
-        -   Mortgage Application web app and Blob Storage hosting public PDFs are deployed to both South Central US and North Central US Azure regions (to minimize the cost, the DR instance can be scaled down to the Free pricing tier)
+        -   Mortgage Application web app and Blob Storage hosting public PDFs are deployed to both South Central US and North Central US Azure regions (to minimize the cost, the disaster recovery instance of the web app can be scaled down to the Free pricing tier)
 
-        -   The remaining components of the Mortgage Application are deployed to Azure Stack Hub integrated system in the FT datacenters in Dallas, TX and Chicago, IL, respectively. The first of them constitutes the production instance, while the second serves as the disaster recovery site. The resiliency of the database tier is implemented by using SQL Server Always On Availability Group containing the Web App DB and Customer Data databases and configured with the asynchronous-commit mode. Due to the asynchronous nature of the replication and the potential for data loss, a failover between them involves a manual action. As part of failover, you should also update the Traffic Manager profile by enabling the secondary endpoint and disabling the primary one. Alternatively, you might also change their relative priority. Note that Traffic Manager automatically fails back by default. For example, suppose the primary region is priority 1 and the secondary is priority 2. After a failover, set the primary region to priority 3, to prevent automatic failback. When you are ready to switch, back, update the priority to 1.
-
-
-
-
-
+        -   The remaining components of the Mortgage Application are deployed to Azure Stack Hub integrated system in the FT datacenters in Dallas, TX and Chicago, IL, respectively. The first of them constitutes the production instance, while the second serves as the disaster recovery site. The resiliency of the database tier is implemented by using SQL Server Always On Availability Group containing the Web App DB and Customer Data databases and configured with the asynchronous-commit mode. Due to the asynchronous nature of the replication and the potential for data loss, a failover between them involves a manual action. As part of failover, you need to update the Traffic Manager profile by enabling the secondary endpoint and disabling the primary one. Alternatively, you might change their relative priority. Keep in mind that Traffic Manager automatically fails back by default. For example, suppose the primary region is priority 1 and the secondary is priority 2. After a failover, set the primary region to priority 3, to prevent automatic failback. When you are ready to switch, back, update the priority to 1.
 
 1.  Describe the approach that will allow Contoso to expand its business to Canada, including provisions that account for data residency and replication requirements.
+
+    Implementing the Mortgate Application in Canada involves provisioning the same set of resources which will reside on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX and in the corresponding Azure-based environment in South Central US. To accomplish this, Contoso will leverage availability of the FT datacenter in Toronto, ON along with Canada Central Azure region.
+
+Traffic Manager
+
+Snapshot replication
 
 
 1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
