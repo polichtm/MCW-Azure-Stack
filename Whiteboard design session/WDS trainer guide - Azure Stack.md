@@ -681,6 +681,8 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     Azure Stack HCI solutions is facilitates deployment and management of virtual machines in a Microsoft-validated hyperconverged infrastructure (HCI) solution hosted in an on-premises datacenter. Besides providing these core capabilities, Azure Stack HCI facilitates integrating its workloads with a number of Azure Global cloud services, including Azure Backup, Azure Site Recovery, Azure Monitor, and Azure Automation Update Management. 
 
+    Azure Stack Edge is an AI-enabled edge computing device with network data transfer capabilities. The device is provided by Microsoft with a built-in Field Programmable Gate Array (FPGA) that enables accelerated AI-inferencing and has all the capabilities of a network storage gateway. Its primary use cases involve Machine Learning (ML) inferencing at the edge and data preprocessing before sending it to Azure.
+
 1.  The developer team acknowledged that the existing application architecture is designed for running on Windows virtual machines, but PaaS is the future they envision. How should they transition to this model?
 
     **Potential Answer:**
