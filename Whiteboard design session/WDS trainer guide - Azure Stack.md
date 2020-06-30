@@ -551,7 +551,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
         > **Note**: You would also need to create a VNet-to-VNet VPN connection **from** the virtual network hosting the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX.
 
-   > **Note**: Any updates to the Mortgage Application code applied to its instance hosted in the FT datacenter in Dallas, TX would be subsequently applied to the instances hosted in the FT datacenters in Chicago, IL and Toronto, ON. 
+        > **Note**: Any updates to the Mortgage Application code applied to its instance hosted in the FT datacenter in Dallas, TX would be subsequently applied to the instances hosted in the FT datacenters in Chicago, IL and Toronto, ON. 
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
