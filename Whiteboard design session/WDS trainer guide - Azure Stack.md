@@ -567,7 +567,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     Azure Traffic Manager parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the web app interface, customers will have the option to explicitly select the country-specific version of the app. 
 
-   ![The remote Azure Stack Hub region includes the components necessary to run the Mortgage Application, including two VMs running SQL Servers containing the Customer Data database configured in an Always On Availability Group, which replicates via transactional replication (after sensitive data is filtered out) to the central Azure Stack Hub region.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4a.png "Preferred solution - remote office")
+        ![The remote Azure Stack Hub region includes the components necessary to run the Mortgage Application, including two VMs running SQL Servers containing the Customer Data database configured in an Always On Availability Group, which replicates via transactional replication (after sensitive data is filtered out) to the central Azure Stack Hub region.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image4a.png "Preferred solution - remote office")
 
 1.  Determine which identity provider and which identity topology you will use to facilitate authentication and authorization of the Azure Stack Hub environment.
 
