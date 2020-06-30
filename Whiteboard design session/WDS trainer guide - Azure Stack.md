@@ -612,11 +612,14 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Identify how Windows and Linux servers that are part of the hybrid environment can be managed in a consistent manner.
 
-    In order toe provide consistent management experience across Windows and Linux servers in the hybrid environment regardless of their location, Contoso will consider implementing Azure Arc for Servers. 
+    In order toe provide consistent management experience across Windows and Linux servers in the hybrid environment regardless of their location, Contoso will consider implementing Azure Arc for Servers (once it reaches General Availability). Azure Arc for servers allows for management of Windows and Linux servers residing in on-premises environments and hosted by 3rd party service providers in the manner similar to that applicable to Azure VMs. Once you connect your servers to Azure by installing the Azure Connected Machine agent on them, each server gets assigned an unique resource ID designating it as an Azure resource within an resource group you designate. From that point on, you can use a number of Azure Resource Manager features to manage and oversee its configuration and state. These features include Azure Policy guest configurations, tags, and support for resource-context access to Log Analytics logs.
 
+    In addition, Azure Arc for servers allows for deployment of Azure VM extensions to non-Azure Windows and Linux servers, simplifying their management. The extension support includes:
 
-PowerShell Desired State Configuration on Windows and Linux servers in order to eliminate configuration drift, which currently is one of the pain points negatively affecting the stability of the compute environment.
-
+    -   Applying Azure Automation State Configuration to centrally store configurations and maintain the desired state of hybrid connected machines enabled through the DSC VM extension.
+    -   Collecting log data for analysis with Logs in Azure Monitor enabled through the Log Analytics agent VM extension. This is useful for performing complex analysis across data from a variety of sources.
+    -   Analyzing the performance of Windows and Linux servers and monitoring their processes and dependencies on other resources and external processes by using the Azure Monitor for VMs functioality. This is accomplished by installing both the Log Analytics agent and Dependency agent VM extensions.
+    -   Downloading and executing PowerShell and Bash scripts on Windows and Linux servers (respectively) by using the Custom Script Extension. This extension is useful for post deployment configuration, software installation, or any other configuration or management tasks.
 
 1.  Plan and Document Azure Stack Hub Taxonomy for this deployment.
 
