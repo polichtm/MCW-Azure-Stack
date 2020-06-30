@@ -186,9 +186,9 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 1.  Meet your table participants and trainer.
 
-2.  Read all of the directions for steps 1-3 in the student guide.
+1.  Read all of the directions for steps 1-3 in the student guide.
 
-3.  As a table team, review the following customer case study.
+1.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -196,7 +196,7 @@ Contoso Finance is one of the largest banks in the United States with a signific
 
 Contoso's current workloads run in their Dallas based datacenter using VMWare based virtual machines. One of the primary applications the company is interested in modernizing to take advantage of the cloud is a consumer facing Mortgage Application. This application is handling new mortgage requests and facilitating access of consumers to their current mortgage information. The current implementation of the Mortgage Application is implemented as a public facing website (and the corresponding application) on Microsoft Internet Information Server (IIS) with a backend database using SQL Server 2012 hosting the Web App DB and Customer Data databases. A separate web site and a corresponding IIS-based app named Mortgage Admin provides administrative access to the Mortgage Application's backend. The Mortgage Application has several modules that run as Windows Services. These modules are responsible for running credit checks and generating PDFs for transactions. The application uses Microsoft Message Queue (MSMQ) for interacting between modules. The application also allows customers to download several publicly accessible PDF files that provide an overview of the bank's mortgage related products.
 
-The current implementation of the Mortgage Application relies on a third party load balancer to distribute requests across a pair of identically confgured web servers, with redundant application servers operating in the active/active mode, and the database tier leveraging SQL Server Always On availability group in the synchronous-commit mode. The Web APp DB and Customer DB databases are also replicated asynchronously to the Contoso's disaster recovery site in Tulsa, Oklahoma. The recovery site hosts instances of web and application servers, configured identically to their production counterparts. As part of the disaster recovery plan, the external DNS records pointing to the public endpoint of the Mortgage Application would be modified to match the public IP address associated with the Tulsa datacenter edge routers.
+The current implementation of the Mortgage Application relies on a third party load balancer to distribute requests across a pair of identically confgured web servers, with redundant application servers operating in the active/active mode, and the database tier leveraging SQL Server Always On availability group in the synchronous-commit mode. The Web APp DB and Customer DB databases are also replicated via transactional replication (with SQL Server 2012, this requires the distribution database outside of the availability group) to the Contoso's disaster recovery site in Tulsa, Oklahoma. The recovery site hosts instances of web and application servers, configured identically to their production counterparts. As part of the disaster recovery plan, the external DNS records pointing to the public endpoint of the Mortgage Application would be modified to match the public IP address associated with the Tulsa datacenter edge routers.
 
 In addition to plans for modernizing its technology, Contoso is also interested in expanding its business mortgage origination business to Canada. Considering the matching projected timelines of these two initiatives, the IT team wants to explore the possibility of leveraging, whenever applicable, Azure technologies, not only for its United States-based workloads but also when developing and implementing its Canada-based operations. However, as the corporate Compliance team has pointed out, operating internationally introduces regulatory challenges. In particular, Contoso must ensure that it protects personally identifiable information (PII) according to country-specific laws governing processing, distribution, and storage of customer financial records. Some of information provided by Canadian customers must remain in the country of its origin and would need to be excluded from any data set transmitted to Azure or to Contoso's United States-based locations.
 
@@ -208,7 +208,7 @@ Another important consideration concerns the future management and maintenance m
 
 In addition, as a result of a recent acquisition of a financial analytics company named Fabrikam, based in Houston, Texas, Contoso IT management team decided to integrate a number of Fabrikam's internally developed applications to process and analyze the customer data being used by the Contoso's customer facing Mortgage Application. Fabrikam has skilled development and infrastructure teams, with extensive Azure experience and its own Azure Active Directory tenant. Contoso is very interested in leveraging that experience and plans to offer the Fabrikam IT team sufficient level of autonomy when working on the integration tasks. That autonomy will need to account for the emerging cloud strategy and allow the Fabrikam IT team to offer to their users cloud resources required for application development, implementation, and maintenance. At the same time, Contoso will need to ensure proper governance that facilitates compliance with its corporate standards throgh automation and centralized control of the content of a service catalog offered to Fabrikam users. 
 
-During the early planning stages of the new cloud strategy, Contoso IT team realized that the constraints applicable to its international locations also play significant role within the United States. As it turned out, corporate compliance policies and regulatory mandates preclude the ability to move some of their customer, on-premises resident data to US based Azure regions. "This was a cause for great concern, as this means Contoso may not be able to move to cloud-based services as we initially envisioned" says Max Rubin VP of Network Engineering. Doreen Newton took on the challenge to investigate alternatives to allow Contoso to proceed with getting the benefits of the cloud while not breaking rules for corporate compliance.
+During the early planning stages of the new cloud strategy, Contoso IT team realized that the constraints applicable to its international locations also play significant role within the United States. As it turned out, corporate compliance policies and regulatory mandates preclude the ability to move some of their customer, on-premises resident data to US based Azure regions. "This was a cause for great concern, as this means Contoso may not be able to move to cloud-based services as initially envisioned" says Max Rubin VP of Network Engineering. Doreen Newton took on the challenge to investigate alternatives to allow Contoso to proceed with getting the benefits of the cloud while not breaking rules for corporate compliance.
 
 To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have a number of datacenters in North America, including Dallas, Denver, Chicago, Las Vegas, and Toronto.
 
@@ -258,9 +258,9 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
 
-1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
+1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approach we can use in hybrid scenarios?
 
-1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
+1.  I'm confused about the differences between different Azure Stack portfolio offerings. Would Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead?
 
 1.  The developer team acknowledged that the existing application architecture is designed for running on Windows virtual machines, but PaaS is the future they envision. How should they transition to this model?
 
@@ -294,13 +294,13 @@ Directions: With all participants at your table, respond to the following questi
 
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso.
 
-1. Identify the overall application design you would propose for modernizing their existing application.
+1.  Identify the overall application design you would propose for modernizing their existing application.
 
 1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
 1.  List the services and components that will be deployed to Global Azure cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-1.  List the services and components of your solution that will be deployed outside of Azure. For each system, service, and componenent, provide their basic function.
+1.  List the services and components of your solution that will be deployed outside of Azure. For each system, service, and component, provide their basic function.
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
@@ -493,9 +493,9 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Azure Web Apps and API Apps will replace the IIS servers for hosting the Mortgage Application and Mortgage Admin web sites and associated APIs.
 
-    -   Azure Blob Storage will be used for hosting private and public PDF files as well as for implementing Cloud Witness for SQL Server Always On Availability Group.
+    -   Azure Storage blobs will be used for hosting private and public PDF files as well as for implementing Cloud Witness for SQL Server Always On Availability Group.
 
-    -   Azure Storage Queues will replace MSMQ to provide the message queuing functionality
+    -   Azure Storage queues will replace MSMQ to provide the message queuing functionality
 
     -   Azure Functions will replace the Windows services.
 
@@ -513,25 +513,25 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Global Azure cloud: The South Central US and Canada Central regions will be used for the production instances of the public facing applications. The following applications will be deployed to Global Azure cloud:
 
-        -   Web App for the Mortgage Application application code.
+        -   Web App for the Mortgage Application code.
 
-        -   Azure Blob Storage for hosting private and public PDF files as well as for implementing Cloud Witness for SQL Server Always On Availability Group
-
-        -   Azure CDN for caching publicly accessible PDF files.
+        -   Azure Storage blobs for hosting private and public PDF files as well as for implementing Cloud Witness for SQL Server Always On Availability Group
 
         -   Azure Traffic Manager for routing web traffic to either the Azure public web apps or the web apps on Azure Stack Hub.
 
-1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and componenent, provide their basic function.
+        -   Azure CDN for caching publicly accessible PDF files.
+
+1.  List the services and components that will be deployed to each Azure Stack Hub integrated system. For each system, service, and component, provide their basic function.
 
     -   An Azure Stack Hub region will be deployed into the FT datacenter in Dallas, TX. The following resources will be deployed into that Azure Stack Hub region:
 
-        -   Two Windows Server 2019 VMs with SQL Server 2019 installed, hosting the Web App DB and Customer Data databases which are members of the same Always On Availability Group with the synchronous-commit mode. One of the VMs hosts the primary replicas while the other one hosts the secondary replicas.
-
         -   Mortgage Applications web app, Mortgage Admin web app, their corresponding APIs, and Function App to implement the functionality currently provided by Windows services. This will require installation of the Azure Stack Hub Azure App resource provider.
 
-        -   Azure Blob Storage for PDFs.
+        -   Azure Storage blobs for PDFs.
 
-        -   Azure Queue Storage for the Mortgage Application messaging.
+        -   Azure Storage queues for the Mortgage Application messaging.
+
+        -   Two Windows Server 2019 VMs with SQL Server 2019 installed, hosting the Web App DB and Customer Data databases which are members of the same Always On Availability Group with the synchronous-commit mode. One of the VMs hosts the primary replicas while the other one hosts the secondary replicas.
 
         -   A VNet-to-VNet VPN connection to the virtual networks hosting the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Chicago, IL. This is necessary for Always On Availability Group Members in two different Azure Stack Hub regions to replicate.
 
@@ -539,13 +539,13 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   An Azure Stack Hub region will be deployed into the FT datacenter in Toronto, ON. The following resources will be deployed into that Azure Stack Hub region:
 
-        -   A Windows Server 2019 VM with SQL Server 2019 installed, hosting the Web App DB and Customer Data databases. This database will be configured to replicate outside of standard business hours via snapshot replication to a database hosted on one of the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX.
-
         -   Mortgage Applications web app, Mortgage Admin web app, their corresponding APIs, and Function App to implement the functionality currently provided by Windows services. This will require installation of the Azure Stack Hub Azure App resource provider.
 
-        -   Azure Blob Storage for PDFs.
+        -   Azure Storage blobs for PDFs.
 
-        -   Azure Queue Storage for the Mortgage Application messaging.
+        -   Azure Storage queues for the Mortgage Application messaging.
+
+        -   A Windows Server 2019 VM with SQL Server 2019 installed, hosting the Web App DB and Customer Data databases. This database will be configured to replicate via transactional replication to a database hosted on one of the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX.
 
         -   VNet-to-VNet VPN connection to the virtual network hosting the Windows Server 2019 VM with SQL Server 2019 installed on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX. This is necessary for SQL Server replication across different Azure Stack Hub regions.
 
@@ -555,7 +555,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
-    High availability is inherent part of any service deployed on Azure Stack Hub due to its architecture. This applies to both IaaS and PaaS services. Availabilty of Azure services is a subject to published and documented SLAs. Effectively, since all components of the proposed design rely on the combination of Azure Stack Hub and Azure services, the resulting solution is highly available. In addition, the database of the database tier for the US-based Mortgage Application in the FT datacenter in Dallas, TX is implemented by using the Always On Availability Group, with the asynchronous-commit mode.
+    High availability is inherent part of any service deployed on Azure Stack Hub due to its architecture. This applies to both IaaS and PaaS services. Availability of Azure services is a subject to published and documented SLAs. Effectively, since all components of the proposed design rely on the combination of Azure Stack Hub and Azure services, the resulting solution is highly available. In addition, the database of the database tier for the US-based Mortgage Application in the FT datacenter in Dallas, TX is implemented by using the Always On Availability Group, with the asynchronous-commit mode.
 
     -   Disaster recovery provisions apply to the US-based deployment of the Mortgage Application infrastructure and rely on the following aspects of that infrastructure:
 
@@ -565,9 +565,9 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
 1.  Describe the approach that will allow Contoso to implement the Mortgage Application web app in Canada, including provisions that account for data residency and for business intelligence requirements.
 
-    Implementing the Mortgate Application in Canada involves provisioning the same set of resources which will reside on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX and in the corresponding Azure-based environment in South Central US. To accomplish this, Contoso will leverage availability of the FT datacenter in Toronto, ON along with Canada Central Azure region.
+    Implementing the Mortgage Application in Canada involves provisioning the same set of resources which will reside on the Azure Stack Hub integrated system in the FT datacenter in Dallas, TX and in the corresponding Azure-based environment in South Central US. To accomplish this, Contoso will leverage availability of the FT datacenter in Toronto, ON along with Canada Central Azure region.
 
-    In order to make the customer data available for the ERP and CRM systems, the proposed solution will rely on transactional replicaton with column-based filters and the subscriber located on a Windows Server 2019 VMs running SQL Server 2019 hosted in the FT datacenter in Dallas, TX. 
+    In order to make the customer data available for the ERP and CRM systems, the proposed solution will rely on transactional replication with column-based filters and the subscriber located on a Windows Server 2019 VMs running SQL Server 2019 hosted in the FT datacenter in Dallas, TX. 
 
     Azure Traffic Manager parent profile will rely on the Geographic routing method to direct requests to country-specific instance of the Mortgage Application web app. Within the web app interface, customers will have the option to explicitly select the country-specific version of the app. 
 
@@ -619,10 +619,12 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   Applying Azure Automation State Configuration to centrally store configurations and maintain the desired state of hybrid connected machines enabled through the DSC VM extension.
     -   Collecting log data for analysis with Logs in Azure Monitor enabled through the Log Analytics agent VM extension. This is useful for performing complex analysis across data from a variety of sources.
-    -   Analyzing the performance of Windows and Linux servers and monitoring their processes and dependencies on other resources and external processes by using the Azure Monitor for VMs functioality. This is accomplished by installing both the Log Analytics agent and Dependency agent VM extensions.
+    -   Analyzing the performance of Windows and Linux servers and monitoring their processes and dependencies on other resources and external processes by using the Azure Monitor for VMs functionality. This is accomplished by installing both the Log Analytics agent and Dependency agent VM extensions.
     -   Downloading and executing PowerShell and Bash scripts on Windows and Linux servers (respectively) by using the Custom Script Extension. This extension is useful for post deployment configuration, software installation, or any other configuration or management tasks.
 
-    Contoso has also the option of leveraging Azure Automation Update Management to minmize the administraive overhead associated with deployment and status monitoring of operating system updates. Update Management is available for Windows and Linux servers running in Azure, in on-premises environments, and in datacenters of 3rd party hosting providers. This will allow Contoso IT teams to easily identify available updates, assess the update status of all of their servers, and automate the update deployment process.
+    > **Note**: The functionality implemented by using the Log Analytics agent and Dependency agent is available without relying on VM extensions provided by Azure Arc for Servers and can be implemented simply by installing these agents on any on-premises Windows or Linux server. This includes support for Azure Automation State Configuration.
+
+    Contoso has also the option of leveraging Azure Automation Update Management to minimize the administrative overhead associated with deployment and status monitoring of operating system updates. Update Management is available for Windows and Linux servers running in Azure, in on-premises environments, and in datacenters of 3rd party hosting providers. This will allow Contoso IT teams to easily identify available updates, assess the update status of all of their servers, and automate the update deployment process.
 
 1.  Plan and Document Azure Stack Hub Taxonomy for this deployment.
 
@@ -638,7 +640,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   **Offers**: Offers make plans available to users or delegated providers. FT will implement the delegated provider model, allowing designated members of the Contoso and Fabrikam staff serve the role of delegated providers and to create offers to their respective end-users based on FT-defined plans and offers.
 
-    -   **Services/Resource Providers (RP)**: The base Resource Providers: Compute RP, Network RP, Storage RP and KeyVault RP will all be enabled. The SQL Server RP will be enabled and configured. The Azure App RP will be enabled and configured (The Windows Server 2016, SQL Server 2017, SQL IaaS Extension for Azure Stack Hub).
+    -   **Services/Resource Providers (RP)**: The base Resource Providers: Compute RP, Network RP, Storage RP and KeyVault RP will all be enabled. The Azure App RP will be enabled and configured (The Windows Server 2019 and SQL IaaS Extension for Azure Stack Hub).
 
     ![The Azure Stack Hub Taxonomy displays as previously described.](images/Whiteboarddesignsessiontrainerguide-AzureStackimages/media/image5.png "Azure Stack Hub Taxonomy")
 
@@ -650,7 +652,7 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     -   For the future, both S2S and ExpressRoute will be configured for routing using BGP ensuring the best connections possible and one set of configurations for routing. FT will provide the Public ASN number for the routes from their datacenter network in Dallas. FT will also configure the BGP connections between their datacenter and the routers residing in the on-premises Contoso Dallas location. The connection will be established by referencing Contoso's public IP address space and FT's public IP adress space.
 
-    -   As described earlier, connectivity between virtual networks that are part of each of the Mortgage Applications intance hosted in each Azure Stack Hub regions will be established by using VNet-to-VNet connectivity.
+    -   As described earlier, connectivity between virtual networks that are part of each of the Mortgage Applications instance hosted in each Azure Stack Hub regions will be established by using VNet-to-VNet connectivity.
 
 
 ## Checklist of preferred objection handling
@@ -665,21 +667,21 @@ Design a hybrid-cloud architecture using Azure services that will make up the im
 
     **Potential Answer:**
 
-    Majority of the services that form the proposed solution in both Global Azure cloud and Azure Stack Hub are implemented as PaaS services. As a result, the need for management of the underlying infrastructure and the operating system is is very limited. To manage operating system updates on virtual machines hosting SQL Server instances, Contoso can leverage Azure Automation Update Management. Update Management is available for Windows and Linux servers running in Azure, in on-premises environments, and in datacenters of 3rd party hosting providers. This will allow Contoso IT teams to easily identify available updates, assess the update status on all of their servers, and automate the update deployment process. 
+    Majority of the services that form the proposed solution in both Global Azure cloud and Azure Stack Hub are implemented as PaaS services. As a result, the need for management of the underlying infrastructure and the operating system is is very limited. To manage operating system updates on virtual machines hosting SQL Server instances, Contoso can leverage Azure Automation Update Management. Update Management is available for Windows and Linux servers running in Azure, in on-premises environments, and in datacenters of 3rd party hosting providers. This will allow Contoso IT teams to easily identify available updates, assess the update status on all of their servers, and automate the update deployment process. Automated installation of SQL Server specific patches can be implemented by using SQL IaaS Extensions for Azure Stack Hub, available from Azure Stack Hub Marketplace.
 
-1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
-
-    **Potential Answer:**
-
-    In order toe provide consistent management experience across Windows and Linux servers in the hybrid environment regardless of their location, Contoso will consider implementing Azure Arc for Servers (once it reaches General Availability). Azure Arc for servers allows for management of Windows and Linux servers residing in on-premises environments and hosted by 3rd party service providers in the manner similar to that applicable to Azure VMs. Once you connect your servers to Azure by installing the Azure Connected Machine agent on them, each server gets assigned an unique resource ID designating it as an Azure resource within an resource group you designate. From that point on, you can use a number of Azure Resource Manager features to manage and oversee its configuration and state. These features include Azure Policy guest configurations, tags, and support for resource-context access to Log Analytics logs.
-
-1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
+1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approach we can use in hybrid scenarios?
 
     **Potential Answer:**
 
-    Azure Stack Hub is an extension of Azure that brings the agility and innovation of cloud computing to on-premises environments. Deployed on-premises, Azure Stack Hub can be used to provide Azure consistent services in either connected (with connectivity to Azure) or disconnected mode (with no or intermittent connectivity to Azure). Azure Stack Hub uses the same underlying technologies as Azure Global cloud, which includes the core components of IaaS, SaaS, and PaaS capabilities. These capabilities include Azure VMs running Windows or Linux, Azure Web Apps, API Apps, and Functions, Azure Key Vault, SQL and MySQL databases, Event Hub, IoT, Service Fabric, Ethereum Blockchain, Cloud Foundry, and Kubernetes Container Service, along with Azure Resource Manager and its management features.
+    In order to provide consistent management experience across Windows and Linux servers in the hybrid environment regardless of their location, Contoso will consider implementing Azure Arc for Servers (once it reaches General Availability). Azure Arc for servers allows for management of Windows and Linux servers residing in on-premises environments and hosted by 3rd party service providers in the manner similar to that applicable to Azure VMs. Once you connect your servers to Azure by installing the Azure Connected Machine agent on them, each server gets assigned a unique resource ID designating it as an Azure resource within an resource group you designate. From that point on, you can use a number of Azure Resource Manager features to manage and oversee its configuration and state. These features include Azure Policy guest configurations, tags, and support for resource-context access to Log Analytics logs. In addition, Azure Arc for servers allows for deployment of Azure VM extensions to non-Azure Windows and Linux servers, simplifying their management. 
 
-    Azure Stack HCI solutions is facilitates deployment and management of virtual machines in a Microsoft-validated hyperconverged infrastructure (HCI) solution hosted in an on-premises datacenter. Besides providing these core capabilities, Azure Stack HCI facilitates integrating its workloads with a number of Azure Global cloud services, including Azure Backup, Azure Site Recovery, Azure Monitor, and Azure Automation Update Management. 
+1.  I'm confused about the differences between different Azure Stack portfolio offerings. Would Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead?
+
+    **Potential Answer:**
+
+    Azure Stack Hub is an extension of Azure that brings the agility and innovation of cloud computing to on-premises environments. Deployed on-premises, Azure Stack Hub can be used to provide Azure consistent services in either connected (with connectivity to Azure) or disconnected mode (with no or intermittent connectivity to Azure). Azure Stack Hub uses the same underlying technologies as Azure Global cloud, which includes the core IaaS, SaaS, and PaaS capabilities. These capabilities include Azure VMs running Windows or Linux, Azure Web Apps, API Apps, and Functions, Azure Key Vault, SQL and MySQL databases, Event Hub, IoT, Service Fabric, Ethereum Blockchain, Cloud Foundry, and Kubernetes Container Service, along with Azure Resource Manager and its management features.
+
+    Azure Stack HCI solutions facilitate deployment and management of virtual machines in a Microsoft-validated hyperconverged infrastructure (HCI) solution hosted in an on-premises datacenter. Besides providing these core capabilities, Azure Stack HCI facilitates integrating its workloads with a number of Azure Global cloud services, including Azure Backup, Azure Site Recovery, Azure Monitor, and Azure Automation Update Management. 
 
     Azure Stack Edge is an AI-enabled edge computing device with network data transfer capabilities. The device is provided by Microsoft with a built-in Field Programmable Gate Array (FPGA) that enables accelerated AI-inferencing and has all the capabilities of a network storage gateway. Its primary use cases involve Machine Learning (ML) inferencing at the edge and data preprocessing before sending it to Azure.
 

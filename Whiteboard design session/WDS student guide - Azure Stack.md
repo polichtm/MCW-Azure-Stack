@@ -60,9 +60,9 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 1.  Meet your table participants and trainer.
 
-2.  Read all of the directions for steps 1-3 in the student guide.
+1.  Read all of the directions for steps 1-3 in the student guide.
 
-3.  As a table team, review the following customer case study.
+1.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -70,7 +70,7 @@ Contoso Finance is one of the largest banks in the United States with a signific
 
 Contoso's current workloads run in their Dallas based datacenter using VMWare based virtual machines. One of the primary applications the company is interested in modernizing to take advantage of the cloud is a consumer facing Mortgage Application. This application is handling new mortgage requests and facilitating access of consumers to their current mortgage information. The current implementation of the Mortgage Application is implemented as a public facing website (and the corresponding application) on Microsoft Internet Information Server (IIS) with a backend database using SQL Server 2012 hosting the Web App DB and Customer Data databases. A separate web site and a corresponding IIS-based app named Mortgage Admin provides administrative access to the Mortgage Application's backend. The Mortgage Application has several modules that run as Windows Services. These modules are responsible for running credit checks and generating PDFs for transactions. The application uses Microsoft Message Queue (MSMQ) for interacting between modules. The application also allows customers to download several publicly accessible PDF files that provide an overview of the bank's mortgage related products.
 
-The current implementation of the Mortgage Application relies on a third party load balancer to distribute requests across a pair of identically confgured web servers, with redundant application servers operating in the active/active mode, and the database tier leveraging SQL Server Always On availability group in the synchronous-commit mode. The Web APp DB and Customer DB databases are also replicated asynchronously to the Contoso's disaster recovery site in Tulsa, Oklahoma. The recovery site hosts instances of web and application servers, configured identically to their production counterparts. As part of the disaster recovery plan, the external DNS records pointing to the public endpoint of the Mortgage Application would be modified to match the public IP address associated with the Tulsa datacenter edge routers.
+The current implementation of the Mortgage Application relies on a third party load balancer to distribute requests across a pair of identically confgured web servers, with redundant application servers operating in the active/active mode, and the database tier leveraging SQL Server Always On availability group in the synchronous-commit mode. The Web APp DB and Customer DB databases are also replicated via transactional replication (with SQL Server 2012, this requires the distribution database outside of the availability group) to the Contoso's disaster recovery site in Tulsa, Oklahoma. The recovery site hosts instances of web and application servers, configured identically to their production counterparts. As part of the disaster recovery plan, the external DNS records pointing to the public endpoint of the Mortgage Application would be modified to match the public IP address associated with the Tulsa datacenter edge routers.
 
 In addition to plans for modernizing its technology, Contoso is also interested in expanding its business mortgage origination business to Canada. Considering the matching projected timelines of these two initiatives, the IT team wants to explore the possibility of leveraging, whenever applicable, Azure technologies, not only for its United States-based workloads but also when developing and implementing its Canada-based operations. However, as the corporate Compliance team has pointed out, operating internationally introduces regulatory challenges. In particular, Contoso must ensure that it protects personally identifiable information (PII) according to country-specific laws governing processing, distribution, and storage of customer financial records. Some of information provided by Canadian customers must remain in the country of its origin and would need to be excluded from any data set transmitted to Azure or to Contoso's United States-based locations.
 
@@ -82,7 +82,7 @@ Another important consideration concerns the future management and maintenance m
 
 In addition, as a result of a recent acquisition of a financial analytics company named Fabrikam, based in Houston, Texas, Contoso IT management team decided to integrate a number of Fabrikam's internally developed applications to process and analyze the customer data being used by the Contoso's customer facing Mortgage Application. Fabrikam has skilled development and infrastructure teams, with extensive Azure experience and its own Azure Active Directory tenant. Contoso is very interested in leveraging that experience and plans to offer the Fabrikam IT team sufficient level of autonomy when working on the integration tasks. That autonomy will need to account for the emerging cloud strategy and allow the Fabrikam IT team to offer to their users cloud resources required for application development, implementation, and maintenance. At the same time, Contoso will need to ensure proper governance that facilitates compliance with its corporate standards throgh automation and centralized control of the content of a service catalog offered to Fabrikam users. 
 
-During the early planning stages of the new cloud strategy, Contoso IT team realized that the constraints applicable to its international locations also play significant role within the United States. As it turned out, corporate compliance policies and regulatory mandates preclude the ability to move some of their customer, on-premises resident data to US based Azure regions. "This was a cause for great concern, as this means Contoso may not be able to move to cloud-based services as we initially envisioned" says Max Rubin VP of Network Engineering. Doreen Newton took on the challenge to investigate alternatives to allow Contoso to proceed with getting the benefits of the cloud while not breaking rules for corporate compliance.
+During the early planning stages of the new cloud strategy, Contoso IT team realized that the constraints applicable to its international locations also play significant role within the United States. As it turned out, corporate compliance policies and regulatory mandates preclude the ability to move some of their customer, on-premises resident data to US based Azure regions. "This was a cause for great concern, as this means Contoso may not be able to move to cloud-based services as initially envisioned" says Max Rubin VP of Network Engineering. Doreen Newton took on the challenge to investigate alternatives to allow Contoso to proceed with getting the benefits of the cloud while not breaking rules for corporate compliance.
 
 To help design a solution using Azure technologies, Contoso has engaged a Microsoft Cloud Partner and Service Provider FusionTomo (FT). FT is a full-service hosting provider in North America certified to deliver Azure services with connectivity solutions and partnerships to provide ExpressRoute and other telecom services. They have a number of datacenters in North America, including Dallas, Denver, Chicago, Las Vegas, and Toronto.
 
@@ -133,9 +133,9 @@ Contoso is looking for FT to provide the following for their expansion into Nort
 
 1.  Contoso will have a very limited staff to manage the US based operations, so minimizing patching of systems and day-to-day management is very important.
 
-1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approch we can use in hybrid scenarios?
+1.  Having to manage multiple environments is bound to increase administrative overhead. Is there really a consistent approach we can use in hybrid scenarios?
 
-1.  I'm confused about the differences between different Azure Stack portfolio offerings. Woud Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead and minimized cost?
+1.  I'm confused about the differences between different Azure Stack portfolio offerings. Would Azure Stack HCI, Azure Stack Hub, or Azure Stack Edge help us accomplish our objectives with the least amount of administrative overhead?
 
 1.  The developer team acknowledged that the existing application architecture is designed for running on Windows virtual machines, but PaaS is the future they envision. How should they transition to this model?
 
@@ -170,13 +170,13 @@ Directions: With all participants at your table, respond to the following questi
 
 Design a hybrid-cloud architecture using Azure services that will make up the implementation for Contoso.
 
-1. Identify the overall application design you would propose for modernizing their existing application.
+1.  Identify the overall application design you would propose for modernizing their existing application.
 
 1.  Provide the rationale for deciding whether to choose Azure public, Azure Stack Hub, Azure Stack HCI, or Azure Stack Edge in your application design. 
 
-1.  List the services and components that will be deployed to Azure public cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
+1.  List the services and components that will be deployed to Global Azure cloud. For each, provide their basic function in the system. Determine which Azure region will be best suited for the deployment.
 
-1.  List the services and components of your solution that will be deployed outside of Azure. For each system, service, and componenent, provide their basic function.
+1.  List the services and components of your solution that will be deployed outside of Azure. For each system, service, and component, provide their basic function.
 
 1.  Describe the high availability and disaster recovery provisions in your design.
 
